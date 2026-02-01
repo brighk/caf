@@ -1,0 +1,128 @@
+version: '3.8'
+
+services:
+  # Apache Jena Fuseki - Truth Anchor (Module C)
+  fuseki:
+    image: secoresearch/fuseki:latest
+    container_name: caf-fuseki
+    ports:
+      - "3030:3030"
+    environment:
+      - ADMIN_PASSWORD=admin123
+      - JVM_ARGS=-Xmx4g
+    volumes:
+      - fuseki-data:/fuseki/databases
+      - ./config/fuseki:/fuseki/configuration
+    networks:
+      - caf-network
+    restart: unless-stopped
+
+  # ChromaDB - Vector Store
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: caf-chromadb
+    ports:
+      - "8001:8000"
+    volumes:
+      - chroma-data:/chroma/chroma
+    networks:
+      - caf-network
+    restart: unless-stopped
+
+  # Inference Engine (Module A)
+  inference-engine:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.inference
+    container_name: caf-inference
+    ports:
+      - "8002:8001"
+    volumes:
+      - model-cache:/app/.cache
+      - ../../modules/inference_engine:/app/modules/inference_engine
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+      - TRANSFORMERS_CACHE=/app/.cache/huggingface
+      - MODEL_NAME=meta-llama/Llama-3-70b-chat-hf
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - caf-network
+    restart: unless-stopped
+    depends_on:
+      - chromadb
+
+  # FastAPI Gateway
+  api-gateway:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.api
+    container_name: caf-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../../api:/app/api
+      - ../../modules:/app/modules
+      - ../../config:/app/config
+    environment:
+      - FUSEKI_ENDPOINT=http://fuseki:3030/dataset
+      - CHROMADB_HOST=chromadb
+      - CHROMADB_PORT=8000
+      - INFERENCE_ENGINE_URL=http://inference-engine:8001
+    networks:
+      - caf-network
+    restart: unless-stopped
+    depends_on:
+      - fuseki
+      - chromadb
+      - inference-engine
+
+  # Prometheus - Monitoring
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: caf-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    networks:
+      - caf-network
+    restart: unless-stopped
+
+  # Grafana - Visualization
+  grafana:
+    image: grafana/grafana:latest
+    container_name: caf-grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./config/grafana:/etc/grafana/provisioning
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    networks:
+      - caf-network
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+
+networks:
+  caf-network:
+    driver: bridge
+
+volumes:
+  fuseki-data:
+  chroma-data:
+  model-cache:
+  prometheus-data:
+  grafana-data:

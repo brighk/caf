@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inference-engine
+  namespace: caf-system
+  labels:
+    app: inference-engine
+    component: module-a
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inference-engine
+  template:
+    metadata:
+      labels:
+        app: inference-engine
+        component: module-a
+    spec:
+      containers:
+      - name: inference-engine
+        image: caf/inference-engine:latest
+        ports:
+        - containerPort: 8001
+          name: http
+        env:
+        - name: CUDA_VISIBLE_DEVICES
+          value: "0"
+        - name: MODEL_NAME
+          value: "meta-llama/Llama-3-70b-chat-hf"
+        - name: TRANSFORMERS_CACHE
+          value: "/app/.cache/huggingface"
+        resources:
+          requests:
+            memory: "32Gi"
+            cpu: "8"
+            nvidia.com/gpu: 1
+          limits:
+            memory: "80Gi"
+            cpu: "16"
+            nvidia.com/gpu: 1
+        volumeMounts:
+        - name: model-cache
+          mountPath: /app/.cache
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8001
+          initialDelaySeconds: 120
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8001
+          initialDelaySeconds: 60
+          periodSeconds: 10
+      volumes:
+      - name: model-cache
+        persistentVolumeClaim:
+          claimName: model-cache-pvc
+      nodeSelector:
+        nvidia.com/gpu.present: "true"
+      tolerations:
+      - key: nvidia.com/gpu
+        operator: Exists
+        effect: NoSchedule
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inference-engine-service
+  namespace: caf-system
+spec:
+  selector:
+    app: inference-engine
+  ports:
+  - protocol: TCP
+    port: 8001
+    targetPort: 8001
+    name: http
+  type: ClusterIP

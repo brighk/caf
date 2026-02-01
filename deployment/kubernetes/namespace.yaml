@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: caf-system
+  labels:
+    name: caf-system
+    environment: production
