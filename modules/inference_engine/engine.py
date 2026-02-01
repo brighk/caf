@@ -7,10 +7,19 @@ Framework: PyTorch + vLLM for high-throughput inference
 from typing import List, Dict, Any, Optional
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from vllm import LLM, SamplingParams
 from loguru import logger
 import asyncio
 from dataclasses import dataclass
+
+# Optional vLLM import
+try:
+    from vllm import LLM, SamplingParams
+    VLLM_AVAILABLE = True
+except ImportError:
+    logger.warning("vLLM not available, will use Hugging Face transformers")
+    VLLM_AVAILABLE = False
+    LLM = None
+    SamplingParams = None
 
 
 @dataclass
@@ -43,13 +52,14 @@ class InferenceEngine:
         use_vllm: bool = True
     ):
         self.model_name = model_name
-        self.use_vllm = use_vllm
+        self.use_vllm = use_vllm and VLLM_AVAILABLE
 
         logger.info(f"Initializing Inference Engine with {model_name}")
 
         if self.use_vllm:
             self._init_vllm(tensor_parallel_size, gpu_memory_utilization)
         else:
+            logger.info("Using Hugging Face transformers (vLLM not available or disabled)")
             self._init_huggingface()
 
         logger.info("Inference Engine initialized successfully")

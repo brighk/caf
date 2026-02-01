@@ -9,7 +9,6 @@ Protocol:
 3. Construct SPARQL query using templates
 """
 from typing import List, Dict, Any, Optional, Tuple
-import spacy
 from sentence_transformers import SentenceTransformer
 import chromadb
 from chromadb.config import Settings
@@ -18,6 +17,11 @@ import re
 
 from api.models import Triplet, CausalAssertion
 
+# Optional spacy import - disabled due to version incompatibility
+SPACY_AVAILABLE = False
+spacy = None
+logger.warning("spaCy temporarily disabled due to version incompatibility with thinc")
+
 
 class EntityLinker:
     """Links entities to knowledge base URIs using semantic similarity"""
@@ -25,20 +29,46 @@ class EntityLinker:
     def __init__(self, chromadb_host: str = "localhost", chromadb_port: int = 8000):
         self.embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
 
-        # Connect to ChromaDB
-        self.chroma_client = chromadb.HttpClient(
-            host=chromadb_host,
-            port=chromadb_port
-        )
+        # Try to connect to ChromaDB with timeout
+        self.chroma_client = None
+        self.entity_collection = None
 
-        # Get or create collections
         try:
-            self.entity_collection = self.chroma_client.get_collection("entities")
-        except:
-            self.entity_collection = self.chroma_client.create_collection(
-                name="entities",
-                metadata={"description": "Entity URI mappings from ConceptNet/Wikidata"}
+            # Try HTTP client first
+            from chromadb import HttpClient
+            import httpx
+            self.chroma_client = HttpClient(
+                host=chromadb_host,
+                port=chromadb_port,
+                settings=Settings(chroma_client_auth_provider="chromadb.auth.token.TokenAuthClientProvider" if False else None)
             )
+
+            # Test connection with timeout
+            try:
+                self.entity_collection = self.chroma_client.get_collection("entities")
+                logger.info(f"Connected to ChromaDB at {chromadb_host}:{chromadb_port}")
+            except:
+                self.entity_collection = self.chroma_client.create_collection(
+                    name="entities",
+                    metadata={"description": "Entity URI mappings from ConceptNet/Wikidata"}
+                )
+                logger.info(f"Created new ChromaDB collection at {chromadb_host}:{chromadb_port}")
+        except Exception as e:
+            logger.warning(f"Could not connect to ChromaDB server: {e}")
+            logger.info("Using in-memory ChromaDB (entity linking will not persist)")
+            # Fallback to embedded/in-memory ChromaDB
+            try:
+                import chromadb
+                self.chroma_client = chromadb.Client()
+                try:
+                    self.entity_collection = self.chroma_client.get_collection("entities")
+                except:
+                    self.entity_collection = self.chroma_client.create_collection(
+                        name="entities",
+                        metadata={"description": "Entity URI mappings from ConceptNet/Wikidata"}
+                    )
+            except Exception as e2:
+                logger.error(f"Failed to initialize ChromaDB: {e2}")
 
         logger.info("Entity Linker initialized")
 
@@ -100,14 +130,10 @@ class SemanticParser:
         chromadb_port: int = 8000,
         spacy_model: str = "en_core_web_lg"
     ):
-        # Load spaCy model
-        try:
-            self.nlp = spacy.load(spacy_model)
-        except OSError:
-            logger.warning(f"Downloading spaCy model {spacy_model}...")
-            import subprocess
-            subprocess.run(["python", "-m", "spacy", "download", spacy_model])
-            self.nlp = spacy.load(spacy_model)
+        # Load spaCy model if available
+        self.nlp = None
+        # Temporarily disable spacy due to version incompatibility
+        logger.warning("spaCy NER temporarily disabled - will use pattern matching")
 
         # Initialize entity linker
         self.entity_linker = EntityLinker(chromadb_host, chromadb_port)

@@ -32,20 +32,43 @@ async def lifespan(app: FastAPI):
 
     settings = get_settings()
 
-    # Initialize modules
-    services['inference'] = InferenceEngineClient(
-        base_url=settings.inference_engine_url
-    )
-    services['parser'] = SemanticParser(
-        chromadb_host=settings.chromadb_host,
-        chromadb_port=settings.chromadb_port
-    )
-    services['truth_anchor'] = TruthAnchor(
-        fuseki_endpoint=settings.fuseki_endpoint
-    )
-    services['causal_validator'] = CausalValidator()
+    # Initialize modules with error handling
+    try:
+        services['inference'] = InferenceEngineClient(
+            base_url=settings.inference_engine_url
+        )
+        logger.info("✓ Inference client initialized")
+    except Exception as e:
+        logger.warning(f"⚠ Inference client initialization failed: {e}")
+        services['inference'] = None
 
-    logger.info("All services initialized successfully")
+    try:
+        services['parser'] = SemanticParser(
+            chromadb_host=settings.chromadb_host,
+            chromadb_port=settings.chromadb_port
+        )
+        logger.info("✓ Semantic parser initialized")
+    except Exception as e:
+        logger.warning(f"⚠ Semantic parser initialization failed: {e}")
+        services['parser'] = None
+
+    try:
+        services['truth_anchor'] = TruthAnchor(
+            fuseki_endpoint=settings.fuseki_endpoint
+        )
+        logger.info("✓ Truth anchor initialized")
+    except Exception as e:
+        logger.warning(f"⚠ Truth anchor initialization failed: {e}")
+        services['truth_anchor'] = None
+
+    try:
+        services['causal_validator'] = CausalValidator()
+        logger.info("✓ Causal validator initialized")
+    except Exception as e:
+        logger.warning(f"⚠ Causal validator initialization failed: {e}")
+        services['causal_validator'] = None
+
+    logger.info("Service initialization complete")
     yield
 
     # Cleanup
@@ -77,10 +100,10 @@ Instrumentator().instrument(app).expose(app)
 async def health_check():
     """System health check endpoint"""
     components = {
-        "inference_engine": await services['inference'].is_healthy(),
-        "semantic_parser": services['parser'].is_healthy(),
-        "truth_anchor": services['truth_anchor'].is_healthy(),
-        "causal_validator": services['causal_validator'].is_healthy()
+        "inference_engine": await services['inference'].is_healthy() if services.get('inference') else False,
+        "semantic_parser": services['parser'].is_healthy() if services.get('parser') else False,
+        "truth_anchor": services['truth_anchor'].is_healthy() if services.get('truth_anchor') else False,
+        "causal_validator": services['causal_validator'].is_healthy() if services.get('causal_validator') else False
     }
 
     all_healthy = all(components.values())

@@ -1,5 +1,6 @@
 """FastAPI application and routes"""
-from .main import app
+# Removed app import to avoid circular dependencies
+# Import app directly from api.main when needed
 from . import models
 
-__all__ = ['app', 'models']
+__all__ = ['models']

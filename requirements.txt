@@ -1,44 +1,54 @@
-# Core Framework
-fastapi==0.109.0
-uvicorn[standard]==0.27.0
-pydantic==2.5.3
-pydantic-settings==2.1.0
+# Core Framework - Updated for numpy 2.x compatibility
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.0
+pydantic-settings>=2.0
 
-# LLM Inference
-torch==2.1.2
-transformers==4.37.0
-vllm==0.2.7
-accelerate==0.26.0
-bitsandbytes==0.42.0
+# LLM Inference - Modern versions
+torch>=2.2.0
+transformers>=4.56.0
+accelerate>=0.25.0
+bitsandbytes>=0.43.0
+# vllm - install separately with: uv pip install vllm --torch-backend=auto
 
-# Semantic Processing
-spacy==3.7.2
-langchain==0.1.4
-langchain-community==0.0.16
+# Semantic Processing - Skip spacy for now due to thinc incompatibility
+# spacy and langchain require older numpy, excluding for now
+# langchain>=0.1.0
+# langchain-community>=0.0.20
 
 # Knowledge Graph & RDF
-rdflib==7.0.0
-SPARQLWrapper==2.0.0
+rdflib>=7.0.0
+SPARQLWrapper>=2.0.0
 
-# Vector Database
-chromadb==0.4.22
-faiss-gpu==1.7.2
-sentence-transformers==2.3.1
+# Vector Database - numpy 2.x compatible versions
+chromadb>=1.0.0
+sentence-transformers>=2.3.0
 
-# Causal Inference
-dowhy==0.11.1
-networkx==3.2.1
+# Causal Inference - numpy 2.x compatible
+networkx>=3.2.1
 
 # Monitoring & Observability
-prometheus-client==0.19.0
-prometheus-fastapi-instrumentator==6.1.0
+prometheus-client>=0.19.0
+prometheus-fastapi-instrumentator>=7.0.0
 
 # Communication
-grpcio==1.60.0
-grpcio-tools==1.60.0
+grpcio>=1.58.0
 
 # Utilities
-python-dotenv==1.0.0
-httpx==0.26.0
-tenacity==8.2.3
-loguru==0.7.2
+python-dotenv>=1.0.0
+httpx>=0.25.0
+tenacity>=8.2.0
+loguru>=0.7.0
+
+# Data Processing
+numpy>=2.0.0,<3.0.0
+pandas>=2.0.0
+
+# Note: Some packages excluded due to numpy 2.x incompatibility:
+# - spacy (requires thinc with numpy 1.x)
+# - langchain (pinned to numpy <2)
+# - dowhy (version conflicts)
+# - faiss-cpu (numpy version issues)
+#
+# Install vllm separately after base requirements:
+# uv pip install vllm --torch-backend=auto

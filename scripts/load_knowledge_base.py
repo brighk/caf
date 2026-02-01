@@ -16,7 +16,7 @@ import requests
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from modules.semantic_parser import EntityLinker
+from modules.semantic_parser.parser import EntityLinker
 from utils.config import get_settings
 
 
