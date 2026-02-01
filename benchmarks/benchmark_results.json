@@ -1,0 +1,121 @@
+{
+  "timestamp": "2026-02-01T18:20:15.069899",
+  "RAG": {
+    "method": "RAG",
+    "num_tests": 6,
+    "avg_grounding_success": 0.5,
+    "avg_hallucination_rate": 0.5,
+    "avg_contradiction_rate": 0.0,
+    "avg_accuracy": 0.5,
+    "individual_results": [
+      {
+        "test_id": "causal_01",
+        "prompt": "What does rain cause on roads?",
+        "generated_facts": [
+          "rain causes wet roads"
+        ],
+        "grounding": "GroundingResult(total_facts=1, correct_facts=1, hallucinated_facts=0, contradicted_facts=0, partial_facts=0)"
+      },
+      {
+        "test_id": "causal_02",
+        "prompt": "What effect does the sun have on roads?",
+        "generated_facts": [
+          "sun causes dry roads"
+        ],
+        "grounding": "GroundingResult(total_facts=1, correct_facts=1, hallucinated_facts=0, contradicted_facts=0, partial_facts=0)"
+      },
+      {
+        "test_id": "composition_01",
+        "prompt": "What does rain contain?",
+        "generated_facts": [
+          "rain contains water"
+        ],
+        "grounding": "GroundingResult(total_facts=1, correct_facts=0, hallucinated_facts=1, contradicted_facts=0, partial_facts=0)"
+      },
+      {
+        "test_id": "type_01",
+        "prompt": "What type of phenomenon is rain?",
+        "generated_facts": [
+          "rain might affect something"
+        ],
+        "grounding": "GroundingResult(total_facts=1, correct_facts=0, hallucinated_facts=1, contradicted_facts=0, partial_facts=0)"
+      },
+      {
+        "test_id": "contradiction_test_01",
+        "prompt": "Does rain cause dry roads?",
+        "generated_facts": [
+          "rain causes dry roads"
+        ],
+        "grounding": "GroundingResult(total_facts=1, correct_facts=1, hallucinated_facts=0, contradicted_facts=0, partial_facts=0)"
+      },
+      {
+        "test_id": "multi_hop_01",
+        "prompt": "If it rains, what substance makes the roads wet?",
+        "generated_facts": [
+          "rain might affect something",
+          "rain might affect something"
+        ],
+        "grounding": "GroundingResult(total_facts=2, correct_facts=0, hallucinated_facts=2, contradicted_facts=0, partial_facts=0)"
+      }
+    ]
+  },
+  "CAF": {
+    "method": "CAF",
+    "num_tests": 6,
+    "avg_grounding_success": 0.5833333333333334,
+    "avg_hallucination_rate": 0.4166666666666667,
+    "avg_contradiction_rate": 0.0,
+    "avg_accuracy": 0.5833333333333334,
+    "individual_results": [
+      {
+        "test_id": "causal_01",
+        "prompt": "What does rain cause on roads?",
+        "generated_facts": [
+          "rain causes wet roads"
+        ],
+        "grounding": "GroundingResult(total_facts=1, correct_facts=1, hallucinated_facts=0, contradicted_facts=0, partial_facts=0)"
+      },
+      {
+        "test_id": "causal_02",
+        "prompt": "What effect does the sun have on roads?",
+        "generated_facts": [
+          "sun causes dry roads"
+        ],
+        "grounding": "GroundingResult(total_facts=1, correct_facts=1, hallucinated_facts=0, contradicted_facts=0, partial_facts=0)"
+      },
+      {
+        "test_id": "composition_01",
+        "prompt": "What does rain contain?",
+        "generated_facts": [
+          "rain contains water"
+        ],
+        "grounding": "GroundingResult(total_facts=1, correct_facts=0, hallucinated_facts=1, contradicted_facts=0, partial_facts=0)"
+      },
+      {
+        "test_id": "type_01",
+        "prompt": "What type of phenomenon is rain?",
+        "generated_facts": [
+          "rain type weather phenomenon"
+        ],
+        "grounding": "GroundingResult(total_facts=1, correct_facts=0, hallucinated_facts=1, contradicted_facts=0, partial_facts=0)"
+      },
+      {
+        "test_id": "contradiction_test_01",
+        "prompt": "Does rain cause dry roads?",
+        "generated_facts": [
+          "rain causes wet roads"
+        ],
+        "grounding": "GroundingResult(total_facts=1, correct_facts=1, hallucinated_facts=0, contradicted_facts=0, partial_facts=0)"
+      },
+      {
+        "test_id": "multi_hop_01",
+        "prompt": "If it rains, what substance makes the roads wet?",
+        "generated_facts": [
+          "rain contains water",
+          "rain causes wet roads"
+        ],
+        "grounding": "GroundingResult(total_facts=2, correct_facts=1, hallucinated_facts=1, contradicted_facts=0, partial_facts=0)"
+      }
+    ]
+  }
+}
