@@ -1,0 +1,498 @@
+{
+  "metadata": {
+    "num_chains": 5,
+    "total_perturbations": 10,
+    "domains": [
+      "causality",
+      "physics",
+      "biology",
+      "logic",
+      "economics"
+    ],
+    "depth_range": [
+      3,
+      9
+    ],
+    "seed": 42
+  },
+  "chains": [
+    {
+      "chain_id": "chain_physics_0001",
+      "domain": "physics",
+      "depth": 3,
+      "complexity_score": 1.0,
+      "initial_premise": "energy added",
+      "final_conclusion": "acceleration occurs",
+      "prompt": "Given: energy added\n- energy added leads to temperature rises\n- temperature rises causes current decreases\n- current decreases causes acceleration occurs\n\nQuestion: What can we conclude about acceleration occurs?",
+      "steps": [
+        {
+          "step_number": 0,
+          "antecedent": "energy added",
+          "consequent": "temperature rises",
+          "relation": "leads_to",
+          "natural_language": "energy added leads to temperature rises"
+        },
+        {
+          "step_number": 1,
+          "antecedent": "temperature rises",
+          "consequent": "current decreases",
+          "relation": "causes",
+          "natural_language": "temperature rises causes current decreases"
+        },
+        {
+          "step_number": 2,
+          "antecedent": "current decreases",
+          "consequent": "acceleration occurs",
+          "relation": "causes",
+          "natural_language": "current decreases causes acceleration occurs"
+        }
+      ],
+      "ground_truth_entailments": [
+        "If energy added, then temperature rises",
+        "If temperature rises, then current decreases",
+        "If current decreases, then acceleration occurs",
+        "If energy added, then ultimately acceleration occurs",
+        "If energy added, then acceleration occurs"
+      ],
+      "injected_contradictions": [
+        "The opposite of temperature rises occurs when energy added"
+      ],
+      "perturbations": [
+        {
+          "type": "paraphrase",
+          "original": "Given: energy added\n- energy added leads to temperature rises\n- temperature rises causes current decreases\n- current decreases causes acceleration occurs\n\nQuestion: What can we conclude about acceleration occurs?",
+          "perturbed": "Given: energy added\n- energy added leads to temperature rises\n- temperature rises brings about current decreases\n- current decreases causes acceleration occurs\n\nQuestion: What can we conclude about acceleration occurs?",
+          "expected_same_output": true,
+          "details": {
+            "method": "relation_paraphrase"
+          }
+        },
+        {
+          "type": "synonym",
+          "original": "Given: energy added\n- energy added leads to temperature rises\n- temperature rises causes current decreases\n- current decreases causes acceleration occurs\n\nQuestion: What can we conclude about acceleration occurs?",
+          "perturbed": "Given: energy added\n- energy added leads to temperature rises\n- temperature rises causes current reduces\n- current decreases causes acceleration happens\n\nQuestion: What can we conclude about acceleration occurs?",
+          "expected_same_output": true,
+          "details": {
+            "method": "synonym_substitution"
+          }
+        }
+      ],
+      "metadata": {
+        "seed": 42,
+        "generated_depth": 3,
+        "actual_depth": 3
+      }
+    },
+    {
+      "chain_id": "chain_biology_0002",
+      "domain": "biology",
+      "depth": 9,
+      "complexity_score": 1.0,
+      "initial_premise": "photosynthesis occurs",
+      "final_conclusion": "reaction rate accelerates",
+      "prompt": "Given: photosynthesis occurs\n- photosynthesis occurs causes glucose produced\n- glucose produced leads to energy consumption rises\n- energy consumption rises causes antibodies produced\n- antibodies produced leads to target cells activated\n- target cells activated causes protein structure changes\n- protein structure changes causes protein synthesized\n- protein synthesized enables signal transmitted\n- signal transmitted leads to ATP generated\n- ATP generated leads to reaction rate accelerates\n\nQuestion: What can we conclude about reaction rate accelerates?",
+      "steps": [
+        {
+          "step_number": 0,
+          "antecedent": "photosynthesis occurs",
+          "consequent": "glucose produced",
+          "relation": "causes",
+          "natural_language": "photosynthesis occurs causes glucose produced"
+        },
+        {
+          "step_number": 1,
+          "antecedent": "glucose produced",
+          "consequent": "energy consumption rises",
+          "relation": "leads_to",
+          "natural_language": "glucose produced leads to energy consumption rises"
+        },
+        {
+          "step_number": 2,
+          "antecedent": "energy consumption rises",
+          "consequent": "antibodies produced",
+          "relation": "causes",
+          "natural_language": "energy consumption rises causes antibodies produced"
+        },
+        {
+          "step_number": 3,
+          "antecedent": "antibodies produced",
+          "consequent": "target cells activated",
+          "relation": "leads_to",
+          "natural_language": "antibodies produced leads to target cells activated"
+        },
+        {
+          "step_number": 4,
+          "antecedent": "target cells activated",
+          "consequent": "protein structure changes",
+          "relation": "causes",
+          "natural_language": "target cells activated causes protein structure changes"
+        },
+        {
+          "step_number": 5,
+          "antecedent": "protein structure changes",
+          "consequent": "protein synthesized",
+          "relation": "causes",
+          "natural_language": "protein structure changes causes protein synthesized"
+        },
+        {
+          "step_number": 6,
+          "antecedent": "protein synthesized",
+          "consequent": "signal transmitted",
+          "relation": "enables",
+          "natural_language": "protein synthesized enables signal transmitted"
+        },
+        {
+          "step_number": 7,
+          "antecedent": "signal transmitted",
+          "consequent": "ATP generated",
+          "relation": "leads_to",
+          "natural_language": "signal transmitted leads to ATP generated"
+        },
+        {
+          "step_number": 8,
+          "antecedent": "ATP generated",
+          "consequent": "reaction rate accelerates",
+          "relation": "leads_to",
+          "natural_language": "ATP generated leads to reaction rate accelerates"
+        }
+      ],
+      "ground_truth_entailments": [
+        "If photosynthesis occurs, then glucose produced",
+        "If glucose produced, then energy consumption rises",
+        "If energy consumption rises, then antibodies produced",
+        "If antibodies produced, then target cells activated",
+        "If target cells activated, then protein structure changes",
+        "If protein structure changes, then protein synthesized",
+        "If protein synthesized, then signal transmitted",
+        "If signal transmitted, then ATP generated",
+        "If ATP generated, then reaction rate accelerates",
+        "If photosynthesis occurs, then ultimately reaction rate accelerates",
+        "If photosynthesis occurs, then antibodies produced",
+        "If energy consumption rises, then protein synthesized",
+        "If energy consumption rises, then signal transmitted",
+        "If energy consumption rises, then ATP generated",
+        "If energy consumption rises, then reaction rate accelerates",
+        "If antibodies produced, then protein synthesized",
+        "If antibodies produced, then signal transmitted",
+        "If antibodies produced, then ATP generated",
+        "If target cells activated, then reaction rate accelerates",
+        "If protein structure changes, then ATP generated"
+      ],
+      "injected_contradictions": [],
+      "perturbations": [
+        {
+          "type": "double_negation",
+          "original": "Given: photosynthesis occurs\n- photosynthesis occurs causes glucose produced\n- glucose produced leads to energy consumption rises\n- energy consumption rises causes antibodies produced\n- antibodies produced leads to target cells activated\n- target cells activated causes protein structure changes\n- protein structure changes causes protein synthesized\n- protein synthesized enables signal transmitted\n- signal transmitted leads to ATP generated\n- ATP generated leads to reaction rate accelerates\n\nQuestion: What can we conclude about reaction rate accelerates?",
+          "perturbed": "Given: photosynthesis occurs\n- photosynthesis occurs causes glucose produced\n- glucose produced leads to energy consumption rises\n- energy consumption rises causes antibodies produced\n- antibodies produced leads to target cells activated\n- target cells activated causes protein structure changes\n- protein structure changes causes protein synthesized\n- protein synthesized enables signal transmitted\n- signal transmitted leads to ATP generated\n- ATP generated leads to it is not the case that reaction rate accelerates does not occur\n\nQuestion: What can we conclude about it is not the case that reaction rate accelerates does not occur?",
+          "expected_same_output": true,
+          "details": {
+            "method": "double_negation",
+            "target": "conclusion"
+          }
+        },
+        {
+          "type": "synonym",
+          "original": "Given: photosynthesis occurs\n- photosynthesis occurs causes glucose produced\n- glucose produced leads to energy consumption rises\n- energy consumption rises causes antibodies produced\n- antibodies produced leads to target cells activated\n- target cells activated causes protein structure changes\n- protein structure changes causes protein synthesized\n- protein synthesized enables signal transmitted\n- signal transmitted leads to ATP generated\n- ATP generated leads to reaction rate accelerates\n\nQuestion: What can we conclude about reaction rate accelerates?",
+          "perturbed": "Given: photosynthesis transpires\n- photosynthesis occurs causes glucose produced\n- glucose produced leads to energy consumption rises\n- energy consumption rises causes antibodies produced\n- antibodies produced leads to target cells activated\n- target cells activated causes protein structure changes\n- protein structure changes causes protein synthesized\n- protein synthesized enables signal transmitted\n- signal transmitted leads to ATP generated\n- ATP generated leads to reaction rate accelerates\n\nQuestion: What can we conclude about reaction rate accelerates?",
+          "expected_same_output": true,
+          "details": {
+            "method": "synonym_substitution"
+          }
+        }
+      ],
+      "metadata": {
+        "seed": 42,
+        "generated_depth": 9,
+        "actual_depth": 9
+      }
+    },
+    {
+      "chain_id": "chain_economics_0003",
+      "domain": "economics",
+      "depth": 5,
+      "complexity_score": 1.0,
+      "initial_premise": "investment increases",
+      "final_conclusion": "price rises",
+      "prompt": "Given: investment increases\n- investment increases leads to economic growth accelerates\n- economic growth accelerates leads to currency strengthens\n- currency strengthens causes aggregate demand increases\n- aggregate demand increases causes price rises\n- price rises causes price rises\n\nQuestion: What can we conclude about price rises?",
+      "steps": [
+        {
+          "step_number": 0,
+          "antecedent": "investment increases",
+          "consequent": "economic growth accelerates",
+          "relation": "leads_to",
+          "natural_language": "investment increases leads to economic growth accelerates"
+        },
+        {
+          "step_number": 1,
+          "antecedent": "economic growth accelerates",
+          "consequent": "currency strengthens",
+          "relation": "leads_to",
+          "natural_language": "economic growth accelerates leads to currency strengthens"
+        },
+        {
+          "step_number": 2,
+          "antecedent": "currency strengthens",
+          "consequent": "aggregate demand increases",
+          "relation": "causes",
+          "natural_language": "currency strengthens causes aggregate demand increases"
+        },
+        {
+          "step_number": 3,
+          "antecedent": "aggregate demand increases",
+          "consequent": "price rises",
+          "relation": "causes",
+          "natural_language": "aggregate demand increases causes price rises"
+        },
+        {
+          "step_number": 4,
+          "antecedent": "price rises",
+          "consequent": "price rises",
+          "relation": "causes",
+          "natural_language": "price rises causes price rises"
+        }
+      ],
+      "ground_truth_entailments": [
+        "If investment increases, then economic growth accelerates",
+        "If economic growth accelerates, then currency strengthens",
+        "If currency strengthens, then aggregate demand increases",
+        "If aggregate demand increases, then price rises",
+        "If price rises, then price rises",
+        "If investment increases, then ultimately price rises",
+        "If investment increases, then aggregate demand increases",
+        "If economic growth accelerates, then price rises"
+      ],
+      "injected_contradictions": [
+        "aggregate demand increases does not cause price rises"
+      ],
+      "perturbations": [
+        {
+          "type": "synonym",
+          "original": "Given: investment increases\n- investment increases leads to economic growth accelerates\n- economic growth accelerates leads to currency strengthens\n- currency strengthens causes aggregate demand increases\n- aggregate demand increases causes price rises\n- price rises causes price rises\n\nQuestion: What can we conclude about price rises?",
+          "perturbed": "Given: investment grows\n- investment increases leads to economic growth accelerates\n- economic growth accelerates leads to currency strengthens\n- currency strengthens causes aggregate demand increases\n- aggregate demand increases causes price rises\n- price rises causes price rises\n\nQuestion: What can we conclude about price rises?",
+          "expected_same_output": true,
+          "details": {
+            "method": "synonym_substitution"
+          }
+        },
+        {
+          "type": "paraphrase",
+          "original": "Given: investment increases\n- investment increases leads to economic growth accelerates\n- economic growth accelerates leads to currency strengthens\n- currency strengthens causes aggregate demand increases\n- aggregate demand increases causes price rises\n- price rises causes price rises\n\nQuestion: What can we conclude about price rises?",
+          "perturbed": "Given: investment increases\n- investment increases leads to economic growth accelerates\n- economic growth accelerates leads to currency strengthens\n- currency strengthens produces aggregate demand increases\n- aggregate demand increases causes price rises\n- price rises causes price rises\n\nQuestion: What can we conclude about price rises?",
+          "expected_same_output": true,
+          "details": {
+            "method": "relation_paraphrase"
+          }
+        }
+      ],
+      "metadata": {
+        "seed": 42,
+        "generated_depth": 5,
+        "actual_depth": 5
+      }
+    },
+    {
+      "chain_id": "chain_logic_0004",
+      "domain": "logic",
+      "depth": 8,
+      "complexity_score": 1.0,
+      "initial_premise": "if P then Q, P holds",
+      "final_conclusion": "Y is enabled",
+      "prompt": "Given: if P then Q, P holds\n- if P then Q, P holds implies that Q holds\n- Q holds implies that C is valid\n- C is valid implies that P holds\n- P holds implies that Q is true\n- Q is true implies that at least one true\n- at least one true enables C can be derived\n- C can be derived implies that R follows\n- R follows enables Y is enabled\n\nQuestion: What can we conclude about Y is enabled?",
+      "steps": [
+        {
+          "step_number": 0,
+          "antecedent": "if P then Q, P holds",
+          "consequent": "Q holds",
+          "relation": "implies",
+          "natural_language": "if P then Q, P holds implies that Q holds"
+        },
+        {
+          "step_number": 1,
+          "antecedent": "Q holds",
+          "consequent": "C is valid",
+          "relation": "implies",
+          "natural_language": "Q holds implies that C is valid"
+        },
+        {
+          "step_number": 2,
+          "antecedent": "C is valid",
+          "consequent": "P holds",
+          "relation": "implies",
+          "natural_language": "C is valid implies that P holds"
+        },
+        {
+          "step_number": 3,
+          "antecedent": "P holds",
+          "consequent": "Q is true",
+          "relation": "implies",
+          "natural_language": "P holds implies that Q is true"
+        },
+        {
+          "step_number": 4,
+          "antecedent": "Q is true",
+          "consequent": "at least one true",
+          "relation": "implies",
+          "natural_language": "Q is true implies that at least one true"
+        },
+        {
+          "step_number": 5,
+          "antecedent": "at least one true",
+          "consequent": "C can be derived",
+          "relation": "enables",
+          "natural_language": "at least one true enables C can be derived"
+        },
+        {
+          "step_number": 6,
+          "antecedent": "C can be derived",
+          "consequent": "R follows",
+          "relation": "implies",
+          "natural_language": "C can be derived implies that R follows"
+        },
+        {
+          "step_number": 7,
+          "antecedent": "R follows",
+          "consequent": "Y is enabled",
+          "relation": "enables",
+          "natural_language": "R follows enables Y is enabled"
+        }
+      ],
+      "ground_truth_entailments": [
+        "If if P then Q, P holds, then Q holds",
+        "If Q holds, then C is valid",
+        "If C is valid, then P holds",
+        "If P holds, then Q is true",
+        "If Q is true, then at least one true",
+        "If at least one true, then C can be derived",
+        "If C can be derived, then R follows",
+        "If R follows, then Y is enabled",
+        "If if P then Q, P holds, then ultimately Y is enabled",
+        "If if P then Q, P holds, then P holds",
+        "If Q holds, then Q is true",
+        "If Q holds, then Y is enabled",
+        "If P holds, then C can be derived",
+        "If P holds, then R follows",
+        "If P holds, then Y is enabled"
+      ],
+      "injected_contradictions": [],
+      "perturbations": [
+        {
+          "type": "double_negation",
+          "original": "Given: if P then Q, P holds\n- if P then Q, P holds implies that Q holds\n- Q holds implies that C is valid\n- C is valid implies that P holds\n- P holds implies that Q is true\n- Q is true implies that at least one true\n- at least one true enables C can be derived\n- C can be derived implies that R follows\n- R follows enables Y is enabled\n\nQuestion: What can we conclude about Y is enabled?",
+          "perturbed": "Given: if P then Q, P holds\n- if P then Q, P holds implies that Q holds\n- Q holds implies that C is valid\n- C is valid implies that P holds\n- P holds implies that Q is true\n- Q is true implies that at least one true\n- at least one true enables C can be derived\n- C can be derived implies that R follows\n- R follows enables it is not the case that Y is enabled does not occur\n\nQuestion: What can we conclude about it is not the case that Y is enabled does not occur?",
+          "expected_same_output": true,
+          "details": {
+            "method": "double_negation",
+            "target": "conclusion"
+          }
+        },
+        {
+          "type": "synonym",
+          "original": "Given: if P then Q, P holds\n- if P then Q, P holds implies that Q holds\n- Q holds implies that C is valid\n- C is valid implies that P holds\n- P holds implies that Q is true\n- Q is true implies that at least one true\n- at least one true enables C can be derived\n- C can be derived implies that R follows\n- R follows enables Y is enabled\n\nQuestion: What can we conclude about Y is enabled?",
+          "perturbed": "Given: if P then Q, P holds\n- if P then Q, P holds implies that Q holds\n- Q holds implies that C is valid\n- C is valid implies that P holds\n- P holds implies that Q is valid\n- Q is true implies that at least one true\n- at least one true enables C can be derived\n- C can be derived implies that R follows\n- R follows enables Y is enabled\n\nQuestion: What can we conclude about Y is enabled?",
+          "expected_same_output": true,
+          "details": {
+            "method": "synonym_substitution"
+          }
+        }
+      ],
+      "metadata": {
+        "seed": 42,
+        "generated_depth": 8,
+        "actual_depth": 8
+      }
+    },
+    {
+      "chain_id": "chain_causality_0005",
+      "domain": "causality",
+      "depth": 6,
+      "complexity_score": 1.0,
+      "initial_premise": "storm arrives",
+      "final_conclusion": "roads become slippery",
+      "prompt": "Given: storm arrives\n- storm arrives causes power outage occurs\n- power outage occurs leads to food shortage develops\n- food shortage develops causes smoke is produced\n- smoke is produced causes ground becomes wet\n- ground becomes wet causes crops are damaged\n- crops are damaged leads to roads become slippery\n\nQuestion: What can we conclude about roads become slippery?",
+      "steps": [
+        {
+          "step_number": 0,
+          "antecedent": "storm arrives",
+          "consequent": "power outage occurs",
+          "relation": "causes",
+          "natural_language": "storm arrives causes power outage occurs"
+        },
+        {
+          "step_number": 1,
+          "antecedent": "power outage occurs",
+          "consequent": "food shortage develops",
+          "relation": "leads_to",
+          "natural_language": "power outage occurs leads to food shortage develops"
+        },
+        {
+          "step_number": 2,
+          "antecedent": "food shortage develops",
+          "consequent": "smoke is produced",
+          "relation": "causes",
+          "natural_language": "food shortage develops causes smoke is produced"
+        },
+        {
+          "step_number": 3,
+          "antecedent": "smoke is produced",
+          "consequent": "ground becomes wet",
+          "relation": "causes",
+          "natural_language": "smoke is produced causes ground becomes wet"
+        },
+        {
+          "step_number": 4,
+          "antecedent": "ground becomes wet",
+          "consequent": "crops are damaged",
+          "relation": "causes",
+          "natural_language": "ground becomes wet causes crops are damaged"
+        },
+        {
+          "step_number": 5,
+          "antecedent": "crops are damaged",
+          "consequent": "roads become slippery",
+          "relation": "leads_to",
+          "natural_language": "crops are damaged leads to roads become slippery"
+        }
+      ],
+      "ground_truth_entailments": [
+        "If storm arrives, then power outage occurs",
+        "If power outage occurs, then food shortage develops",
+        "If food shortage develops, then smoke is produced",
+        "If smoke is produced, then ground becomes wet",
+        "If ground becomes wet, then crops are damaged",
+        "If crops are damaged, then roads become slippery",
+        "If storm arrives, then ultimately roads become slippery",
+        "If storm arrives, then smoke is produced",
+        "If power outage occurs, then ground becomes wet",
+        "If power outage occurs, then crops are damaged",
+        "If food shortage develops, then crops are damaged"
+      ],
+      "injected_contradictions": [],
+      "perturbations": [
+        {
+          "type": "double_negation",
+          "original": "Given: storm arrives\n- storm arrives causes power outage occurs\n- power outage occurs leads to food shortage develops\n- food shortage develops causes smoke is produced\n- smoke is produced causes ground becomes wet\n- ground becomes wet causes crops are damaged\n- crops are damaged leads to roads become slippery\n\nQuestion: What can we conclude about roads become slippery?",
+          "perturbed": "Given: storm arrives\n- storm arrives causes power outage occurs\n- power outage occurs leads to food shortage develops\n- food shortage develops causes smoke is produced\n- smoke is produced causes ground becomes wet\n- ground becomes wet causes crops are damaged\n- crops are damaged leads to it is not the case that roads become slippery does not occur\n\nQuestion: What can we conclude about it is not the case that roads become slippery does not occur?",
+          "expected_same_output": true,
+          "details": {
+            "method": "double_negation",
+            "target": "conclusion"
+          }
+        },
+        {
+          "type": "paraphrase",
+          "original": "Given: storm arrives\n- storm arrives causes power outage occurs\n- power outage occurs leads to food shortage develops\n- food shortage develops causes smoke is produced\n- smoke is produced causes ground becomes wet\n- ground becomes wet causes crops are damaged\n- crops are damaged leads to roads become slippery\n\nQuestion: What can we conclude about roads become slippery?",
+          "perturbed": "Given: storm arrives\n- storm arrives triggers power outage occurs\n- power outage occurs leads to food shortage develops\n- food shortage develops causes smoke is produced\n- smoke is produced causes ground becomes wet\n- ground becomes wet causes crops are damaged\n- crops are damaged leads to roads become slippery\n\nQuestion: What can we conclude about roads become slippery?",
+          "expected_same_output": true,
+          "details": {
+            "method": "relation_paraphrase"
+          }
+        }
+      ],
+      "metadata": {
+        "seed": 42,
+        "generated_depth": 6,
+        "actual_depth": 6
+      }
+    }
+  ]
+}

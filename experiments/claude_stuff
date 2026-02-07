@@ -1,0 +1,14 @@
+# 1. Extract the backup
+tar -xzf session_backup_20260207_184648.tar.gz
+
+# 2. Restore conversation to Claude Code
+mkdir -p ~/.claude/projects/-workspace-caf/
+cp session_backup_*/65098d20-c289-4f9b-91b4-35813ec41cd9.jsonl \
+   ~/.claude/projects/-workspace-caf/
+
+# 3. Restore code
+cp -r session_backup_*/experiments /workspace/caf/
+cp -r session_backup_*/paper /workspace/caf/
+
+# 4. Resume in Claude Code CLI
+claude --project /workspace/caf

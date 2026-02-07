@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Comparison of CAF with baseline methods}
+\label{tab:caf-comparison}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Metric} & \textbf{CAF} & \textbf{Vanilla} & \textbf{CoT} & \textbf{RAG} & \textbf{RAG+CoT} \\
+\midrule
+Inference Depth ($d$) & 1.32 & 2.97 & 2.33 & 2.52 & 2.41 \\
+Contradiction Rate & 84.0\% & 70.7\% & 74.7\% & 70.7\% & 74.7\% \\
+Entailment Accuracy & 0.765 & 0.620 & 0.524 & 0.538 & 0.527 \\
+Semantic Invariance & 0.711 & 0.000 & 0.000 & 0.000 & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}

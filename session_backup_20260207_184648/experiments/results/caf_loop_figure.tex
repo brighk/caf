@@ -1,0 +1,33 @@
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+    node distance=1.5cm,
+    box/.style={rectangle, draw, rounded corners, minimum width=2.5cm, minimum height=0.8cm, align=center},
+    decision/.style={diamond, draw, aspect=2, minimum width=2cm, align=center},
+    arrow/.style={->, >=stealth, thick}
+]
+
+% Nodes
+\node[box] (input) {Input Prompt $X$};
+\node[box, below of=input] (il) {IL: LLM Draft $Y$};
+\node[box, below of=il] (fvl) {FVL: SPARQL\\Verification};
+\node[decision, below of=fvl, yshift=-0.5cm] (de) {DE: Score\\$\geq \theta$?};
+\node[box, right of=de, xshift=2.5cm] (accept) {Accept $Y^*$};
+\node[box, left of=de, xshift=-2cm] (refine) {Extract\\Constraints};
+
+% Arrows
+\draw[arrow] (input) -- (il);
+\draw[arrow] (il) -- (fvl);
+\draw[arrow] (fvl) -- (de);
+\draw[arrow] (de) -- node[above] {Yes} (accept);
+\draw[arrow] (de) -- node[above] {No} (refine);
+\draw[arrow] (refine) |- node[left, pos=0.25] {Inject} (il);
+
+% Iteration label
+\node[right of=fvl, xshift=1.5cm, gray] {$t = 1 \ldots T$};
+
+\end{tikzpicture}
+\caption{CAF iterative verification loop. The IL generates a proposal, the FVL parses and verifies via SPARQL, and the DE adjudicates. If verification fails, constraints are injected and the IL regenerates.}
+\label{fig:caf-loop}
+\end{figure}

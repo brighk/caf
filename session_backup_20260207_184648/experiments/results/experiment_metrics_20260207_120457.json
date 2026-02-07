@@ -1,0 +1,358 @@
+{
+  "experiment_info": {
+    "timestamp": "20260207_120457",
+    "seed": 42,
+    "num_chains": 75,
+    "total_perturbations": 225,
+    "methods": [
+      "CAF",
+      "Vanilla",
+      "CoT",
+      "RAG",
+      "RAG+CoT"
+    ]
+  },
+  "metrics_by_method": {
+    "CAF": {
+      "primary_metrics": {
+        "mean_inference_depth": 1.6,
+        "std_inference_depth": 2.417,
+        "contradiction_rate_percent": 76.0,
+        "entailment_accuracy": 0.7685
+      },
+      "secondary_metrics": {
+        "semantic_invariance_mean": 0.6976,
+        "semantic_invariance_std": 0.1962
+      },
+      "statistics": {
+        "num_chains": 75,
+        "num_perturbations": 225,
+        "confidence_interval_95": [
+          0.7182,
+          0.8187
+        ]
+      },
+      "by_domain": {
+        "physics": {
+          "mean_depth": 2.33,
+          "contradiction_rate": 66.67,
+          "entailment_accuracy": 0.736
+        },
+        "biology": {
+          "mean_depth": 1.47,
+          "contradiction_rate": 86.67,
+          "entailment_accuracy": 0.8019
+        },
+        "economics": {
+          "mean_depth": 0.87,
+          "contradiction_rate": 93.33,
+          "entailment_accuracy": 0.7407
+        },
+        "logic": {
+          "mean_depth": 1.87,
+          "contradiction_rate": 73.33,
+          "entailment_accuracy": 0.8106
+        },
+        "causality": {
+          "mean_depth": 1.47,
+          "contradiction_rate": 60.0,
+          "entailment_accuracy": 0.7531
+        }
+      }
+    },
+    "Vanilla": {
+      "primary_metrics": {
+        "mean_inference_depth": 2.707,
+        "std_inference_depth": 2.851,
+        "contradiction_rate_percent": 73.33,
+        "entailment_accuracy": 0.6189
+      },
+      "secondary_metrics": {
+        "semantic_invariance_mean": 0.0,
+        "semantic_invariance_std": 0.0
+      },
+      "statistics": {
+        "num_chains": 75,
+        "num_perturbations": 225,
+        "confidence_interval_95": [
+          0.5726,
+          0.6651
+        ]
+      },
+      "by_domain": {
+        "physics": {
+          "mean_depth": 1.93,
+          "contradiction_rate": 86.67,
+          "entailment_accuracy": 0.5112
+        },
+        "biology": {
+          "mean_depth": 3.0,
+          "contradiction_rate": 73.33,
+          "entailment_accuracy": 0.6597
+        },
+        "economics": {
+          "mean_depth": 2.53,
+          "contradiction_rate": 73.33,
+          "entailment_accuracy": 0.6383
+        },
+        "logic": {
+          "mean_depth": 3.13,
+          "contradiction_rate": 66.67,
+          "entailment_accuracy": 0.5756
+        },
+        "causality": {
+          "mean_depth": 2.93,
+          "contradiction_rate": 66.67,
+          "entailment_accuracy": 0.7095
+        }
+      }
+    },
+    "CoT": {
+      "primary_metrics": {
+        "mean_inference_depth": 5.787,
+        "std_inference_depth": 2.435,
+        "contradiction_rate_percent": 0.0,
+        "entailment_accuracy": 0.0
+      },
+      "secondary_metrics": {
+        "semantic_invariance_mean": 0.0,
+        "semantic_invariance_std": 0.0
+      },
+      "statistics": {
+        "num_chains": 75,
+        "num_perturbations": 225,
+        "confidence_interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "by_domain": {
+        "physics": {
+          "mean_depth": 5.07,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        },
+        "biology": {
+          "mean_depth": 6.27,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        },
+        "economics": {
+          "mean_depth": 6.0,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        },
+        "logic": {
+          "mean_depth": 6.27,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        },
+        "causality": {
+          "mean_depth": 5.33,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        }
+      }
+    },
+    "RAG": {
+      "primary_metrics": {
+        "mean_inference_depth": 5.787,
+        "std_inference_depth": 2.435,
+        "contradiction_rate_percent": 0.0,
+        "entailment_accuracy": 0.0
+      },
+      "secondary_metrics": {
+        "semantic_invariance_mean": 0.0,
+        "semantic_invariance_std": 0.0
+      },
+      "statistics": {
+        "num_chains": 75,
+        "num_perturbations": 225,
+        "confidence_interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "by_domain": {
+        "physics": {
+          "mean_depth": 5.07,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        },
+        "biology": {
+          "mean_depth": 6.27,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        },
+        "economics": {
+          "mean_depth": 6.0,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        },
+        "logic": {
+          "mean_depth": 6.27,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        },
+        "causality": {
+          "mean_depth": 5.33,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        }
+      }
+    },
+    "RAG+CoT": {
+      "primary_metrics": {
+        "mean_inference_depth": 5.787,
+        "std_inference_depth": 2.435,
+        "contradiction_rate_percent": 0.0,
+        "entailment_accuracy": 0.0
+      },
+      "secondary_metrics": {
+        "semantic_invariance_mean": 0.0,
+        "semantic_invariance_std": 0.0
+      },
+      "statistics": {
+        "num_chains": 75,
+        "num_perturbations": 225,
+        "confidence_interval_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "by_domain": {
+        "physics": {
+          "mean_depth": 5.07,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        },
+        "biology": {
+          "mean_depth": 6.27,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        },
+        "economics": {
+          "mean_depth": 6.0,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        },
+        "logic": {
+          "mean_depth": 6.27,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        },
+        "causality": {
+          "mean_depth": 5.33,
+          "contradiction_rate": 0.0,
+          "entailment_accuracy": 0.0
+        }
+      }
+    }
+  },
+  "comparisons_to_caf": {
+    "Vanilla": {
+      "inference_depth": {
+        "caf": 1.6,
+        "baseline": 2.7066666666666666,
+        "improvement_pct": -40.88669950738916,
+        "delta": -1.1066666666666665
+      },
+      "contradiction_rate": {
+        "caf": 76.0,
+        "baseline": 73.33333333333333,
+        "reduction_pct": -3.5087719298245674,
+        "delta": -2.6666666666666714
+      },
+      "entailment_accuracy": {
+        "caf": 0.7684603174603174,
+        "baseline": 0.6188571428571428,
+        "improvement_pct": 24.17410485277522,
+        "delta": 0.14960317460317463
+      },
+      "semantic_invariance": {
+        "caf": 0.6975502645502646,
+        "baseline": 0.0,
+        "improvement_pct": Infinity,
+        "delta": 0.6975502645502646
+      }
+    },
+    "CoT": {
+      "inference_depth": {
+        "caf": 1.6,
+        "baseline": 5.786666666666667,
+        "improvement_pct": -72.35023041474655,
+        "delta": -4.186666666666667
+      },
+      "contradiction_rate": {
+        "caf": 76.0,
+        "baseline": 0.0,
+        "reduction_pct": -100.0,
+        "delta": -76.0
+      },
+      "entailment_accuracy": {
+        "caf": 0.7684603174603174,
+        "baseline": 0.0,
+        "improvement_pct": Infinity,
+        "delta": 0.7684603174603174
+      },
+      "semantic_invariance": {
+        "caf": 0.6975502645502646,
+        "baseline": 0.0,
+        "improvement_pct": Infinity,
+        "delta": 0.6975502645502646
+      }
+    },
+    "RAG": {
+      "inference_depth": {
+        "caf": 1.6,
+        "baseline": 5.786666666666667,
+        "improvement_pct": -72.35023041474655,
+        "delta": -4.186666666666667
+      },
+      "contradiction_rate": {
+        "caf": 76.0,
+        "baseline": 0.0,
+        "reduction_pct": -100.0,
+        "delta": -76.0
+      },
+      "entailment_accuracy": {
+        "caf": 0.7684603174603174,
+        "baseline": 0.0,
+        "improvement_pct": Infinity,
+        "delta": 0.7684603174603174
+      },
+      "semantic_invariance": {
+        "caf": 0.6975502645502646,
+        "baseline": 0.0,
+        "improvement_pct": Infinity,
+        "delta": 0.6975502645502646
+      }
+    },
+    "RAG+CoT": {
+      "inference_depth": {
+        "caf": 1.6,
+        "baseline": 5.786666666666667,
+        "improvement_pct": -72.35023041474655,
+        "delta": -4.186666666666667
+      },
+      "contradiction_rate": {
+        "caf": 76.0,
+        "baseline": 0.0,
+        "reduction_pct": -100.0,
+        "delta": -76.0
+      },
+      "entailment_accuracy": {
+        "caf": 0.7684603174603174,
+        "baseline": 0.0,
+        "improvement_pct": Infinity,
+        "delta": 0.7684603174603174
+      },
+      "semantic_invariance": {
+        "caf": 0.6975502645502646,
+        "baseline": 0.0,
+        "improvement_pct": Infinity,
+        "delta": 0.6975502645502646
+      }
+    }
+  }
+}
