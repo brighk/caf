@@ -11,6 +11,7 @@ Supports:
 """
 
 import torch
+import warnings
 from typing import Optional, List
 from dataclasses import dataclass
 from transformers import (
@@ -19,6 +20,9 @@ from transformers import (
     pipeline,
     BitsAndBytesConfig
 )
+
+# Suppress the max_new_tokens/max_length warning spam
+warnings.filterwarnings("ignore", message=".*max_new_tokens.*max_length.*")
 
 from experiments.caf_algorithm import InferenceLayer
 
