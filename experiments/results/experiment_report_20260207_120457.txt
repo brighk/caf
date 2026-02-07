@@ -1,0 +1,158 @@
+
+======================================================================
+CAF MULTI-METHOD COMPARISON REPORT
+======================================================================
+Generated: 2026-02-07 12:04:57
+Seed: 42
+
+DATASET SUMMARY
+---------------
+Total Chains: 75
+Total Perturbations: 225
+Domains: biology, causality, economics, logic, physics
+Depth Range: 2 - 10
+Chains with Contradictions: 10
+
+======================================================================
+METHODS EVALUATED
+======================================================================
+1. CAF
+2. Vanilla
+3. CoT
+4. RAG
+5. RAG+CoT
+
+======================================================================
+PRIMARY METRICS - ALL METHODS
+======================================================================
+
+Metric                   |          CAF |      Vanilla |          CoT |          RAG |      RAG+CoT 
+----------------------------------------------------------------------------------------------------
+Inference Depth          |         1.60 |         2.71 |         5.79 |         5.79 |         5.79 
+Contradiction Rate (%)   |         76.0 |         73.3 |          0.0 |          0.0 |          0.0 
+Entailment Accuracy      |       0.7685 |       0.6189 |       0.0000 |       0.0000 |       0.0000 
+Semantic Invariance      |       0.6976 |       0.0000 |       0.0000 |       0.0000 |       0.0000 
+
+======================================================================
+CAF IMPROVEMENTS OVER BASELINES
+======================================================================
+
+
+CAF vs Vanilla:
+  Inference Depth: +-40.9%
+  Contradiction Rate: -2.7pp reduction
+  Entailment Accuracy: +24.2%
+  Semantic Invariance: +inf%
+
+CAF vs CoT:
+  Inference Depth: +-72.4%
+  Contradiction Rate: -76.0pp reduction
+  Entailment Accuracy: +inf%
+  Semantic Invariance: +inf%
+
+CAF vs RAG:
+  Inference Depth: +-72.4%
+  Contradiction Rate: -76.0pp reduction
+  Entailment Accuracy: +inf%
+  Semantic Invariance: +inf%
+
+CAF vs RAG+CoT:
+  Inference Depth: +-72.4%
+  Contradiction Rate: -76.0pp reduction
+  Entailment Accuracy: +inf%
+  Semantic Invariance: +inf%
+
+======================================================================
+CAF STATISTICAL DETAILS
+======================================================================
+
+  - Inference Depth: 1.60 ± 2.42
+  - 95% CI for Entailment: [0.7182, 0.8187]
+
+======================================================================
+PER-DOMAIN BREAKDOWN (CAF)
+======================================================================
+
+PHYSICS:
+  Mean Depth: 2.33
+  Contradiction Rate: 66.7%
+  Entailment Accuracy: 0.7360
+
+BIOLOGY:
+  Mean Depth: 1.47
+  Contradiction Rate: 86.7%
+  Entailment Accuracy: 0.8019
+
+ECONOMICS:
+  Mean Depth: 0.87
+  Contradiction Rate: 93.3%
+  Entailment Accuracy: 0.7407
+
+LOGIC:
+  Mean Depth: 1.87
+  Contradiction Rate: 73.3%
+  Entailment Accuracy: 0.8106
+
+CAUSALITY:
+  Mean Depth: 1.47
+  Contradiction Rate: 60.0%
+  Entailment Accuracy: 0.7531
+
+======================================================================
+ALGORITHM PSEUDOCODE
+======================================================================
+
+Algorithm 1: CAF Iterative Verification Loop
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Input: Prompt X, Knowledge Base K, Max Iterations T, Threshold θ
+Output: Verified Response Y* or FAIL
+
+ 1: function CAF_LOOP(X, K, T, θ)
+ 2:     Y₀ ← IL.generate(X)                      ▷ Initial LLM draft
+ 3:     for t ← 1 to T do
+ 4:         triplets ← FVL.parse(Yₜ₋₁)           ▷ Extract RDF triplets
+ 5:         for each τ ∈ triplets do
+ 6:             results[τ] ← SPARQL_VERIFY(τ, K)  ▷ KB verification
+ 7:         end for
+ 8:         score ← COMPUTE_SCORE(results)
+ 9:         if score ≥ θ then
+10:             return (Yₜ₋₁, ACCEPT)             ▷ Verification passed
+11:         end if
+12:         C ← EXTRACT_CONSTRAINTS(results)      ▷ Get violations
+13:         Yₜ ← IL.generate(X, C)                ▷ Constrained regen
+14:     end for
+15:     return DE.adjudicate(Y_T, results)        ▷ Final decision
+16: end function
+
+17: function COMPUTE_SCORE(results)
+18:     v ← |{r ∈ results : r.status = VERIFIED}|
+19:     p ← |{r ∈ results : r.status = PARTIAL}|
+20:     c ← |{r ∈ results : r.status = CONTRADICTION}|
+21:     return (v + α·p)/|results| - β·c/|results|
+22: end function
+
+23: function SPARQL_VERIFY(τ, K)
+24:     query ← BUILD_ASK_QUERY(τ)
+25:     if K.execute(query) then
+26:         return VERIFIED
+27:     else if K.execute(NEGATION(query)) then
+28:         return CONTRADICTION
+29:     else if FUZZY_MATCH(τ, K) > γ then
+30:         return PARTIAL
+31:     else
+32:         return FAILED
+33:     end if
+34: end function
+
+Parameters:
+  α = 0.5  (partial match weight)
+  β = 0.5  (contradiction penalty)
+  γ = 0.85 (fuzzy match threshold)
+  θ = 0.8  (verification threshold)
+  T = 5    (max iterations)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+======================================================================
+END OF REPORT
+======================================================================

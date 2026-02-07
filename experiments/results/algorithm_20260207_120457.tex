@@ -1,0 +1,48 @@
+
+\begin{algorithm}[t]
+\caption{CAF Iterative Verification Loop}
+\label{alg:caf-loop}
+\begin{algorithmic}[1]
+\Require Prompt $X$, Knowledge Base $\mathcal{K}$, Max Iterations $T$, Threshold $\theta$
+\Ensure Verified Response $Y^*$ or \textsc{Fail}
+
+\Function{CAF-Loop}{$X, \mathcal{K}, T, \theta$}
+    \State $Y_0 \gets \text{IL.generate}(X)$ \Comment{Initial LLM draft}
+    \For{$t \gets 1$ to $T$}
+        \State $\mathcal{T} \gets \text{FVL.parse}(Y_{t-1})$ \Comment{Extract RDF triplets}
+        \For{each $\tau \in \mathcal{T}$}
+            \State $\text{results}[\tau] \gets \text{SPARQL-Verify}(\tau, \mathcal{K})$
+        \EndFor
+        \State $s \gets \text{ComputeScore}(\text{results})$
+        \If{$s \geq \theta$}
+            \State \Return $(Y_{t-1}, \textsc{Accept})$ \Comment{Verification passed}
+        \EndIf
+        \State $\mathcal{C} \gets \text{ExtractConstraints}(\text{results})$
+        \State $Y_t \gets \text{IL.generate}(X, \mathcal{C})$ \Comment{Constrained regeneration}
+    \EndFor
+    \State \Return $\text{DE.adjudicate}(Y_T, \text{results})$ \Comment{Final decision}
+\EndFunction
+
+\vspace{0.5em}
+\Function{ComputeScore}{results}
+    \State $v \gets |\{r \in \text{results} : r.\text{status} = \textsc{Verified}\}|$
+    \State $p \gets |\{r \in \text{results} : r.\text{status} = \textsc{Partial}\}|$
+    \State $c \gets |\{r \in \text{results} : r.\text{status} = \textsc{Contradiction}\}|$
+    \State \Return $(v + \alpha \cdot p) / |\text{results}| - \beta \cdot c / |\text{results}|$
+\EndFunction
+
+\vspace{0.5em}
+\Function{SPARQL-Verify}{$\tau, \mathcal{K}$}
+    \State $q \gets \text{BuildAskQuery}(\tau)$
+    \If{$\mathcal{K}.\text{execute}(q)$}
+        \State \Return \textsc{Verified}
+    \ElsIf{$\mathcal{K}.\text{execute}(\neg q)$}
+        \State \Return \textsc{Contradiction}
+    \ElsIf{$\text{FuzzyMatch}(\tau, \mathcal{K}) > \gamma$}
+        \State \Return \textsc{Partial}
+    \Else
+        \State \Return \textsc{Failed}
+    \EndIf
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
