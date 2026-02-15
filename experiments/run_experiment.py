@@ -64,7 +64,8 @@ class ExperimentRunner:
         output_dir: str = "experiments/results",
         seed: int = 42,
         verbose: bool = True,
-        inference_layer = None
+        inference_layer = None,
+        verification_layer = None  # NEW: Allow custom FVL
     ):
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -79,7 +80,8 @@ class ExperimentRunner:
                 max_iterations=5,
                 verification_threshold=0.8,
             ),
-            inference_layer=inference_layer  # Use provided IL or default to simulated
+            inference_layer=inference_layer,  # Use provided IL or default to simulated
+            verification_layer=verification_layer  # Use provided FVL or default to simulated
         )
         self.metrics_calc = MetricsCalculator()
 
@@ -668,6 +670,29 @@ def main():
         help="Use 8-bit quantization"
     )
 
+    # SPARQL/FVL Configuration (NEW)
+    parser.add_argument(
+        "--use-real-sparql",
+        action="store_true",
+        help="Use real SPARQL verification instead of simulation (requires running triplestore)"
+    )
+    parser.add_argument(
+        "--sparql-endpoint",
+        default="http://localhost:3030/conceptnet/query",
+        help="SPARQL endpoint URL for verification"
+    )
+    parser.add_argument(
+        "--entity-threshold",
+        type=float,
+        default=0.7,
+        help="Fuzzy matching threshold for entity linking (0-1)"
+    )
+    parser.add_argument(
+        "--disable-fuzzy-match",
+        action="store_true",
+        help="Disable fuzzy entity matching (exact matches only)"
+    )
+
     args = parser.parse_args()
 
     # Validate parameters
@@ -695,12 +720,54 @@ def main():
     else:
         print("Using simulated inference layer (no real LLM)")
 
+    # Initialize verification layer (NEW)
+    verification_layer = None
+    if args.use_real_sparql:
+        print("=" * 60)
+        print("INITIALIZING REAL SPARQL VERIFICATION")
+        print("=" * 60)
+        try:
+            from experiments.real_fvl import RealFVL
+
+            verification_layer = RealFVL(
+                sparql_endpoint=args.sparql_endpoint,
+                entity_threshold=args.entity_threshold,
+                enable_fuzzy_match=not args.disable_fuzzy_match
+            )
+            print(f"Real FVL initialized with endpoint: {args.sparql_endpoint}")
+            print(f"  Entity threshold: {args.entity_threshold}")
+            print(f"  Fuzzy matching: {'disabled' if args.disable_fuzzy_match else 'enabled'}")
+
+            # Test connection
+            print("\nTesting SPARQL endpoint connection...")
+            test_query = "ASK { ?s ?p ?o }"
+            result = verification_layer._execute_sparql_query(test_query)
+            if result.success:
+                print("✓ SPARQL endpoint connection successful!")
+            else:
+                print(f"✗ SPARQL endpoint connection failed: {result.error}")
+                print("  Make sure triplestore is running and endpoint is correct.")
+                print("  See REAL_SPARQL_SETUP.md for setup instructions.")
+                sys.exit(1)
+
+        except ImportError as e:
+            print(f"Error: Failed to import RealFVL: {e}")
+            print("Install dependencies: pip install SPARQLWrapper spacy fuzzywuzzy")
+            print("Download spaCy model: python -m spacy download en_core_web_sm")
+            sys.exit(1)
+        except Exception as e:
+            print(f"Error initializing Real FVL: {e}")
+            sys.exit(1)
+    else:
+        print("Using simulated verification layer (no real SPARQL)")
+
     # Run experiment
     runner = ExperimentRunner(
         output_dir=args.output_dir,
         seed=args.seed,
         verbose=not args.quiet,
-        inference_layer=inference_layer
+        inference_layer=inference_layer,
+        verification_layer=verification_layer  # Pass Real FVL if enabled
     )
 
     results = runner.run_full_experiment(
