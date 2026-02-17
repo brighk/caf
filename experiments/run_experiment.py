@@ -64,7 +64,8 @@ class ExperimentRunner:
         output_dir: str = "experiments/results",
         seed: int = 42,
         verbose: bool = True,
-        inference_layer = None
+        inference_layer = None,
+        verification_layer = None,
     ):
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -79,7 +80,8 @@ class ExperimentRunner:
                 max_iterations=5,
                 verification_threshold=0.8,
             ),
-            inference_layer=inference_layer  # Use provided IL or default to simulated
+            inference_layer=inference_layer,  # Use provided IL or default to simulated
+            verification_layer=verification_layer,  # Use provided FVL or default to simulated
         )
         self.metrics_calc = MetricsCalculator()
 
@@ -667,6 +669,21 @@ def main():
         action="store_true",
         help="Use 8-bit quantization"
     )
+    parser.add_argument(
+        "--use-real-sparql",
+        action="store_true",
+        help="Use real SPARQL verification instead of simulated FVL"
+    )
+    parser.add_argument(
+        "--sparql-endpoint",
+        default="http://localhost:3030/dataset/query",
+        help="SPARQL endpoint URL (used with --use-real-sparql)"
+    )
+    parser.add_argument(
+        "--spacy-model",
+        default="en_core_web_sm",
+        help="spaCy model for triplet extraction (used with --use-real-sparql)"
+    )
 
     args = parser.parse_args()
 
@@ -695,12 +712,29 @@ def main():
     else:
         print("Using simulated inference layer (no real LLM)")
 
+    # Initialize verification layer
+    verification_layer = None
+    if args.use_real_sparql:
+        print("=" * 60)
+        print("LOADING REAL SPARQL VERIFIER")
+        print("=" * 60)
+        from experiments.real_fvl import RealFVL
+
+        verification_layer = RealFVL(
+            sparql_endpoint=args.sparql_endpoint,
+            spacy_model=args.spacy_model,
+        )
+        print(f"Real SPARQL verifier ready ({args.sparql_endpoint})")
+    else:
+        print("Using simulated verification layer (no SPARQL endpoint)")
+
     # Run experiment
     runner = ExperimentRunner(
         output_dir=args.output_dir,
         seed=args.seed,
         verbose=not args.quiet,
-        inference_layer=inference_layer
+        inference_layer=inference_layer,
+        verification_layer=verification_layer,
     )
 
     results = runner.run_full_experiment(

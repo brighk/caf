@@ -10,6 +10,7 @@ Supports:
 - Configurable generation parameters
 """
 
+import os
 import torch
 import warnings
 from typing import Optional, List
@@ -66,6 +67,14 @@ class HuggingFaceLlamaLayer(InferenceLayer):
         """Load the Llama model and tokenizer."""
         print(f"Loading model: {self.config.model_name}")
         print(f"Device: {self.config.device}")
+        # Explicit cache dir avoids writes to /root/.cache on constrained systems.
+        cache_dir = (
+            os.getenv("HUGGINGFACE_HUB_CACHE")
+            or os.getenv("HF_HUB_CACHE")
+            or os.getenv("TRANSFORMERS_CACHE")
+        )
+        if cache_dir:
+            print(f"HF cache dir: {cache_dir}")
 
         # Check GPU availability
         if self.config.device == "cuda" and not torch.cuda.is_available():
@@ -93,7 +102,8 @@ class HuggingFaceLlamaLayer(InferenceLayer):
         # Load tokenizer
         self.tokenizer = AutoTokenizer.from_pretrained(
             self.config.model_name,
-            trust_remote_code=self.config.trust_remote_code
+            trust_remote_code=self.config.trust_remote_code,
+            cache_dir=cache_dir,
         )
 
         # Ensure pad token is set
@@ -114,6 +124,7 @@ class HuggingFaceLlamaLayer(InferenceLayer):
 
         self.model = AutoModelForCausalLM.from_pretrained(
             self.config.model_name,
+            cache_dir=cache_dir,
             **model_kwargs
         )
 

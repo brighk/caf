@@ -3,6 +3,8 @@
 
 .PHONY: help setup install test lint format clean docker-build docker-up docker-down k8s-deploy
 
+COMPOSE := $(shell if command -v docker-compose >/dev/null 2>&1; then echo docker-compose; elif command -v docker >/dev/null 2>&1 && docker compose version >/dev/null 2>&1; then echo "docker compose"; fi)
+
 help:
 	@echo "CAF - Causal Autonomy Framework"
 	@echo ""
@@ -54,16 +56,19 @@ clean:
 
 docker-build:
 	@echo "Building Docker images..."
-	@cd deployment/docker && docker-compose build
+	@if [ -z "$(COMPOSE)" ]; then echo "Docker Compose not found (expected 'docker compose' or 'docker-compose')"; exit 127; fi
+	@cd deployment/docker && $(COMPOSE) build
 
 docker-up:
 	@echo "Starting Docker services..."
-	@cd deployment/docker && docker-compose up -d
-	@echo "Services started. Check status with: docker-compose ps"
+	@if [ -z "$(COMPOSE)" ]; then echo "Docker Compose not found (expected 'docker compose' or 'docker-compose')"; exit 127; fi
+	@cd deployment/docker && $(COMPOSE) up -d
+	@echo "Services started. Check status with: $(COMPOSE) ps"
 
 docker-down:
 	@echo "Stopping Docker services..."
-	@cd deployment/docker && docker-compose down
+	@if [ -z "$(COMPOSE)" ]; then echo "Docker Compose not found (expected 'docker compose' or 'docker-compose')"; exit 127; fi
+	@cd deployment/docker && $(COMPOSE) down
 
 k8s-deploy:
 	@echo "Deploying to Kubernetes..."
