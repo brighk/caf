@@ -1,0 +1,74 @@
+{
+  "domains": {
+    "abc": {
+      "SHD_mean": 3.0,
+      "SHD_std": 0.816496580927726,
+      "Intervention_Accuracy": 0.85,
+      "Counterfactual_Consistency": 0.8833333333333333,
+      "n": 3
+    },
+    "ap": {
+      "SHD_mean": 3.4615384615384617,
+      "SHD_std": 3.1284152934865777,
+      "Intervention_Accuracy": 0.7038461538461539,
+      "Counterfactual_Consistency": 0.7692307692307693,
+      "n": 13
+    },
+    "cnn": {
+      "SHD_mean": 1.0,
+      "SHD_std": 0.0,
+      "Intervention_Accuracy": 0.5333333333333333,
+      "Counterfactual_Consistency": 0.5,
+      "n": 3
+    },
+    "nyt": {
+      "SHD_mean": 4.333333333333333,
+      "SHD_std": 4.0276819911981905,
+      "Intervention_Accuracy": 0.7666666666666666,
+      "Counterfactual_Consistency": 0.8166666666666668,
+      "n": 3
+    },
+    "pri": {
+      "SHD_mean": 1.5,
+      "SHD_std": 0.5,
+      "Intervention_Accuracy": 0.675,
+      "Counterfactual_Consistency": 0.75,
+      "n": 2
+    },
+    "other_news": {
+      "SHD_mean": 2.0,
+      "SHD_std": 0.0,
+      "Intervention_Accuracy": 0.85,
+      "Counterfactual_Consistency": 0.85,
+      "n": 1
+    },
+    "voa": {
+      "SHD_mean": 3.0,
+      "SHD_std": 0.0,
+      "Intervention_Accuracy": 0.8999999999999999,
+      "Counterfactual_Consistency": 0.875,
+      "n": 2
+    },
+    "wsj": {
+      "SHD_mean": 2.8987341772151898,
+      "SHD_std": 2.6462054835148034,
+      "Intervention_Accuracy": 0.7341772151898734,
+      "Counterfactual_Consistency": 0.7088607594936711,
+      "n": 79
+    },
+    "ea": {
+      "SHD_mean": 2.0,
+      "SHD_std": 1.0,
+      "Intervention_Accuracy": 0.7,
+      "Counterfactual_Consistency": 0.725,
+      "n": 2
+    },
+    "finance": {
+      "SHD_mean": 1.0,
+      "SHD_std": 0.0,
+      "Intervention_Accuracy": 0.5031,
+      "Counterfactual_Consistency": 0.49977499999999997,
+      "n": 2000
+    }
+  }
+}

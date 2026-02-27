@@ -1,0 +1,135 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PhD Dissertation - Main File
+%% Causal Grounding for Reliable Large Language Model Reasoning
+%% Koycho Georgiev
+%% University of Portsmouth, 2026
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper,twoside]{book}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx} % Use [draft] option to show placeholders for missing figures
+\usepackage{pifont} % For checkmarks and crosses
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,backgrounds,calc}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{booktabs}
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage[a4paper,margin=2.5cm,headheight=14.5pt]{geometry}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{lipsum} % For placeholder text
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{example}{Example}[chapter]
+\newtheorem{remark}{Remark}[chapter]
+\newtheorem{assumption}{Assumption}[chapter]
+
+% Custom commands
+\newcommand{\CAF}{\textsc{CAF}}
+\newcommand{\LLM}{\textsc{LLM}}
+\newcommand{\SCM}{\textsc{SCM}}
+\newcommand{\SPARQL}{\textsc{SPARQL}}
+\newcommand{\RDF}{\textsc{RDF}}
+\newcommand{\dooperator}{\text{do}}
+\newcommand{\cmark}{\ding{51}} % Checkmark
+\newcommand{\xmark}{\ding{55}} % Cross mark
+
+% Line spacing
+\onehalfspacing
+
+% Headers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\rightmark}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=blue,
+    pdftitle={Causal Grounding for Reliable LLM Reasoning},
+    pdfauthor={Koycho Georgiev},
+}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FRONT MATTER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frontmatter
+
+% Include front matter
+\input{chapters/frontmatter}
+
+% Table of Contents
+\tableofcontents
+\listoffigures
+\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MAIN MATTER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter
+
+% Chapter 1: Introduction
+\input{chapters/chapter01_introduction}
+
+% Chapter 2: Literature Review
+\input{chapters/chapter02_literature_review}
+
+% Chapter 3: Stochastic Drift and Formal Foundations
+\input{chapters/chapter03_foundations}
+
+% Chapter 4: CAF Architecture
+\input{chapters/chapter04_caf_architecture}
+
+% Chapter 5: Causal Discovery from Text
+\input{chapters/chapter05_causal_discovery}
+
+% Chapter 6: Experimental Evaluation - CAF
+\input{chapters/chapter06_eval_caf}
+
+% Chapter 7: Experimental Evaluation - Causal Discovery
+\input{chapters/chapter07_eval_causal}
+
+% Chapter 8: Production Deployment
+\input{chapters/chapter08_deployment}
+
+% Chapter 9: Discussion
+\input{chapters/chapter09_discussion}
+
+% Chapter 10: Conclusion
+\input{chapters/chapter10_conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BACK MATTER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\backmatter
+
+% Bibliography
+\input{chapters/backmatter}
+
+\end{document}

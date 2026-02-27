@@ -1,0 +1,16 @@
+{
+  "status": "NOT_READY",
+  "errors": [
+    "Missing required package: bitsandbytes",
+    "Missing required package: rdflib",
+    "Missing required package: SPARQLWrapper",
+    "Missing required package: spacy",
+    "Failed to load LLM: No package metadata was found for bitsandbytes",
+    "Mini experiment failed: 'ExperimentRunner' object has no attribute 'run_verification'"
+  ],
+  "warnings": [
+    "Low GPU memory: 3.6GB",
+    "SPARQL endpoint not reachable at http://localhost:3030"
+  ],
+  "timestamp": "2026-02-15 11:17:30"
+}

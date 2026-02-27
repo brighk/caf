@@ -1,0 +1,155 @@
+SCIAMA GPU RESOURCES AND CONFIGURATION - EXTRACTED DOCUMENTATION
+==================================================================
+
+1. GPU HARDWARE RESOURCES
+==========================
+
+GPU Nodes:
+- gpu01 and gpu02: Two 40GB GPU nodes with 128 cores each
+- Each node contains 2x 40GB GPUs
+- Maximum concurrent jobs: Up to 4 jobs can run concurrently on gpu.q
+- Important: Only 1 job can run on a single GPU at a time
+
+GPU Partition:
+- Partition name: gpu.q (used with --partition flag)
+
+2. REQUESTING GPU RESOURCES - INTERACTIVE SESSION
+===================================================
+
+To use GPUs interactively:
+
+Command:
+    srun --pty --mem=1g --gres=gpu:1 -J interactive -p gpu.q /bin/bash
+
+Key components:
+    --pty              : Allocate pseudo-terminal for interactive use
+    --mem=1g          : Memory allocation (1GB)
+    --gres=gpu:1      : Generic resource specification (1 GPU)
+    -J interactive    : Job name
+    -p gpu.q          : Partition (gpu queue)
+
+Verification commands:
+    nvidia-smi                # Check GPU status and allocation
+    echo $CUDA_VISIBLE_DEVICES # See which GPU is assigned
+
+3. SUBMITTING GPU BATCH JOBS
+==============================
+
+Basic sbatch script template:
+
+    #!/bin/bash
+    #SBATCH --partition=gpu.q
+    #SBATCH --gres=gpu
+
+SBATCH directives explained:
+    --partition=gpu.q : Request GPU partition
+    --gres=gpu       : Request GPU resource (generic resource specification)
+
+4. GPU RESOURCE SPECIFICATIONS (GRES)
+======================================
+
+Generic Resource (GRES) Format: --gres=gpu[:type][:count]
+
+Examples:
+    --gres=gpu:1     : Request 1 GPU (default type)
+    --gres=gpu       : Request 1 GPU (implicit)
+
+5. NVIDIA MULTI-INSTANCE GPU (MIG) PARTITIONS
+===============================================
+
+GPU01 and GPU02 nodes have 2x 40GB GPUs partitioned using MIG technology.
+
+Available MIG Instance Sizes:
+(Note: The following represents the partitioning scheme with slices of 5GB)
+
+Profile: 1g.5gb
+- Size: 1 GPU with 5GB memory
+- Compute units: 1
+- Quantity: 8 instances per GPU
+
+Profile: 3g.20g
+- Size: 3 GPUs with 20GB memory
+- Compute units: 3
+
+Profile: 2g.20gb
+- Size: 2 GPUs with 20GB memory
+- Compute units: 2
+
+Profile: 4g.20g
+- Size: 4 GPUs with 20GB memory
+- Compute units: 4
+
+Profile: 1g.10gb
+- Size: 1 GPU with 10GB memory
+- Compute units: 1
+
+6. CUDA AND SOFTWARE MODULES
+==============================
+
+CUDA Environment Variable:
+    $CUDA_VISIBLE_DEVICES : Environment variable showing assigned GPUs
+
+Module Management:
+    module purge              : Clear all loaded modules
+    module load system/intel64 : Load system module
+    module load <module_name> : Load required modules
+    
+To check available GPU modules:
+    module avail | grep -i gpu
+    module avail | grep -i cuda
+
+7. COMPLETE EXAMPLE SBATCH SCRIPT FOR GPU JOBS
+================================================
+
+#!/bin/bash
+#SBATCH --job-name=my_gpu_job
+#SBATCH --partition=gpu.q
+#SBATCH --gres=gpu:1
+#SBATCH --mem=10G
+#SBATCH --time=2:00:00
+#SBATCH --output=job_output.log
+#SBATCH --error=job_error.log
+
+# Set up environment
+module purge
+# Load GPU/CUDA modules as needed for your application
+# module load cuda
+# module load cudnn
+# module load tensorflow  # or pytorch, etc.
+
+# Change to working directory
+cd $SLURM_SUBMIT_DIR
+
+# Run your GPU job
+python your_script.py
+
+8. SUBMITTING BATCH JOBS
+=========================
+
+Command:
+    sbatch <path/to/jobscript>
+
+Monitoring jobs:
+    squeue -u <username>   # Check status of your jobs
+    
+Cancel a job:
+    scancel <job_number>
+
+9. USEFUL LINKS
+================
+
+- Submitting Jobs on SCIAMA: See related documentation
+- The GPU Anaconda Environment: Separate documentation page
+- NVIDIA MIG User Guide: https://docs.nvidia.com/datacenter/tesla/mig-user-guide/
+
+10. BEST PRACTICES
+===================
+
+1. Only 1 job per GPU: Plan resource allocation accordingly
+2. Use MIG profiles for lighter workloads to maximize resource sharing
+3. Always specify --partition=gpu.q for GPU jobs
+4. Use nvidia-smi to verify GPU allocation before running
+5. Set CUDA_VISIBLE_DEVICES to isolate GPU access
+6. Clean up modules after job completion (module purge recommended)
+7. Monitor GPU usage with nvidia-smi for debugging
+

@@ -1,0 +1,32 @@
+{
+  "total_examples": 10,
+  "correct": 7,
+  "accuracy": 0.7,
+  "by_type": {
+    "basic": {
+      "total": 10,
+      "correct": 7,
+      "accuracy": 0.7
+    }
+  },
+  "by_decision": {
+    "accept": {
+      "total": 7,
+      "correct": 7
+    },
+    "reject": {
+      "total": 3,
+      "correct": 0
+    }
+  },
+  "answer_distribution": {
+    "no": 8,
+    "yes": 2
+  },
+  "avg_iterations": 2.4,
+  "avg_score": 0.7,
+  "configuration": {
+    "use_llm": true,
+    "use_sparql": true
+  }
+}

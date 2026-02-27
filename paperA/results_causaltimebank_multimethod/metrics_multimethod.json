@@ -1,0 +1,32 @@
+{
+  "methods": {
+    "correlation_baseline": {
+      "SHD_mean": 3.8518518518518516,
+      "SHD_std": 4.436412495463422,
+      "Intervention_Accuracy": 0.6879629629629629,
+      "Counterfactual_Consistency": 0.6689814814814815,
+      "n": 108
+    },
+    "llm_only": {
+      "SHD_mean": 3.0185185185185186,
+      "SHD_std": 2.785483140090986,
+      "Intervention_Accuracy": 0.7171296296296297,
+      "Counterfactual_Consistency": 0.7171296296296296,
+      "n": 108
+    },
+    "llm_scm_no_intervention": {
+      "SHD_mean": 2.9074074074074074,
+      "SHD_std": 2.654615257876843,
+      "Intervention_Accuracy": 0.7342592592592593,
+      "Counterfactual_Consistency": 0.7259259259259259,
+      "n": 108
+    },
+    "full_pipeline": {
+      "SHD_mean": 0.16666666666666666,
+      "SHD_std": 0.4409585518440984,
+      "Intervention_Accuracy": 0.9898148148148148,
+      "Counterfactual_Consistency": 0.9898148148148148,
+      "n": 108
+    }
+  }
+}

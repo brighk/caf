@@ -1,0 +1,3610 @@
+[
+  {
+    "domain": "general",
+    "text": "Avian influenza is an infectious disease of birds caused by type A strains of the influenza virus.",
+    "gold_edges": [
+      [
+        "virus",
+        "influenza"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The same effect is achieved the traditional way, with a team of workers like Keebler elves.",
+    "gold_edges": [
+      [
+        "way",
+        "effect"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Of the hundreds of strains of avian influenza A viruses, only four have caused human infections: H5N1, H7N3, H7N7, and H9N2.",
+    "gold_edges": [
+      [
+        "viruses",
+        "infections"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The subject of \"imply\" is the source of an implication while the subject of \"infer\" is the recipient of an implication.",
+    "gold_edges": [
+      [
+        "subject",
+        "implication"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The treaty establishes a double majority rule for Council decisions.",
+    "gold_edges": [
+      [
+        "treaty",
+        "rule"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "In South Africa, which has one of the best police to public ratios on the continent, the share of murders that result in a conviction is about 18%, compared to 56% in the US and 61% in the UK.",
+    "gold_edges": [
+      [
+        "murders",
+        "conviction"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Traffic vibrations on the street outside had caused the movement of the light.",
+    "gold_edges": [
+      [
+        "vibrations",
+        "movement"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The slide, which was triggered by an avalanche-control crew, damaged one home and blocked the road for most of the day.",
+    "gold_edges": [
+      [
+        "crew",
+        "slide"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Muscle fatigue is the number one cause of arm muscle pain.",
+    "gold_edges": [
+      [
+        "fatigue",
+        "pain"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "It spilled more than 53000 gallons of crude oil into the surrounding marshes one of the bigger spills caused by the hurricane.",
+    "gold_edges": [
+      [
+        "hurricane",
+        "spills"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The diseases are caused by gene mutations on the X chromosome.",
+    "gold_edges": [
+      [
+        "gene mutations",
+        "diseases"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The pretexts offered were laughable, and the response caused scarcely a ripple on the flood of commentary on Washington's noble \"efforts to spread democracy\".",
+    "gold_edges": [
+      [
+        "response",
+        "ripple"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Lisa took great joy from laughing, volunteering at school, taking pictures, chatting, the Twins and Vikings, playing softball and volleyball, and time at Lake Vermilion.",
+    "gold_edges": [
+      [
+        "laughing",
+        "joy"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The receiver was outputting the same tone to my Deva 5.",
+    "gold_edges": [
+      [
+        "receiver",
+        "tone"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The presentation uses animation to show how germs and microbes cause sickness, and outlines simple preventive measures.",
+    "gold_edges": [
+      [
+        "microbes",
+        "sickness"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "As a result, pollution from cars is causing serious health problems for Americans.",
+    "gold_edges": [
+      [
+        "cars",
+        "pollution"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Rain caused cancellation of the event in 1877, so enforcement of the new law had to wait until 1878.",
+    "gold_edges": [
+      [
+        "rain",
+        "cancellation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "His trademark steam-engine puffing is revealed as a sound made by a viper spitting venom at his prey before swallowing her whole.",
+    "gold_edges": [
+      [
+        "viper",
+        "sound"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The deadly train crash was caused by terrorist attack.",
+    "gold_edges": [
+      [
+        "attack",
+        "crash"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "All the decking on the ramps need to be replaced (for the second time) because of the damage caused by the misuse of the facility.",
+    "gold_edges": [
+      [
+        "misuse",
+        "damage"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "These types of scripts help visually impaired individuals to get more enjoyment from programming because the action on-screen is described for them.",
+    "gold_edges": [
+      [
+        "programming",
+        "enjoyment"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Seasonal and nocturnal migrations cause sleep deprivation in diurnal Swainson's thrush, Catharus ustulatus.",
+    "gold_edges": [
+      [
+        "migrations",
+        "deprivation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The aircraft was written off in the accident due to the severe impact caused by the KLM aircraft, and the resulting fire.",
+    "gold_edges": [
+      [
+        "accident",
+        "impact"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The airstrike also resulted in several secondary explosions, leading Marines at the site to suspect that the house may have contained homemade bombs.",
+    "gold_edges": [
+      [
+        "airstrike",
+        "explosions"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The third conflict has been caused by the highly polluted wastewater from the industrial park around the town of Kemalpasha.",
+    "gold_edges": [
+      [
+        "wastewater",
+        "conflict"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The Fujita Scale is used to rate the intensity of a tornado by examining the damage caused by the tornado after it has passed over a man-made structure.",
+    "gold_edges": [
+      [
+        "tornado",
+        "damage"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "This is one of the more common causes of hair loss caused by stress and when you are losing hair because of this your hair stops growing and lies dormant.",
+    "gold_edges": [
+      [
+        "stress",
+        "hair loss"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The colors of the rainbow are caused by the dispersion of light as it passes through a prism.",
+    "gold_edges": [
+      [
+        "dispersion",
+        "colors"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "I won't tell you how much music means now, in these times, when you are battling depression from unemployment.",
+    "gold_edges": [
+      [
+        "unemployment",
+        "depression"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The collision resulted in two more crashes in the intersection, including a Central Concrete truck that was about to turn left onto College Ave.",
+    "gold_edges": [
+      [
+        "collision",
+        "crashes"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "A good neck support pillow can be used while you are sleeping to remedy the neck pain which has been caused by the stresses and strains of your daily routine.",
+    "gold_edges": [
+      [
+        "strains",
+        "pain"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The damage caused by a bullet depends on the amount of energy which it transfers to the tissues.",
+    "gold_edges": [
+      [
+        "bullet",
+        "damage"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Neuralgia (TN) is the most common cause of chronic sinusitis headache.",
+    "gold_edges": [
+      [
+        "neuralgia",
+        "headache"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The distribution of the damage caused by the earthquake in Valdivia in relation to the form of the terrane.",
+    "gold_edges": [
+      [
+        "earthquake",
+        "damage"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The misinterpretation has been caused by the Italian word for vacuum tubes, which is valvole (or tubi a vuoto).",
+    "gold_edges": [
+      [
+        "word",
+        "misinterpretation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The current Iraqi government is seeking financial compensation from Israel for the damage caused by the bombing of the Osirak nuclear reactor in 1981.",
+    "gold_edges": [
+      [
+        "bombing",
+        "damage"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The sheer scale of the death and destruction caused by the 2004 Boxing Day tsunami is impossible to fathom, even five years on.",
+    "gold_edges": [
+      [
+        "tsunami",
+        "death"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "As a guitarist I get so much satisfaction from the playing and performing of music.",
+    "gold_edges": [
+      [
+        "playing",
+        "satisfaction"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "In this paper, we propose a web-based system for prevention of the confidential information leakage caused by the person who is authorized to access.",
+    "gold_edges": [
+      [
+        "person",
+        "leakage"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Clinically, microcracks cause stress or fragility fractures.",
+    "gold_edges": [
+      [
+        "microcracks",
+        "stress"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Finally, Slone's fear of AIDS and the mental distress she suffered from this fear were caused by the needle stab.",
+    "gold_edges": [
+      [
+        "stab",
+        "fear"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The suffering caused by the embargo is sometimes reported here as well.",
+    "gold_edges": [
+      [
+        "embargo",
+        "suffering"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Even nuclear energy is among the causes of water pollution.",
+    "gold_edges": [
+      [
+        "nuclear energy",
+        "pollution"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Sorace was unaware that her anger was caused by the abuse.",
+    "gold_edges": [
+      [
+        "abuse",
+        "anger"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "As people discovered that debt and overconsumption cause stress to families, the planet, and each of us, many turned instead to friends.",
+    "gold_edges": [
+      [
+        "debt",
+        "stress"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The drone strike that resulted in the death of Pakistan's most wanted terrorist is believed to be a result of deliberately planted false intelligence, sources in South Waziristan have confirmed.",
+    "gold_edges": [
+      [
+        "strike",
+        "death"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The idea of Roman expansion into North Africa started with the fear and jealousy caused by the great economic power of Carthage.",
+    "gold_edges": [
+      [
+        "power",
+        "fear"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Tides are caused by the gravitational pull of the moon and sun, and the rotation of the Earth.",
+    "gold_edges": [
+      [
+        "gravitational pull",
+        "tides"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The dramatic streaks we see in the sky are caused by particles that incinerate before they hit the ground.",
+    "gold_edges": [
+      [
+        "particles",
+        "streaks"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The dust from the extinguishers set off the alarm.",
+    "gold_edges": [
+      [
+        "dust",
+        "alarm"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The drug has a low half-life that makes it ideal for killing of the susceptible bacteria responsible for sleeping sickness.",
+    "gold_edges": [
+      [
+        "bacteria",
+        "sickness"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The pain from an ulcer is usually more severe than pain from indigestion, often gnawing in nature, it sometimes goes through to the back.",
+    "gold_edges": [
+      [
+        "indigestion",
+        "pain"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The kids get great joy from eating the tomatoes right off the vine.",
+    "gold_edges": [
+      [
+        "eating",
+        "joy"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Stroke is one of the leading causes of death, long-term disability, and hospital admission in the industrialized world.",
+    "gold_edges": [
+      [
+        "stroke",
+        "death"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "I still shiver as I remember trying to page through economics texts by the flicker from candles while clad in overcoat, scarf, and little knitted gloves with the fingertips cut off, in the 4 p.m.",
+    "gold_edges": [
+      [
+        "candles",
+        "flicker"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The worst pain of all was caused by the torment to her head which was like the pain of thorns pressing into her.",
+    "gold_edges": [
+      [
+        "torment",
+        "pain"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Overall, discomfort from braces is typically short in duration and easily managed.",
+    "gold_edges": [
+      [
+        "braces",
+        "discomfort"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The distraction caused by the students, coupled with limited vision down the track, caused the incident to occur.",
+    "gold_edges": [
+      [
+        "distraction",
+        "incident"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Immediately a soft glow appeared on her lovely face as the light was radiating from her soft winged friend.",
+    "gold_edges": [
+      [
+        "friend",
+        "light"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Four of the entrapments resulted in suffocation: a 7-month-old in Gouverneur, N.Y.; a 7-month-old in New Iberia, La.; a 6-month-old in Summersville, W.Va.; and a 9-month-old in Bronx, N.Y.",
+    "gold_edges": [
+      [
+        "entrapments",
+        "suffocation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Storms and earthquakes lead to the second-highest losses in insurance history.",
+    "gold_edges": [
+      [
+        "storms",
+        "losses"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Cobalt metal fume and dust cause irritation of the nose and throat.",
+    "gold_edges": [
+      [
+        "fume",
+        "irritation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Amateur video has been posted online that shows some of the devastation caused by the tsunami waves.",
+    "gold_edges": [
+      [
+        "waves",
+        "devastation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Cancer is the abnormal growth of cells that causes illness in the body.",
+    "gold_edges": [
+      [
+        "cancer",
+        "illness"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The two trains caught fire after the collision and were burned.",
+    "gold_edges": [
+      [
+        "collision",
+        "fire"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Seniors get much joy from animals.",
+    "gold_edges": [
+      [
+        "animals",
+        "joy"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "I get tons of satisfaction and joy from watching the little fur ball become the hunter it was bred to be.",
+    "gold_edges": [
+      [
+        "watching",
+        "satisfaction"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The pollution was caused by the shipwreck.",
+    "gold_edges": [
+      [
+        "shipwreck",
+        "pollution"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Inhalation of excessive concentrations of vapor, fumes, and/or dust produces irritation of the upper respiratory trad.",
+    "gold_edges": [
+      [
+        "inhalation",
+        "irritation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Air pollution causes smog and respiratory problems when breathed.",
+    "gold_edges": [
+      [
+        "pollution",
+        "smog"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Until now, no paper has been presented on predicting the interior noise caused by a powertrain on the basis of hybrid TPA with a real vehicle.",
+    "gold_edges": [
+      [
+        "powertrain",
+        "noise"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "World AIDS Day, observed December 1 each year, is dedicated to raising awareness of the AIDS pandemic caused by the spread of HIV infection.",
+    "gold_edges": [
+      [
+        "infection",
+        "pandemic"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Wind and water cause weathering and erosion to change the shape of the earth.",
+    "gold_edges": [
+      [
+        "wind",
+        "weathering"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The mentality is since oil and bacteria cause acne, I'll just remove the oil off my face and kill the bacteria.",
+    "gold_edges": [
+      [
+        "bacteria",
+        "acne"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "In the last couple of years I have been working with my fear from darkness.",
+    "gold_edges": [
+      [
+        "darkness",
+        "fear"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "A large tsunami triggered by the earthquake spread outward from off the Sumatran coast.",
+    "gold_edges": [
+      [
+        "earthquake",
+        "tsunami"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Lopez and Espinoza took plea agreements that resulted in diversion -- the completion of requirements such as community service and a fine during a probation period that ended with a clean slate and no conviction.",
+    "gold_edges": [
+      [
+        "agreements",
+        "diversion"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Cutler ended up with a bleeding stomach ulcer caused by the stress and hard work supervising their tours twenty-four hours a day.",
+    "gold_edges": [
+      [
+        "stress",
+        "ulcer"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Recessions are caused by an excess demand for money combined with rational downward price rigidity.",
+    "gold_edges": [
+      [
+        "excess demand",
+        "recessions"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "In the present recession, which has been triggered by a collapse in land prices, land-value taxation would reverse the collapse - not by re-inflating a temporary speculative bubble, but by inducing investment in infrastructure that permanently enhances the utility of the land.",
+    "gold_edges": [
+      [
+        "collapse",
+        "recession"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Lesions in the internal capsule caused proportional leg weakness.",
+    "gold_edges": [
+      [
+        "lesions",
+        "leg weakness"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Hiroshima has rejected the demands of some citizens and victims groups that the newly renovated museum include an exhibition on Japan's \"aggressive role\" in World War II, alongside the gruesome displays of the suffering and devastation caused by the bomb.",
+    "gold_edges": [
+      [
+        "bomb",
+        "suffering"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The death caused the cancellation of the band's plans for overseas tours.",
+    "gold_edges": [
+      [
+        "death",
+        "cancellation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Many problems have ensued from the new policy, most of them unforeseen and based on ethnic differences.",
+    "gold_edges": [
+      [
+        "policy",
+        "problems"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The bacteria is the cause of pneumonia, including common uses, side effects, interactions and risks.",
+    "gold_edges": [
+      [
+        "bacteria",
+        "pneumonia"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The incoming water caused a stain on the wall that, through the lens of pareidolia, looked like a bearded man with a big afro hairdo.",
+    "gold_edges": [
+      [
+        "incoming water",
+        "stain"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The bleeding was caused by an injury, such as a fall or something hitting your face.",
+    "gold_edges": [
+      [
+        "injury",
+        "bleeding"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Merlin Lindeman (animal sciences) then pooled their expertise to show that the caterpillars caused the disease.",
+    "gold_edges": [
+      [
+        "caterpillars",
+        "disease"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "They made the effect even more dramatic by lighting the talent with a light placed on the floor and focused on the face.",
+    "gold_edges": [
+      [
+        "light",
+        "effect"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The thin F ring on the left of the image shows the perturbations caused by the moon Prometheus.",
+    "gold_edges": [
+      [
+        "moon",
+        "perturbations"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "A recent book by Carmen M. Reinhart and Kenneth S. Rogoff, two economists, found that over the last century the typical crisis had caused the jobless rate in the country where it occurred to rise for almost five years.",
+    "gold_edges": [
+      [
+        "crisis",
+        "jobless rate"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "We have recently determined the corruption was (ironically) triggered by the SMART utilities.",
+    "gold_edges": [
+      [
+        "utilities",
+        "corruption"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The life-like creatures caused a real scare on the set when a 44-foot spinosaurus malfunctioned and began slamming its head against a prop plane.",
+    "gold_edges": [
+      [
+        "creatures",
+        "scare"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The ban caused a widespread debate, largely on the Internet, in which rabbis and scholars from around the world participated.",
+    "gold_edges": [
+      [
+        "ban",
+        "debate"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "He preserved the working ranches of the west, while achieving an expansion of the ranch's value through development and management of the recreational ecosystem within the ranch.",
+    "gold_edges": [
+      [
+        "development",
+        "expansion"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "A really enjoyable drinking experience ensued from this red blend from this boutique winery from the Cowra area of Central Western NSW.",
+    "gold_edges": [
+      [
+        "blend",
+        "experience"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The spill was caused by the Iraqi fuel tanker Zainab, suspected of smuggling around 1,300 tonnes of fuel oil from Iraq, as it ran into trouble on its way to a holding area in international waters.",
+    "gold_edges": [
+      [
+        "tanker",
+        "spill"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Use outdoor where sunlight and glare cause eye strain and fatigue.",
+    "gold_edges": [
+      [
+        "sunlight",
+        "fatigue"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Police investigators later found brake discs on the car were broken, though experts from the Italian car manufacturers insist the damage was caused by the collision and the car had been in perfect condition.",
+    "gold_edges": [
+      [
+        "collision",
+        "damage"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "These wind turbines generate electricity from naturally occurring wind.",
+    "gold_edges": [
+      [
+        "turbines",
+        "electricity"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Aware of the suffering caused by exploitation, social injustice, stealing, and oppression, I am committed to cultivate loving kindness and learn ways to work for the well-being of people, animals, plants, and minerals.",
+    "gold_edges": [
+      [
+        "exploitation",
+        "suffering"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Witness the gangs in Los Angeles who stopped killing one another for a time after the riots triggered by the Rodney King bashing verdict.",
+    "gold_edges": [
+      [
+        "verdict",
+        "riots"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "From banishing cold and flu germs to preventing foodborne illnesses, frequent hand-washing is one of the smartest preventive habits you can adopt.",
+    "gold_edges": [
+      [
+        "germs",
+        "cold"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Human growth hormone is described by some as the key to slowing the aging process.",
+    "gold_edges": [
+      [
+        "hormone",
+        "growth"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The election was caused by the appointment of Donald Sumner, formerly Conservative MP for Orpington, to be a county court judge.",
+    "gold_edges": [
+      [
+        "appointment",
+        "election"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "This was our first day back volunteering there but he wasn't feeling good, had a fever from immunizations.",
+    "gold_edges": [
+      [
+        "immunizations",
+        "fever"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "I found that the wind swirling around from the back, in between the front seats, caused a draft on the driver and passenger's necks.",
+    "gold_edges": [
+      [
+        "wind",
+        "draft"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The acidity is caused by the gradual buildup of carbon dioxide (CO2) in the atmosphere, dissolving into the oceans.",
+    "gold_edges": [
+      [
+        "carbon dioxide",
+        "acidity"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The European colonial expansion to the Americas resulted in massive population movements from the Old World to the New World.",
+    "gold_edges": [
+      [
+        "expansion",
+        "movements"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The straight, blue ion tail is caused by the solar wind and the curved dust tail is caused by solar radiation pressure.",
+    "gold_edges": [
+      [
+        "solar wind",
+        "tail"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Infectious diseases or communicable diseases are caused by bacteria, viruses, and parasites.",
+    "gold_edges": [
+      [
+        "parasites",
+        "infectious diseases"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "On this basis, the vibronically coupled CD bands of lutein diacetate are attributed to an excitonic interaction arose from the twisted nematic layers.",
+    "gold_edges": [
+      [
+        "layers",
+        "interaction"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The pension crisis has been caused by the escalating cost of funding \"copper bottomed\" final salary pension schemes still provided, unlike most companies, by councils and other public sector employers such as Transport for London.",
+    "gold_edges": [
+      [
+        "cost",
+        "crisis"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "A third of the injuries are caused by illegally obtained fireworks, and burns account for half the injuries.",
+    "gold_edges": [
+      [
+        "fireworks",
+        "injuries"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "In addition to the threat from cable television, analog terrestrial television is now also subject to competition from satellite television and distribution of video and film content over the Internet.",
+    "gold_edges": [
+      [
+        "television",
+        "threat"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Alcohol and drugs directly cause suicide by significantly diminishing the reasoning of the person at the time of the suicide.",
+    "gold_edges": [
+      [
+        "alcohol",
+        "suicide"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "I write as both a doctor/Medical Director of the ME Association and as someone who suffers from the illness, which was triggered by an attack of chickenpox.",
+    "gold_edges": [
+      [
+        "chickenpox",
+        "illness"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "I know plenty of people with oily skin and wrinkles from the sun and they're in their 30s.",
+    "gold_edges": [
+      [
+        "sun",
+        "wrinkles"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Windmills kill birds and bats, while soil disturbances required to build solar and wind arrays lead to soil erosion.",
+    "gold_edges": [
+      [
+        "disturbances",
+        "erosion"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The mosaicism observed in the proband was derived from a postzygotic somatic mutation of the normal maternal y chromosome.",
+    "gold_edges": [
+      [
+        "mutation",
+        "mosaicism"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The deleveraging triggered by the crisis implies that countries that hoarded reserves have been reaping the benefits.",
+    "gold_edges": [
+      [
+        "crisis",
+        "deleveraging"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Headaches, dizziness, balance problems, and neck and back pain were caused by the work injury.",
+    "gold_edges": [
+      [
+        "injury",
+        "dizziness"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Fainting is a common cause of unconsciousness and may occur when the casualty's heart rate is too slow to maintain sufficient blood pressure for the brain.",
+    "gold_edges": [
+      [
+        "fainting",
+        "unconsciousness"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Much like the virus that caused the 1918 flu pandemic, this new H1N1 flu virus affects young adults and school children in greater numbers.",
+    "gold_edges": [
+      [
+        "virus",
+        "pandemic"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Heat burns, or thermal burns, are caused by steam, fire, hot objects or hot liquids.",
+    "gold_edges": [
+      [
+        "liquids",
+        "burns"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Methadone gives a buzz too, but it's the most effective way to reel in heroin addicts into treatment and real life.",
+    "gold_edges": [
+      [
+        "methadone",
+        "buzz"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The flooding, caused by a cyclone, came on the heels of a prolonged drought, which destroyed 60 percent of Fiji's sugar cane crop last year and cost more than 50 million Fijian dollars (25 million US) in relief and rehabilitation.",
+    "gold_edges": [
+      [
+        "cyclone",
+        "flooding"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Fog caused delays at the Charlotte Douglas International Airport Monday morning.",
+    "gold_edges": [
+      [
+        "fog",
+        "delays"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The accompanying inflammatory process had caused the stricture of the mid-CBD.",
+    "gold_edges": [
+      [
+        "process",
+        "stricture"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "One of the most dreaded types of scars are contracture scars from burns.",
+    "gold_edges": [
+      [
+        "burns",
+        "scars"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Dehydration is one of the lead causes of death in the world due to dirty water and felt this should be emphasized in global charity documentation.",
+    "gold_edges": [
+      [
+        "dehydration",
+        "death"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "These toxins cause sickness or an unpleasant odor.",
+    "gold_edges": [
+      [
+        "toxins",
+        "odor"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Accident causes delays on BW Parkway.",
+    "gold_edges": [
+      [
+        "accident",
+        "delays"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Children stand near houses in Padang that caught fire after the earthquake.",
+    "gold_edges": [
+      [
+        "earthquake",
+        "fire"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Individual donors make a significant difference in addressing the suffering caused by the economic crisis.",
+    "gold_edges": [
+      [
+        "crisis",
+        "suffering"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "This is a yeast infection of the esophagus caused by the same fungus that causes vaginal yeast infections.",
+    "gold_edges": [
+      [
+        "fungus",
+        "infection"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Tonsillitis is caused by infection by a variety of different micro-organisms.",
+    "gold_edges": [
+      [
+        "micro-organisms",
+        "tonsillitis"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Hiccups are caused by a spasm contracting the diaphragm, a muscle essential in human respiration.",
+    "gold_edges": [
+      [
+        "spasm",
+        "hiccups"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Landslides caused the majority of the deaths.",
+    "gold_edges": [
+      [
+        "landslides",
+        "deaths"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Rain and wind cause power outage in Los Angeles 11:24, October 15, 2009.",
+    "gold_edges": [
+      [
+        "rain",
+        "power outage"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "He took a shower after using hair cream to avoid skin irritation from the chemicals in the product.",
+    "gold_edges": [
+      [
+        "chemicals",
+        "irritation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The humiliation comes from authorities and people making him loose faith in humanity.",
+    "gold_edges": [
+      [
+        "people",
+        "humiliation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The visit caused a sensation on the Whangaparaoa Peninsula with people reporting the orca and rushing out to photograph and film them, from a safe distance.",
+    "gold_edges": [
+      [
+        "visit",
+        "sensation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The constant polarization voltage between the two electrodes instigates the electrochemical reaction of the chlorine compounds on the working electrode.",
+    "gold_edges": [
+      [
+        "voltage",
+        "reaction"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Dust or vapor cause burns or irritation of the eyes with swelling.",
+    "gold_edges": [
+      [
+        "vapor",
+        "swelling"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Increased reproductive toxicity of landfill leachate after degradation was caused by nitrite.",
+    "gold_edges": [
+      [
+        "nitrite",
+        "reproductive toxicity"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "A controversy arose from an equivocal assignment of the metastable 150-meV vibrational peak.",
+    "gold_edges": [
+      [
+        "assignment",
+        "controversy"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The alleged abuse resulted in bruises and swelling of the brain.",
+    "gold_edges": [
+      [
+        "abuse",
+        "swelling"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Picture of a woodcut portraying the harm caused by the quake.",
+    "gold_edges": [
+      [
+        "quake",
+        "harm"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Bacterial infections of the ear result in malodor, excessive exudation (drainage of pus-like material), and ulceration.",
+    "gold_edges": [
+      [
+        "infections",
+        "malodor"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "On the one hand, a small notorious set of bacteria, fungi, parasites, protozoa, and viruses cause disease, as discussed in the two units of the book.",
+    "gold_edges": [
+      [
+        "fungi",
+        "disease"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The clashes resulted in a great deal of bloodshed, including the deaths of at least 1200 civilians and 180 Pakistani soldiers.",
+    "gold_edges": [
+      [
+        "clashes",
+        "deaths"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The variations are caused by stratospheric winds and the chemical production and destruction of ozone.",
+    "gold_edges": [
+      [
+        "stratospheric winds",
+        "variations"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Much of the bloodshed was caused by the growth of gangs.",
+    "gold_edges": [
+      [
+        "growth",
+        "bloodshed"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The anxiety caused by the accident, which appears to show no sign of diminishing, and its negative impact on the living conditions in the affected areas, may be the principal reason for the increase in poor reported health.",
+    "gold_edges": [
+      [
+        "accident",
+        "anxiety"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The energy is going away from the source at the group velocity Cg.",
+    "gold_edges": [
+      [
+        "source",
+        "energy"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "This mild and relatively common form of acne is caused by cosmetics.",
+    "gold_edges": [
+      [
+        "cosmetics",
+        "acne"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The light was radiating from the face of Jesus Christ.",
+    "gold_edges": [
+      [
+        "face",
+        "light"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The output noise was caused by the biasing resistors and the shot noises of the base currents of Q1 and Q4.",
+    "gold_edges": [
+      [
+        "resistors",
+        "noise"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The only light was from two turrets of bulletproof glass.",
+    "gold_edges": [
+      [
+        "turrets",
+        "light"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The widespread opinion that both protein and phosphorus cause calcium loss is examined.",
+    "gold_edges": [
+      [
+        "phosphorus",
+        "calcium loss"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Ambient vanadium pentoxide dust produces irritation of the eyes, nose and throat.",
+    "gold_edges": [
+      [
+        "dust",
+        "irritation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The heat and pressure cause metamorphism to occur.",
+    "gold_edges": [
+      [
+        "heat",
+        "metamorphism"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Dogs develop a fever from stress and/or pain such as in a severe flea infestation.",
+    "gold_edges": [
+      [
+        "stress",
+        "fever"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The weight of the concrete on the soft materials caused a second ground collapse on the following Sunday night.",
+    "gold_edges": [
+      [
+        "weight",
+        "collapse"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Every schoolchild is taught that the monsoons are caused by the change in wind patterns when a large body of warm air rises.",
+    "gold_edges": [
+      [
+        "change",
+        "monsoons"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Both reached the same basic conclusion, that the ship had been destroyed by a magazine explosion which was triggered by an external blast.",
+    "gold_edges": [
+      [
+        "blast",
+        "explosion"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "But just think, sadness leads to fear then fear leads to anger.",
+    "gold_edges": [
+      [
+        "sadness",
+        "fear"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "By far the greatest damage has been caused by the illicit use of the hallucinogens.",
+    "gold_edges": [
+      [
+        "hallucinogens",
+        "damage"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The symptoms of H1N1 flu include fever, cough, sore throat, runny or stuffy nose, body aches, headache, chills, fatigue, and possibly vomiting or diarrhea.",
+    "gold_edges": [
+      [
+        "flu",
+        "chills"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The full amount paid to Aardman for the blaze, which was triggered by an electrical fault, was not disclosed.",
+    "gold_edges": [
+      [
+        "fault",
+        "blaze"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Most illnesses, including colds and flu, cause a toxic overload that also increases the stress on the kidneys.",
+    "gold_edges": [
+      [
+        "flu",
+        "stress"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "This case arises from a December 21, 2005 automobile accident that resulted in the death of Larry Haynes.",
+    "gold_edges": [
+      [
+        "accident",
+        "death"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Two of my girls had the high fever from vaccines, and our family doctor thought nothing of it.",
+    "gold_edges": [
+      [
+        "vaccines",
+        "fever"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Acne is caused by oily skin and often has black or whiteheads, inflamed sores, and infected sores along with scars.",
+    "gold_edges": [
+      [
+        "oily skin",
+        "acne"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Excess oil, dirt and bacteria cause acne.",
+    "gold_edges": [
+      [
+        "dirt",
+        "acne"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The proposed permanent rules establish criteria and procedures for awarding grants to eligible applicants.",
+    "gold_edges": [
+      [
+        "rules",
+        "criteria"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The rainbows are caused by the refraction, or bending, of sunlight as it passes through the raindrops.",
+    "gold_edges": [
+      [
+        "refraction",
+        "rainbows"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The weekend snow storm caused cancellation of the Tornadoes' scheduled league game.",
+    "gold_edges": [
+      [
+        "storm",
+        "cancellation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The response to the harm caused by the flood, although institutionally organized, relied mostly on individuals joined in a common purpose rather than on an orchestrated effort by established hand binderies.",
+    "gold_edges": [
+      [
+        "flood",
+        "harm"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Larger batteries provide standby power for telephone exchanges or computer data centers.",
+    "gold_edges": [
+      [
+        "batteries",
+        "power"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The uterine contractions are caused by prostaglandins.",
+    "gold_edges": [
+      [
+        "prostaglandins",
+        "contractions"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Slaanesh enjoys every aspect of experience, deriving pleasure from pain and suffering.",
+    "gold_edges": [
+      [
+        "suffering",
+        "pleasure"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "A cigarette set off a smoke alarm.",
+    "gold_edges": [
+      [
+        "cigarette",
+        "alarm"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Eighty-four percent of the complications resulted in patient deaths, while 16 percent resulted in a serious injury.",
+    "gold_edges": [
+      [
+        "complications",
+        "deaths"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "So solar thermal power generation works essentially the same as generation from fossil fuels except that instead of using steam produced from the combustion of fossil fuels, the steam is produced by the heat collected from sunlight.",
+    "gold_edges": [
+      [
+        "combustion",
+        "steam"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The shifts are caused by gas flows going up one leg and returning down the other.",
+    "gold_edges": [
+      [
+        "gas flows",
+        "shifts"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Lesions affecting the medial part of the premotor cortex, the SMA and sparing the precentral gyrus caused a contralateral hemiparesis predominating on the leg but predominating proximally on both leg and arm.",
+    "gold_edges": [
+      [
+        "lesions",
+        "hemiparesis"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Resulting congestion caused delays of 15-20 minutes to Northeast Corridor, North Jersey Coast Line and Midtown Direct trains.",
+    "gold_edges": [
+      [
+        "congestion",
+        "delays"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "KHZZ experienced competition from former oldies station KHYL, but both stations ended up giving up the format, with KHZZ turning to oldies.",
+    "gold_edges": [
+      [
+        "station",
+        "competition"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "A plasma was generated by an electric discharge between electrodes located in the focal plane of the lens and separated by ~ 1 cm from one another.",
+    "gold_edges": [
+      [
+        "discharge",
+        "plasma"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Several infections cause rash-fever disease that is commonly mistaken for measles.",
+    "gold_edges": [
+      [
+        "infections",
+        "disease"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The cause for the jump to over 30,000 was the deterioration in the economy triggered by a series of bankruptcies among banks and securities firms.",
+    "gold_edges": [
+      [
+        "deterioration",
+        "jump"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "As the compressor on the frig turned on caused a voltage spike on the electrical line, which caused a glitch in the \"room commander\" system.",
+    "gold_edges": [
+      [
+        "spike",
+        "glitch"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Stimulation of the posterior horn of the medial meniscus produced a measurable amount of CMAP latency for the semimembranosus muscle.",
+    "gold_edges": [
+      [
+        "stimulation",
+        "latency"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Saosin shook himself off, coughing from inhaling the smoke, and then stood up in an awkward fashion.",
+    "gold_edges": [
+      [
+        "inhaling",
+        "coughing"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "A polio outbreak in Nigeria was caused by the vaccine designed to stop it, leaving at least 69 children paralyzed.",
+    "gold_edges": [
+      [
+        "vaccine",
+        "outbreak"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The impact of the tire against the pothole caused a slit on the tube that the repairman had to sew three stiches.",
+    "gold_edges": [
+      [
+        "impact",
+        "slit"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Stress and anxiety trigger panic attacks, however healthy people may experience panic attacks, but they are no that common.",
+    "gold_edges": [
+      [
+        "stress",
+        "panic attacks"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The drop was caused by the recession and the usual seasonal factors, with fruit and vegetable prices lower in the summer months.",
+    "gold_edges": [
+      [
+        "recession",
+        "drop"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The pandemic was caused by the virus Yesinia pestis, better known as The Bubonic Black Plague, which infected the flees on the Black rodents.",
+    "gold_edges": [
+      [
+        "virus",
+        "pandemic"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Unemployment and poverty cause abuse of children and serious situations such as the breakdown of families where the rights of the child are easily infringe.",
+    "gold_edges": [
+      [
+        "unemployment",
+        "abuse"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Acne is caused by irritants like fabrics, hair gels and makeup.",
+    "gold_edges": [
+      [
+        "irritants",
+        "acne"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Sadness leads to dissatisfaction with the job.",
+    "gold_edges": [
+      [
+        "sadness",
+        "dissatisfaction"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The word \"song\" is used to describe the pattern of regular and predictable sounds made by some species of whales, notably the humpback whale.",
+    "gold_edges": [
+      [
+        "species",
+        "sounds"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "By 1945 the French electric system was generating more power than it had before the war.",
+    "gold_edges": [
+      [
+        "system",
+        "power"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "That being said, I do love the game and play it all the time but would appreciate a little less frustration from programming and debugging, and sticking strictly with the frustration that comes from hitting bad shots.",
+    "gold_edges": [
+      [
+        "debugging",
+        "frustration"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "You see and hear Hackman's screaming after the dreadful shooting.",
+    "gold_edges": [
+      [
+        "shooting",
+        "screaming"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Wind and water erosion is confined to farmlands.",
+    "gold_edges": [
+      [
+        "water",
+        "erosion"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The human papillomavirus is one of the most common causes of these and most other types of warts, and this is a virus that attacks the skin through direct contact.",
+    "gold_edges": [
+      [
+        "papillomavirus",
+        "warts"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The crash has been caused by a meteor.",
+    "gold_edges": [
+      [
+        "meteor",
+        "crash"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The man was on his knees, sdiraya neck with the rope and coughing from suffocation.",
+    "gold_edges": [
+      [
+        "suffocation",
+        "coughing"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The South China tigers are verging on the brink on extinction from hunting and deforestation, and these magestic animals are so close to being gone forever.",
+    "gold_edges": [
+      [
+        "deforestation",
+        "extinction"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Swine flu is one of the leading causes of respiratory disease in swine throughout the world.",
+    "gold_edges": [
+      [
+        "swine flu",
+        "disease"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The environmental and health consequences of the evacuation after the Chernobyl accident.",
+    "gold_edges": [
+      [
+        "accident",
+        "evacuation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The Queen has expressed her shock at the devastation caused by the flooding.",
+    "gold_edges": [
+      [
+        "flooding",
+        "devastation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The speech caused a conservative combustion on the Internet, but when Wanda visited The Tonight Show a few weeks later to talk about the dinner, she told Jay Leno that she didn't even know about the controversy.",
+    "gold_edges": [
+      [
+        "speech",
+        "combustion"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The pet was overly sensitive, and thus the ticks and fleas caused rashes and discomfort.",
+    "gold_edges": [
+      [
+        "ticks",
+        "discomfort"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The raid resulted in an immediate regional crisis over the apparent Colombian violation of Ecuadoran sovereignty, with both Ecuador and Venezuela mobilizing military forces.",
+    "gold_edges": [
+      [
+        "raid",
+        "crisis"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "A scheme establishing access to the East Sussex countryside for disabled people draws to a close.",
+    "gold_edges": [
+      [
+        "scheme",
+        "access"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Comedy was employed in a cathartic role against the tension, fear and grief caused by the fighting.",
+    "gold_edges": [
+      [
+        "fighting",
+        "tension"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Since 1972, when Jewish settler organizations were successful in falsely registering the land with the Israeli Land registrar, the family have suffered the stress and anxiety caused by the constant legal battles involved in fighting for the right to stay in the homes in which many of them were born.",
+    "gold_edges": [
+      [
+        "battles",
+        "stress"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "All thirty of the patches sewn into the cloth in 1534 by the Poor Clare nuns to repair the devastation caused by the 1532 fire were removed.",
+    "gold_edges": [
+      [
+        "fire",
+        "devastation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The storm was generated by an intense cold front moving across drought-affected areas in South Australia and NSW.",
+    "gold_edges": [
+      [
+        "cold front",
+        "storm"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Joint problems are caused by osteoarthitis (degenerative joint disease), subluxations, sprains, intervertebral disc.",
+    "gold_edges": [
+      [
+        "osteoarthitis",
+        "joint problems"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "A lice infestation is diagnosed by looking closely through pubic hair for nits, nymphs, or adults.",
+    "gold_edges": [
+      [
+        "lice",
+        "infestation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "He created and advocated \"flower power,\"a strategy in which antiwar demonstrators promoted positive values like peace and love to dramatize their opposition to the destruction and death caused by the war in Vietnam.",
+    "gold_edges": [
+      [
+        "war",
+        "destruction"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The accident caused a traffic snarl on the ever busy bridge leading to diversions to other routes.",
+    "gold_edges": [
+      [
+        "accident",
+        "snarl"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "I've suffered from an injury that has been caused by the negligence of another person, and I've filed an injury claim.",
+    "gold_edges": [
+      [
+        "person",
+        "injury"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Cells damaged or killed by flu result in the production of interferon which is one of the most potent causes of fever.",
+    "gold_edges": [
+      [
+        "interferon",
+        "fever"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Pressure from shoes and walking cause friction and the body's natural response is to build up the skin to protect it from breaking down.",
+    "gold_edges": [
+      [
+        "pressure",
+        "friction"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "A mother carries her children inside a public school used as an evacuation center for victims of the floods caused by the continuous rains of Typhoon Ketsana, in the town of Tanay, Rizal east of Manila September 28, 2009.",
+    "gold_edges": [
+      [
+        "rains",
+        "floods"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The electron beam is generated by an explosive emission cathode.",
+    "gold_edges": [
+      [
+        "emission",
+        "beam"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Three people had been killed in a fire after the quake and hundreds of people were injured.",
+    "gold_edges": [
+      [
+        "quake",
+        "fire"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Some have argued that the money the pirates demand is very little compared to the devastation that has been caused by the toxic waste, which includes nuclear waste.",
+    "gold_edges": [
+      [
+        "waste",
+        "devastation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The paper reported a 'palpable sense of disappointment' from the audience.",
+    "gold_edges": [
+      [
+        "audience",
+        "disappointment"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Scientists warn that the damage caused by the fishing industry is irreparable.",
+    "gold_edges": [
+      [
+        "industry",
+        "damage"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "These old power plants produce pollution that causes smog, acid rain and global warming, and they generate radioactive wastes and other toxic pollutants.",
+    "gold_edges": [
+      [
+        "pollution",
+        "warming"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Fetal alcohol spectrum disorders, or FASDs, are caused by drinking alcohol during pregnancy.",
+    "gold_edges": [
+      [
+        "drinking",
+        "disorders"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Little Irish girl Becky called a demolition company and asked if they would knock her school down.",
+    "gold_edges": [
+      [
+        "company",
+        "demolition"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Adam Smith's first measure of fame was gained from a series of public lectures on rhetoric and belles lettres delivered in Edinburgh from 1748 to 1751.",
+    "gold_edges": [
+      [
+        "lectures",
+        "measure"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The closure caused a backup on the freeway for several miles northbound as cars were detoured to the Lost Hills Road exit and over to Agoura Road to head south on Las Virgenes.",
+    "gold_edges": [
+      [
+        "closure",
+        "backup"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The devastation caused by the earthquake-generated tsunami is seen on the south coast of Western Samoa.",
+    "gold_edges": [
+      [
+        "tsunami",
+        "devastation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Scars from burns happen when the entire depth of the skin is destroyed by heat.",
+    "gold_edges": [
+      [
+        "burns",
+        "scars"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "To that end, the coalition has established some local recreational activities, including Laser Tag and paintball.",
+    "gold_edges": [
+      [
+        "coalition",
+        "activities"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The march's goal is to raise awareness of the crisis caused by the Israeli blockade and bring much needed humanitarian relief.",
+    "gold_edges": [
+      [
+        "blockade",
+        "crisis"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The truck carried homemade weapons, and the blast was caused by the mishandling of weapons.",
+    "gold_edges": [
+      [
+        "mishandling",
+        "blast"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Bread shortages and mounting poverty cause riots in nearby Paris.",
+    "gold_edges": [
+      [
+        "shortages",
+        "riots"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Thursday afternoon the staff from the University of Wisconsin-Madison near Lake Mendota felt a shake and heard a noise like a boom which was triggered by an ice quake.",
+    "gold_edges": [
+      [
+        "quake",
+        "noise"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Chronic coughing from smoking increases the risk of developing a hernia.",
+    "gold_edges": [
+      [
+        "smoking",
+        "coughing"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The delays are caused by local governments trying to wring more money out of the feder.",
+    "gold_edges": [
+      [
+        "governments",
+        "delays"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Information about the foodborne illness caused by salmonella bacteria.",
+    "gold_edges": [
+      [
+        "bacteria",
+        "illness"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "War and rural poverty cause mass migration of people and often simultaneous growth of informal development.",
+    "gold_edges": [
+      [
+        "poverty",
+        "migration"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "I'm close to taking a writing break myself - to mention the frustration from rejection, but I got the Rosetta Stone Spanish CD;s a couple of years ago, and they've taken a back-seat in the priority list - not much time with work and the hubby and kids.",
+    "gold_edges": [
+      [
+        "rejection",
+        "frustration"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "When the force was generated via the joystick, the reproduced force matched the original force much more accurately.",
+    "gold_edges": [
+      [
+        "joystick",
+        "force"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "In Sri Lanka, the tsunami resulted in 31187 deaths, 4280 missing people, 23189 injured people, and the displacement of 545715 people.",
+    "gold_edges": [
+      [
+        "tsunami",
+        "displacement"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "I have found that I have extremely sensitive skin and most cleaners cause rash or a burning sensation if it has contact with my skin.",
+    "gold_edges": [
+      [
+        "cleaners",
+        "burning sensation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Dry air, dust and wind dry out the nose and throat and cause nosebleeds, coughing, wheezing, and other short-term respiratory problems.",
+    "gold_edges": [
+      [
+        "dust",
+        "nosebleeds"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Depression is among the top 10 causes of suicide both among doctors as well as nursing professionals.",
+    "gold_edges": [
+      [
+        "depression",
+        "suicide"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The shot caused a wound on the left side of the neck which bled profusely.",
+    "gold_edges": [
+      [
+        "shot",
+        "wound"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Acne is caused by hormonal imbalance within the body, but there are many other contributing factors to acne outbreaks.",
+    "gold_edges": [
+      [
+        "hormonal imbalance",
+        "acne"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The inflammation causes pain in the joint.",
+    "gold_edges": [
+      [
+        "inflammation",
+        "pain"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Genetic disorders are caused by the mutation of a gene.",
+    "gold_edges": [
+      [
+        "mutation",
+        "disorders"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Power is generated by an electrochemical reaction of hydrogen and oxygen that yields as its by-product only heat and H2O.",
+    "gold_edges": [
+      [
+        "reaction",
+        "power"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The storm is generated by an upwelling of warmer air, similar to a terrestrial thunderhead.",
+    "gold_edges": [
+      [
+        "upwelling",
+        "storm"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Light blue shows the additional extent of an extreme flood from rivers or the sea.",
+    "gold_edges": [
+      [
+        "sea",
+        "flood"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "From the outset, the TV reporters started talking about two disasters: the natural disaster which was caused by the hurricane and the man-made disaster which happened in New Orleans, the blame for which was laid at the hands of George Bush.",
+    "gold_edges": [
+      [
+        "hurricane",
+        "disaster"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Another reason for the impression of energy and optimism caused by many posters is their very nature as images of propaganda.",
+    "gold_edges": [
+      [
+        "posters",
+        "energy"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Timoshenko commented its laughter after the joke of Putin about Yushchenko and Of.",
+    "gold_edges": [
+      [
+        "joke",
+        "laughter"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The explosion caused a crater on the ground and destroyed several stalls.",
+    "gold_edges": [
+      [
+        "explosion",
+        "crater"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The video then shows the damage caused by the aircraft as it hit the north tower, follows the disintegrating plane through the interior, and then shows the airplane metal, ignited fuel, dust and smoke exiting the building on the opposite side.",
+    "gold_edges": [
+      [
+        "aircraft",
+        "damage"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "A vehicle accident with a utility pole cause a power outage.",
+    "gold_edges": [
+      [
+        "accident",
+        "power outage"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Colds and flu cause high fevers in babies and toddlers, but with the flu, the fever will last more than one or two days.",
+    "gold_edges": [
+      [
+        "flu",
+        "fevers"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "During the first documented outbreak of human infections with H5N1, which occurred in Hong Kong in 1997, the 18 human cases coincided with an outbreak of highly pathogenic avian influenza, caused by a virtually identical virus, in poultry farms and live markets.",
+    "gold_edges": [
+      [
+        "virus",
+        "influenza"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Wrinkles from laughing is a good sign of a healthy, happy life.",
+    "gold_edges": [
+      [
+        "laughing",
+        "wrinkles"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The damage caused by the \" W32/Sircam\" computer virus is expanding in Japan.",
+    "gold_edges": [
+      [
+        "virus",
+        "damage"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "He has fear from darkness, ghosts, robbers & being alone, of thunder, in the crowd, of death, of disease, of evil, that something may happen.",
+    "gold_edges": [
+      [
+        "robbers",
+        "fear"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Much of the difference in the total damage caused by the Nisqually and the Northridge earthquakes can be attributed to the Nisqually earthquake's location.",
+    "gold_edges": [
+      [
+        "earthquakes",
+        "damage"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Breast abscess is caused by infection of the engorged glandular system of the breasts.",
+    "gold_edges": [
+      [
+        "infection",
+        "abscess"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The fat and cholesterol cause heart disease; the animal protein causes cancer.",
+    "gold_edges": [
+      [
+        "fat",
+        "disease"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Later on that same day, an electrical short at the Farragut North station caused a fire on the tracks which shut down service three times over the course of the day.",
+    "gold_edges": [
+      [
+        "electrical short",
+        "fire"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The events at the trial caused the dissolution of the Communist League, and a general dampening of revolutionary activity.",
+    "gold_edges": [
+      [
+        "events",
+        "dissolution"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The contamination was caused by residues of the aromatic hydrocarbons.",
+    "gold_edges": [
+      [
+        "residues",
+        "contamination"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Asthma is a disease of the respiratory system, which causes swelling and narrowing of the airways.",
+    "gold_edges": [
+      [
+        "asthma",
+        "narrowing"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The incident was caused by the entry of high pressure gas from a deep formation that got confined in the porthole of the well.",
+    "gold_edges": [
+      [
+        "entry",
+        "incident"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The imbalance caused a torque on the moon that acted to synchronize its rotation with its orbit, so that one side is always facing the earth.",
+    "gold_edges": [
+      [
+        "imbalance",
+        "torque"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Almost suddenly, I was overcome with an uncontrollable fear which was triggered by the death of my friend.",
+    "gold_edges": [
+      [
+        "death",
+        "fear"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "My view of how the brain works is rooted in an evolutionary perspective that moves from the fact that our mental life reflects the actions of many.",
+    "gold_edges": [
+      [
+        "perspective",
+        "view"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Among the first to survey the devastation caused by the April earthquake, the team discusses what they observed and learned from the damaged buildings.",
+    "gold_edges": [
+      [
+        "earthquake",
+        "devastation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Known by the medical field as tinea cruris, jock itch is a persistent reddish, flaky, and itchy rash in the groin and around the anus caused by a fungal imbalance on the skin.",
+    "gold_edges": [
+      [
+        "fungal imbalance",
+        "rash"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Each time a neuron unleashes its tiny jolt, it needs to replenish its stores of energy for the next spark.",
+    "gold_edges": [
+      [
+        "neuron",
+        "jolt"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Tsunamis are caused by the sudden displacement of large volumes of water.",
+    "gold_edges": [
+      [
+        "displacement",
+        "tsunamis"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Scientists have revealed how environmental irritants such as air pollution and cigarette smoke which cause coughing in people.",
+    "gold_edges": [
+      [
+        "irritants",
+        "coughing"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The recent decline has been caused by the environmentally-induced collapse of fish catches from the Black Sea.",
+    "gold_edges": [
+      [
+        "collapse",
+        "decline"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Chocolates, junk food, dirty skin, and stress cause acne.",
+    "gold_edges": [
+      [
+        "chocolates",
+        "acne"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "I ended up going to the doctor, although it was just coughing from allergies.",
+    "gold_edges": [
+      [
+        "allergies",
+        "coughing"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Three times (every 1200 years), the gods were distressed by the disturbance from human overpopulation.",
+    "gold_edges": [
+      [
+        "overpopulation",
+        "disturbance"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The announcement of the game caused a stir on the web yesterday, with the Weekly Standard launching a protest campaign encouraging readers to e-mail Microsoft and T-Enterprise, the out-of-its-depth company that had hired actual Gitmo detainee Moazzam Begg as a consultant on the game.",
+    "gold_edges": [
+      [
+        "announcement",
+        "stir"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The fat and cholesterol cause heart disease; the animal protein causes cancer.",
+    "gold_edges": [
+      [
+        "protein",
+        "cancer"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "A method for computing the deformation of the crust caused by the filling of large lakes.",
+    "gold_edges": [
+      [
+        "filling",
+        "deformation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "I had been constipated for over 30 years, had significant sleep requirements (average 9+ hours a night), and had recurring headaches from fatigue and allergies.",
+    "gold_edges": [
+      [
+        "allergies",
+        "headaches"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Social breakdown and poverty caused by civil war in several African countries has caused further increases in the rate of prostitution in those countries.",
+    "gold_edges": [
+      [
+        "war",
+        "breakdown"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Since hunger and poverty cause violence and unrest, the solution must be found in other than military action.",
+    "gold_edges": [
+      [
+        "hunger",
+        "unrest"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "However, recent research demonstrates that most ulcers of the duodenum are caused by an infectious agent named Helicobacter pylori or H. pylori.",
+    "gold_edges": [
+      [
+        "infectious agent",
+        "ulcers"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "To alleviate the inconvenience caused by the fence, the Cabinet approved a plan to construct 11 passages through the barrier to facilitate movement in and out of the city.",
+    "gold_edges": [
+      [
+        "fence",
+        "inconvenience"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The sound waves cause disorientation and nausea.",
+    "gold_edges": [
+      [
+        "waves",
+        "nausea"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The clot later caused a seizure, leaving Nathan completely paralyzed on the right side of his body.",
+    "gold_edges": [
+      [
+        "clot",
+        "seizure"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "In ionic conduction charge carriers are affected by the electromagnetic radiation from the microwaves by being attracted or repelled by the electric field.",
+    "gold_edges": [
+      [
+        "microwaves",
+        "radiation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "We already know ignorance, heat, boredom, greed and poverty cause violence even in the U.S.",
+    "gold_edges": [
+      [
+        "boredom",
+        "violence"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The struggle with the door and the oiler caused a disturbance on the ship.",
+    "gold_edges": [
+      [
+        "struggle",
+        "disturbance"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Plaintiffs seek compensatory damages for personal injuries, property damage, emotional distress, and expenses resulting from the evacuation after the explosion.",
+    "gold_edges": [
+      [
+        "explosion",
+        "evacuation"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The industry only reports incidents that have resulted in serious physical injuries, and reporting is left up to the cruise line with no oversight.",
+    "gold_edges": [
+      [
+        "incidents",
+        "injuries"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "This time, though, they left the fire unattended and the wind caused nearby leaves to catch fire, spreading 14 feet to the building.",
+    "gold_edges": [
+      [
+        "wind",
+        "fire"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The complication arose from the light irradiation.",
+    "gold_edges": [
+      [
+        "irradiation",
+        "complication"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The bombing resulted in the deaths of 1318 in Hanoi.",
+    "gold_edges": [
+      [
+        "bombing",
+        "deaths"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The error was caused by the illegal embedded code tags.",
+    "gold_edges": [
+      [
+        "tags",
+        "error"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Liver plays key role in how steroids cause diabetes and hypertension.",
+    "gold_edges": [
+      [
+        "steroids",
+        "hypertension"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The poet Essex Hemphill conquered sorrow after the loss of a friend by taking up the cause of that friend.",
+    "gold_edges": [
+      [
+        "loss",
+        "sorrow"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The winds are caused by moisture, originating off the Pacific coast, cooling as they climb the western slopes, and then rapidly warming as they drop down the eastern side of the mountains.",
+    "gold_edges": [
+      [
+        "moisture",
+        "winds"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The drag caused by the Earth's atmosphere works against a rocket or a water molecule.",
+    "gold_edges": [
+      [
+        "atmosphere",
+        "drag"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Endometriosis is the cause of pelvic pain (dysmenorrhea, dyspareunia) and infertility in more than 35% of women of reproductive age.",
+    "gold_edges": [
+      [
+        "endometriosis",
+        "infertility"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Most of the flooding has been caused by the clogging of drains.",
+    "gold_edges": [
+      [
+        "clogging",
+        "flooding"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The dips are caused by the thermal diffuse of y-rays which is reflected secondarily by the net planes in the same crystal.",
+    "gold_edges": [
+      [
+        "y-rays",
+        "dips"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The JNC also is currently accepting applications for the vacancy created by the retirement of Judge Edwin B. Browning, Jr.",
+    "gold_edges": [
+      [
+        "retirement",
+        "vacancy"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "The evening's performance was a great production by a first-class company - and not expensive.",
+    "gold_edges": [
+      [
+        "company",
+        "performance"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "Two of the incidents resulted in fatal CO poisonings (COHb levels of 55% and 49% ).",
+    "gold_edges": [
+      [
+        "incidents",
+        "poisonings"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "In this excellent fourth Sunny Randall PI tale (after Shrink Rap), is shown how sadness leads to murder.",
+    "gold_edges": [
+      [
+        "sadness",
+        "murder"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  },
+  {
+    "domain": "general",
+    "text": "She was looking beautiful in the dim light that emanated from my broken table-lamp.",
+    "gold_edges": [
+      [
+        "table-lamp",
+        "light"
+      ]
+    ],
+    "source_file": "semeval2010_task8_test"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "domains": {
+    "counterbench": {
+      "SHD_mean": 4.64,
+      "SHD_std": 1.6218507946170637,
+      "Intervention_Accuracy": 0.90675,
+      "Counterfactual_Consistency": 0.9051499999999999,
+      "n": 1000
+    }
+  }
+}

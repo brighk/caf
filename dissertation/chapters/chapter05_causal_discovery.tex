@@ -1,0 +1,884 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Causal Discovery and Intervention from Text}
+\label{ch:causal_discovery}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This chapter presents our second major contribution: a comprehensive pipeline for discovering causal structures from unstructured text and validating them through LLM-driven intervention design. While CAF (Chapter 4) verifies reasoning against existing knowledge bases, the causal discovery system \textit{learns} causal structure from text, constructing new knowledge that can populate knowledge bases or guide decision-making.
+
+The chapter is organized as follows: Section~\ref{sec:discovery_overview} provides motivation and problem formulation; Section~\ref{sec:discovery_methodology} details the five-stage pipeline (variable extraction, graph induction, SCM construction, intervention design, validation); Section~\ref{sec:counterfactual_reasoning} demonstrates counterfactual inference using discovered structures; Section~\ref{sec:integration_caf} discusses integration with CAF for end-to-end workflows; and Section~\ref{sec:discovery_summary} summarizes key innovations.
+
+\section{Overview and Problem Formulation}
+\label{sec:discovery_overview}
+
+Causal discovery—learning causal structure from data—is a foundational problem in causal inference. Traditional approaches assume access to numerical observational data (samples $(x_i, y_i, z_i, \ldots)$ from a joint distribution), enabling statistical tests for conditional independence and structure optimization. However, vast amounts of causal knowledge exist in unstructured text—scientific papers, medical records, policy documents, news articles—that cannot be directly processed by these methods.
+
+\subsection{Motivation: The Text-to-Causality Gap}
+\label{subsec:text_causality_gap}
+
+Consider a medical research abstract:
+
+\begin{quote}
+\textit{``Our longitudinal study of 10,000 patients over 15 years found that regular exercise significantly reduces the risk of cardiovascular disease. The protective effect appears mediated by improvements in blood pressure and cholesterol levels. Patients who exercised at least 3 times per week had 35\% lower incidence of heart disease compared to sedentary controls, even after adjusting for age, sex, and smoking status.''}
+\end{quote}
+
+This text implicitly describes a causal structure:
+\begin{itemize}
+\item Exercise $\to$ Blood Pressure (improvement)
+\item Exercise $\to$ Cholesterol (improvement)
+\item Blood Pressure $\to$ Heart Disease (reduction)
+\item Cholesterol $\to$ Heart Disease (reduction)
+\item Exercise $\to$ Heart Disease (direct and indirect paths)
+\end{itemize}
+
+Traditional causal discovery algorithms cannot extract this structure from text. They require:
+\begin{itemize}
+\item Numerical data: tuples $(E, BP, C, HD)$ for exercise level, blood pressure, cholesterol, heart disease.
+\item Many samples: Thousands of i.i.d. observations for statistical power.
+\item Measured variables: All relevant variables must be explicitly measured.
+\end{itemize}
+
+Text provides none of these directly, yet contains rich causal information expressed linguistically.
+
+\subsection{Complementarity with CAF}
+\label{subsec:complementarity_caf}
+
+CAF and causal discovery serve complementary roles:
+
+\begin{table}[ht]
+\centering
+\caption{CAF vs. Causal Discovery: Complementary Capabilities}
+\label{tab:caf_vs_discovery}
+\begin{tabular}{lp{5cm}p{5cm}}
+\toprule
+\textbf{Aspect} & \textbf{CAF} & \textbf{Causal Discovery} \\
+\midrule
+Input & Query requiring reasoning & Text corpus describing system \\
+Knowledge Base & Requires pre-existing KB & Constructs new causal KB \\
+Primary Task & Verify reasoning consistency & Learn causal structure \\
+Output & Verified propositions & Causal graph + SCM \\
+Validation & SPARQL queries against KB & Intervention-based testing \\
+Use Case & Question answering, reasoning verification & Knowledge extraction, hypothesis generation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Integration Scenario:} Use causal discovery to extract structures from scientific literature, populate a knowledge base with discovered causal relations, then use CAF to verify reasoning about those relations. This creates a virtuous cycle: discovery expands KB, CAF leverages expanded KB for better verification.
+
+\subsection{Problem Formulation}
+\label{subsec:problem_formulation_discovery}
+
+\begin{definition}[Causal Discovery from Text]
+\label{def:causal_discovery_from_text}
+\textbf{Input:}
+\begin{itemize}
+\item Text corpus $\mathcal{T} = \{d_1, d_2, \ldots, d_N\}$ describing a causal system
+\item Optional: Domain ontology $\mathcal{O}$ defining variable types and relation vocabulary
+\end{itemize}
+
+\textbf{Output:}
+\begin{itemize}
+\item Structural Causal Model $\mathcal{M} = (G, F, P(U))$ where:
+\begin{itemize}
+  \item $G = (V, E)$ is a directed acyclic graph (DAG)
+  \item $F = \{f_i\}$ are structural equations relating variables
+  \item $P(U)$ is the distribution over exogenous variables
+\end{itemize}
+\end{itemize}
+
+\textbf{Constraints:}
+\begin{enumerate}
+\item $G$ must be consistent with causal relations described in $\mathcal{T}$
+\item $\mathcal{M}$ must support valid interventional queries: predictions $P(Y|\dooperator(X))$ should match textual descriptions or consensus
+\item $\mathcal{M}$ should enable counterfactual reasoning: $P(Y_x|X', Y')$ should be computable
+\end{enumerate}
+\end{definition}
+
+\textbf{Key Challenges:}
+\begin{enumerate}
+\item \textbf{Variable Identification:} Which entities in text correspond to causal variables? (``exercise'', ``cardiovascular disease'', ``blood pressure'' $\to$ variables; ``patients'', ``study'' $\to$ not variables)
+
+\item \textbf{Relation Extraction:} Which statements express causation vs. correlation? (``Exercise reduces heart disease'' $\to$ causal; ``Exercise is associated with lower heart disease rates'' $\to$ correlational)
+
+\item \textbf{Graph Construction:} How to resolve inconsistencies when text describes contradictory causal directions or contains cycles?
+
+\item \textbf{Functional Form Selection:} What functional relationships $f_i$ relate variables? (Linear? Nonlinear? Threshold effects?)
+
+\item \textbf{Validation without Ground Truth:} How to assess correctness when true causal structure is unknown?
+\end{enumerate}
+
+Our approach addresses these challenges through a five-stage pipeline combining LLM linguistic understanding with formal causal constraints.
+
+\section{Methodology: Five-Stage Pipeline}
+\label{sec:discovery_methodology}
+
+Figure~\ref{fig:discovery_pipeline} illustrates the complete pipeline.
+
+\begin{figure}[ht]
+\centering
+% [PLACEHOLDER: Insert causal discovery pipeline diagram]
+% This figure should show:
+% 1. Five sequential stages as boxes with arrows
+% 2. Stage 1: Text -> Variable Extraction -> Set of variables V
+% 3. Stage 2: V + Text -> Graph Induction -> Candidate DAGs {G_1, ..., G_K}
+% 4. Stage 3: DAGs -> SCM Construction -> Parameterized SCMs {M_1, ..., M_K}
+% 5. Stage 4: SCMs -> Intervention Design -> Proposed interventions do(X=x)
+% 6. Stage 5: Interventions + SCMs -> Validation -> Pruned SCMs, final M*
+% 7. Feedback loop from Stage 5 back to Stage 4 (iterative refinement)
+% 8. Example data flowing through pipeline (specific medical example)
+% 9. Self-consistency checks at Stages 1-2
+% 10. LLM involvement highlighted at Stages 1, 3, 4
+\includegraphics[width=\textwidth]{figures/causal_discovery_pipeline.pdf}
+\caption{Five-stage causal discovery pipeline. \textbf{Stage 1} extracts causal variables from text using LLM prompting with self-consistency filtering. \textbf{Stage 2} induces candidate DAG structures from extracted relations, resolving cycles and quantifying edge confidence. \textbf{Stage 3} constructs parameterized SCMs by selecting functional forms (linear, polynomial, neural) guided by LLM domain knowledge. \textbf{Stage 4} designs interventions using LLMs to propose $\dooperator(X=x)$ manipulations that maximally disambiguate competing hypotheses. \textbf{Stage 5} validates predictions via SCM rollouts, pruning graphs inconsistent with simulated or empirical outcomes. Stages 4-5 iterate until convergence (single graph remains or max iterations reached).}
+\label{fig:discovery_pipeline}
+\end{figure}
+
+\subsection{Stage 1: Causal Variable Extraction}
+\label{subsec:stage1_extraction}
+
+The first stage identifies which entities in text correspond to causal variables—factors that can be causes or effects in the domain.
+
+\subsubsection{LLM Prompting Strategy}
+
+We use structured prompting to extract variables and relations:
+
+\begin{verbatim}
+You are an expert in causal analysis. Read the following text
+carefully and extract:
+
+1. VARIABLES: Entities that can be causes or effects (e.g.,
+   diseases, treatments, behaviors, outcomes).
+   - Include: concrete phenomena that can vary or change
+   - Exclude: agents (patients, researchers), studies, institutions
+
+2. CAUSAL RELATIONS: Statements describing causal relationships.
+   Format: "X causes Y" or "X prevents Y"
+
+Text:
+"""
+[Medical abstract about exercise and heart disease]
+"""
+
+Output Format:
+VARIABLES:
+- Variable1
+- Variable2
+...
+
+CAUSAL RELATIONS:
+- Variable_A causes Variable_B
+- Variable_C prevents Variable_D
+...
+\end{verbatim}
+
+\textbf{Example LLM Response:}
+
+\begin{verbatim}
+VARIABLES:
+- Exercise
+- Blood_Pressure
+- Cholesterol
+- Cardiovascular_Disease
+- Age
+- Smoking
+
+CAUSAL RELATIONS:
+- Exercise causes Blood_Pressure_Reduction
+- Exercise causes Cholesterol_Improvement
+- Blood_Pressure_Reduction prevents Cardiovascular_Disease
+- Cholesterol_Improvement prevents Cardiovascular_Disease
+- Smoking causes Cardiovascular_Disease
+- Age influences Cardiovascular_Disease
+\end{verbatim}
+
+\subsubsection{Self-Consistency Validation}
+
+To filter spurious extractions (LLM hallucinations, low-confidence proposals), we employ self-consistency sampling \cite{wang2022selfconsistency}:
+
+\begin{algorithm}[ht]
+\caption{Self-Consistency Variable Extraction}
+\label{alg:self_consistency_extraction}
+\begin{algorithmic}[1]
+\Require Text corpus $\mathcal{T}$, Number of samples $K$, Threshold $\theta_{\text{cons}}$
+\Ensure Filtered variable set $V^*$ and relation set $R^*$
+
+\State $\mathcal{V} \gets \{\}$, $\mathcal{R} \gets \{\}$ \Comment{Collect samples}
+\For{$k = 1$ to $K$}
+  \State $(V_k, R_k) \gets \textsc{LLM-Extract}(\mathcal{T})$ \Comment{Independent extraction}
+  \State $\mathcal{V} \gets \mathcal{V} \cup \{V_k\}$
+  \State $\mathcal{R} \gets \mathcal{R} \cup \{R_k\}$
+\EndFor
+
+\State \Comment{Aggregate and filter}
+\State $V^* \gets \{v : \text{count}(v \in V_k \text{ for } k=1,\ldots,K) / K \geq \theta_{\text{cons}}\}$
+\State $R^* \gets \{r : \text{count}(r \in R_k \text{ for } k=1,\ldots,K) / K \geq \theta_{\text{cons}}\}$
+
+\State \Return $(V^*, R^*)$
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Parameters:}
+\begin{itemize}
+\item $K = 10$ independent samples (empirically sufficient for stability)
+\item $\theta_{\text{cons}} = 0.6$ (variable/relation must appear in $\geq 60\%$ of samples)
+\end{itemize}
+
+\textbf{Rationale:} LLMs exhibit stochastic variation—different samples may extract different variables. Consistently extracted entities are more likely genuine, while one-off extractions are likely hallucinations or misinterpretations.
+
+\textbf{Empirical Validation:} On gold-standard annotated medical abstracts (Chapter 7), self-consistency filtering improves precision from 68\% (single sample) to 84\% ($K=10$, $\theta=0.6$), with recall dropping only slightly (91\% to 87\%).
+
+\subsubsection{Entity Normalization and Merging}
+
+Extracted variables undergo normalization:
+
+\begin{enumerate}
+\item \textbf{Synonym Merging:} ``cardiovascular disease'', ``heart disease'', ``CVD'' $\to$ canonical ``Cardiovascular\_Disease''
+\begin{itemize}
+  \item Use embedding similarity (Sentence-BERT) to detect synonyms
+  \item Cluster similar entities (threshold 0.85 cosine similarity)
+  \item Select most frequent term as canonical
+\end{itemize}
+
+\item \textbf{Granularity Resolution:} When entities at different levels extracted (``Disease'' vs. ``Cardiovascular Disease''), prefer more specific
+\begin{itemize}
+  \item Check for is-a relationships (``Cardiovascular Disease is-a Disease'')
+  \item Retain specific entity, discard overly generic
+\end{itemize}
+
+\item \textbf{Composite Variable Detection:} Some variables are composites (``Blood\_Pressure\_Reduction'') rather than primitives (``Blood\_Pressure'')
+\begin{itemize}
+  \item Decompose into base variable + direction: ``Blood\_Pressure\_Reduction'' $\to$ base ``Blood\_Pressure'', direction ``decrease''
+  \item Represent as intervention in SCM: $\dooperator(\text{Blood\_Pressure} = \text{low})$
+\end{itemize}
+\end{enumerate}
+
+\textbf{Output of Stage 1:} Filtered, normalized variable set $V^* = \{\text{Exercise}, \text{Blood\_Pressure}, \text{Cholesterol}, \text{Cardiovascular\_Disease}, \ldots\}$ and relation set $R^* = \{(\text{Exercise}, \text{causes}, \text{Blood\_Pressure}), \ldots\}$.
+
+\subsection{Stage 2: Candidate Graph Induction}
+\label{subsec:stage2_induction}
+
+From extracted variables and relations, we construct directed acyclic graphs (DAGs) representing causal structure.
+
+\subsubsection{Initial Graph Construction}
+
+Create directed edges from extracted relations:
+
+\begin{algorithm}[ht]
+\caption{Initial DAG Construction}
+\label{alg:initial_dag}
+\begin{algorithmic}[1]
+\Require Variable set $V^*$, Relation set $R^*$
+\Ensure Graph $G = (V, E)$ with edge confidences
+
+\State $V \gets V^*$, $E \gets \emptyset$
+\For{$(v_i, \text{rel}, v_j) \in R^*$}
+  \If{$\text{rel} \in \{\text{causes}, \text{enables}, \text{increases}\}$}
+    \State $E \gets E \cup \{(v_i \to v_j)\}$ with label ``positive''
+  \ElsIf{$\text{rel} \in \{\text{prevents}, \text{inhibits}, \text{decreases}\}$}
+    \State $E \gets E \cup \{(v_i \to v_j)\}$ with label ``negative''
+  \EndIf
+\EndFor
+
+\State \Comment{Compute edge confidence from self-consistency counts}
+\For{$e = (v_i \to v_j) \in E$}
+  \State $\text{conf}(e) \gets \frac{\text{count}(e \text{ in samples})}{K}$
+\EndFor
+
+\State \Return $G = (V, E, \text{conf})$
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Cycle Detection and Resolution}
+
+Causal graphs must be acyclic (DAGs). Cycles indicate inconsistencies requiring resolution.
+
+\textbf{Cycle Detection:} Use DFS-based algorithm (Algorithm~\ref{alg:cycle_detection}, Chapter 4).
+
+\textbf{Cycle Resolution Strategies:}
+
+\begin{enumerate}
+\item \textbf{Confidence-Based Edge Removal:} If cycle detected, remove lowest-confidence edge:
+\begin{verbatim}
+Cycle: Exercise -> Blood_Pressure -> Stress -> Exercise
+Edge confidences: (E->BP: 0.9), (BP->S: 0.5), (S->E: 0.4)
+Action: Remove S->E (lowest confidence 0.4)
+\end{verbatim}
+
+\item \textbf{Temporal Ordering:} If timestamps available in text (``first X, then Y''), enforce temporal order
+\begin{itemize}
+  \item $X$ occurs before $Y$ $\Rightarrow$ allow $X \to Y$, disallow $Y \to X$
+\end{itemize}
+
+\item \textbf{LLM Adjudication:} Present cycle to LLM, ask for resolution:
+\begin{verbatim}
+Prompt: "The following variables form a causal cycle, which is
+impossible. Which edge should be removed?
+  - Exercise causes Blood_Pressure (confidence 0.9)
+  - Blood_Pressure causes Stress (confidence 0.5)
+  - Stress causes Exercise (confidence 0.4)
+
+Which causal relationship is least plausible?"
+\end{verbatim}
+LLM likely identifies ``Stress causes Exercise'' as least plausible (reverse direction).
+
+\item \textbf{Multiple Hypotheses:} If ambiguous, retain multiple candidate graphs $\{G_1, G_2, \ldots\}$ with different cycle resolutions for later disambiguation via intervention.
+\end{enumerate}
+
+\subsubsection{Edge Confidence Scoring}
+
+Edges are weighted by confidence:
+
+\begin{equation}
+\text{conf}(v_i \to v_j) = \frac{\#\{\text{samples extracting } v_i \to v_j\}}{K}
+\label{eq:edge_confidence}
+\end{equation}
+
+\textbf{Confidence Interpretation:}
+\begin{itemize}
+\item $\text{conf} \geq 0.8$: High confidence (consistent across samples)
+\item $0.5 \leq \text{conf} < 0.8$: Medium confidence (majority support)
+\item $\text{conf} < 0.5$: Low confidence (uncertain, candidate for removal)
+\end{itemize}
+
+Edges with $\text{conf} < \theta_{\text{edge}} = 0.5$ can be flagged as uncertain, requiring additional evidence.
+
+\subsubsection{Transitive Closure and Implied Edges}
+
+If text explicitly mentions direct edges $A \to B$ and $B \to C$, should we add transitive edge $A \to C$?
+
+\textbf{Strategy:} Add only if explicitly mentioned or strongly implied. Avoid automatic transitive closure (may introduce spurious edges).
+
+\textbf{Example:}
+\begin{itemize}
+\item Explicit: ``Exercise reduces blood pressure, which in turn lowers heart disease risk'' $\to$ Add Exercise $\to$ Blood\_Pressure $\to$ Heart\_Disease (transitivity mentioned)
+\item Implicit: ``Exercise reduces blood pressure. Blood pressure affects heart disease.'' $\to$ Do not automatically add Exercise $\to$ Heart\_Disease (transitivity not stated)
+\end{itemize}
+
+\textbf{Output of Stage 2:} One or more candidate DAGs $\{G_1, G_2, \ldots, G_K\}$ with edge confidences. If cycles fully resolved, $K=1$. If multiple resolution strategies yield different graphs, $K > 1$ (to be disambiguated in Stage 4-5).
+
+\subsection{Stage 3: Structural Causal Model Construction}
+\label{subsec:stage3_scm}
+
+From DAG structure, we construct parameterized SCMs by selecting functional forms and estimating parameters.
+
+\subsubsection{Functional Form Selection via LLM Priors}
+
+For each variable $X_i$ with parents $\text{Pa}(X_i)$, we must specify functional form $f_i$:
+
+\begin{equation}
+X_i = f_i(\text{Pa}(X_i), U_i)
+\label{eq:structural_equation_form}
+\end{equation}
+
+\textbf{Options:}
+\begin{enumerate}
+\item \textbf{Linear:} $X_i = \sum_{X_j \in \text{Pa}(X_i)} \beta_j X_j + U_i$
+\item \textbf{Polynomial:} $X_i = \sum_{k=0}^d \sum_{X_j \in \text{Pa}(X_i)} \beta_{jk} X_j^k + U_i$
+\item \textbf{Threshold/Step:} $X_i = \mathbb{I}[\sum \beta_j X_j > \tau] + U_i$ (binary outcome)
+\item \textbf{Nonlinear (Neural):} $X_i = \text{NN}(\text{Pa}(X_i); \theta) + U_i$
+\end{enumerate}
+
+\textbf{LLM Guidance:} Prompt LLM to suggest functional form based on domain knowledge:
+
+\begin{verbatim}
+Variable: Cardiovascular_Disease
+Parents: {Blood_Pressure, Cholesterol, Age, Smoking}
+
+Question: What functional relationship likely governs how
+Blood Pressure, Cholesterol, Age, and Smoking affect
+Cardiovascular Disease risk?
+
+Options:
+A) Linear additive (each factor contributes independently)
+B) Multiplicative (factors interact synergistically)
+C) Threshold (disease occurs when combined risk exceeds threshold)
+D) Complex nonlinear (no simple pattern)
+
+Provide your best assessment and rationale.
+\end{verbatim}
+
+\textbf{Example LLM Response:}
+
+\begin{verbatim}
+Assessment: C) Threshold with some linear components
+
+Rationale: Cardiovascular disease typically manifests when
+cumulative risk factors exceed physiological thresholds. However,
+each risk factor (high BP, high cholesterol, smoking) contributes
+additively to overall risk. A mixed model is appropriate:
+  Risk_Score = β₁·BP + β₂·Chol + β₃·Age + β₄·Smoking
+  CVD = Threshold(Risk_Score > τ)
+where β coefficients reflect relative contributions and τ is a
+disease onset threshold.
+\end{verbatim}
+
+\textbf{Functional Form Mapping:}
+
+Based on LLM suggestion, select:
+\begin{itemize}
+\item Linear suggestion $\to$ Linear model
+\item Threshold suggestion $\to$ Logistic or probit model
+\item Nonlinear suggestion $\to$ Neural network or spline model
+\item Interaction suggestion $\to$ Polynomial with interaction terms
+\end{itemize}
+
+\subsubsection{Parameter Estimation}
+
+\textbf{Case 1: Observational Data Available}
+
+If numerical data $(x_1, x_2, \ldots, x_n)$ available (e.g., from mentioned study datasets):
+\begin{enumerate}
+\item Fit parameters via regression: $\hat{\beta} = \arg\min_\beta \sum_i (X_i - f(\text{Pa}(X_i); \beta))^2$
+\item Use BIC for model selection among functional forms:
+\begin{equation}
+\text{BIC}(f) = n \log(\text{SSE}) + k \log(n)
+\label{eq:bic_model_selection}
+\end{equation}
+where SSE is sum of squared errors, $k$ is number of parameters, $n$ is sample size.
+\end{enumerate}
+
+\textbf{Case 2: No Data (Text-Only)}
+
+Use LLM-suggested priors and domain heuristics:
+\begin{enumerate}
+\item Normalize all variables to $[0, 1]$ range (standardization)
+\item Set effect sizes based on linguistic cues:
+\begin{itemize}
+  \item ``X significantly affects Y'' $\to$ $\beta = 0.6$
+  \item ``X moderately affects Y'' $\to$ $\beta = 0.4$
+  \item ``X slightly affects Y'' $\to$ $\beta = 0.2$
+\end{itemize}
+\item Add Gaussian noise: $U_i \sim \mathcal{N}(0, \sigma^2)$ with $\sigma = 0.1$ (small noise relative to signal)
+\end{enumerate}
+
+\textbf{Example SCM (Medical):}
+
+\begin{align}
+\text{Exercise} &= U_E \quad U_E \sim \text{Uniform}(0, 1) \label{eq:scm_exercise} \\
+\text{Blood\_Pressure} &= 0.8 - 0.5 \cdot \text{Exercise} + U_{BP} \quad U_{BP} \sim \mathcal{N}(0, 0.1^2) \label{eq:scm_bp} \\
+\text{Cholesterol} &= 0.7 - 0.4 \cdot \text{Exercise} + U_C \quad U_C \sim \mathcal{N}(0, 0.1^2) \label{eq:scm_chol} \\
+\text{CVD} &= \mathbb{I}[0.5 \cdot \text{BP} + 0.4 \cdot \text{Chol} + U_{CVD} > 0.6] \quad U_{CVD} \sim \mathcal{N}(0, 0.1^2) \label{eq:scm_cvd}
+\end{align}
+
+Interpretation:
+\begin{itemize}
+\item Exercise (exogenous, uniformly distributed in population)
+\item Blood pressure decreases with exercise ($-0.5$ coefficient)
+\item Cholesterol decreases with exercise ($-0.4$ coefficient)
+\item CVD occurs when risk score (0.5·BP + 0.4·Chol) exceeds threshold 0.6
+\end{itemize}
+
+\subsubsection{Handling Multiple Candidate SCMs}
+
+If Stage 2 produced multiple candidate DAGs $\{G_1, \ldots, G_K\}$, construct SCMs for each:
+
+\begin{equation}
+\mathcal{M}_k = (G_k, F_k, P(U_k)) \quad \text{for } k = 1, \ldots, K
+\end{equation}
+
+These will be disambiguated via intervention testing (Stages 4-5).
+
+\textbf{Output of Stage 3:} One or more parameterized SCMs $\{\mathcal{M}_1, \ldots, \mathcal{M}_K\}$ ready for intervention validation.
+
+\subsection{Stage 4: LLM-Driven Intervention Design}
+\label{subsec:stage4_intervention}
+
+This stage represents a key innovation: using LLMs to actively design causal experiments (interventions) that disambiguate competing hypotheses.
+
+\subsubsection{Information-Theoretic Motivation}
+
+Given $K$ competing SCMs, we seek an intervention $\dooperator(X=x)$ that maximally reduces uncertainty about which model is correct.
+
+\textbf{Optimal Intervention (Mutual Information):}
+
+\begin{equation}
+X^* = \arg\max_{X} I(G; Y | \dooperator(X)) = \arg\max_X \left[ H(G) - H(G | Y, \dooperator(X)) \right]
+\label{eq:optimal_intervention}
+\end{equation}
+
+where:
+\begin{itemize}
+\item $G \in \{G_1, \ldots, G_K\}$ is a random variable over graph hypotheses
+\item $Y$ is an outcome variable
+\item $I(G; Y | \dooperator(X))$ is mutual information between graph identity and observed outcome under intervention
+\item $H(G)$ is entropy over graphs (uncertainty before intervention)
+\item $H(G | Y, \dooperator(X))$ is conditional entropy (uncertainty after observing intervention outcome)
+\end{itemize}
+
+\textbf{Interpretation:} Choose intervention that causes different SCMs to predict different outcomes, enabling discrimination.
+
+\subsubsection{LLM-Based Intervention Proposal}
+
+Rather than exhaustively evaluating all possible interventions (computationally expensive), we leverage LLM domain knowledge to propose plausible, informative interventions.
+
+\textbf{Prompt Structure:}
+
+\begin{verbatim}
+You are a scientist designing an experiment to test causal
+hypotheses. We have two competing causal models:
+
+Model 1 (Graph G1):
+  Exercise -> Blood_Pressure -> Cardiovascular_Disease
+  Exercise -> Cholesterol -> Cardiovascular_Disease
+
+Model 2 (Graph G2):
+  Exercise -> Cardiovascular_Disease (direct only)
+  Blood_Pressure and Cholesterol are independent effects
+
+Task: Propose an intervention (manipulation of a variable) that
+would yield different predicted outcomes under Model 1 vs Model 2,
+allowing us to distinguish which model is correct.
+
+Format your response as:
+INTERVENTION: do(Variable = value)
+PREDICTED OUTCOME (Model 1): ...
+PREDICTED OUTCOME (Model 2): ...
+RATIONALE: ...
+\end{verbatim}
+
+\textbf{Example LLM Response:}
+
+\begin{verbatim}
+INTERVENTION: do(Blood_Pressure = low)
+  (Administer blood pressure medication to reduce BP to low level,
+   independent of exercise)
+
+PREDICTED OUTCOME (Model 1):
+  Cardiovascular disease risk DECREASES significantly, because
+  lowering BP breaks the causal path BP -> CVD. This effect occurs
+  even if exercise and cholesterol remain unchanged.
+
+PREDICTED OUTCOME (Model 2):
+  Cardiovascular disease risk UNCHANGED or minimal change, because
+  in Model 2, BP does not causally affect CVD (only exercise does
+  directly). Manipulating BP should have no effect on CVD.
+
+RATIONALE:
+  Model 1 posits BP as a mediator on the path from exercise to CVD.
+  Intervening on BP tests this mediation hypothesis. If lowering BP
+  reduces CVD (holding exercise constant), Model 1 is supported.
+  If lowering BP has no effect, Model 2 is supported.
+\end{verbatim}
+
+\subsubsection{Validation of Proposed Interventions}
+
+Before executing, validate that proposed intervention is:
+
+\begin{enumerate}
+\item \textbf{Well-Defined:} Target variable $X$ exists in all candidate models; proposed value $x$ is in variable's domain.
+
+\item \textbf{Informative:} Simulating intervention under each SCM yields distinguishable predictions:
+\begin{equation}
+\left| P_{\mathcal{M}_1}(Y | \dooperator(X=x)) - P_{\mathcal{M}_2}(Y | \dooperator(X=x)) \right| > \epsilon
+\label{eq:intervention_informativeness}
+\end{equation}
+for some threshold $\epsilon > 0$ (e.g., 0.1 for probability differences).
+
+\item \textbf{Feasible (if real experiment):} In text-only setting, feasibility is not constrained. For integration with real experimental platforms (future work), check physical/ethical feasibility.
+\end{enumerate}
+
+\subsubsection{Multiple Interventions for Complex Scenarios}
+
+If $K > 2$ models or models differ on multiple edges, design sequence of interventions:
+
+\begin{algorithm}[ht]
+\caption{Sequential Intervention Design}
+\label{alg:sequential_intervention}
+\begin{algorithmic}[1]
+\Require Set of candidate SCMs $\{\mathcal{M}_1, \ldots, \mathcal{M}_K\}$
+\Ensure Sequence of interventions $\{I_1, I_2, \ldots\}$
+
+\State $\mathcal{M}_{\text{active}} \gets \{\mathcal{M}_1, \ldots, \mathcal{M}_K\}$
+\State $t \gets 1$
+\While{$|\mathcal{M}_{\text{active}}| > 1$ \textbf{and} $t \leq T_{\max}$}
+  \State $I_t \gets \textsc{LLM-ProposeIntervention}(\mathcal{M}_{\text{active}})$
+  \State $\text{predictions} \gets \{\}$
+  \For{$\mathcal{M}_k \in \mathcal{M}_{\text{active}}$}
+    \State $\text{predictions}[k] \gets \textsc{SimulateIntervention}(I_t, \mathcal{M}_k)$
+  \EndFor
+  \State $\text{outcome} \gets \textsc{GetGroundTruth}(I_t)$ \Comment{Empirical or consensus}
+  \State $\mathcal{M}_{\text{active}} \gets \{M_k : |\text{predictions}[k] - \text{outcome}| < \delta\}$ \Comment{Prune inconsistent}
+  \State $t \gets t + 1$
+\EndWhile
+\State \Return $\mathcal{M}_{\text{active}}$ \Comment{Remaining consistent models}
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Termination Conditions:}
+\begin{itemize}
+\item Single model remains: $|\mathcal{M}_{\text{active}}| = 1$ (unique identification)
+\item No further pruning: All remaining models make identical predictions (Markov equivalence)
+\item Max iterations: $t = T_{\max}$ (computational budget exhausted)
+\end{itemize}
+
+\subsection{Stage 5: Intervention-Based Validation and Refinement}
+\label{subsec:stage5_validation}
+
+The final stage executes proposed interventions (via SCM simulation) and prunes inconsistent models.
+
+\subsubsection{SCM Rollout: Simulating Interventions}
+
+Given SCM $\mathcal{M} = (G, F, P(U))$ and intervention $\dooperator(X=x)$:
+
+\begin{algorithm}[ht]
+\caption{SCM Intervention Rollout}
+\label{alg:scm_rollout}
+\begin{algorithmic}[1]
+\Require SCM $\mathcal{M} = (G, F, P(U))$, Intervention $\dooperator(X=x)$, Target $Y$, Samples $N$
+\Ensure Predicted distribution $\hat{P}(Y | \dooperator(X=x))$
+
+\State $\text{outcomes} \gets []$
+\For{$i = 1$ to $N$}
+  \State $\mathbf{u}_i \sim P(U)$ \Comment{Sample exogenous variables}
+  \State $\mathcal{M}' \gets \text{ModifySCM}(\mathcal{M}, X \leftarrow x)$ \Comment{Graph surgery: remove incoming edges to X, set X=x}
+  \State $\mathbf{v}_i \gets \text{ForwardSimulate}(\mathcal{M}', \mathbf{u}_i)$ \Comment{Compute all endogenous variables via topological sort}
+  \State $\text{outcomes}.\text{append}(\mathbf{v}_i[Y])$ \Comment{Record target variable Y}
+\EndFor
+\State \Return $\hat{P}(Y | \dooperator(X=x)) \approx \text{EmpiricalDist}(\text{outcomes})$
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Example Execution (Medical SCM):}
+
+\begin{verbatim}
+Intervention: do(Exercise = 0.8) (high exercise level)
+
+Modified SCM:
+  Exercise = 0.8  (fixed, overriding equation (5.1))
+  Blood_Pressure = 0.8 - 0.5 * 0.8 + U_BP = 0.4 + U_BP
+  Cholesterol = 0.7 - 0.4 * 0.8 + U_C = 0.38 + U_C
+  CVD = I[0.5 * BP + 0.4 * Chol + U_CVD > 0.6]
+
+Simulation (1000 samples):
+  Sample U_BP, U_C, U_CVD ~ N(0, 0.01)
+  Compute BP, Chol, CVD for each sample
+  Aggregate: P(CVD=1 | do(Exercise=0.8)) ≈ 0.15 (15% CVD incidence)
+
+Compare to baseline (no intervention):
+  P(CVD=1) ≈ 0.35 (35% baseline incidence)
+
+Conclusion: High exercise reduces CVD risk by 20 percentage points
+(0.35 - 0.15) in this model.
+\end{verbatim}
+
+\subsubsection{Model Pruning via Prediction Errors}
+
+After simulating intervention under each candidate SCM, compare predictions to ground truth.
+
+\textbf{Ground Truth Sources:}
+\begin{enumerate}
+\item \textbf{Empirical Data (if available):} Real-world intervention studies, RCTs, observational data with interventional interpretation.
+\item \textbf{Consensus Among Models:} If no data, use majority consensus among remaining models as proxy ground truth.
+\item \textbf{LLM Domain Knowledge:} Prompt LLM for expected outcome based on domain expertise (weakest form, used only when alternatives unavailable).
+\end{enumerate}
+
+\textbf{Pruning Rule:}
+
+\begin{equation}
+\text{Prune } \mathcal{M}_k \text{ if } \left| \hat{P}_{\mathcal{M}_k}(Y | \dooperator(X=x)) - P_{\text{truth}}(Y | \dooperator(X=x)) \right| > \delta
+\label{eq:pruning_rule}
+\end{equation}
+
+where $\delta$ is tolerance threshold (e.g., $\delta = 0.15$ for 15 percentage point difference in probabilities).
+
+\textbf{Handling Uncertainty:} If all models deviate from ground truth (possible if ground truth is noisy or models are all wrong), do not prune based on single intervention. Require consistency across multiple interventions before pruning.
+
+\subsubsection{Convergence Analysis}
+
+\textbf{Ideal Case:} Iterative intervention-validation converges to unique true model after $O(\log K)$ interventions (each halves candidate space).
+
+\textbf{Practical Case:} Convergence may halt at Markov equivalence class (multiple models making identical predictions on all interventions).
+
+\begin{definition}[Markov Equivalence]
+Two SCMs $\mathcal{M}_1, \mathcal{M}_2$ are Markov equivalent if they induce the same joint distribution over all variables:
+\begin{equation}
+P_{\mathcal{M}_1}(\mathbf{V}) = P_{\mathcal{M}_2}(\mathbf{V})
+\end{equation}
+and make identical interventional predictions for all interventions:
+\begin{equation}
+P_{\mathcal{M}_1}(Y | \dooperator(X=x)) = P_{\mathcal{M}_2}(Y | \dooperator(X=x)) \quad \forall X, x, Y
+\end{equation}
+\end{definition}
+
+\textbf{Handling Markov Equivalence:} Retain all equivalent models or select representative based on simplicity (Occam's razor: prefer fewer edges, linear over nonlinear).
+
+\textbf{Output of Stage 5:} Pruned set of SCMs $\mathcal{M}_{\text{final}} \subseteq \{\mathcal{M}_1, \ldots, \mathcal{M}_K\}$ consistent with interventional predictions. Ideally $|\mathcal{M}_{\text{final}}| = 1$ (unique model) or Markov equivalence class.
+
+\section{Counterfactual Reasoning with Discovered SCMs}
+\label{sec:counterfactual_reasoning}
+
+Once a validated SCM is obtained, it enables Pearl's three levels of causal inference, including Level 3 counterfactuals.
+
+\subsection{Pearl's Three-Step Procedure}
+\label{subsec:three_step_procedure}
+
+Recall from Chapter 2 that counterfactual inference follows:
+\begin{enumerate}
+\item \textbf{Abduction:} Infer exogenous variables from observations
+\item \textbf{Action:} Apply counterfactual intervention
+\item \textbf{Prediction:} Compute outcome under modified model
+\end{enumerate}
+
+\subsection{Example: Medical Counterfactual}
+\label{subsec:medical_counterfactual}
+
+\textbf{Scenario:} Patient Alice has low exercise level (Exercise=0.2), developed cardiovascular disease (CVD=1). \textit{Would Alice have developed CVD if she had exercised regularly (Exercise=0.8)?}
+
+\textbf{Step 1: Abduction}
+
+Observed: Exercise=0.2, CVD=1
+
+From SCM equations~\eqref{eq:scm_exercise}--\eqref{eq:scm_cvd}, work backwards:
+
+\begin{align}
+U_E &= \text{Exercise} = 0.2 \\
+\text{BP} &= 0.8 - 0.5(0.2) + U_{BP} = 0.7 + U_{BP}
+\end{align}
+
+Suppose we observe BP=0.75, then:
+\begin{equation}
+U_{BP} = 0.75 - 0.7 = 0.05
+\end{equation}
+
+Similarly, if Cholesterol=0.65:
+\begin{equation}
+U_C = 0.65 - (0.7 - 0.4 \times 0.2) = 0.65 - 0.62 = 0.03
+\end{equation}
+
+For CVD, infer $U_{CVD}$ from threshold condition:
+\begin{equation}
+\text{CVD} = \mathbb{I}[0.5 \times 0.75 + 0.4 \times 0.65 + U_{CVD} > 0.6] = 1
+\end{equation}
+\begin{equation}
+0.375 + 0.26 + U_{CVD} > 0.6 \implies U_{CVD} > -0.035
+\end{equation}
+
+Assume $U_{CVD} = 0$ (simplest consistent value).
+
+\textbf{Step 2: Action}
+
+Apply counterfactual intervention: Set Exercise=0.8 (override equation~\eqref{eq:scm_exercise}).
+
+\textbf{Step 3: Prediction}
+
+Compute outcomes under modified model with inferred exogenous values:
+
+\begin{align}
+\text{Exercise}_{\text{CF}} &= 0.8 \\
+\text{BP}_{\text{CF}} &= 0.8 - 0.5(0.8) + 0.05 = 0.45 \\
+\text{Chol}_{\text{CF}} &= 0.7 - 0.4(0.8) + 0.03 = 0.41 \\
+\text{CVD}_{\text{CF}} &= \mathbb{I}[0.5(0.45) + 0.4(0.41) + 0 > 0.6] \\
+&= \mathbb{I}[0.225 + 0.164 > 0.6] = \mathbb{I}[0.389 > 0.6] = 0
+\end{align}
+
+\textbf{Conclusion:} Alice would \textit{not} have developed CVD if she had exercised regularly (counterfactual CVD=0 vs. factual CVD=1). Exercise was a critical contributing factor in her case.
+
+\subsection{Contrast with LLM-Only Counterfactuals}
+\label{subsec:llm_only_counterfactuals}
+
+Without formal SCM grounding, LLMs generate plausible-sounding but unreliable counterfactuals:
+
+\textbf{Prompt to LLM:}
+\begin{verbatim}
+Alice exercised minimally and developed cardiovascular disease.
+What would have happened if she had exercised regularly?
+\end{verbatim}
+
+\textbf{Typical LLM Response (ungrounded):}
+\begin{quote}
+\textit{``If Alice had exercised regularly, she likely would have had lower blood pressure and cholesterol, reducing her risk of cardiovascular disease. However, other factors like genetics and diet also play roles, so we cannot be certain she would have avoided the disease entirely.''}
+\end{quote}
+
+\textbf{Issues:}
+\begin{itemize}
+\item Vague (``likely'', ``reducing risk'') rather than quantitative
+\item No principled inference from specific observations (Alice's BP, cholesterol)
+\item Cannot distinguish between population-level association and individual-level causation
+\item Inconsistent across paraphrases (different runs give different answers)
+\end{itemize}
+
+\textbf{SCM-Grounded Response (ours):}
+\begin{quote}
+\textit{``Based on the learned SCM and Alice's observed exogenous factors (inferred from her BP=0.75, Chol=0.65), if she had exercised at level 0.8, her blood pressure would have been 0.45 and cholesterol 0.41. Her combined risk score (0.389) would have been below the CVD threshold (0.6), so she would not have developed CVD with 95\% confidence (accounting for $U_{CVD}$ uncertainty).''}
+\end{quote}
+
+\textbf{Advantages:}
+\begin{itemize}
+\item Quantitative prediction with uncertainty bounds
+\item Individual-level inference (uses Alice's specific exogenous profile)
+\item Mechanistic reasoning (traces causal paths)
+\item Consistent (deterministic computation from SCM)
+\end{itemize}
+
+\section{Integration with CAF for End-to-End Workflows}
+\label{sec:integration_caf}
+
+Causal discovery and CAF complement each other in end-to-end causal reasoning workflows.
+
+\subsection{Workflow 1: Discovery $\to$ KB Population $\to$ CAF Verification}
+
+\begin{enumerate}
+\item \textbf{Causal Discovery:} Extract causal structures from domain-specific literature (e.g., medical papers on cardiovascular disease)
+\item \textbf{KB Population:} Add discovered causal relations to knowledge base as RDF triples:
+\begin{verbatim}
+<Exercise> <prevents> <Cardiovascular_Disease> .
+<High_Blood_Pressure> <causes> <Cardiovascular_Disease> .
+<Exercise> <decreases> <Blood_Pressure> .
+\end{verbatim}
+\item \textbf{CAF Verification:} Use populated KB to verify new reasoning tasks:
+\begin{verbatim}
+Query: "Does regular exercise reduce heart disease risk?"
+CAF Process:
+  - IL generates: "Exercise prevents cardiovascular disease"
+  - FVL verifies against KB (populated from discovery): Verified
+  - DE validates causal consistency: Accepted
+  - Output: Verified response with high confidence
+\end{verbatim}
+\end{enumerate}
+
+\textbf{Benefit:} Discovery expands KB coverage; CAF leverages expanded KB for better verification.
+
+\subsection{Workflow 2: CAF Query $\to$ Discovery for Missing Knowledge}
+
+\begin{enumerate}
+\item \textbf{CAF Query:} User asks causal question
+\item \textbf{Verification Failure:} FVL reports KB lacks relevant knowledge (many propositions fail verification)
+\item \textbf{Trigger Discovery:} Automatically initiate causal discovery on relevant literature
+\item \textbf{KB Update:} Add discovered relations
+\item \textbf{Retry CAF:} Re-run verification with updated KB
+\end{enumerate}
+
+\textbf{Benefit:} Just-in-time KB expansion addresses knowledge gaps on-demand.
+
+\subsection{Workflow 3: Iterative Refinement via Intervention Testing}
+
+\begin{enumerate}
+\item \textbf{CAF generates reasoning trace} with causal claims
+\item \textbf{Discovery extracts implied causal graph} from trace
+\item \textbf{Intervention testing} validates graph against known experimental results
+\item \textbf{Feedback to CAF:} If interventions fail, inject constraints correcting causal structure
+\item \textbf{CAF regenerates} with corrected causal understanding
+\end{enumerate}
+
+\textbf{Benefit:} Intervention validation provides stronger constraint than KB lookup alone, catching errors in causal direction or mediation.
+
+\section{Summary}
+\label{sec:discovery_summary}
+
+This chapter presented a comprehensive pipeline for causal discovery from unstructured text, making four key contributions:
+
+\begin{itemize}
+\item \textbf{LLM-based variable and relation extraction} with self-consistency filtering, achieving 84\% precision while maintaining 87\% recall (Chapter 7).
+
+\item \textbf{Candidate DAG induction} with cycle resolution strategies (confidence-based, temporal, LLM adjudication) and edge confidence scoring.
+
+\item \textbf{SCM construction with LLM-guided functional form selection}, leveraging domain knowledge to choose appropriate structural equations (linear, threshold, nonlinear).
+
+\item \textbf{LLM-driven intervention design and validation}, transforming LLMs from passive extractors into active experimental designers proposing informative interventions that disambiguate competing hypotheses.
+
+\item \textbf{Counterfactual reasoning} via Pearl's three-step procedure, enabling individual-level causal inference grounded in discovered SCMs.
+\end{itemize}
+
+The integration of discovery with CAF creates a virtuous cycle: discovery expands causal knowledge bases, CAF verifies reasoning over expanded knowledge, and intervention testing from both systems mutually reinforces causal correctness.
+
+Experimental validation of this pipeline, including convergence analysis and ablation studies, is presented in Chapter 7.
+

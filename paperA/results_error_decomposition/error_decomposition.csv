@@ -1,0 +1,5 @@
+method,missing_mean,missing_std,extra_mean,extra_std,n
+correlation_baseline,6.103333,2.781964,8.070000,3.422246,300
+llm_only,1.853333,1.346039,0.933333,0.834000,300
+llm_scm_no_intervention,1.000000,0.930949,0.356667,0.531779,300
+full_pipeline,0.063333,0.243562,0.000000,0.000000,300

@@ -1,0 +1,5 @@
+method,shd_mean,shd_std,intervention_accuracy,counterfactual_consistency
+correlation_baseline,14.766667,6.653737,0.614500,0.610000
+llm_only,2.940000,1.806396,0.873667,0.877500
+llm_scm_no_intervention,1.426667,1.232053,0.932833,0.925667
+full_pipeline,0.103333,0.315154,0.993500,0.993167

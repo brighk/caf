@@ -1,0 +1,163 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Chapter 10: Conclusion and Future Work
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Conclusion}
+\label{ch:conclusion}
+
+\section{Summary of Contributions}
+
+This dissertation has presented the \textbf{Causal Autonomy Framework (CAF)}, a neuro-symbolic architecture that addresses fundamental limitations in large language model reasoning through formal causal grounding. We conclude by summarizing our key contributions, reflecting on their significance, and outlining promising directions for future research.
+
+\subsection{Contribution 1: Formalization of Stochastic Drift}
+
+% TODO: Summarize theoretical contribution
+% - What was formalized
+% - Why it matters
+% - Key results
+
+We formalized the concept of \emph{stochastic drift} in LLM generation, providing a theoretical framework for understanding error accumulation in multi-step reasoning. Our error accumulation model (Chapter~\ref{ch:foundations}) demonstrates that...
+
+\subsection{Contribution 2: Causal Autonomy Framework Architecture}
+
+% TODO: Summarize CAF architecture
+% - Three-layer design
+% - Key innovations
+% - Why it works
+
+We designed and implemented CAF, a three-layer architecture that combines stochastic LLM generation with deterministic causal verification. The framework achieves...
+
+\subsection{Contribution 3: Causal Discovery and Intervention Pipeline}
+
+% TODO: Summarize causal discovery contribution
+% - Text-to-graph extraction
+% - Intervention consistency
+% - Hybrid approach benefits
+
+We developed a novel pipeline for extracting causal graphs from text and validating them through intervention consistency checks...
+
+\subsection{Contribution 4: Comprehensive Experimental Validation}
+
+% TODO: Summarize experimental results
+% - Key metrics and improvements
+% - Comparison to baselines
+% - What was learned
+
+Our experimental evaluation on CLadder and other benchmarks demonstrated that CAF substantially improves LLM reliability, achieving...
+
+\section{Revisiting the Research Question}
+
+% TODO: Return to RQ from Chapter 1
+% - Restate the research question
+% - How did we answer it?
+% - What did we learn?
+
+We began this dissertation with the research question:
+
+\begin{quote}
+\emph{Can formal causal grounding, implemented through iterative verification against structured knowledge bases, substantially improve the reliability of LLM reasoning on causal tasks while maintaining practical deployability?}
+\end{quote}
+
+Our answer is a qualified \textbf{yes}. We have shown that...
+
+\section{Key Insights}
+
+\subsection{Insight 1: Formal Verification is Necessary but Not Sufficient}
+
+% TODO: Discuss insight
+
+\subsection{Insight 2: Intervention Feedback Drives Learning}
+
+% TODO: Discuss insight
+
+\subsection{Insight 3: Hybrid Approaches Unlock New Capabilities}
+
+% TODO: Discuss insight
+
+\subsection{Insight 4: Practical Deployment is Feasible}
+
+% TODO: Discuss insight
+
+\section{Future Work}
+
+\subsection{Near-Term Extensions}
+
+\subsubsection{Extension to Other Reasoning Tasks}
+
+% TODO: How can CAF be extended to other domains?
+% - Temporal reasoning
+% - Mathematical reasoning
+% - Multi-modal reasoning
+
+\subsubsection{Improved Knowledge Base Integration}
+
+% TODO: Future KB work
+% - Dynamic KB updating
+% - Multi-source KB fusion
+% - Uncertainty quantification
+
+\subsubsection{Scalability Optimizations}
+
+% TODO: Scalability improvements
+% - Parallel verification
+% - Caching strategies
+% - Approximate methods
+
+\subsection{Medium-Term Research Directions}
+
+\subsubsection{Learning from Verification Feedback}
+
+% TODO: Can we fine-tune LLMs using verification signals?
+% - Reinforcement learning from formal feedback
+% - Iterative improvement of base models
+% - Transfer learning across domains
+
+\subsubsection{Automated Knowledge Base Construction}
+
+% TODO: Automated KB building
+% - Text-to-KB pipelines
+% - Active learning for KB completion
+% - Quality assurance
+
+\subsubsection{Theoretical Foundations}
+
+% TODO: Deeper theory needed
+% - Formal guarantees on convergence
+% - Sample complexity analysis
+% - Generalization bounds
+
+\subsection{Long-Term Vision}
+
+\subsubsection{Toward Trustworthy AI Systems}
+
+% TODO: Broader vision for trustworthy AI
+% - Role of formal methods in AI safety
+% - Verification as a foundation for reliability
+% - Human-AI collaboration
+
+\subsubsection{Integration with Cognitive Architectures}
+
+% TODO: Cognitive architecture integration
+% - CAF as a component in larger systems
+% - Multi-agent architectures
+% - Continual learning
+
+\subsubsection{Foundation Models with Built-In Verification}
+
+% TODO: Future of LLMs
+% - Can verification be internalized?
+% - Architecture co-design
+% - End-to-end differentiable verification
+
+\section{Closing Remarks}
+
+% TODO: Final thoughts
+% - Significance of this work
+% - Broader context
+% - Hope for future
+
+Large language models have demonstrated remarkable capabilities, but their reliability remains a critical barrier to deployment in high-stakes applications. This dissertation has shown that formal causal grounding, implemented through the Causal Autonomy Framework, can substantially improve LLM reliability on causal reasoning tasks.
+
+Our work represents a step toward \emph{trustworthy AI systems} that combine the flexibility of neural learning with the rigor of formal verification. While challenges remain, we believe that neuro-symbolic approaches like CAF offer a promising path forward for building AI systems that are not only powerful but also reliable, transparent, and aligned with human values.
+
+The journey toward truly autonomous and trustworthy AI systems is far from complete, but by grounding stochastic generation in formal causal structures, we move closer to that goal.

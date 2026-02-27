@@ -1,0 +1,2 @@
+domain,shd_mean,shd_std,intervention_accuracy,counterfactual_consistency,n
+general,1.000000,0.000000,0.549887,0.550639,1331

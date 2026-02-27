@@ -1,0 +1,1004 @@
+[
+  {
+    "question_id": "0",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "expected_answer": "no",
+    "caf_answer": "no",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 1,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Task:\nWe know that",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'no'\", 'Based on: do(Ziklo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=[], duration_ms=1760.8022689819336)"
+      ],
+      "iteration_count": 1,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "200",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "expected_answer": "no",
+    "caf_answer": "no",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 1,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"No, Z",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, Z', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='counterfactual_effect', obj='zlim', confidence=1.0, source_span='Would Zlim occur if not Glent instead of Glent?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'no'\", 'Based on: do(Glent=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=[], duration_ms=1344.0747261047363)"
+      ],
+      "iteration_count": 1,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "400",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "expected_answer": "no",
+    "caf_answer": "no",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 1,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Task:\nWe know that",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'no'\", 'Based on: do(Praf=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=[], duration_ms=1334.7828388214111)"
+      ],
+      "iteration_count": 1,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "600",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "expected_answer": "no",
+    "caf_answer": "no",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 1,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Task:\nWe know that",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'no'\", 'Based on: do(Fizo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=[], duration_ms=1346.876621246338)"
+      ],
+      "iteration_count": 1,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "800",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "expected_answer": "no",
+    "caf_answer": "no",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 1,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Task:\nWe know that",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'no'\", 'Based on: do(Nuv=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=[], duration_ms=1364.0532493591309)"
+      ],
+      "iteration_count": 1,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "1",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 3,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, L",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, L', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Ziklo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1338.8187885284424)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Lum', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.PARTIAL: 'partial'>, kb_support=False, contradiction_found=False, supporting_facts=[], contradicting_facts=[], confidence_score=0.5)], overall_score=0.5, injected_constraints=['AVOID: ziklo counterfactual_effect lumbo contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1980.4730415344238)",
+        "IterationLog(iteration=3, draft_response='Example: \"Yes, L', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Ziklo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['Strengthen evidence for: (ziklo, counterfactual_effect, lumbo)'], duration_ms=1698.6448764801025)"
+      ],
+      "iteration_count": 3,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "201",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example:\n\"Yes,",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, Z', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='counterfactual_effect', obj='zlim', confidence=1.0, source_span='Would Zlim occur if not Glent instead of Glent?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Glent=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1357.5291633605957)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Yes,', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='counterfactual_effect', obj='zlim', confidence=1.0, source_span='Would Zlim occur if not Glent instead of Glent?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Glent=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: glent counterfactual_effect zlim contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1972.3443984985352)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "401",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 3,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, Kle",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Praf=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1416.3155555725098)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.PARTIAL: 'partial'>, kb_support=False, contradiction_found=False, supporting_facts=[], contradicting_facts=[], confidence_score=0.5)], overall_score=0.5, injected_constraints=['AVOID: praf counterfactual_effect klep contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=2017.6103115081787)",
+        "IterationLog(iteration=3, draft_response='Example: \"Yes, Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Praf=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['Strengthen evidence for: (praf, counterfactual_effect, klep)'], duration_ms=1711.6427421569824)"
+      ],
+      "iteration_count": 3,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "601",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example:\n\"Yes,",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Fizo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1359.386682510376)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Yes,', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='fizo', predicate='counterfactual_effect', obj='jext', confidence=1.0, source_span='Would Jext occur if not Fizo instead of Fizo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Fizo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1957.653522491455)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "801",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, W",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Nuv=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1345.747470855713)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, W', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='nuv', predicate='counterfactual_effect', obj='wrox', confidence=1.0, source_span='Would Wrox occur if not Nuv instead of Nuv?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Nuv=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1956.967830657959)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "2",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 3,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, L",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, L', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Ziklo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1347.3389148712158)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Lum', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.PARTIAL: 'partial'>, kb_support=False, contradiction_found=False, supporting_facts=[], contradicting_facts=[], confidence_score=0.5)], overall_score=0.5, injected_constraints=['AVOID: ziklo counterfactual_effect lumbo contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1976.8552780151367)",
+        "IterationLog(iteration=3, draft_response='Example: \"Yes, L', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Ziklo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['Strengthen evidence for: (ziklo, counterfactual_effect, lumbo)'], duration_ms=1701.4784812927246)"
+      ],
+      "iteration_count": 3,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "202",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example:\n\"Yes,",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, Z', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='counterfactual_effect', obj='zlim', confidence=1.0, source_span='Would Zlim occur if not Glent instead of Glent?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Glent=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1354.3744087219238)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Yes,', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='counterfactual_effect', obj='zlim', confidence=1.0, source_span='Would Zlim occur if not Glent instead of Glent?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Glent=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: glent counterfactual_effect zlim contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1974.9062061309814)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "402",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 3,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, Kle",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Praf=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1368.4260845184326)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.PARTIAL: 'partial'>, kb_support=False, contradiction_found=False, supporting_facts=[], contradicting_facts=[], confidence_score=0.5)], overall_score=0.5, injected_constraints=['AVOID: praf counterfactual_effect klep contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1965.6078815460205)",
+        "IterationLog(iteration=3, draft_response='Example: \"Yes, Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Praf=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['Strengthen evidence for: (praf, counterfactual_effect, klep)'], duration_ms=1692.9020881652832)"
+      ],
+      "iteration_count": 3,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "602",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example:\n\"Yes,",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, J', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='fizo', predicate='counterfactual_effect', obj='jext', confidence=1.0, source_span='Would Jext occur if not Fizo instead of Fizo?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Fizo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1359.208106994629)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Yes,', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='fizo', predicate='counterfactual_effect', obj='jext', confidence=1.0, source_span='Would Jext occur if not Fizo instead of Fizo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Fizo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: fizo counterfactual_effect jext contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1966.7668342590332)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "802",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 3,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, W",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, W', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='nuv', predicate='counterfactual_effect', obj='wrox', confidence=1.0, source_span='Would Wrox occur if not Nuv instead of Nuv?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Nuv=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1348.1781482696533)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Would', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='nuv', predicate='counterfactual_effect', obj='wrox', confidence=1.0, source_span='Would Wrox occur if not Nuv instead of Nuv?'), status=<VerificationStatus.PARTIAL: 'partial'>, kb_support=False, contradiction_found=False, supporting_facts=[], contradicting_facts=[], confidence_score=0.5)], overall_score=0.5, injected_constraints=['AVOID: nuv counterfactual_effect wrox contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1965.4476642608643)",
+        "IterationLog(iteration=3, draft_response='Example: \"Yes, W', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='nuv', predicate='counterfactual_effect', obj='wrox', confidence=1.0, source_span='Would Wrox occur if not Nuv instead of Nuv?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Nuv=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['Strengthen evidence for: (nuv, counterfactual_effect, wrox)'], duration_ms=1699.9554634094238)"
+      ],
+      "iteration_count": 3,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "3",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 3,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, L",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, L', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Ziklo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1343.7037467956543)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Lum', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.PARTIAL: 'partial'>, kb_support=False, contradiction_found=False, supporting_facts=[], contradicting_facts=[], confidence_score=0.5)], overall_score=0.5, injected_constraints=['AVOID: ziklo counterfactual_effect lumbo contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1986.9050979614258)",
+        "IterationLog(iteration=3, draft_response='Example: \"Yes, L', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Ziklo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['Strengthen evidence for: (ziklo, counterfactual_effect, lumbo)'], duration_ms=1688.7001991271973)"
+      ],
+      "iteration_count": 3,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "203",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 1,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, Z",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"Yes, Z', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='counterfactual_effect', obj='zlim', confidence=1.0, source_span='Would Zlim occur if not Glent instead of Glent?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Glent=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=[], duration_ms=1343.6856269836426)"
+      ],
+      "iteration_count": 1,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "403",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 3,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, Kle",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Praf=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1346.6331958770752)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.PARTIAL: 'partial'>, kb_support=False, contradiction_found=False, supporting_facts=[], contradicting_facts=[], confidence_score=0.5)], overall_score=0.5, injected_constraints=['AVOID: praf counterfactual_effect klep contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1964.3771648406982)",
+        "IterationLog(iteration=3, draft_response='Example: \"Yes, Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Praf=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['Strengthen evidence for: (praf, counterfactual_effect, klep)'], duration_ms=1713.4978771209717)"
+      ],
+      "iteration_count": 3,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "603",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 1,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, J",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"Yes, J', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='fizo', predicate='counterfactual_effect', obj='jext', confidence=1.0, source_span='Would Jext occur if not Fizo instead of Fizo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Fizo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=[], duration_ms=1346.843957901001)"
+      ],
+      "iteration_count": 1,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "803",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, W",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"Wrox', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='nuv', predicate='counterfactual_effect', obj='wrox', confidence=1.0, source_span='Would Wrox occur if not Nuv instead of Nuv?'), status=<VerificationStatus.PARTIAL: 'partial'>, kb_support=False, contradiction_found=False, supporting_facts=[], contradicting_facts=[], confidence_score=0.5)], overall_score=0.5, injected_constraints=[], duration_ms=1344.7842597961426)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, W', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='nuv', predicate='counterfactual_effect', obj='wrox', confidence=1.0, source_span='Would Wrox occur if not Nuv instead of Nuv?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Nuv=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['Strengthen evidence for: (nuv, counterfactual_effect, wrox)'], duration_ms=1682.7642917633057)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "4",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, L",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Ziklo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1352.0479202270508)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, L', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Ziklo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1977.565050125122)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "204",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example:\n\"Yes,",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Glent=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1342.404842376709)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Yes,', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='counterfactual_effect', obj='zlim', confidence=1.0, source_span='Would Zlim occur if not Glent instead of Glent?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Glent=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1968.1403636932373)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "404",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, Kle",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Praf=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1355.997085571289)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Praf=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1965.0547504425049)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "604",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, J",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Fizo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1337.5475406646729)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, J', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='fizo', predicate='counterfactual_effect', obj='jext', confidence=1.0, source_span='Would Jext occur if not Fizo instead of Fizo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Fizo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1953.6824226379395)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "804",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, W",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Nuv=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1349.4668006896973)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, W', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='nuv', predicate='counterfactual_effect', obj='wrox', confidence=1.0, source_span='Would Wrox occur if not Nuv instead of Nuv?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Nuv=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1975.2461910247803)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "5",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example:\n\"Yes,",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Ziklo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1351.952075958252)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Yes,', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Ziklo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1958.540916442871)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "205",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example:\n\"Yes,",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Glent=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1364.0551567077637)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Yes,', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='counterfactual_effect', obj='zlim', confidence=1.0, source_span='Would Zlim occur if not Glent instead of Glent?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Glent=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1957.9439163208008)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "405",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example:\n\"Yes,",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Praf=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1337.2068405151367)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Yes,', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Praf=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1965.9690856933594)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "605",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example:\n\"Yes,",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Fizo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1361.992359161377)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Yes,', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='fizo', predicate='counterfactual_effect', obj='jext', confidence=1.0, source_span='Would Jext occur if not Fizo instead of Fizo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Fizo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1969.766616821289)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "805",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 3,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, W",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Nuv=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1357.3174476623535)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Would', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='nuv', predicate='counterfactual_effect', obj='wrox', confidence=1.0, source_span='Would Wrox occur if not Nuv instead of Nuv?'), status=<VerificationStatus.PARTIAL: 'partial'>, kb_support=False, contradiction_found=False, supporting_facts=[], contradicting_facts=[], confidence_score=0.5)], overall_score=0.5, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1967.6399230957031)",
+        "IterationLog(iteration=3, draft_response='Example: \"Yes, W', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='nuv', predicate='counterfactual_effect', obj='wrox', confidence=1.0, source_span='Would Wrox occur if not Nuv instead of Nuv?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Nuv=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['Strengthen evidence for: (nuv, counterfactual_effect, wrox)'], duration_ms=1691.4479732513428)"
+      ],
+      "iteration_count": 3,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "6",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, L",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Ziklo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1345.163345336914)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, L', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Ziklo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1958.8477611541748)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "206",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, Z",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Glent=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1347.782850265503)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, Z', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='counterfactual_effect', obj='zlim', confidence=1.0, source_span='Would Zlim occur if not Glent instead of Glent?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Glent=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1967.1995639801025)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "406",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, Kle",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Praf=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1345.2136516571045)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Praf=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1959.562063217163)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "606",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, J",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Fizo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1364.0975952148438)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, J', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='fizo', predicate='counterfactual_effect', obj='jext', confidence=1.0, source_span='Would Jext occur if not Fizo instead of Fizo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Fizo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1973.2983112335205)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "806",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, W",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Nuv=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1349.4417667388916)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, W', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='nuv', predicate='counterfactual_effect', obj='wrox', confidence=1.0, source_span='Would Wrox occur if not Nuv instead of Nuv?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Nuv=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1982.703447341919)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "7",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 3,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, L",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, L', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Ziklo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1373.0087280273438)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Lum', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.PARTIAL: 'partial'>, kb_support=False, contradiction_found=False, supporting_facts=[], contradicting_facts=[], confidence_score=0.5)], overall_score=0.5, injected_constraints=['AVOID: ziklo counterfactual_effect lumbo contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1962.0416164398193)",
+        "IterationLog(iteration=3, draft_response='Example: \"Yes, L', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Ziklo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['Strengthen evidence for: (ziklo, counterfactual_effect, lumbo)'], duration_ms=1700.5112171173096)"
+      ],
+      "iteration_count": 3,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "207",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example:\n\"Yes,",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, Z', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='counterfactual_effect', obj='zlim', confidence=1.0, source_span='Would Zlim occur if not Glent instead of Glent?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Glent=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1356.2352657318115)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Yes,', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='counterfactual_effect', obj='zlim', confidence=1.0, source_span='Would Zlim occur if not Glent instead of Glent?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Glent=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: glent counterfactual_effect zlim contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1966.0429954528809)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "407",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, Kle",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Praf=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1366.4603233337402)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Praf=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1960.9367847442627)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "607",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example:\n\"Yes,",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, J', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='fizo', predicate='counterfactual_effect', obj='jext', confidence=1.0, source_span='Would Jext occur if not Fizo instead of Fizo?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Fizo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1345.656156539917)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Yes,', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='fizo', predicate='counterfactual_effect', obj='jext', confidence=1.0, source_span='Would Jext occur if not Fizo instead of Fizo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Fizo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: fizo counterfactual_effect jext contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1968.3058261871338)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "807",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, W",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Nuv=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1348.7005233764648)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, W', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='nuv', predicate='counterfactual_effect', obj='wrox', confidence=1.0, source_span='Would Wrox occur if not Nuv instead of Nuv?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Nuv=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1945.0407028198242)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "8",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 3,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, L",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, L', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Ziklo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1353.7988662719727)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Lum', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.PARTIAL: 'partial'>, kb_support=False, contradiction_found=False, supporting_facts=[], contradicting_facts=[], confidence_score=0.5)], overall_score=0.5, injected_constraints=['AVOID: ziklo counterfactual_effect lumbo contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1969.8984622955322)",
+        "IterationLog(iteration=3, draft_response='Example: \"Yes, L', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Ziklo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['Strengthen evidence for: (ziklo, counterfactual_effect, lumbo)'], duration_ms=1698.1136798858643)"
+      ],
+      "iteration_count": 3,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "208",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 1,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, Z",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"Yes, Z', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='counterfactual_effect', obj='zlim', confidence=1.0, source_span='Would Zlim occur if not Glent instead of Glent?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Glent=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=[], duration_ms=1364.5520210266113)"
+      ],
+      "iteration_count": 1,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "408",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "expected_answer": "no",
+    "caf_answer": "no",
+    "caf_decision": "reject",
+    "caf_score": 0.0,
+    "iterations": 3,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"No, Kle",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"No, Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Praf=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1370.9204196929932)",
+        "IterationLog(iteration=2, draft_response='Example: \"No, Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Praf=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=['AVOID: praf counterfactual_effect klep contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1970.6509113311768)",
+        "IterationLog(iteration=3, draft_response='Example: \"No, Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Praf=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=['AVOID: praf counterfactual_effect klep contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1962.5492095947266)"
+      ],
+      "iteration_count": 3,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "608",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 1,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, J",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"Yes, J', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='fizo', predicate='counterfactual_effect', obj='jext', confidence=1.0, source_span='Would Jext occur if not Fizo instead of Fizo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Fizo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=[], duration_ms=1359.7259521484375)"
+      ],
+      "iteration_count": 1,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "808",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "expected_answer": "no",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, W",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Example: \"Wrox', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='nuv', predicate='counterfactual_effect', obj='wrox', confidence=1.0, source_span='Would Wrox occur if not Nuv instead of Nuv?'), status=<VerificationStatus.PARTIAL: 'partial'>, kb_support=False, contradiction_found=False, supporting_facts=[], contradicting_facts=[], confidence_score=0.5)], overall_score=0.5, injected_constraints=[], duration_ms=1346.0731506347656)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, W', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='nuv', predicate='counterfactual_effect', obj='wrox', confidence=1.0, source_span='Would Wrox occur if not Nuv instead of Nuv?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Nuv=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['Strengthen evidence for: (nuv, counterfactual_effect, wrox)'], duration_ms=1693.744421005249)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "9",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example:\n\"Yes,",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Ziklo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1368.6578273773193)",
+        "IterationLog(iteration=2, draft_response='Example:\\n\"Yes,', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Ziklo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1968.548059463501)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "209",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, Z",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Glent=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1361.476182937622)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, Z', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='counterfactual_effect', obj='zlim', confidence=1.0, source_span='Would Zlim occur if not Glent instead of Glent?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Glent=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1982.3224544525146)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "409",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, Kle",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Praf=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1348.8197326660156)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, Kle', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='praf', predicate='counterfactual_effect', obj='klep', confidence=1.0, source_span='Would Klep occur if not Praf instead of Praf?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Praf=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1954.714298248291)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "609",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, J",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Fizo=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1361.9236946105957)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, J', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='fizo', predicate='counterfactual_effect', obj='jext', confidence=1.0, source_span='Would Jext occur if not Fizo instead of Fizo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Fizo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1975.7745265960693)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "809",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "expected_answer": "yes",
+    "caf_answer": "yes",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 2,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "Example: \"Yes, W",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='Task:\\nWe know that', extracted_triplets=[RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='we', predicate='know', obj='that', confidence=0.8, source_span='Task:\\nWe know that'), status=<VerificationStatus.CONTRADICTION: 'contradiction'>, kb_support=False, contradiction_found=True, supporting_facts=[], contradicting_facts=[\"Intervention calculus expects 'yes' but response implies 'no'\", 'Based on: do(Nuv=False)'], confidence_score=0.0)], overall_score=0.0, injected_constraints=[], duration_ms=1361.912488937378)",
+        "IterationLog(iteration=2, draft_response='Example: \"Yes, W', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='nuv', predicate='counterfactual_effect', obj='wrox', confidence=1.0, source_span='Would Wrox occur if not Nuv instead of Nuv?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'yes'\", 'Based on: do(Nuv=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=['AVOID: we know that contradicts known facts', 'Output ONLY one word: yes', 'Do not add explanations, dialogue, or extra text.'], duration_ms=1954.6232223510742)"
+      ],
+      "iteration_count": 2,
+      "used_intervention": true
+    }
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "total_examples": 3,
+  "correct": 0,
+  "accuracy": 0.0,
+  "by_type": {
+    "basic": {
+      "total": 3,
+      "correct": 0,
+      "accuracy": 0.0
+    }
+  },
+  "by_decision": {
+    "ERROR": {
+      "total": 3,
+      "correct": 0
+    }
+  },
+  "answer_distribution": {
+    "Unknown": 3
+  },
+  "avg_iterations": 0.0,
+  "avg_score": 0.0,
+  "configuration": {
+    "use_llm": false,
+    "use_sparql": false
+  }
+}

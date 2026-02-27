@@ -1,0 +1,25 @@
+{
+  "domains": {
+    "medical": {
+      "SHD_mean": 2.6666666666666665,
+      "SHD_std": 0.4714045207910317,
+      "Intervention_Accuracy": 0.43333333333333335,
+      "Counterfactual_Consistency": 0.4833333333333334,
+      "n": 3
+    },
+    "economics": {
+      "SHD_mean": 2.3333333333333335,
+      "SHD_std": 0.4714045207910317,
+      "Intervention_Accuracy": 0.85,
+      "Counterfactual_Consistency": 0.8166666666666668,
+      "n": 3
+    },
+    "policy": {
+      "SHD_mean": 2.0,
+      "SHD_std": 0.0,
+      "Intervention_Accuracy": 0.85,
+      "Counterfactual_Consistency": 0.7999999999999999,
+      "n": 3
+    }
+  }
+}

@@ -1,0 +1,204 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    SCIAMA GPU QUICK REFERENCE CHEATSHEET                   ║
+║                         (Extracted from Official Docs)                     ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+HARDWARE QUICK FACTS
+════════════════════════════════════════════════════════════════════════════
+  Nodes:           gpu01, gpu02
+  GPUs/Node:       2x 40GB (80GB total per node)
+  CPU Cores/Node:  128
+  Partition:       gpu.q
+  Max Concurrent:  4 jobs (1 per GPU, 2 GPUs)
+  Exclusivity:     1 job per GPU only
+
+THE THREE KEY FLAGS FOR GPU JOBS
+════════════════════════════════════════════════════════════════════════════
+  1. --partition=gpu.q      (REQUIRED: specifies GPU queue)
+  2. --gres=gpu             (REQUIRED: requests GPU resource)
+  3. --mem=<amount>         (RECOMMENDED: specify memory)
+
+ONE-LINER: GET INTERACTIVE GPU SESSION
+════════════════════════════════════════════════════════════════════════════
+  srun --pty --mem=1g --gres=gpu:1 -J interactive -p gpu.q /bin/bash
+
+MINIMAL GPU BATCH SCRIPT
+════════════════════════════════════════════════════════════════════════════
+  #!/bin/bash
+  #SBATCH --partition=gpu.q
+  #SBATCH --gres=gpu
+  
+  python your_script.py
+
+COMPLETE GPU BATCH SCRIPT TEMPLATE
+════════════════════════════════════════════════════════════════════════════
+  #!/bin/bash
+  #SBATCH --job-name=gpu_job
+  #SBATCH --partition=gpu.q
+  #SBATCH --gres=gpu:1
+  #SBATCH --mem=16G
+  #SBATCH --ntasks=1
+  #SBATCH --cpus-per-task=4
+  #SBATCH --time=02:00:00
+  #SBATCH --output=%j.log
+  
+  module purge
+  cd $SLURM_SUBMIT_DIR
+  python train.py
+
+SBATCH DIRECTIVES REFERENCE TABLE
+════════════════════════════════════════════════════════════════════════════
+  Directive                  Example              Purpose
+  ─────────────────────────────────────────────────────────────────────────
+  --partition                gpu.q                GPU queue (REQUIRED)
+  --gres                     gpu:1                GPU request (REQUIRED)
+  --mem                      16G                  Memory allocation
+  --ntasks                   1                    Number of tasks
+  --cpus-per-task            4                    CPUs per task
+  --time                     02:00:00             Wall-clock time (HH:MM:SS)
+  --job-name                 my_job               Job identifier
+  --output                   %j.log               Output filename
+  --error                    %j.err               Error filename
+  --nodes                    1                    Number of nodes
+
+JOB SUBMISSION & MANAGEMENT
+════════════════════════════════════════════════════════════════════════════
+  sbatch job.sbatch          Submit job
+  squeue -u $USER            List your jobs
+  squeue -j <id>             Check specific job
+  scancel <id>               Cancel job
+  sinfo -p gpu.q             Check partition status
+  sinfo -p gpu.q -N          Show GPU nodes
+
+GPU VERIFICATION COMMANDS
+════════════════════════════════════════════════════════════════════════════
+  nvidia-smi                 Check GPU status
+  nvidia-smi -l 1            Continuous monitoring (1s refresh)
+  echo $CUDA_VISIBLE_DEVICES Show assigned GPUs
+  nvidia-smi --query-gpu=name,memory.total --format=csv
+                             Show GPU memory
+
+MODULE MANAGEMENT
+════════════════════════════════════════════════════════════════════════════
+  module purge               Clear all modules (start of job scripts)
+  module load system/intel64 Load system module
+  module load <name>         Load specific module
+  module avail | grep cuda   List CUDA modules
+  module avail | grep gpu    List GPU modules
+
+GRES SPECIFICATIONS
+════════════════════════════════════════════════════════════════════════════
+  --gres=gpu       Request 1 GPU (default)
+  --gres=gpu:1     Request 1 GPU (explicit)
+  --gres=gpu:2     Request 2 GPUs
+  --gres=gpu:4     Request 4 GPUs (all from node)
+
+NVIDIA MIG PROFILES (Advanced Resource Partitioning)
+════════════════════════════════════════════════════════════════════════════
+  Profile      Memory  Compute Units  Use Case
+  ─────────────────────────────────────────────────────────────────────────
+  1g.5gb       5GB     1              Light workloads, testing (x8 per GPU)
+  1g.10gb      10GB    1              Medium workloads
+  2g.20gb      20GB    2              Moderate compute
+  3g.20g       20GB    3              Higher compute
+  4g.20g       20GB    4              Maximum compute
+
+PYTORCH GPU JOB EXAMPLE
+════════════════════════════════════════════════════════════════════════════
+  #!/bin/bash
+  #SBATCH --job-name=pytorch_gpu
+  #SBATCH --partition=gpu.q
+  #SBATCH --gres=gpu:1
+  #SBATCH --mem=20G
+  #SBATCH --time=01:00:00
+  
+  module purge
+  # module load pytorch
+  
+  python -c "
+  import torch
+  print(f'CUDA Available: {torch.cuda.is_available()}')
+  print(f'GPU Count: {torch.cuda.device_count()}')
+  print(f'GPU 0: {torch.cuda.get_device_name(0)}')
+  "
+
+TENSORFLOW GPU JOB EXAMPLE
+════════════════════════════════════════════════════════════════════════════
+  #!/bin/bash
+  #SBATCH --job-name=tf_gpu
+  #SBATCH --partition=gpu.q
+  #SBATCH --gres=gpu:1
+  #SBATCH --mem=20G
+  #SBATCH --time=01:00:00
+  
+  module purge
+  # module load tensorflow
+  
+  python -c "
+  import tensorflow as tf
+  gpus = tf.config.list_physical_devices('GPU')
+  print(f'GPUs found: {len(gpus)}')
+  for gpu in gpus:
+    print(f'  {gpu}')
+  "
+
+ENVIRONMENT VARIABLES
+════════════════════════════════════════════════════════════════════════════
+  $SLURM_SUBMIT_DIR          Submission directory
+  $SLURM_JOB_ID              Job ID
+  $CUDA_VISIBLE_DEVICES      Assigned GPU IDs
+  %j                         Job ID (in filenames)
+  %N                         Node name (in filenames)
+
+TROUBLESHOOTING
+════════════════════════════════════════════════════════════════════════════
+  Problem: GPU not found
+    → Check: echo $CUDA_VISIBLE_DEVICES
+    → Add: --partition=gpu.q and --gres=gpu to script
+  
+  Problem: Job queued but not running
+    → Check: sinfo -p gpu.q (are GPUs available?)
+    → Check: squeue | grep gpu (how many jobs running?)
+  
+  Problem: Module not found
+    → Run: module avail to list available modules
+    → Check correct module name before loading
+  
+  Problem: Out of memory
+    → Increase: --mem=<larger_amount>
+    → Profile GPU memory with: nvidia-smi
+
+COMMON MISTAKES TO AVOID
+════════════════════════════════════════════════════════════════════════════
+  ✗ Forgetting --partition=gpu.q        (Won't use GPUs)
+  ✗ Forgetting --gres=gpu                (No GPU allocated)
+  ✗ Using wrong partition name           (gpu.q not gpuq or gpu_q)
+  ✗ Not clearing modules (module purge)  (Version conflicts)
+  ✗ Requesting too many GPUs             (Only 4 max available)
+  ✗ Setting time limit too low           (Job gets killed)
+  ✗ Not checking GPU availability        (Unexpected queue delays)
+
+BEST PRACTICES CHECKLIST
+════════════════════════════════════════════════════════════════════════════
+  ✓ Always start with: module purge
+  ✓ Include both: --partition=gpu.q and --gres=gpu
+  ✓ Test with: nvidia-smi in your script
+  ✓ Log outputs: redirect stdout/stderr
+  ✓ Monitor memory: use nvidia-smi -l 1 while running
+  ✓ Clean up after: ensure scripts exit cleanly
+  ✓ Use meaningful job names: helps with tracking
+  ✓ Set realistic time limits: prevents queue blocking
+  ✓ Start small: test with 1 GPU before scaling
+
+USEFUL LINKS
+════════════════════════════════════════════════════════════════════════════
+  SCIAMA Home:       https://sciama.icg.port.ac.uk/sciama-wp/
+  MIG Guide:         https://docs.nvidia.com/datacenter/tesla/mig-user-guide/
+  SLURM Docs:        https://slurm.schedmd.com/
+  NVIDIA CUDA:       https://docs.nvidia.com/cuda/
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║  For complete documentation, see:                                          ║
+║  - /deployment/sciama/Using GPUs on SCIAMA – SCIAMA.html                   ║
+║  - /deployment/sciama/Submitting Jobs – SCIAMA.html                        ║
+╚════════════════════════════════════════════════════════════════════════════╝

@@ -30,6 +30,7 @@ Output: Verified Response Y* or FAIL
 12: return DE.adjudicate(Y_T, results)      // Final decision
 """
 
+import re
 import time
 import random
 from dataclasses import dataclass, field
@@ -407,6 +408,20 @@ class CAFLoop:
                     f"AVOID: {result.triplet.subject} {result.triplet.predicate} "
                     f"{result.triplet.obj} contradicts known facts"
                 )
+                # If verification provides a canonical expected answer, force a short correction.
+                expected = None
+                for fact in result.contradicting_facts:
+                    match = re.search(r"expects '([^']+)'", fact)
+                    if match:
+                        expected = match.group(1).strip().lower()
+                        break
+                if expected in {"yes", "no"}:
+                    constraints.append(
+                        f"Output ONLY one word: {expected}"
+                    )
+                    constraints.append(
+                        "Do not add explanations, dialogue, or extra text."
+                    )
             elif result.status == VerificationStatus.PARTIAL:
                 constraints.append(
                     f"Strengthen evidence for: {result.triplet}"

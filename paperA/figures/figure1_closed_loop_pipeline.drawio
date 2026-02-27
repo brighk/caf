@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net" modified="2026-02-24T12:00:00.000Z" agent="5.0" version="24.7.17" type="device">
+  <diagram id="fig1" name="Figure 1 - Closed Loop Pipeline">
+    <mxGraphModel dx="1320" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="Closed-Loop Causal Discovery Pipeline" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=24;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="437" y="40" width="780" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="s1" value="1. Causal Variable &amp; Edge Extraction\n(LLM + self-consistency)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="120" y="220" width="250" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="s2" value="2. Graph Induction\n(DAG checks + confidence)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="420" y="220" width="250" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="s3" value="3. SCM Construction\n(functional forms + parameters)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="720" y="220" width="250" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="s4" value="4. Intervention Design\n(do-queries to disambiguate)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="220" width="250" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="s5" value="5. Validation &amp; Refinement\n(intervention + counterfactual checks)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="220" width="280" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="a12" style="endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="a23" style="endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="a34" style="endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="s3" target="s4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="a45" style="endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="s4" target="s5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="loop" value="Iterate until convergence" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#cc0000;fontColor=#cc0000;" edge="1" parent="1" source="s5" target="s1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1600" y="420"/>
+              <mxPoint x="120" y="420"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="in" value="Input Corpus / Documents" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="120" y="120" width="250" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="ain" style="endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="in" target="s1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="out" value="Final SCM + Causal Graph" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="120" width="280" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="aout" style="endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="s5" target="out">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

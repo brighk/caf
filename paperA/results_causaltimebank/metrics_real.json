@@ -1,0 +1,11 @@
+{
+  "domains": {
+    "news": {
+      "SHD_mean": 2.9074074074074074,
+      "SHD_std": 2.654615257876843,
+      "Intervention_Accuracy": 0.7175925925925926,
+      "Counterfactual_Consistency": 0.7120370370370368,
+      "n": 108
+    }
+  }
+}

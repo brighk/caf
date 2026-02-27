@@ -1,0 +1,45 @@
+python scripts/populate_kb_from_text.py \
+    --input data/medical_abstracts.txt \
+    --domain medical \
+    --fuseki http://localhost:3030/caf/data \
+    --llm-model 7b \
+    --confidence-threshold 0.7
+
+
+    # Now CAF verifies against domain-specific causal knowledge
+python -m experiments.run_experiment \
+    --use-llm \
+    --llm-4bit \
+    --use-real-sparql \
+    --num-chains 75
+
+
+
+we ca update experiments/run_experiment.py to support KB population:
+# Add new argument
+parser.add_argument(
+    '--populate-kb-from-text',
+    help='Text file to extract causal graph from and populate KB'
+)
+parser.add_argument(
+    '--kb-domain',
+    default='general',
+    help='Domain for KB population'
+)
+
+# In main():
+if args.populate_kb_from_text:
+    print("=" * 60)
+    print("POPULATING KB FROM TEXT")
+    print("=" * 60)
+    
+    from scripts.populate_kb_from_text import populate_kb
+    
+    populate_kb(
+        text_file=args.populate_kb_from_text,
+        domain=args.kb_domain,
+        fuseki_endpoint=args.sparql_endpoint,
+        llm=inference_layer
+    )
+    
+    print("KB population complete. Proceeding to experiments...")

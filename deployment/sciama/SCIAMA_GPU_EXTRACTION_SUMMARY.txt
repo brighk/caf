@@ -1,0 +1,331 @@
+================================================================================
+SCIAMA GPU DOCUMENTATION EXTRACTION - SUMMARY REPORT
+================================================================================
+Date: 2026-02-11
+Source Files:
+  - /home/bright/Brightness Computing/PhD/Causal AI/CAF/deployment/sciama/Using GPUs on SCIAMA – SCIAMA.html
+  - /home/bright/Brightness Computing/PhD/Causal AI/CAF/deployment/sciama/Submitting Jobs – SCIAMA.html
+
+================================================================================
+SECTION 1: GPU HARDWARE & PARTITION DETAILS
+================================================================================
+
+GPU NODES:
+  - Node Names: gpu01, gpu02
+  - GPU Type: NVIDIA 40GB GPUs
+  - GPUs per Node: 2x 40GB
+  - CPU Cores: 128 cores per node
+  - Total GPU Memory: 80GB per node (2 x 40GB)
+
+PARTITION CONFIGURATION:
+  - Partition Name: gpu.q
+  - Max Concurrent Jobs: 4 (limited by 2 GPUs x 2 potential job slots)
+  - Exclusivity: Only 1 job per GPU at a time
+  - Queue Type: GPU-specific queue
+
+================================================================================
+SECTION 2: GPU REQUEST METHODS & COMMANDS
+================================================================================
+
+2.1 INTERACTIVE GPU ACCESS
+----------------------------
+
+Command Template:
+    srun --pty --mem=1g --gres=gpu:1 -J interactive -p gpu.q /bin/bash
+
+Breaking Down the Command:
+    srun                    : SLURM run command for resource allocation
+    --pty                   : Allocate pseudo-terminal for interactive use
+    --mem=1g               : Memory allocation (1 gigabyte)
+    --gres=gpu:1           : Generic resource spec - request 1 GPU
+    -J interactive         : Job name identifier
+    -p gpu.q               : Partition specification (GPU queue)
+    /bin/bash              : Shell to launch
+
+Post-Connection Verification:
+    nvidia-smi             : Display GPU status, memory, and current allocations
+    echo $CUDA_VISIBLE_DEVICES : Display which GPU IDs are accessible
+
+2.2 BATCH JOB SUBMISSION WITH SBATCH
+--------------------------------------
+
+Minimal Template:
+    #!/bin/bash
+    #SBATCH --partition=gpu.q
+    #SBATCH --gres=gpu
+
+Key SBATCH Directives for GPU Jobs:
+    #SBATCH --partition=gpu.q      : Required - specifies GPU partition
+    #SBATCH --gres=gpu              : Required - requests GPU resources
+    #SBATCH --gres=gpu:1            : Request 1 GPU (alternative syntax)
+    #SBATCH --gres=gpu:2            : Request 2 GPUs (if available)
+    #SBATCH --mem=10G              : Memory per node
+    #SBATCH --ntasks=1             : Number of tasks
+    #SBATCH --cpus-per-task=4      : CPUs per task
+    #SBATCH --time=02:00:00        : Wall-clock time limit (HH:MM:SS)
+    #SBATCH --job-name=name        : Job identifier
+    #SBATCH --output=file.log      : Standard output file
+    #SBATCH --error=file.log       : Error output file
+
+Submission:
+    sbatch <path/to/jobscript>
+
+Job Monitoring:
+    squeue -u <username>            : List your jobs
+    squeue -j <job_id>             : Check specific job
+    scancel <job_id>               : Cancel a job
+
+================================================================================
+SECTION 3: GENERIC RESOURCE (GRES) SPECIFICATION DETAILS
+================================================================================
+
+GRES Format Syntax:
+    --gres=gpu[:type][:count]
+
+Standard Usage:
+    --gres=gpu              : Request 1 GPU (implicit count=1)
+    --gres=gpu:1            : Request 1 GPU (explicit)
+    --gres=gpu:2            : Request 2 GPUs
+
+Notes:
+    - Default behavior without count specification requests 1 GPU
+    - GRES is the primary mechanism for GPU allocation on SCIAMA
+    - Must be included in all GPU batch job scripts
+    - Exclusive allocation: only 1 job per GPU
+
+================================================================================
+SECTION 4: CUDA AND MODULE MANAGEMENT
+================================================================================
+
+CUDA ENVIRONMENT VARIABLES:
+    $CUDA_VISIBLE_DEVICES  : Set by SLURM; shows accessible GPU IDs
+                             Verify with: echo $CUDA_VISIBLE_DEVICES
+
+MODULE SYSTEM COMMANDS:
+    module purge                        : Remove all loaded modules
+                                        (recommended at start of scripts)
+    
+    module load system/intel64          : Load system module
+    
+    module load <module_name>           : Load specific module
+                                        Examples: cuda, cudnn, pytorch, tensorflow
+    
+    module avail | grep -i cuda         : List available CUDA modules
+    
+    module avail | grep -i gpu          : List available GPU-related modules
+
+Recommended Practice:
+    1. Start GPU scripts with: module purge
+    2. Load system: module load system/intel64
+    3. Load framework: module load pytorch/tensorflow/etc
+    4. Then run application
+
+================================================================================
+SECTION 5: NVIDIA MULTI-INSTANCE GPU (MIG) SUPPORT
+================================================================================
+
+MIG Overview:
+    - Technology: NVIDIA Multi-Instance GPU
+    - Purpose: Partition GPUs into smaller isolated instances
+    - Benefit: Better resource sharing for multiple smaller jobs
+    - Application: Light workloads, testing, resource optimization
+
+GPU01 and GPU02 MIG Partitioning:
+    Each node has 2x 40GB GPUs partitioned with the following profiles:
+
+    Profile Name: 1g.5gb
+        - Memory: 5GB
+        - Compute Units: 1
+        - Availability: 8 instances per GPU
+        - Use Case: Light/small workloads, testing
+
+    Profile Name: 1g.10gb
+        - Memory: 10GB
+        - Compute Units: 1
+        - Use Case: Medium-sized workloads
+
+    Profile Name: 2g.20gb
+        - Memory: 20GB
+        - Compute Units: 2
+        - Use Case: Moderate compute demands
+
+    Profile Name: 3g.20g
+        - Memory: 20GB
+        - Compute Units: 3
+        - Use Case: Higher compute demands
+
+    Profile Name: 4g.20g
+        - Memory: 20GB
+        - Compute Units: 4
+        - Use Case: Maximum compute allocation
+
+MIG Documentation Reference:
+    https://docs.nvidia.com/datacenter/tesla/mig-user-guide/
+
+================================================================================
+SECTION 6: ACTIONABLE COMMAND EXAMPLES
+================================================================================
+
+6.1 START INTERACTIVE GPU SESSION
+-----------------------------------
+Command:
+    srun --pty --mem=1g --gres=gpu:1 -J interactive -p gpu.q /bin/bash
+
+Then verify:
+    nvidia-smi
+    echo $CUDA_VISIBLE_DEVICES
+
+6.2 MINIMAL GPU BATCH SCRIPT (submit_job.sbatch)
+--------------------------------------------------
+#!/bin/bash
+#SBATCH --partition=gpu.q
+#SBATCH --gres=gpu
+python my_script.py
+
+Submit with:
+    sbatch submit_job.sbatch
+
+6.3 FULL GPU BATCH SCRIPT WITH ENVIRONMENT (gpu_job.sbatch)
+-------------------------------------------------------------
+#!/bin/bash
+#SBATCH --job-name=my_gpu_job
+#SBATCH --partition=gpu.q
+#SBATCH --gres=gpu:1
+#SBATCH --mem=16G
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --time=02:00:00
+#SBATCH --output=job_%j.log
+#SBATCH --error=job_%j.err
+
+# Setup environment
+module purge
+# Uncomment and customize as needed:
+# module load cuda/11.8
+# module load cudnn/8.6
+# module load pytorch
+
+# Change to submission directory
+cd $SLURM_SUBMIT_DIR
+
+# Run application
+python train_model.py
+
+Submit with:
+    sbatch gpu_job.sbatch
+
+6.4 PYTORCH GPU JOB (pytorch_job.sbatch)
+------------------------------------------
+#!/bin/bash
+#SBATCH --job-name=pytorch_test
+#SBATCH --partition=gpu.q
+#SBATCH --gres=gpu:1
+#SBATCH --mem=20G
+#SBATCH --time=01:00:00
+
+module purge
+# module load pytorch  # if available
+
+python -c "import torch; print(f'GPUs available: {torch.cuda.is_available()}'); print(f'GPU count: {torch.cuda.device_count()}')"
+
+6.5 TENSORFLOW GPU JOB (tensorflow_job.sbatch)
+----------------------------------------------
+#!/bin/bash
+#SBATCH --job-name=tf_test
+#SBATCH --partition=gpu.q
+#SBATCH --gres=gpu:1
+#SBATCH --mem=20G
+#SBATCH --time=01:00:00
+
+module purge
+# module load tensorflow  # if available
+
+python -c "import tensorflow as tf; print(f'GPUs: {len(tf.config.list_physical_devices(\"GPU\"))}')"
+
+6.6 MONITOR GPU USAGE
+---------------------
+While job is running:
+    nvidia-smi -l 1    # Refresh every 1 second
+    nvidia-smi          # One-time check
+
+6.7 CHECK GPU AVAILABILITY
+---------------------------
+View current usage:
+    squeue | grep gpu
+    
+Check partition status:
+    sinfo -p gpu.q
+    
+Detailed GPU availability:
+    sinfo -p gpu.q --Node --format="%N %.6D %.6T %.15C"
+
+================================================================================
+SECTION 7: KEY CONSTRAINTS & REQUIREMENTS
+================================================================================
+
+MANDATORY REQUIREMENTS:
+    1. Partition: Always use --partition=gpu.q for GPU jobs
+    2. GRES: Must include --gres=gpu (or --gres=gpu:N) directive
+    3. Node Awareness: GPUs are on gpu01 and gpu02 nodes
+
+RESOURCE CONSTRAINTS:
+    1. Exclusivity: Only 1 job can run on a single GPU at a time
+    2. Max Concurrency: Maximum 4 concurrent jobs (2 GPUs x 2 max jobs per GPU)
+    3. Memory: Plan memory allocation based on job requirements
+    4. Time: Specify reasonable time limits to prevent queue blocking
+
+BEST PRACTICES:
+    1. Always start scripts with: module purge
+    2. Verify GPU assignment: nvidia-smi or $CUDA_VISIBLE_DEVICES
+    3. Use appropriate memory allocation (--mem flag)
+    4. Set realistic time limits (--time flag)
+    5. Direct output to log files (--output and --error)
+    6. Use meaningful job names (--job-name) for tracking
+    7. Implement error handling in job scripts
+    8. Monitor GPU utilization during job execution
+    9. Use MIG profiles for lighter workloads if available
+    10. Clean up resources after job completion
+
+================================================================================
+SECTION 8: REFERENCE MATERIALS & LINKS
+================================================================================
+
+Official Documentation:
+    - SCIAMA Main Portal: https://sciama.icg.port.ac.uk/sciama-wp/
+    - NVIDIA MIG Guide: https://docs.nvidia.com/datacenter/tesla/mig-user-guide/
+    - SLURM Documentation: https://slurm.schedmd.com/
+
+Related SCIAMA Pages:
+    - Submitting Jobs on SCIAMA (referenced for general SBATCH syntax)
+    - The GPU Anaconda Environment (separate documentation page)
+    - How to use software modules on SCIAMA
+    - Sciama Queues (partition information)
+
+================================================================================
+SECTION 9: EXTRACTION METHODOLOGY
+================================================================================
+
+Source Documents:
+    1. Using GPUs on SCIAMA – SCIAMA.html (114KB)
+    2. Submitting Jobs – SCIAMA.html (89KB)
+
+Extraction Technique:
+    - HTML parsing and text extraction
+    - Keyword-based filtering (gpu, CUDA, partition, sbatch, etc.)
+    - Code block identification from <code> tags
+    - Table data extraction for MIG profiles
+    - Command example compilation
+
+Content Verified:
+    - GPU node specifications (gpu01, gpu02)
+    - Partition names (gpu.q)
+    - SBATCH directives syntax
+    - Interactive session commands (srun)
+    - GRES specification format
+    - MIG profile details
+    - Environment variables ($CUDA_VISIBLE_DEVICES)
+    - Module management commands
+
+================================================================================
+END OF EXTRACTION REPORT
+================================================================================

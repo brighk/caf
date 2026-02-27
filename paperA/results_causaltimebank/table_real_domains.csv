@@ -1,0 +1,2 @@
+domain,shd_mean,shd_std,intervention_accuracy,counterfactual_consistency,n
+news,2.907407,2.654615,0.717593,0.712037,108

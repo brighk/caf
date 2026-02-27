@@ -1,0 +1,15 @@
+[
+  {
+    "question_id": "0",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "expected_answer": "no",
+    "caf_answer": "unknown",
+    "caf_decision": "ERROR",
+    "caf_score": 0.0,
+    "iterations": 0,
+    "correct": false,
+    "reasoning_type": "basic",
+    "response_text": "Error: 'HuggingFaceLlamaLayer' object has no attribute 'max_iterations'",
+    "verification_details": null
+  }
+]

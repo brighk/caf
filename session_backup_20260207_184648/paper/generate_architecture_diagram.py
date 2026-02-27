@@ -1,121 +1,68 @@
-#!/usr/bin/env python3
-"""
-Generate CAF architecture diagram as publication-ready figure.
-"""
-
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
-import matplotlib.patches as patches
+from matplotlib.lines import Line2D
 
-# Set publication style
-plt.style.use('seaborn-v0_8-paper')
-plt.rcParams['font.family'] = 'serif'
-plt.rcParams['font.size'] = 11
-
-fig, ax = plt.subplots(figsize=(12, 4))
+fig, ax = plt.subplots(figsize=(12, 5))
 ax.set_xlim(0, 12)
-ax.set_ylim(0, 4)
-ax.axis('off')
+ax.set_ylim(0, 5)
+ax.axis("off")
 
-# Define box positions
-il_box = FancyBboxPatch((0.5, 1.5), 2.5, 1.5,
-                        boxstyle="round,pad=0.1",
-                        edgecolor='black',
-                        facecolor='#E8F4F8',
-                        linewidth=2)
+def add_box(x, y, w, h, text, fontsize=12, lw=1.8):
+    box = FancyBboxPatch(
+        (x, y), w, h,
+        boxstyle="round,pad=0.02,rounding_size=0.12",
+        linewidth=lw,
+        facecolor="white",
+        edgecolor="black"
+    )
+    ax.add_patch(box)
+    ax.text(x + w/2, y + h/2, text, ha="center", va="center", fontsize=fontsize)
 
-fvl_box = FancyBboxPatch((4.0, 1.5), 2.5, 1.5,
-                         boxstyle="round,pad=0.1",
-                         edgecolor='black',
-                         facecolor='#F0E6F6',
-                         linewidth=2)
+def add_arrow(x1, y1, x2, y2, lw=1.8):
+    arr = FancyArrowPatch(
+        (x1, y1), (x2, y2),
+        arrowstyle="->",
+        mutation_scale=14,
+        linewidth=lw,
+        color="black"
+    )
+    ax.add_patch(arr)
 
-de_box = FancyBboxPatch((7.5, 1.5), 2.5, 1.5,
-                        boxstyle="round,pad=0.1",
-                        edgecolor='black',
-                        facecolor='#E8F8E8',
-                        linewidth=2)
+# Section headers
+ax.text(2.0, 4.65, "Inference Layer", ha="center", va="center", fontsize=13, fontweight="bold")
+ax.text(6.0, 4.65, "Formal Verification Layer", ha="center", va="center", fontsize=13, fontweight="bold")
+ax.text(10.0, 4.65, "Deterministic Executive", ha="center", va="center", fontsize=13, fontweight="bold")
 
-kb_box = FancyBboxPatch((4.0, 0.2), 2.5, 1.0,
-                        boxstyle="round,pad=0.1",
-                        edgecolor='black',
-                        facecolor='#FFF4E6',
-                        linewidth=2)
+# Vertical dividers
+ax.add_line(Line2D([4, 4], [0.4, 4.35], linewidth=1.2, color="black", alpha=0.4))
+ax.add_line(Line2D([8, 8], [0.4, 4.35], linewidth=1.2, color="black", alpha=0.4))
 
-# Add boxes to plot
-ax.add_patch(il_box)
-ax.add_patch(fvl_box)
-ax.add_patch(de_box)
-ax.add_patch(kb_box)
+# Boxes
+add_box(0.7, 2.9, 2.6, 1.0, "LLM Proposer")
 
-# Add text labels
-ax.text(1.75, 2.5, 'Inference Layer', ha='center', va='center',
-        fontsize=12, fontweight='bold')
-ax.text(1.75, 2.0, 'LLM Proposer', ha='center', va='center',
-        fontsize=10, style='italic')
+add_box(4.5, 2.9, 3.0, 1.0, "Semantic Parser + KB")
+add_box(4.5, 1.3, 3.0, 1.0, "RDF Knowledge Base")
+add_box(4.5, 0.7, 3.0, 0.45, "Constraints", fontsize=11)
 
-ax.text(5.25, 2.5, 'Formal Verification', ha='center', va='center',
-        fontsize=12, fontweight='bold')
-ax.text(5.25, 2.0, 'Layer', ha='center', va='center',
-        fontsize=12, fontweight='bold')
-ax.text(5.25, 1.7, 'Semantic Parser + KB', ha='center', va='center',
-        fontsize=9, style='italic')
+add_box(8.7, 2.9, 2.6, 1.0, "SCM + Entailment")
+add_box(8.7, 1.3, 2.6, 1.0, "Deterministic Executive")
 
-ax.text(8.75, 2.5, 'Deterministic', ha='center', va='center',
-        fontsize=12, fontweight='bold')
-ax.text(8.75, 2.0, 'Executive', ha='center', va='center',
-        fontsize=12, fontweight='bold')
-ax.text(8.75, 1.7, 'SCM + Entailment', ha='center', va='center',
-        fontsize=9, style='italic')
+# Main pipeline arrows
+add_arrow(3.35, 3.4, 4.45, 3.4)   # LLM -> Semantic Parser
+add_arrow(7.55, 3.4, 8.65, 3.4)   # Semantic Parser -> SCM + Entailment
 
-ax.text(5.25, 0.7, 'RDF Knowledge Base', ha='center', va='center',
-        fontsize=11, fontweight='bold')
+# Internal verification arrows
+add_arrow(6.0, 2.85, 6.0, 2.35)   # Parser -> RDF KB
+add_arrow(6.0, 2.3, 6.0, 1.85)    # (visual spacing)
+add_arrow(6.0, 1.25, 6.0, 1.18)   # RDF KB -> Constraints
 
-# Add forward arrows
-# IL -> FVL
-arrow1 = FancyArrowPatch((3.0, 2.25), (4.0, 2.25),
-                        arrowstyle='->', mutation_scale=20,
-                        linewidth=2, color='black')
-ax.add_patch(arrow1)
+# Executive arrows
+add_arrow(10.0, 2.85, 10.0, 2.35) # SCM + Entailment -> DE
+add_arrow(11.3, 1.8, 11.7, 1.8)   # DE -> Response
+ax.text(11.82, 1.8, "Response", ha="left", va="center", fontsize=12)
 
-# FVL -> DE
-arrow2 = FancyArrowPatch((6.5, 2.25), (7.5, 2.25),
-                        arrowstyle='->', mutation_scale=20,
-                        linewidth=2, color='black')
-ax.add_patch(arrow2)
 
-# FVL -> KB
-arrow3 = FancyArrowPatch((5.25, 1.5), (5.25, 1.2),
-                        arrowstyle='->', mutation_scale=20,
-                        linewidth=2, color='black')
-ax.add_patch(arrow3)
-
-# Feedback arrow: DE -> IL (dashed, curved)
-# Draw it in segments to go around the top
-arrow4 = FancyArrowPatch((8.75, 3.0), (1.75, 3.0),
-                        arrowstyle='->', mutation_scale=20,
-                        linewidth=2, color='#D62728',
-                        linestyle='--',
-                        connectionstyle="arc3,rad=0")
-ax.add_patch(arrow4)
-
-# Add "Constraints" label above feedback arrow
-ax.text(5.25, 3.3, 'Constraints', ha='center', va='bottom',
-        fontsize=11, color='#D62728', fontweight='bold')
-
-# Add connecting lines for the feedback arrow
-ax.plot([8.75, 8.75], [2.25, 3.0], 'r--', linewidth=2)
-ax.plot([1.75, 1.75], [3.0, 2.25], 'r--', linewidth=2)
-
+out_path = "caf_pipeline_figure2.png"
 plt.tight_layout()
-
-# Save as both PDF and PNG
-plt.savefig('paper/figures/architecture_overview.pdf', dpi=300, bbox_inches='tight')
-plt.savefig('paper/figures/architecture_overview.png', dpi=300, bbox_inches='tight')
-
-print("✓ Architecture diagram saved:")
-print("  - paper/figures/architecture_overview.pdf")
-print("  - paper/figures/architecture_overview.png")
-
-plt.close()
+plt.savefig(out_path, dpi=200, bbox_inches="tight")
+plt.show()

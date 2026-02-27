@@ -1,0 +1,11 @@
+{
+  "domains": {
+    "general": {
+      "SHD_mean": 1.0,
+      "SHD_std": 0.0,
+      "Intervention_Accuracy": 0.5498873027798648,
+      "Counterfactual_Consistency": 0.5506386175807664,
+      "n": 1331
+    }
+  }
+}

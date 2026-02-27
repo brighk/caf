@@ -1,0 +1,83 @@
+\begin{thebibliography}{10}
+
+\bibitem{anthropic2023claude}
+Anthropic.
+\newblock Claude 2.
+\newblock 2023.
+
+\bibitem{chowdhery2022palm}
+Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, et~al.
+\newblock Palm: Scaling language modeling with pathways.
+\newblock {\em arXiv preprint arXiv:2204.02311}, 2022.
+
+\bibitem{jin2024can}
+Zhijing Jin, Jiarui Chen, Laura Finkelstein, et~al.
+\newblock Can large language models infer causation from correlation?
+\newblock {\em arXiv preprint arXiv:2306.05836}, 2024.
+
+\bibitem{kiciman2023causal}
+Emre Kiciman, Robert Ness, Amit Sharma, et~al.
+\newblock Causal reasoning and large language models: Opening a new frontier for causality.
+\newblock {\em arXiv preprint arXiv:2305.00050}, 2023.
+
+\bibitem{li2022competition}
+Yujia Li, David Choi, Junyoung Chung, et~al.
+\newblock Competition-level code generation with alphacode.
+\newblock {\em Science}, 378(6624):1092--1097, 2022.
+
+\bibitem{openai2023gpt4}
+OpenAI.
+\newblock Gpt-4 technical report.
+\newblock {\em arXiv preprint arXiv:2303.08774}, 2023.
+
+\bibitem{pearl2009causality}
+Judea Pearl.
+\newblock {\em Causality}.
+\newblock Cambridge University Press, 2nd edition, 2009.
+
+\bibitem{pearl2019seven}
+Judea Pearl.
+\newblock The seven tools of causal inference, with reflections on machine learning.
+\newblock {\em Communications of the ACM}, 62(3):54--60, 2019.
+
+\bibitem{shimizu2006linear}
+Shohei Shimizu, Patrik~O Hoyer, Aapo Hyv{\"a}rinen, et~al.
+\newblock A linear non-gaussian acyclic model for causal discovery.
+\newblock {\em Journal of Machine Learning Research}, 7(10), 2006.
+
+\bibitem{singhal2023large}
+Karan Singhal, Shekoofeh Azizi, Tao Tu, et~al.
+\newblock Large language models encode clinical knowledge.
+\newblock {\em Nature}, 620(7972):172--180, 2023.
+
+\bibitem{speer2017conceptnet}
+Robyn Speer, Joshua Chin, and Catherine Havasi.
+\newblock Conceptnet 5.5: An open multilingual graph of general knowledge.
+\newblock In {\em Thirty-first AAAI conference on artificial intelligence}, 2017.
+
+\bibitem{spirtes2000causation}
+Peter Spirtes, Clark~N Glymour, and Richard Scheines.
+\newblock Causation, prediction, and search.
+\newblock 2000.
+
+\bibitem{touvron2023llama}
+Hugo Touvron, Louis Martin, Kevin Stone, et~al.
+\newblock Llama 2: Open foundation and fine-tuned chat models.
+\newblock {\em arXiv preprint arXiv:2307.09288}, 2023.
+
+\bibitem{vaswani2017attention}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, et~al.
+\newblock Attention is all you need.
+\newblock {\em Advances in neural information processing systems}, 30, 2017.
+
+\bibitem{vrandevcic2014wikidata}
+Denny Vrande{\v{c}}i{\'c} and Markus Kr{\"o}tzsch.
+\newblock Wikidata: a free collaborative knowledgebase.
+\newblock {\em Communications of the ACM}, 57(10):78--85, 2014.
+
+\bibitem{zevcevic2023causal}
+Matej {\v{Z}}ev{\v{c}}evi{\'c}, Moritz Willig, Devendra~Singh Dhami, et~al.
+\newblock Causal parrots: Large language models may talk causality but are not causal.
+\newblock {\em arXiv preprint arXiv:2308.13067}, 2023.
+
+\end{thebibliography}

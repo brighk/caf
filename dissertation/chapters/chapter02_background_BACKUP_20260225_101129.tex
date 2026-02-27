@@ -1,0 +1,1199 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Background and Related Work}
+\label{ch:background}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This chapter establishes the foundational concepts and reviews prior work across four interconnected research areas that underpin this dissertation: causal inference and structural causal models, large language models and their capabilities and limitations, neuro-symbolic artificial intelligence, and knowledge graphs and semantic web technologies. We aim to provide sufficient background for readers from diverse disciplinary backgrounds while positioning our contributions within the broader research landscape.
+
+\section{Causal Inference and Structural Causal Models}
+\label{sec:background_causal}
+
+Causal inference is the scientific discipline concerned with identifying and estimating causal relationships from data and domain knowledge. Unlike associational statistics, which describe correlations and conditional probabilities observable in data, causal inference aims to answer questions about interventions (``What would happen if we did X?'') and counterfactuals (``What would have happened if things had been different?'').
+
+\subsection{Pearl's Causal Hierarchy}
+\label{subsec:pearl_hierarchy}
+
+The modern framework for causal reasoning was developed primarily by Judea Pearl and colleagues over several decades \cite{pearl2009causality,pearl2018book,spirtes2000causation}. Pearl's framework distinguishes three qualitatively different levels of causal reasoning, forming a strict hierarchy where each level requires strictly more information than the previous.
+
+\begin{definition}[Pearl's Three-Level Causal Hierarchy - Detailed]
+\label{def:pearl_hierarchy_detailed}
+
+\textbf{Level 1: Association (Seeing)} \\
+Associational queries concern probability distributions conditional on passive observations. These queries have the general form:
+\begin{equation}
+P(Y = y | X = x)
+\label{eq:association}
+\end{equation}
+which asks: ``Given that we observe $X=x$ in our data, what is the probability that $Y=y$?''
+
+Such queries can be answered entirely from observational data through standard statistical techniques such as maximum likelihood estimation, Bayesian inference, or frequency counting. No causal assumptions beyond standard statistical assumptions (i.i.d. sampling, correct model specification) are required. Association is symmetric in a certain sense—$P(Y|X)$ can be computed from $P(X,Y)$ via Bayes' rule without reference to causal direction.
+
+\textbf{Examples of Level 1 queries:}
+\begin{itemize}
+\item ``What percentage of patients with symptom X have disease Y?''
+\item ``What is the correlation between education level and income?''
+\item ``How often does event B occur when event A has occurred?''
+\end{itemize}
+
+\textbf{Level 2: Intervention (Doing)} \\
+Interventional queries concern probability distributions under hypothetical actions or manipulations. These queries have the form:
+\begin{equation}
+P(Y = y | \dooperator(X = x))
+\label{eq:intervention}
+\end{equation}
+where $\dooperator(X=x)$ represents an external intervention that sets $X$ to value $x$ regardless of $X$'s natural causes. This is read as: ``If we actively force $X$ to be $x$ (by experimental manipulation or policy intervention), what is the probability that $Y$ will be $y$?''
+
+The critical distinction between $P(Y|X)$ and $P(Y|\dooperator(X))$ is that the former conditions on a natural observation of $X$, which may be influenced by confounders affecting both $X$ and $Y$, while the latter removes the influence of $X$'s causes by setting its value exogenously.
+
+Intervention queries generally \textit{cannot} be answered from purely observational data without additional assumptions. Pearl's do-calculus \cite{pearl1995causal} provides a complete graphical criterion (the back-door criterion, front-door criterion, and general rules) for determining when $P(Y|\dooperator(X))$ is identifiable from observational data given a causal graph.
+
+\textbf{Examples of Level 2 queries:}
+\begin{itemize}
+\item ``If we administer drug X to a patient, what is the probability they will recover?'' (contrasted with: ``What is the recovery rate among patients who chose to take drug X?'')
+\item ``If we implement policy X, how will outcome Y change?''
+\item ``What is the causal effect of $X$ on $Y$?''
+\end{itemize}
+
+\textbf{Level 3: Counterfactuals (Imagining)} \\
+Counterfactual queries concern probability distributions in alternative histories or possible worlds, conditioned on factual observations. These queries have the form:
+\begin{equation}
+P(Y_x = y | X = x', Y = y')
+\label{eq:counterfactual}
+\end{equation}
+which asks: ``Given that we observed $X=x'$ and $Y=y'$ in the actual world, what is the probability that $Y$ would have been $y$ if $X$ had been $x$ instead?''
+
+The subscript notation $Y_x$ denotes the value $Y$ would take in a counterfactual world where $X$ is set to $x$. Counterfactual reasoning requires a complete structural causal model including not just the causal graph structure but also the functional forms relating variables and the distributions of exogenous noise terms.
+
+Pearl's three-step procedure for answering counterfactual queries \cite{pearl2009causality} consists of:
+\begin{enumerate}
+\item \textbf{Abduction:} Infer the values of exogenous variables (unobserved noise terms) that would have generated the observed data, using the observed values and the structural equations.
+\item \textbf{Action:} Modify the structural equations to reflect the counterfactual intervention (e.g., replace $X \leftarrow f_X(\text{Pa}(X), U_X)$ with $X \leftarrow x$).
+\item \textbf{Prediction:} Use the modified model and the abduced exogenous values to predict the counterfactual outcome.
+\end{enumerate}
+
+\textbf{Examples of Level 3 queries:}
+\begin{itemize}
+\item ``Patient Alice smoked for 30 years and developed lung cancer. Would Alice have developed cancer if she had never smoked?''
+\item ``Company revenue decreased after implementing policy X. Would revenue have decreased even without the policy?''
+\item ``What would the election outcome have been if candidate A had not made statement X?''
+\end{itemize}
+\end{definition}
+
+\subsubsection{Hierarchy is Strict}
+
+An important theoretical result is that the hierarchy is \textit{strict}—each level is strictly more powerful than the previous, in the sense that queries at level $k$ cannot generally be answered using only information sufficient for level $k-1$ \cite{bareinboim2016causal}.
+
+Specifically:
+\begin{itemize}
+\item \textbf{Level 2 does not reduce to Level 1:} There exist scenarios where full knowledge of $P(Y|X)$ for all values of $X$ does not determine $P(Y|\dooperator(X))$. Classic example: Simpson's paradox, where a treatment appears harmful in observational data ($P(Y|X) < P(Y|\neg X)$) due to confounding, but is actually beneficial when administered ($P(Y|\dooperator(X)) > P(Y|\dooperator(\neg X))$).
+
+\item \textbf{Level 3 does not reduce to Level 2:} There exist scenarios where full knowledge of all interventional distributions $P(Y|\dooperator(X))$ does not determine counterfactual probabilities $P(Y_x | X', Y')$. This is because counterfactuals require reasoning about specific individuals with specific (though unobserved) exogenous profiles, whereas interventional distributions average over the population distribution of exogenous variables.
+\end{itemize}
+
+This hierarchy has profound implications for large language models: if LLMs learn only from observational text (Level 1 information), they cannot reliably answer Level 2 or Level 3 queries without additional structure.
+
+\subsection{Structural Causal Models (SCMs)}
+\label{subsec:scm_framework}
+
+Structural Causal Models provide the mathematical formalism for representing and reasoning about causality.
+
+\begin{definition}[Structural Causal Model - Complete Definition]
+\label{def:scm_complete}
+A Structural Causal Model (SCM) is a tuple $\mathcal{M} = \langle \mathbf{U}, \mathbf{V}, \mathbf{F}, P(\mathbf{U}) \rangle$ where:
+
+\begin{itemize}
+\item $\mathbf{U} = \{U_1, \ldots, U_m\}$ is a set of \textit{exogenous} (external) variables, representing factors determined outside the model (noise, unobserved confounders, random influences). These variables have no causes within the model.
+
+\item $\mathbf{V} = \{V_1, \ldots, V_n\}$ is a set of \textit{endogenous} (internal) variables, representing factors determined within the model by causal mechanisms.
+
+\item $\mathbf{F} = \{f_1, \ldots, f_n\}$ is a set of \textit{structural equations} or \textit{causal mechanisms}, one for each endogenous variable:
+\begin{equation}
+V_i = f_i(\text{Pa}(V_i), U_i)
+\label{eq:structural_equation}
+\end{equation}
+where $\text{Pa}(V_i) \subseteq \mathbf{V} \setminus \{V_i\}$ denotes the parents of $V_i$ (the endogenous variables that directly cause $V_i$), and $U_i \in \mathbf{U}$ is the exogenous noise term associated with $V_i$.
+
+\item $P(\mathbf{U})$ is a probability distribution over the exogenous variables, representing the natural variability or randomness in the system.
+\end{itemize}
+
+The structural equations $\mathbf{F}$ induce a directed graph $G = (\mathbf{V}, E)$ where there is an edge $V_j \to V_i$ if $V_j \in \text{Pa}(V_i)$. We require that this graph is acyclic (a DAG—directed acyclic graph), ensuring that variables can be ordered topologically and values can be computed recursively.
+\end{definition}
+
+\subsubsection{Semantics and Inference in SCMs}
+
+An SCM defines a probability distribution over endogenous variables through the following generative process:
+
+\begin{enumerate}
+\item Sample exogenous variables from their prior: $\mathbf{u} \sim P(\mathbf{U})$.
+\item Compute endogenous variables recursively in topological order:
+\begin{equation}
+v_i = f_i(\text{pa}(v_i), u_i)
+\end{equation}
+where $\text{pa}(v_i)$ denotes the values of $V_i$'s parents (which have already been computed due to topological ordering).
+\end{enumerate}
+
+This process induces a joint distribution $P(\mathbf{V})$ over endogenous variables. Importantly, this distribution satisfies the \textit{Markov condition}: each variable is independent of its non-descendants given its parents.
+
+\subsubsection{Interventions in SCMs}
+
+An intervention $\dooperator(X = x)$ is modeled by constructing a modified SCM $\mathcal{M}_x$ where:
+\begin{itemize}
+\item The structural equation for $X$ is replaced: $X \leftarrow x$ (a constant function ignoring parents and noise).
+\item All other structural equations remain unchanged.
+\end{itemize}
+
+The interventional distribution $P(Y | \dooperator(X=x))$ is the distribution of $Y$ induced by $\mathcal{M}_x$ under the original exogenous distribution $P(\mathbf{U})$.
+
+Graphically, intervention corresponds to \textit{graph surgery}: remove all incoming edges to $X$ and set $X$ to a fixed value. This breaks the dependence of $X$ on its natural causes, simulating an external manipulation.
+
+\subsubsection{Example: Smoking, Tar, and Lung Cancer}
+
+Consider a simple SCM relating smoking ($S$), tar deposits in lungs ($T$), and lung cancer ($C$):
+
+\textbf{Variables:}
+\begin{itemize}
+\item Exogenous: $U_S$ (genetic propensity to smoke), $U_T$ (environmental factors affecting tar buildup), $U_C$ (other cancer risk factors)
+\item Endogenous: $S$ (smoking behavior), $T$ (tar deposits), $C$ (lung cancer)
+\end{itemize}
+
+\textbf{Structural Equations:}
+\begin{align}
+S &= f_S(U_S) = U_S \label{eq:smoke} \\
+T &= f_T(S, U_T) = 0.8 \cdot S + U_T \label{eq:tar} \\
+C &= f_C(S, T, U_C) = 0.3 \cdot S + 0.5 \cdot T + U_C \label{eq:cancer}
+\end{align}
+
+where noise terms are $U_S, U_T, U_C \sim \mathcal{N}(0, 0.1)$ (Gaussian noise).
+
+\textbf{Causal Graph:}
+\begin{center}
+\begin{tikzpicture}[node distance=2cm]
+\node[draw, circle] (S) {$S$};
+\node[draw, circle, right of=S] (T) {$T$};
+\node[draw, circle, right of=T] (C) {$C$};
+\draw[-Latex, thick] (S) -- (T);
+\draw[-Latex, thick] (T) -- (C);
+\draw[-Latex, thick, bend left=30] (S) to (C);
+\end{tikzpicture}
+\end{center}
+
+\textbf{Observational Query (Level 1):} $P(C | S=1)$ can be computed by sampling from the joint distribution and conditioning. Due to the direct and indirect paths $S \to C$ and $S \to T \to C$, we expect $P(C|S=1) > P(C|S=0)$.
+
+\textbf{Interventional Query (Level 2):} $P(C | \dooperator(S=0))$ requires modifying the model to set $S=0$ regardless of $U_S$. The modified equations become:
+\begin{align}
+S &= 0 \quad \text{(intervened)} \\
+T &= 0.8 \cdot 0 + U_T = U_T \\
+C &= 0.3 \cdot 0 + 0.5 \cdot U_T + U_C = 0.5 U_T + U_C
+\end{align}
+
+We can now sample from this modified system to estimate $P(C | \dooperator(S=0))$, which will be lower than $P(C)$ under the natural distribution, quantifying the causal effect of smoking cessation.
+
+\textbf{Counterfactual Query (Level 3):} ``Alice smoked ($S=1$) and developed cancer ($C=1$). Would she have developed cancer if she had not smoked?''
+
+\begin{enumerate}
+\item \textbf{Abduction:} Given $S=1, C=1$, infer likely values of $U_S, U_T, U_C$. Using the structural equations and observed values, we can compute:
+\begin{align}
+U_S &= S = 1 \\
+T &= 0.8 \cdot 1 + U_T \implies U_T = T - 0.8 \\
+C &= 0.3 \cdot 1 + 0.5 \cdot T + U_C \implies U_C = C - 0.3 - 0.5T
+\end{align}
+If we observe specific values, say $T=0.9$, then $U_T = 0.1$ and $U_C = 1 - 0.3 - 0.45 = 0.25$.
+
+\item \textbf{Action:} Modify model to set $S=0$ (counterfactual world where Alice never smoked).
+
+\item \textbf{Prediction:} Using the inferred exogenous values and modified model:
+\begin{align}
+S &= 0 \\
+T &= 0.8 \cdot 0 + 0.1 = 0.1 \\
+C_{\text{CF}} &= 0.3 \cdot 0 + 0.5 \cdot 0.1 + 0.25 = 0.30
+\end{align}
+Since $C_{\text{CF}} = 0.30 < 1$ (assuming $C$ is binary with threshold 0.5), Alice would likely \textit{not} have developed cancer if she had not smoked, suggesting smoking was a necessary cause in her case.
+\end{enumerate}
+
+This detailed example illustrates the machinery of SCMs and the three levels of causal inference.
+
+\subsection{Causal Discovery Algorithms}
+\label{subsec:causal_discovery}
+
+Causal discovery is the task of learning causal structure (the graph $G$ or the full SCM $\mathcal{M}$) from data. This is a challenging inverse problem: given samples from the joint distribution $P(\mathbf{V})$ induced by an unknown SCM, recover the SCM or at least its graphical structure.
+
+\subsubsection{Constraint-Based Methods}
+
+Constraint-based algorithms exploit conditional independence relationships observable in data to infer graph structure.
+
+\textbf{PC Algorithm} \cite{spirtes2000causation}: The PC (Peter-Clark) algorithm operates as follows:
+\begin{enumerate}
+\item \textbf{Initialize:} Start with a complete undirected graph connecting all variables.
+\item \textbf{Edge Removal:} For each pair of variables $X, Y$, test whether $X \perp Y | S$ for some conditioning set $S$. If independent, remove edge $X - Y$. Iterate through increasingly large conditioning sets.
+\item \textbf{Edge Orientation:} Identify v-structures (colliders $X \to Z \leftarrow Y$ where $X$ and $Y$ are not adjacent) from independence patterns, then propagate orientations using acyclicity and causal Markov condition.
+\end{enumerate}
+
+PC can provably recover the correct causal graph up to \textit{Markov equivalence} under assumptions of causal sufficiency (no unmeasured confounders) and faithfulness (independence in distribution iff d-separation in graph).
+
+\textbf{FCI Algorithm} \cite{spirtes2000causation}: Fast Causal Inference extends PC to handle latent confounders, recovering a Partial Ancestral Graph (PAG) that represents equivalence classes of causal structures compatible with data.
+
+\textbf{Limitations:} Constraint-based methods require many conditional independence tests, which can have low statistical power with finite samples. They are sensitive to test threshold choices and can produce inconsistent orientations with noisy data.
+
+\subsubsection{Score-Based Methods}
+
+Score-based algorithms search the space of causal graphs to optimize a goodness-of-fit score.
+
+\textbf{GES Algorithm} \cite{chickering2002optimal}: Greedy Equivalence Search uses a two-phase approach:
+\begin{enumerate}
+\item \textbf{Forward Phase:} Start with empty graph, greedily add edges that maximize BIC (Bayesian Information Criterion) score until no improvement possible.
+\item \textbf{Backward Phase:} Greedily remove edges that maximize BIC until no improvement possible.
+\end{enumerate}
+
+BIC balances fit ($\log P(\text{data} | \text{graph})$) against complexity (number of parameters):
+\begin{equation}
+\text{BIC}(G) = \log P(\mathbf{D} | G, \hat{\theta}_G) - \frac{k}{2} \log n
+\label{eq:bic}
+\end{equation}
+where $k$ is the number of parameters, $n$ is sample size, and $\hat{\theta}_G$ are maximum-likelihood parameters for graph $G$.
+
+\textbf{Limitations:} Searching graph space is NP-hard, so greedy search can get stuck in local optima. Score-based methods also typically recover only Markov equivalence classes, not unique causal orders.
+
+\subsubsection{Functional Causal Models}
+
+Functional approaches exploit asymmetries in the data-generating process to identify causal direction uniquely.
+
+\textbf{LiNGAM} \cite{shimizu2006linear}: Linear Non-Gaussian Acyclic Model assumes:
+\begin{enumerate}
+\item Data generated by linear structural equations: $X_i = \sum_{j \in \text{Pa}(i)} \beta_{ji} X_j + U_i$
+\item Exogenous noise terms $U_i$ are non-Gaussian and mutually independent.
+\end{enumerate}
+
+Under these assumptions, Independent Component Analysis (ICA) can recover the causal ordering uniquely (up to scaling). The key insight: if $Y = \beta X + U$ with independent $U$, then $X$ and $U$ will be independent (by assumption), but if we reverse the direction ($X = \gamma Y + V$), then $Y$ and the residual $V$ will generally \textit{not} be independent, allowing us to distinguish cause from effect.
+
+\textbf{Additive Noise Models (ANM)} \cite{hoyer2009nonlinear}: Generalizes LiNGAM to nonlinear functions $Y = f(X) + U$ with independent $U$. Uses regression and independence testing to determine causal direction.
+
+\textbf{Limitations:} Require strong assumptions (linearity or specific functional forms, non-Gaussian noise, no confounders). Violations of assumptions can lead to incorrect causal conclusions.
+
+\subsubsection{Causal Discovery from Text: The Challenge}
+
+All the above methods assume access to numerical observational data—samples $(x_i, y_i, z_i, \ldots)$ from the joint distribution over measured variables. They cannot directly operate on \textit{unstructured text}.
+
+Extracting causal structure from text poses unique challenges:
+\begin{itemize}
+\item Variables are not explicitly measured; they must be identified from entity mentions.
+\item Relationships are described linguistically with variability (``causes'', ``leads to'', ``influences'', ``affects'').
+\item Text is observational (Level 1) and rarely contains direct interventional data.
+\item Confounders are often not mentioned explicitly.
+\item Sample size is not well-defined (how many ``samples'' does a corpus provide?).
+\end{itemize}
+
+Our contribution (Chapter 5) addresses this challenge by using LLMs to extract candidate causal structures from text, then validating them through simulated interventions on constructed SCMs—bridging text and formal causal inference.
+
+\subsection{Do-Calculus and Identifiability}
+\label{subsec:do_calculus}
+
+Pearl's do-calculus \cite{pearl1995causal} provides a complete set of inference rules for transforming interventional distributions into purely observational expressions when possible.
+
+\begin{theorem}[Rules of Do-Calculus]
+\label{thm:do_calculus}
+Given a causal graph $G$ and disjoint variable sets $\mathbf{X}, \mathbf{Y}, \mathbf{Z}, \mathbf{W}$, the following rules are sound and complete for determining identifiability:
+
+\textbf{Rule 1 (Insertion/deletion of observations):}
+\begin{equation}
+P(y | \dooperator(x), z, w) = P(y | \dooperator(x), w) \quad \text{if } (\mathbf{Y} \perp \mathbf{Z} | \mathbf{X}, \mathbf{W})_{G_{\overline{X}}}
+\end{equation}
+where $G_{\overline{X}}$ is the graph with incoming edges to $\mathbf{X}$ removed.
+
+\textbf{Rule 2 (Action/observation exchange):}
+\begin{equation}
+P(y | \dooperator(x), \dooperator(z), w) = P(y | \dooperator(x), z, w) \quad \text{if } (\mathbf{Y} \perp \mathbf{Z} | \mathbf{X}, \mathbf{W})_{G_{\overline{X}, \underline{Z}}}
+\end{equation}
+where $G_{\overline{X}, \underline{Z}}$ has incoming edges to $\mathbf{X}$ removed and outgoing edges from $\mathbf{Z}$ removed.
+
+\textbf{Rule 3 (Insertion/deletion of actions):}
+\begin{equation}
+P(y | \dooperator(x), \dooperator(z), w) = P(y | \dooperator(x), w) \quad \text{if } (\mathbf{Y} \perp \mathbf{Z} | \mathbf{X}, \mathbf{W})_{G_{\overline{X}, \overline{Z(W)}}}
+\end{equation}
+where $G_{\overline{X}, \overline{Z(W)}}$ has incoming edges to $\mathbf{X}$ removed and incoming edges to $\mathbf{Z}$ from variables not in $\mathbf{W}$ removed.
+\end{theorem}
+
+These rules can be applied sequentially to reduce interventional expressions to purely observational form (if identifiable), enabling estimation from observational data.
+
+\textbf{Back-Door Criterion:} A sufficient condition for identifiability is the back-door criterion: a set $\mathbf{Z}$ satisfies the back-door criterion relative to $(X, Y)$ if:
+\begin{enumerate}
+\item No variable in $\mathbf{Z}$ is a descendant of $X$.
+\item $\mathbf{Z}$ blocks all back-door paths from $X$ to $Y$ (paths ending with arrow into $X$).
+\end{enumerate}
+
+If $\mathbf{Z}$ satisfies the back-door criterion, then:
+\begin{equation}
+P(y | \dooperator(x)) = \sum_z P(y | x, z) P(z)
+\label{eq:backdoor}
+\end{equation}
+which can be estimated from observational data via adjustment for confounders $\mathbf{Z}$.
+
+\textbf{Relevance to This Work:} Our systems implement simplified versions of do-calculus reasoning. When validating interventional predictions, we use SCM rollouts (simulation-based computation of $P(Y | \dooperator(X))$) rather than algebraic do-calculus manipulation. This is appropriate for our setting where we have explicit functional forms in constructed SCMs.
+
+\begin{figure}[ht]
+\centering
+% [PLACEHOLDER: Insert comprehensive causal hierarchy diagram]
+% This figure should illustrate:
+% 1. Three levels of Pearl's hierarchy as vertical tiers
+% 2. For each level: example queries, required information, applicable methods
+% 3. Arrows showing strict hierarchy (higher levels require more information)
+% 4. Example scenarios (smoking-cancer) at each level
+% 5. Indication of which levels LLMs handle well (Level 1) vs poorly (Levels 2-3)
+% 6. Indication of where our contributions fit (enabling Levels 2-3 through formal grounding)
+\includegraphics[width=0.95\textwidth]{figures/causal_hierarchy_comprehensive.pdf}
+\caption{Pearl's three-level causal hierarchy with example queries, information requirements, and applicable inference methods at each level. The hierarchy is strict: Level 2 queries require causal structure beyond observational data; Level 3 queries require complete SCMs including functional forms and noise distributions. Large language models trained on observational text succeed at Level 1 but fail systematically at Levels 2 and 3 (indicated by red shading). Our contributions (CAF and causal discovery pipeline, shown in green) enable Levels 2 and 3 reasoning through formal causal grounding.}
+\label{fig:causal_hierarchy_comprehensive}
+\end{figure}
+
+\section{Large Language Models: Architecture, Capabilities, and Limitations}
+\label{sec:background_llm}
+
+Large Language Models are neural network systems trained on massive text corpora to predict or generate natural language. This section reviews their architecture, training methodology, emergent capabilities, and—critically—their limitations on reasoning tasks.
+
+\subsection{Transformer Architecture}
+\label{subsec:transformer}
+
+Modern LLMs are built on the Transformer architecture introduced by Vaswani et al. \cite{vaswani2017attention}, which revolutionized sequence modeling through the self-attention mechanism.
+
+\subsubsection{Self-Attention Mechanism}
+
+The core innovation of Transformers is the \textit{scaled dot-product attention} mechanism. Given a sequence of tokens represented as embeddings $\mathbf{x}_1, \ldots, \mathbf{x}_T$, we project each token into three spaces:
+
+\begin{align}
+\mathbf{Q} &= \mathbf{XW}^Q \quad \text{(queries)} \\
+\mathbf{K} &= \mathbf{XW}^K \quad \text{(keys)} \\
+\mathbf{V} &= \mathbf{XW}^V \quad \text{(values)}
+\end{align}
+
+where $\mathbf{X} \in \mathbb{R}^{T \times d}$ stacks token embeddings and $\mathbf{W}^Q, \mathbf{W}^K, \mathbf{W}^V \in \mathbb{R}^{d \times d_k}$ are learned projection matrices.
+
+Attention is computed as:
+\begin{equation}
+\text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{QK}^\top}{\sqrt{d_k}}\right) \mathbf{V}
+\label{eq:attention}
+\end{equation}
+
+The softmax of $\frac{\mathbf{QK}^\top}{\sqrt{d_k}}$ produces attention weights $\alpha_{ij}$ representing how much token $i$ should attend to token $j$. The output for each token is a weighted sum of value vectors.
+
+\textbf{Multi-Head Attention:} To capture different types of relationships, Transformers use multiple attention heads in parallel:
+\begin{equation}
+\text{MultiHead}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{Concat}(\text{head}_1, \ldots, \text{head}_h) \mathbf{W}^O
+\end{equation}
+where each $\text{head}_i = \text{Attention}(\mathbf{QW}_i^Q, \mathbf{KW}_i^K, \mathbf{VW}_i^V)$ uses separate projection matrices.
+
+\subsubsection{Transformer Block}
+
+A full Transformer block consists of:
+\begin{enumerate}
+\item Multi-head self-attention layer
+\item Layer normalization and residual connection
+\item Position-wise feedforward network (two linear layers with non-linearity)
+\item Layer normalization and residual connection
+\end{enumerate}
+
+Mathematically:
+\begin{align}
+\mathbf{Z}^{(l)} &= \text{LayerNorm}(\mathbf{H}^{(l-1)} + \text{MultiHead}(\mathbf{H}^{(l-1)})) \\
+\mathbf{H}^{(l)} &= \text{LayerNorm}(\mathbf{Z}^{(l)} + \text{FFN}(\mathbf{Z}^{(l)}))
+\end{align}
+
+where $\text{FFN}(\mathbf{x}) = \mathbf{W}_2 \cdot \text{ReLU}(\mathbf{W}_1 \mathbf{x} + \mathbf{b}_1) + \mathbf{b}_2$.
+
+Modern LLMs stack $L$ such blocks (e.g., $L=32$ for Llama-2-7b, $L=80$ for Llama-3-70B), allowing deep hierarchical processing of sequences.
+
+\subsubsection{Causal Masking and Autoregressive Generation}
+
+For causal language modeling (predicting next token), attention is masked so token $i$ can only attend to tokens $j \leq i$ (cannot see the future). This is implemented by setting attention weights to $-\infty$ for $j > i$ before softmax, ensuring $\alpha_{ij} = 0$ for future positions.
+
+During generation, the model produces tokens autoregressively:
+\begin{equation}
+\mathbf{x}_{t+1} \sim P(\cdot | \mathbf{x}_{\leq t}; \theta)
+\end{equation}
+where $P$ is the distribution output by the final layer (typically a softmax over vocabulary).
+
+\subsection{Pre-Training and Scale}
+\label{subsec:pretraining}
+
+\subsubsection{Causal Language Modeling Objective}
+
+LLMs are pre-trained using the causal language modeling objective:
+\begin{equation}
+\mathcal{L}_{\text{CLM}}(\theta) = -\mathbb{E}_{\mathbf{x} \sim \mathcal{D}} \left[ \sum_{t=1}^{T} \log P(x_t | x_{<t}; \theta) \right]
+\label{eq:clm_objective}
+\end{equation}
+
+where $\mathcal{D}$ is the training corpus and $\theta$ represents all model parameters (embeddings, attention weights, feedforward weights across all layers).
+
+This objective is simple yet remarkably effective: by learning to predict the next token given context, the model implicitly learns:
+\begin{itemize}
+\item Syntactic patterns (grammar, word order)
+\item Semantic relationships (word meanings, conceptual associations)
+\item World knowledge (facts, events, relationships extracted from text)
+\item Discourse structure (how sentences and paragraphs cohere)
+\item Common reasoning patterns (argument structures, explanation formats)
+\end{itemize}
+
+\subsubsection{Training Corpora}
+
+Modern LLMs are trained on massive heterogeneous corpora. For example:
+
+\textbf{GPT-3} \cite{brown2020language}: Trained on 300B tokens from:
+\begin{itemize}
+\item Common Crawl (filtered): 410B tokens $\to$ 60\% of training mix
+\item WebText2: 19B tokens $\to$ 22\%
+\item Books1 \& Books2: 67B tokens $\to$ 16\%
+\item Wikipedia: 3B tokens $\to$ 3\%
+\end{itemize}
+
+\textbf{Llama-2} \cite{touvron2023llama}: Trained on 2T tokens from undisclosed sources (primarily web crawls, code, scientific papers).
+
+\textbf{GPT-4} \cite{openai2023gpt4}: Training details largely undisclosed, but estimated corpus size 10T+ tokens.
+
+The diversity and scale of training data enable broad generalization, but also introduce biases, factual errors, and—critically for our purposes—predominantly observational (Level 1) information.
+
+\subsubsection{Scaling Laws}
+
+Empirical research has established power-law relationships between model performance and scale \cite{kaplan2020scaling}:
+
+\begin{equation}
+\mathcal{L}(N, D) \approx \left(\frac{N_c}{N}\right)^{\alpha_N} + \left(\frac{D_c}{D}\right)^{\alpha_D}
+\label{eq:scaling_law}
+\end{equation}
+
+where $\mathcal{L}$ is test loss, $N$ is number of parameters, $D$ is dataset size, and $N_c, D_c, \alpha_N, \alpha_D$ are fitted constants.
+
+Key findings:
+\begin{itemize}
+\item Loss decreases smoothly as model size increases (no saturation observed up to 100B+ parameters).
+\item Returns diminish: going from 1B to 10B parameters yields larger gains than 10B to 100B (logarithmic improvement).
+\item Optimal allocation of compute budget: should scale parameters, data, and training time roughly proportionally.
+\end{itemize}
+
+However, scaling laws for \textit{reasoning capabilities} (as opposed to raw perplexity) are less well understood. Recent work suggests that certain capabilities (causal reasoning, mathematical proof) may not improve smoothly with scale and may require architectural innovations beyond pure scaling \cite{wei2022emergent}.
+
+\subsection{Emergent Capabilities and Prompting Techniques}
+\label{subsec:emergent_capabilities}
+
+At sufficient scale, LLMs exhibit capabilities not explicitly present in smaller models, termed \textit{emergent abilities} \cite{wei2022emergent}.
+
+\subsubsection{In-Context Learning}
+
+LLMs can adapt to new tasks from a few examples provided in the prompt, without parameter updates. For example:
+
+\begin{verbatim}
+Translate English to French:
+sea otter -> loutre de mer
+peppermint -> menthe poivrée
+plush girafe -> girafe peluche
+cheese ->
+\end{verbatim}
+
+GPT-3 and larger models correctly generate ``fromage'' without explicit fine-tuning on translation tasks. This \textit{in-context learning} demonstrates that models learn meta-patterns (``how to perform tasks from examples'') during pre-training.
+
+\subsubsection{Chain-of-Thought Reasoning}
+
+Wei et al. \cite{wei2022chain} demonstrated that prompting models to generate intermediate reasoning steps before final answers substantially improves performance on multi-step problems:
+
+\textbf{Standard Prompting:}
+\begin{verbatim}
+Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls.
+   Each can has 3 balls. How many tennis balls does he have now?
+A: 11
+\end{verbatim}
+
+\textbf{Chain-of-Thought Prompting:}
+\begin{verbatim}
+Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls.
+   Each can has 3 balls. How many tennis balls does he have now?
+A: Let's think step by step. Roger started with 5 balls.
+   He bought 2 cans, each with 3 balls, so 2 × 3 = 6 new balls.
+   In total: 5 + 6 = 11 balls.
+\end{verbatim}
+
+Chain-of-thought prompting improves performance on arithmetic (from 18\% to 57\% on GSM8K benchmark), common-sense reasoning, and symbolic manipulation tasks for models with 100B+ parameters (smaller models show little benefit).
+
+However, as we demonstrate in our experiments (Chapter 6), CoT does \textit{not} improve causal reasoning when combined with verification scoring—suggesting that encouraging verbose outputs without verification may introduce more opportunities for error.
+
+\subsubsection{Tool Use}
+
+Recent work has explored enabling LLMs to invoke external tools (calculators, search engines, code interpreters) to augment their capabilities \cite{schick2023toolformer,paranjape2023art}.
+
+For example, Toolformer \cite{schick2023toolformer} fine-tunes LLMs to generate API calls:
+\begin{verbatim}
+Q: What is 37642 × 52918?
+A: The result is [Calculator(37642 * 52918) → 1992557956].
+\end{verbatim}
+
+This approach improves performance on arithmetic, fact retrieval, and date reasoning by offloading tasks requiring precise computation or up-to-date information to specialized tools.
+
+Our CAF system can be viewed as a sophisticated tool-use architecture, where the FVL (SPARQL verification) and DE (SCM validation) serve as external verifiers constraining generation.
+
+\subsection{Systematic Evaluation of Causal Reasoning Limitations}
+\label{subsec:llm_causal_failures}
+
+Despite impressive general capabilities, systematic studies reveal profound LLM failures on causal reasoning tasks.
+
+\subsubsection{CLadder Benchmark}
+
+The CLadder (Causal Ladder) benchmark \cite{jin2024cladder} evaluates LLMs on all three levels of Pearl's hierarchy using carefully constructed scenarios with known ground-truth causal structures.
+
+\textbf{Methodology:}
+\begin{itemize}
+\item 10,000 questions across 1,000 causal scenarios
+\item Scenarios span domains: medicine, economics, social science, law
+\item Each scenario has defined causal graph and SCM
+\item Questions explicitly labeled by level (L1: association, L2: intervention, L3: counterfactual)
+\end{itemize}
+
+\textbf{Results for State-of-the-Art Models:}
+
+\begin{table}[ht]
+\centering
+\caption{LLM Performance on CLadder Benchmark by Causal Level}
+\label{tab:cladder_results}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Model} & \textbf{Level 1 (Assoc.)} & \textbf{Level 2 (Interv.)} & \textbf{Level 3 (CF)} \\
+\midrule
+GPT-3.5-turbo & 72.3\% & 38.7\% & 29.1\% \\
+GPT-4 & 84.6\% & 51.2\% & 42.3\% \\
+PaLM-540B & 79.8\% & 44.9\% & 35.7\% \\
+Llama-2-70B & 68.5\% & 35.4\% & 27.8\% \\
+\midrule
+Human experts & 94.2\% & 89.7\% & 86.3\% \\
+Random baseline & 33.3\% & 33.3\% & 33.3\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Key Observations:}
+\begin{itemize}
+\item \textbf{Sharp capability cliff:} Performance drops 25-35 percentage points from Level 1 to Level 2.
+\item \textbf{Further degradation at Level 3:} Counterfactual reasoning barely exceeds random guessing for smaller models.
+\item \textbf{Even GPT-4 struggles:} The most capable model achieves only 51\% on interventions and 42\% on counterfactuals—far below human expert performance.
+\end{itemize}
+
+\subsubsection{Correlation-Causation Confusion}
+
+Jin et al. \cite{jin2024can} conducted controlled experiments presenting LLMs with correlational evidence and asking explicitly causal questions.
+
+\textbf{Example Scenario:}
+\begin{quote}
+\textit{``In a study of 10,000 individuals tracked over 20 years, researchers found that those who drank coffee daily had 30\% lower rates of Parkinson's disease compared to non-coffee drinkers, even after controlling for age, sex, and smoking status.''}
+
+\textbf{Question:} Does this evidence prove that coffee prevents Parkinson's disease?
+
+\textbf{Correct Answer:} No—observational correlation does not establish causation. There could be unmeasured confounders (e.g., genetic factors affecting both coffee preference and Parkinson's risk).
+\end{quote}
+
+\textbf{Results:}
+\begin{itemize}
+\item GPT-3.5: Incorrectly infers causation 68\% of the time
+\item GPT-4: Incorrectly infers causation 42\% of the time
+\item When scenarios explicitly mention potential confounders, performance improves but remains poor (GPT-4: 35\% error rate)
+\end{itemize}
+
+This systematic confusion between correlation and causation poses serious risks in high-stakes applications where LLMs might recommend interventions based on spurious associations.
+
+\subsubsection{Causal Graph Structural Inconsistency}
+
+Zevcevic et al. \cite{zevcevic2023causal} investigated whether LLMs produce consistent causal explanations across paraphrased queries.
+
+\textbf{Methodology:}
+\begin{enumerate}
+\item Present a causal scenario describing a system (e.g., economic policy mechanisms).
+\item Ask the model to describe causal relationships in 10 independent queries with paraphrased prompts.
+\item Extract causal graphs from each response.
+\item Measure graph consistency: percentage of edges appearing in all 10 graphs.
+\end{enumerate}
+
+\textbf{Results:}
+\begin{itemize}
+\item GPT-3: Average of 6.4 distinct graphs out of 10 queries for the same scenario.
+\item Edge direction reversals: 23\% of relationships have reversed directions across queries (``X causes Y'' vs. ``Y causes X'').
+\item Consistency score: Only 31\% of edges appear consistently across all paraphrases.
+\end{itemize}
+
+This severe inconsistency under paraphrase—low \textit{semantic invariance}—indicates that LLM causal reasoning is driven by surface linguistic cues rather than deep structural understanding.
+
+\begin{figure}[ht]
+\centering
+% [PLACEHOLDER: Insert LLM causal reasoning failure modes visualization]
+% This figure should show:
+% 1. Four panels illustrating different failure modes:
+%    a) Correlation-causation confusion (bar chart showing error rates by model)
+%    b) Intervention prediction errors (example with correct vs. LLM-predicted outcomes)
+%    c) Counterfactual hallucination (example showing implausible counterfactual reasoning)
+%    d) Structural inconsistency (graph showing 5 different causal structures extracted from same scenario)
+% 2. Color coding: red for failures, yellow for partial success, green for rare successes
+% 3. Annotations explaining why each failure occurs (pattern matching vs. causal understanding)
+\includegraphics[width=0.95\textwidth]{figures/llm_causal_failures.pdf}
+\caption{Four systematic failure modes of large language models on causal reasoning tasks: (a) Correlation-causation confusion—models incorrectly infer causation from observational correlations in 42-68\% of cases; (b) Intervention prediction errors—models predict associational rather than interventional distributions; (c) Counterfactual hallucination—models generate plausible-sounding but incorrect alternative histories; (d) Structural inconsistency—paraphrased queries yield different causal graphs for the same scenario. These failures stem from LLMs' reliance on pattern matching over observational text rather than genuine causal understanding.}
+\label{fig:llm_causal_failures}
+\end{figure}
+
+\subsection{Theoretical Explanations for Causal Reasoning Failures}
+\label{subsec:why_llms_fail_causal}
+
+Why do LLMs fail systematically at causal reasoning despite succeeding at many other complex tasks? We identify four fundamental reasons:
+
+\subsubsection{1. Observational Training Data}
+
+Training corpora consist overwhelmingly of observational descriptions—text describing the world as it is. While scientific papers occasionally describe experiments and interventions, such text:
+\begin{itemize}
+\item Represents a tiny fraction of training data (<1\% for general-purpose LLMs).
+\item Often uses causal language loosely (``X causes Y'' when only correlation was established).
+\item Rarely provides complete causal graphs or SCMs.
+\end{itemize}
+
+As established in causal inference theory, observational data (Level 1 information) is insufficient to identify causal structure, even with infinite samples, due to confounding and Markov equivalence \cite{spirtes2000causation}.
+
+\subsubsection{2. Next-Token Prediction Objective}
+
+The pre-training objective (Eq.~\ref{eq:clm_objective}) optimizes for likelihood of observed text sequences, not for causal correctness. This objective encourages:
+\begin{itemize}
+\item Learning statistical associations (words that frequently co-occur).
+\item Mimicking linguistic patterns (how humans \textit{talk about} causation, not how causation actually works).
+\item Generating plausible-sounding text (high likelihood under training distribution), not necessarily true or causally valid text.
+\end{itemize}
+
+There is no training signal explicitly teaching the model the difference between $P(Y|X)$ and $P(Y|\dooperator(X))$, or how to perform counterfactual reasoning.
+
+\subsubsection{3. Lack of Formal Structure}
+
+LLMs represent knowledge in high-dimensional continuous vector spaces (embeddings, hidden states) without explicit formal structures such as:
+\begin{itemize}
+\item Logical entailment relations ($\phi \vdash \psi$)
+\item Causal graphs (directed acyclic graphs encoding causal relationships)
+\item Structural equations (functional relationships with exogenous noise)
+\item Do-operator semantics (intervention vs. observation)
+\end{itemize}
+
+While distributed representations can implicitly encode some structural information, they do not enforce the hard constraints required for sound causal reasoning. Soft attention mechanisms are fundamentally different from logical inference rules.
+
+\subsubsection{4. Stochastic Generation Process}
+
+LLM generation is stochastic: at each step, tokens are sampled from a probability distribution. This introduces variability and accumulation of errors:
+\begin{itemize}
+\item Small errors at early steps propagate to later steps (error cascading).
+\item Different random seeds or temperature settings yield different outputs (low reliability).
+\item Long reasoning chains amplify error accumulation (stochastic drift, as formalized in Chapter 3).
+\end{itemize}
+
+In contrast, formal causal inference systems (e.g., do-calculus proofs, SCM simulations with fixed parameters) produce deterministic, replicable answers.
+
+These four factors combine to create a fundamental capability gap: LLMs can \textit{talk about} causation fluently but cannot \textit{reason about} causation reliably. This motivates our hybrid approach, which retains LLM linguistic flexibility while adding formal causal grounding.
+
+\section{Neuro-Symbolic AI: Bridging Neural and Symbolic Approaches}
+\label{sec:background_neurosymbolic}
+
+Neuro-symbolic AI aims to integrate neural networks (learning from data, handling uncertainty, processing unstructured inputs) with symbolic systems (logical reasoning, knowledge representation, formal guarantees). This section reviews historical context and contemporary approaches.
+
+\subsection{Historical Context and Motivation}
+\label{subsec:neurosymbolic_history}
+
+The dichotomy between neural and symbolic approaches has existed since the early days of AI:
+
+\textbf{Symbolic AI (1950s-1980s):} Early AI research focused on knowledge representation (predicate logic, semantic networks, frames) and logical reasoning (theorem proving, expert systems). Successes included:
+\begin{itemize}
+\item MYCIN \cite{shortliffe1975mycin}: Medical diagnosis expert system with explicit rules.
+\item DENDRAL \cite{lindsay1980dendral}: Chemical structure elucidation from mass spectrometry data.
+\item Automated theorem provers for mathematical logic.
+\end{itemize}
+
+\textbf{Limitations:} Symbolic systems struggled with:
+\begin{itemize}
+\item Knowledge acquisition bottleneck (manually encoding rules is labor-intensive).
+\item Brittleness (systems fail catastrophically on inputs outside their knowledge base).
+\item Inability to handle noisy, unstructured data (images, speech, natural language).
+\end{itemize}
+
+\textbf{Neural AI (1980s-present):} Connectionist approaches using artificial neural networks offered:
+\begin{itemize}
+\item Learning from data (no manual rule engineering).
+\item Robustness to noise and missing inputs.
+\item Handling unstructured data (images, audio, text).
+\end{itemize}
+
+\textbf{Limitations:} Neural systems struggled with:
+\begin{itemize}
+\item Interpretability (black-box models, opaque decision processes).
+\item Systematic generalization (failures on out-of-distribution examples).
+\item Logical reasoning and formal correctness guarantees.
+\end{itemize}
+
+\textbf{Neuro-Symbolic Integration:} Recognizing complementary strengths, researchers have long sought to combine approaches \cite{besold2017neural,garcez2019neural}. Early hybrid systems include:
+
+\textbf{KBANN} \cite{towell1994knowledge}: Knowledge-Based Artificial Neural Networks initialize network topology and weights based on expert rules, then refine through backpropagation. This transfers symbolic knowledge into neural form while retaining learning capability.
+
+\textbf{CLARION} \cite{sun2002clarion}: Cognitive architecture with explicit top-level rule system and implicit bottom-level neural networks, simulating human dual-process cognition.
+
+Modern deep learning has renewed interest in neuro-symbolic integration, with applications to visual question answering, theorem proving, program synthesis, and—relevant to this work—knowledge-grounded generation.
+
+\subsection{Contemporary Neuro-Symbolic Approaches}
+\label{subsec:contemporary_neurosymbolic}
+
+Current neuro-symbolic research can be categorized into several architectural paradigms:
+
+\subsubsection{Knowledge-Augmented Neural Models}
+
+These systems inject structured knowledge into neural architectures during training or inference.
+
+\textbf{ERNIE} \cite{zhang2019ernie}: Enhanced Representation through Knowledge Integration. Extends BERT by incorporating entity and entity-relation embeddings from knowledge graphs during pre-training. Entity mentions in text are linked to KG entities, and both masked language modeling and knowledge masking objectives are optimized jointly.
+
+\textbf{COMET} \cite{bosselut2019comet}: Commonsense Transformer for knowledge graph construction. Trained on ConceptNet and ATOMIC, COMET generates plausible commonsense inferences:
+\begin{verbatim}
+Input: PersonX goes to the store
+COMET Output: (xIntent, to buy groceries), (xEffect, has groceries)
+\end{verbatim}
+
+\textbf{Limitations:} Knowledge augmentation improves performance on knowledge-intensive tasks but does not fundamentally change the probabilistic generation process. Models still generate soft predictions rather than formally verified outputs.
+
+\subsubsection{Neural-Symbolic Inference}
+
+These approaches use neural networks to guide symbolic reasoning processes.
+
+\textbf{Neural Module Networks} \cite{andreas2016neural}: For visual question answering, decompose questions into modular programs. Each module (e.g., ``find'', ``filter'', ``count'') is implemented as a neural network. A parser converts questions to programs, which are executed compositionally:
+
+\begin{verbatim}
+Question: "How many red objects are there?"
+Program: count(filter(find(), red))
+\end{verbatim}
+
+Each module processes visual features symbolically (following program structure) but with neural implementations (learned from data).
+
+\textbf{Differentiable ILP} \cite{evans2018learning}: $\partial$ILP makes logical inference differentiable, enabling end-to-end learning of logical rules from examples. Logical operations (AND, OR, NOT) are approximated by continuous functions, allowing gradient-based optimization.
+
+\textbf{Limitations:} Requires differentiability, which can compromise the crispness of logical reasoning. Approximate logic may not satisfy formal properties (e.g., transitivity, excluded middle).
+
+\subsubsection{Symbolic Constraints on Neural Generation}
+
+Our approach falls into this category: using symbolic systems to constrain or verify neural outputs.
+
+\textbf{Constrained Decoding:} Forcing neural generation to satisfy grammatical or logical constraints. For example, ensuring generated code is syntactically valid by masking invalid tokens during sampling.
+
+\textbf{Neuro-Symbolic Verification:} Generate candidates neurally, verify symbolically, refine if verification fails. This is precisely the paradigm CAF instantiates for causal reasoning.
+
+\textbf{Advantages:}
+\begin{itemize}
+\item No need for end-to-end differentiability (can use discrete symbolic operations).
+\item Clear separation of concerns (neural for generation, symbolic for verification).
+\item Formal guarantees on verified outputs (if symbolic verifier is sound).
+\end{itemize}
+
+\textbf{Our Contribution:} We extend this paradigm to causal reasoning by integrating LLM generation with SPARQL verification (for factual correctness) and SCM validation (for causal consistency), demonstrating substantial improvements in reliability.
+
+\subsection{Positioning of Our Work}
+\label{subsec:neurosymbolic_positioning}
+
+Our contributions differ from prior neuro-symbolic work in several ways:
+
+\begin{itemize}
+\item \textbf{Focus on Causal Reasoning:} While much neuro-symbolic research targets visual reasoning, program synthesis, or knowledge graph completion, we specifically address causal inference—a domain requiring Level 2 and Level 3 reasoning beyond observational pattern matching.
+
+\item \textbf{Verification-Based Architecture:} Rather than attempting to make symbolic reasoning differentiable (which compromises logical rigor), we use symbolic systems as non-differentiable verifiers providing hard constraints. This preserves formal correctness guarantees.
+
+\item \textbf{Closed-Loop Refinement:} We implement iterative feedback where verification failures generate constraints that guide LLM refinement, creating a closed-loop system that progressively improves outputs.
+
+\item \textbf{Integration of Multiple Symbolic Systems:} CAF integrates both knowledge graphs (for factual verification via SPARQL) and structural causal models (for causal validation via intervention testing), demonstrating that multiple symbolic components can synergistically enhance reliability.
+
+\item \textbf{Production-Grade Implementation:} We provide not just proof-of-concept experiments but a complete production-ready system with deployment architecture, performance benchmarks, and scalability analysis.
+\end{itemize}
+
+\section{Knowledge Graphs and Semantic Web Technologies}
+\label{sec:background_kg}
+
+Knowledge graphs provide structured representations of entities and relationships, serving as the factual grounding substrate for our verification mechanisms.
+
+\subsection{RDF: Resource Description Framework}
+\label{subsec:rdf}
+
+RDF \cite{w3c2014rdf} is the standard data model for representing knowledge graphs on the semantic web.
+
+\subsubsection{RDF Triples}
+
+Knowledge is represented as triples:
+\begin{equation}
+\langle \text{subject}, \text{predicate}, \text{object} \rangle
+\end{equation}
+
+\textbf{Examples:}
+\begin{itemize}
+\item $\langle \text{Smoking}, \text{causes}, \text{Lung\_Cancer} \rangle$
+\item $\langle \text{Paris}, \text{isCapitalOf}, \text{France} \rangle$
+\item $\langle \text{Einstein}, \text{bornIn}, \text{1879} \rangle$
+\end{itemize}
+
+Subjects and predicates are URIs (Uniform Resource Identifiers), enabling global namespaces and interoperability:
+\begin{verbatim}
+<http://dbpedia.org/resource/Smoking>
+<http://example.org/ontology/causes>
+<http://dbpedia.org/resource/Lung_cancer>
+\end{verbatim}
+
+Objects can be URIs (resources) or literals (strings, numbers, dates):
+\begin{verbatim}
+<http://dbpedia.org/resource/Albert_Einstein>
+<http://dbpedia.org/ontology/birthYear>
+"1879"^^xsd:integer
+\end{verbatim}
+
+\subsubsection{RDF Graphs}
+
+A collection of RDF triples forms a directed labeled graph where:
+\begin{itemize}
+\item Nodes represent subjects and objects (entities, literals).
+\item Edges represent predicates (relationships).
+\end{itemize}
+
+This graph structure enables traversal queries, pattern matching, and inference (e.g., finding all causes of lung cancer by querying triples with predicate ``causes'' and object ``Lung\_Cancer'').
+
+\subsection{SPARQL: Query Language for RDF}
+\label{subsec:sparql}
+
+SPARQL \cite{w3c2013sparql} is the standard query language for RDF data, analogous to SQL for relational databases.
+
+\subsubsection{SPARQL Query Types}
+
+\textbf{SELECT queries:} Retrieve variable bindings matching a graph pattern.
+
+Example: Find all diseases caused by smoking:
+\begin{verbatim}
+PREFIX ex: <http://example.org/>
+SELECT ?disease WHERE {
+  ex:Smoking ex:causes ?disease .
+}
+\end{verbatim}
+
+Returns: \texttt{?disease = \{Lung\_Cancer, Heart\_Disease, COPD, ...\}}
+
+\textbf{ASK queries:} Boolean queries checking existence of a pattern.
+
+Example: Does smoking cause lung cancer?
+\begin{verbatim}
+PREFIX ex: <http://example.org/>
+ASK {
+  ex:Smoking ex:causes ex:Lung_Cancer .
+}
+\end{verbatim}
+
+Returns: \texttt{true} or \texttt{false}
+
+\textbf{CONSTRUCT queries:} Build new RDF graphs from query results.
+
+\textbf{DESCRIBE queries:} Retrieve all triples about a resource.
+
+\subsubsection{Graph Patterns and Filters}
+
+SPARQL supports complex patterns with variables, logical operators, and filters:
+
+\begin{verbatim}
+SELECT ?person ?age WHERE {
+  ?person rdf:type ex:Scientist .
+  ?person ex:age ?age .
+  FILTER (?age > 50)
+}
+\end{verbatim}
+
+Finds all scientists older than 50.
+
+\subsubsection{Relevance to CAF}
+
+Our Formal Verification Layer constructs SPARQL queries from LLM-generated propositions:
+\begin{enumerate}
+\item Extract RDF triple $(s, p, o)$ from natural language proposition.
+\item Build ASK query: \texttt{ASK \{ <s> <p> <o> . \}}
+\item Execute against triplestore.
+\item Classify as Verified (query returns true), Contradiction (negation returns true), or Failed (neither returns true).
+\end{enumerate}
+
+This enables deterministic, formal verification of factual claims extracted from stochastic LLM generation.
+
+\subsection{Major Knowledge Bases}
+\label{subsec:knowledge_bases}
+
+Several large-scale open knowledge bases are relevant to this work:
+
+\subsubsection{Wikidata}
+
+\textbf{Wikidata} \cite{vrandevcic2014wikidata} is a collaborative knowledge base serving as structured data backend for Wikipedia.
+
+\textbf{Statistics:}
+\begin{itemize}
+\item 100M+ items (entities)
+\item 1.5B+ statements (triples)
+\item Multilingual (labels and descriptions in 300+ languages)
+\item Continuously updated by community contributors
+\end{itemize}
+
+\textbf{Coverage:} General world knowledge—people, places, events, concepts, works of art, scientific terms.
+
+\textbf{Strengths:} Comprehensive coverage, high quality (community-reviewed), multilingual, actively maintained.
+
+\textbf{Limitations:} Primarily factual/encyclopedic; causal relationships less systematically encoded.
+
+\subsubsection{ConceptNet}
+
+\textbf{ConceptNet} \cite{speer2017conceptnet} is a multilingual knowledge graph representing common-sense knowledge.
+
+\textbf{Statistics:}
+\begin{itemize}
+\item 8M+ concepts
+\item 21M+ edges (relationships)
+\item 30+ relation types
+\item Multilingual (concepts from 100+ languages)
+\end{itemize}
+
+\textbf{Relation Types Include:}
+\begin{itemize}
+\item \texttt{Causes}: direct causation (e.g., ``exercise causes weight loss'')
+\item \texttt{HasPrerequisite}: prerequisite relationships (e.g., ``driving requires license'')
+\item \texttt{IsA}: taxonomic relationships (e.g., ``dog is a mammal'')
+\item \texttt{PartOf}: mereological relationships (e.g., ``wheel part of car'')
+\item \texttt{UsedFor}: functional relationships (e.g., ``knife used for cutting'')
+\end{itemize}
+
+\textbf{Relevance:} ConceptNet includes explicit \texttt{Causes} relations, making it particularly valuable for causal verification in our system.
+
+\textbf{Limitations:} Common-sense level (not deep scientific causality); some edges derived from crowdsourcing (variable quality).
+
+\subsubsection{YAGO}
+
+\textbf{YAGO} \cite{suchanek2007yago} combines Wikipedia, WordNet, and GeoNames into a high-precision knowledge base.
+
+\textbf{Statistics:}
+\begin{itemize}
+\item 10M+ entities
+\item 120M+ facts
+\item High precision (95%+ accuracy on manual evaluation)
+\end{itemize}
+
+\textbf{Strengths:} Precision focus (carefully extracted and validated), temporal and spatial information, taxonomic depth.
+
+\textbf{Limitations:} Coverage less comprehensive than Wikidata; update frequency lower.
+
+\subsubsection{Domain-Specific Knowledge Bases}
+
+For specialized applications, domain-specific KBs are often more suitable:
+
+\begin{itemize}
+\item \textbf{Medical:} UMLS (Unified Medical Language System), SNOMED CT, Disease Ontology
+\item \textbf{Biological:} Gene Ontology, UniProt, Reactome (pathway database)
+\item \textbf{Chemical:} PubChem, ChEMBL
+\item \textbf{Legal:} LegalRuleML ontologies
+\end{itemize}
+
+Our architecture is designed to be KB-agnostic: any triplestore exposing a SPARQL endpoint can be integrated into CAF.
+
+\begin{figure}[ht]
+\centering
+% [PLACEHOLDER: Insert knowledge graph visualization showing RDF structure]
+% This figure should illustrate:
+% 1. Example RDF triples as a graph (nodes = entities, edges = relations)
+% 2. Sample from ConceptNet showing causal relations (Smoking -[Causes]-> Lung_Cancer)
+% 3. SPARQL query overlaid on graph, highlighting matched pattern
+% 4. Verification process: proposition -> triple extraction -> SPARQL query -> result
+% 5. Multiple knowledge bases (Wikidata, ConceptNet, domain-specific) feeding into unified triplestore
+\includegraphics[width=0.95\textwidth]{figures/knowledge_graph_structure.pdf}
+\caption{Knowledge graph structure and SPARQL verification workflow. (Top) RDF triples form a directed labeled graph where entities (circles) are connected by typed relationships (arrows). (Middle) Example from ConceptNet showing causal relations: Smoking causes Lung\_Cancer, which causes Respiratory\_Failure. (Bottom) Verification process: LLM-generated proposition ``Smoking causes lung cancer'' is converted to RDF triple $\langle$Smoking, causes, Lung\_Cancer$\rangle$, translated to SPARQL ASK query, and executed against the triplestore, returning true (verified) or false (failed/contradiction). Multiple knowledge bases can be integrated via federated SPARQL queries.}
+\label{fig:kg_structure}
+\end{figure}
+
+\section{Related Work: Causal Reasoning with Language Models}
+\label{sec:related_work}
+
+We now survey prior work specifically targeting causal reasoning with language models, contrasting these approaches with our contributions.
+
+\subsection{Causal Reasoning Benchmarks and Evaluations}
+
+\subsubsection{CLadder Benchmark}
+
+As discussed in Section~\ref{subsec:llm_causal_failures}, the CLadder benchmark \cite{jin2024cladder} systematically evaluates LLMs on Pearl's three levels, revealing sharp capability cliffs at Levels 2 and 3. This work provides strong empirical motivation for our research: pure LLM approaches are insufficient for causal reasoning.
+
+\subsubsection{CORR2CAUSE Dataset}
+
+The CORR2CAUSE dataset \cite{jin2024can} tests whether LLMs can distinguish correlation from causation. It includes:
+\begin{itemize}
+\item Correlational scenarios with and without explicit confounders
+\item Causal questions requiring interventional reasoning
+\item Ground-truth labels based on causal graphs
+\end{itemize}
+
+Results confirm that even GPT-4 incorrectly infers causation from correlation in 40%+ of cases.
+
+\subsubsection{CausalQA Benchmark}
+
+CausalQA \cite{kiciman2023causal} evaluates causal question answering across multiple domains. Questions are categorized as:
+\begin{itemize}
+\item Causal discovery (``What causes X?'')
+\item Effect prediction (``What happens if we do X?'')
+\item Explanation (``Why did X happen?'')
+\end{itemize}
+
+LLMs achieve 50-65\% accuracy, substantially below human experts (85-90\%).
+
+\subsection{Prompting-Based Approaches}
+
+\subsubsection{Causal Chain-of-Thought}
+
+Sprague et al. \cite{sprague2023causal} propose causal chain-of-thought prompting, encouraging LLMs to explicitly state causal mechanisms:
+
+\begin{verbatim}
+Q: If we increase minimum wage, what happens to employment?
+Causal-CoT: Let's trace the causal chain:
+1. Minimum wage increase -> labor costs increase for businesses
+2. Labor costs increase -> businesses may reduce hiring
+3. Reduced hiring -> employment may decrease
+4. However, increased wages -> workers spend more -> demand increases
+5. Increased demand -> businesses may hire more
+Therefore: The effect is ambiguous, depending on relative magnitudes.
+\end{verbatim}
+
+\textbf{Results:} Modest improvements (5-10 percentage points) on causal reasoning tasks compared to standard CoT.
+
+\textbf{Limitations:} Still relies on pattern matching; no formal verification. Our experiments (Chapter 6) show that even advanced prompting techniques underperform formal verification.
+
+\subsubsection{Analogical Prompting for Causality}
+
+Using analogies to known causal scenarios improves LLM performance \cite{webb2023analogical}:
+
+\begin{verbatim}
+Analogy: Just as smoking causes lung damage, which causes cancer,
+Exercise causes muscle growth, which causes ?
+Answer: strength improvement
+\end{verbatim}
+
+\textbf{Limitations:} Analogies work only when similar scenarios exist in training data; fails on novel causal structures.
+
+\subsection{Fine-Tuning for Causal Reasoning}
+
+\subsubsection{CausalBERT}
+
+Veitch et al. \cite{veitch2021adapting} fine-tune BERT for causal effect estimation from text:
+\begin{itemize}
+\item Dataset: Medical abstracts describing randomized controlled trials
+\item Task: Predict treatment effect sign and magnitude
+\item Method: Fine-tune BERT encoder on labeled examples (treatment, outcome, effect)
+\end{itemize}
+
+\textbf{Results:} Achieves 72\% accuracy on effect sign prediction (positive/negative/neutral).
+
+\textbf{Limitations:} Domain-specific (medical RCTs); requires labeled training data; does not generalize to arbitrary causal reasoning.
+
+\subsubsection{Instruction-Tuned Models for Causality}
+
+Some work explores instruction-tuning LLMs on causal reasoning datasets \cite{jin2023towards}:
+\begin{itemize}
+\item Curate datasets of causal questions with explanations
+\item Fine-tune LLMs (e.g., T5, Flan) on these datasets
+\item Evaluate on held-out causal reasoning tasks
+\end{itemize}
+
+\textbf{Results:} Improvements of 10-15 percentage points over base models, but still far below formal methods.
+
+\textbf{Limitations:} Requires large labeled datasets; suffers from distribution shift; does not provide formal guarantees.
+
+\subsection{Knowledge-Grounded Causal Reasoning}
+
+\subsubsection{Retrieval-Augmented Generation for Causality}
+
+Some work applies RAG to causal questions \cite{kiciman2023causal}:
+\begin{enumerate}
+\item Retrieve relevant documents (e.g., scientific papers describing causal relationships)
+\item Prepend retrieved context to LLM prompt
+\item Generate answer conditioned on retrieval
+\end{enumerate}
+
+\textbf{Results:} Improves performance on factual causal questions (``What causes X?'') but provides little benefit on interventional/counterfactual questions.
+
+\textbf{Limitations:} Retrieval based on semantic similarity, not causal relevance; no verification that LLM correctly uses retrieved information; our experiments show RAG underperforms verification (53.8\% vs. 76.5\% for CAF).
+
+\subsubsection{COMET-Atomic Integration}
+
+COMET \cite{bosselut2019comet} generates commonsense causal inferences:
+\begin{verbatim}
+Input: PersonX eats pizza
+COMET: (xEffect, PersonX is full), (xWant, to drink water)
+\end{verbatim}
+
+Some work integrates COMET with LLMs to improve commonsense reasoning \cite{bosselut2021dynamic}.
+
+\textbf{Limitations:} Limited to commonsense causality (everyday scenarios); does not handle scientific, economic, or policy-level causal reasoning; no formal causal models.
+
+\subsection{Text-to-Causal-Graph Extraction}
+
+\subsubsection{Causal Relation Extraction}
+
+Prior work on extracting causal relations from text \cite{hassanpour2019learning,oh2020causal}:
+\begin{itemize}
+\item \textbf{Task:} Identify pairs $(X, Y)$ where $X$ causes $Y$ based on textual evidence
+\item \textbf{Methods:} Supervised learning (SVM, neural classifiers) on annotated datasets with linguistic features (syntax, dependency paths, keywords)
+\end{itemize}
+
+\textbf{Results:} F1 scores of 60-75\% on biomedical causal extraction.
+
+\textbf{Limitations:} Produces flat lists of cause-effect pairs, not full DAGs; no transitive reasoning; no grounding in SCMs; no validation through interventions.
+
+\subsubsection{Event Causality Identification}
+
+Identifying causal relationships between events in text \cite{do2011minimally}:
+\begin{verbatim}
+Text: "The earthquake caused the building to collapse."
+Extraction: (earthquake, CAUSE, collapse)
+\end{verbatim}
+
+\textbf{Limitations:} Event-level (not variable-level) causality; no quantitative causal effects; no counterfactual reasoning.
+
+\subsection{Differentiating Our Contributions}
+
+Our work differs from prior approaches in several critical ways:
+
+\begin{table}[ht]
+\centering
+\caption{Comparison of Our Contributions with Prior Work}
+\label{tab:related_work_comparison}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Approach} & \textbf{Formal} & \textbf{Intervention} & \textbf{Iterative} & \textbf{End-to-End} \\
+& \textbf{Verification} & \textbf{Validation} & \textbf{Refinement} & \textbf{System} \\
+\midrule
+Prompting (CoT, Causal-CoT) & \xmark & \xmark & \xmark & \xmark \\
+Fine-tuning (CausalBERT) & \xmark & \xmark & \xmark & \cmark \\
+RAG-based & \xmark & \xmark & \xmark & \cmark \\
+COMET / Commonsense KG & \cmark & \xmark & \xmark & \cmark \\
+Causal extraction (prior) & \xmark & \xmark & \xmark & \xmark \\
+\midrule
+\textbf{CAF (Our Work)} & \cmark & \cmark & \cmark & \cmark \\
+\textbf{Causal Discovery (Our Work)} & \cmark & \cmark & \cmark & \cmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Key Differentiators:}
+\begin{enumerate}
+\item \textbf{Formal Verification:} We integrate SPARQL verification against knowledge bases and SCM-based causal validation—providing formal correctness guarantees absent in prompting or fine-tuning approaches.
+
+\item \textbf{Intervention-Based Validation:} Our causal discovery pipeline validates extracted structures through interventional predictions (Level 2 reasoning), filtering spurious correlations that would pass observational tests.
+
+\item \textbf{Iterative Refinement:} CAF implements closed-loop feedback where verification failures generate constraints guiding LLM regeneration—an architectural innovation not present in prior work.
+
+\item \textbf{End-to-End Production System:} We provide complete implementation including deployment architecture, performance optimization, and scalability analysis—enabling real-world deployment.
+
+\item \textbf{Comprehensive Evaluation:} Our experiments span synthetic and real-world domains, include ablation studies identifying critical components, and analyze convergence dynamics—providing deeper empirical understanding than prior work.
+\end{enumerate}
+
+\section{Summary}
+\label{sec:background_summary}
+
+This chapter established the essential background for understanding our contributions:
+
+\textbf{Causal Inference (Section~\ref{sec:background_causal}):} Pearl's three-level hierarchy (association, intervention, counterfactuals) defines qualitatively different types of causal reasoning. Structural Causal Models provide formal machinery for representing causality and performing interventional and counterfactual inference. Causal discovery algorithms can learn structure from data but require numerical observations and cannot directly process text.
+
+\textbf{Large Language Models (Section~\ref{sec:background_llm}):} Transformer-based LLMs achieve impressive performance on many NLP tasks through pre-training on massive text corpora. However, systematic evaluations reveal profound failures on causal reasoning: LLMs confuse correlation with causation, fail to predict interventional outcomes, hallucinate counterfactuals, and produce structurally inconsistent causal explanations. These failures stem from fundamental limitations: observational training data, next-token prediction objectives lacking causal supervision, absence of formal structure, and stochastic generation processes prone to error accumulation.
+
+\textbf{Neuro-Symbolic AI (Section~\ref{sec:background_neurosymbolic}):} Integrating neural learning with symbolic reasoning offers a path toward systems combining flexibility with formal rigor. Our verification-based architecture—where LLMs propose and symbolic systems verify—represents a contemporary neuro-symbolic paradigm prioritizing correctness over end-to-end differentiability.
+
+\textbf{Knowledge Graphs (Section~\ref{sec:background_kg}):} RDF and SPARQL provide standard representations and query languages for structured knowledge. Large-scale knowledge bases (Wikidata, ConceptNet, domain-specific ontologies) offer factual grounding for verification. Our CAF system leverages these technologies to formally verify LLM-generated propositions.
+
+\textbf{Related Work (Section~\ref{sec:related_work}):} Prior approaches to causal reasoning with LLMs—advanced prompting, fine-tuning, RAG, causal extraction—provide partial solutions but lack the formal verification and intervention-based validation central to our contributions.
+
+With this foundation established, we now turn to the theoretical contributions in Chapter 3: formalizing stochastic drift and defining causal autonomy as the target property for reliable causal reasoning systems.

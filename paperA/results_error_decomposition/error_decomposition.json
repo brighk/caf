@@ -1,0 +1,30 @@
+{
+  "correlation_baseline": {
+    "missing_mean": 6.1033333333333335,
+    "missing_std": 2.7819637348862445,
+    "extra_mean": 8.07,
+    "extra_std": 3.422245851289277,
+    "n": 300
+  },
+  "llm_only": {
+    "missing_mean": 1.8533333333333333,
+    "missing_std": 1.3460394578994415,
+    "extra_mean": 0.9333333333333333,
+    "extra_std": 0.8339997335464536,
+    "n": 300
+  },
+  "llm_scm_no_intervention": {
+    "missing_mean": 1.0,
+    "missing_std": 0.9309493362512627,
+    "extra_mean": 0.3566666666666667,
+    "extra_std": 0.5317789850011835,
+    "n": 300
+  },
+  "full_pipeline": {
+    "missing_mean": 0.06333333333333334,
+    "missing_std": 0.24356153682842085,
+    "extra_mean": 0.0,
+    "extra_std": 0.0,
+    "n": 300
+  }
+}

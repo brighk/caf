@@ -1,0 +1,24 @@
+{
+  "causal_timebank_news": {
+    "n": 108,
+    "shd_mean": 2.9074074074074074,
+    "shd_std": 2.654615257876843,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 314
+  },
+  "semeval2010_task8_general": {
+    "n": 1331,
+    "shd_mean": 1.0,
+    "shd_std": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 1331
+  }
+}

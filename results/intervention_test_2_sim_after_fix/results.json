@@ -1,0 +1,40 @@
+[
+  {
+    "question_id": "0",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "expected_answer": "no",
+    "caf_answer": "no",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 1,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "[Generated response #1]\nPrompt: Would Lumbo occur if not Ziklo instead of Ziklo?...",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='[Generated response #1]\\nPrompt: Would Lumbo occur if not Ziklo instead of Ziklo?...', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='ziklo', predicate='counterfactual_effect', obj='lumbo', confidence=1.0, source_span='Would Lumbo occur if not Ziklo instead of Ziklo?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'no'\", 'Based on: do(Ziklo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=[], duration_ms=10.121822357177734)"
+      ],
+      "iteration_count": 1,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "200",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "expected_answer": "no",
+    "caf_answer": "no",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 1,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "[Generated response #2]\nPrompt: Would Zlim occur if not Glent instead of Glent?...",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='[Generated response #2]\\nPrompt: Would Zlim occur if not Glent instead of Glent?...', extracted_triplets=[], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='counterfactual_effect', obj='zlim', confidence=1.0, source_span='Would Zlim occur if not Glent instead of Glent?'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'no'\", 'Based on: do(Glent=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=[], duration_ms=10.419607162475586)"
+      ],
+      "iteration_count": 1,
+      "used_intervention": true
+    }
+  }
+]

@@ -1,0 +1,4 @@
+domain,shd_mean,shd_std,intervention_accuracy,counterfactual_consistency,n
+economics,2.333333,0.471405,0.850000,0.816667,3
+medical,2.666667,0.471405,0.433333,0.483333,3
+policy,2.000000,0.000000,0.850000,0.800000,3

@@ -1,0 +1,25 @@
+[
+  {
+    "question_id": "0",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "expected_answer": "no",
+    "caf_answer": "no",
+    "caf_decision": "reject",
+    "caf_score": 0.0,
+    "iterations": 5,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "[Generated response #5]\nPrompt: Would Lumbo occur if not Ziklo instead of Ziklo?...",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='[Generated response #1]\\nPrompt: Would Lumbo occur if not Ziklo instead of Ziklo?...', extracted_triplets=[], verification_results=[], overall_score=0.0, injected_constraints=[], duration_ms=9.650707244873047)",
+        "IterationLog(iteration=2, draft_response='[Generated response #2]\\nPrompt: Would Lumbo occur if not Ziklo instead of Ziklo?...', extracted_triplets=[], verification_results=[], overall_score=0.0, injected_constraints=[], duration_ms=7.761478424072266)",
+        "IterationLog(iteration=3, draft_response='[Generated response #3]\\nPrompt: Would Lumbo occur if not Ziklo instead of Ziklo?...', extracted_triplets=[], verification_results=[], overall_score=0.0, injected_constraints=[], duration_ms=7.650613784790039)",
+        "IterationLog(iteration=4, draft_response='[Generated response #4]\\nPrompt: Would Lumbo occur if not Ziklo instead of Ziklo?...', extracted_triplets=[], verification_results=[], overall_score=0.0, injected_constraints=[], duration_ms=7.296085357666016)",
+        "IterationLog(iteration=5, draft_response='[Generated response #5]\\nPrompt: Would Lumbo occur if not Ziklo instead of Ziklo?...', extracted_triplets=[], verification_results=[], overall_score=0.0, injected_constraints=[], duration_ms=7.695674896240234)"
+      ],
+      "iteration_count": 5,
+      "used_intervention": true
+    }
+  }
+]

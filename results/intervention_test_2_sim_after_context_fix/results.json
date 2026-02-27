@@ -1,0 +1,40 @@
+[
+  {
+    "question_id": "0",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "expected_answer": "no",
+    "caf_answer": "no",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 1,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "[Generated response #1]\nPrompt: We know that Ziklo causes Blaf, Blaf causes Trune, Trune causes Vork, and Vork causes Lumbo.\n\nQuesti...",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='[Generated response #1]\\nPrompt: We know that Ziklo causes Blaf, Blaf causes Trune, Trune causes Vork, and Vork causes Lumbo.\\n\\nQuesti...', extracted_triplets=[RDFTriplet(subject='trune', predicate='cause', obj='vork', confidence=0.8, source_span='[Generated response #1]\\nPrompt: We know that Ziklo causes Blaf, Blaf causes Trune, Trune causes Vork, and Vork causes Lumbo.\\n\\n'), RDFTriplet(subject='trune', predicate='cause', obj='vork', confidence=0.8, source_span='[Generated response #1]\\nPrompt: We know that Ziklo causes Blaf, Blaf causes Trune, Trune causes Vork, and Vork causes Lumbo.\\n\\n'), RDFTriplet(subject='vork', predicate='cause', obj='lumbo', confidence=0.8, source_span='[Generated response #1]\\nPrompt: We know that Ziklo causes Blaf, Blaf causes Trune, Trune causes Vork, and Vork causes Lumbo.\\n\\n')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='trune', predicate='cause', obj='vork', confidence=0.8, source_span='[Generated response #1]\\nPrompt: We know that Ziklo causes Blaf, Blaf causes Trune, Trune causes Vork, and Vork causes Lumbo.\\n\\n'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'no'\", 'Based on: do(Ziklo=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=[], duration_ms=14.042377471923828)"
+      ],
+      "iteration_count": 1,
+      "used_intervention": true
+    }
+  },
+  {
+    "question_id": "200",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "expected_answer": "no",
+    "caf_answer": "no",
+    "caf_decision": "accept",
+    "caf_score": 1.0,
+    "iterations": 1,
+    "correct": true,
+    "reasoning_type": "basic",
+    "response_text": "[Generated response #2]\nPrompt: We know that Glent causes Razz, Razz causes Pex, Pex causes Zurn, and Zurn causes Zlim.\n\nQuestion: W...",
+    "verification_details": {
+      "iteration_logs": [
+        "IterationLog(iteration=1, draft_response='[Generated response #2]\\nPrompt: We know that Glent causes Razz, Razz causes Pex, Pex causes Zurn, and Zurn causes Zlim.\\n\\nQuestion: W...', extracted_triplets=[RDFTriplet(subject='glent', predicate='cause', obj='razz', confidence=0.8, source_span='[Generated response #2]\\nPrompt: We know that Glent causes Razz, Razz causes Pex, Pex causes Zurn, and Zurn causes'), RDFTriplet(subject='pex', predicate='cause', obj='zurn', confidence=0.8, source_span='[Generated response #2]\\nPrompt: We know that Glent causes Razz, Razz causes Pex, Pex causes Zurn, and Zurn causes')], verification_results=[VerificationResult(triplet=RDFTriplet(subject='glent', predicate='cause', obj='razz', confidence=0.8, source_span='[Generated response #2]\\nPrompt: We know that Glent causes Razz, Razz causes Pex, Pex causes Zurn, and Zurn causes'), status=<VerificationStatus.VERIFIED: 'verified'>, kb_support=True, contradiction_found=False, supporting_facts=[\"Intervention calculus expects 'no'\", 'Based on: do(Glent=False)'], contradicting_facts=[], confidence_score=1.0)], overall_score=1.0, injected_constraints=[], duration_ms=13.60011100769043)"
+      ],
+      "iteration_count": 1,
+      "used_intervention": true
+    }
+  }
+]

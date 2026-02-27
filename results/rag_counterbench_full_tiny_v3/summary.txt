@@ -1,0 +1,18 @@
+======================================================================
+RAG Baseline - CounterBench Evaluation
+======================================================================
+
+Generated: 2026-02-20 10:31:41
+Configuration: Pure RAG (Retrieve + Generate, NO verification)
+
+OVERALL PERFORMANCE
+----------------------------------------------------------------------
+Total examples: 1000
+Correct: 383
+Accuracy: 38.30%
+Avg iterations: 1 (RAG is single-shot)
+
+ANSWER DISTRIBUTION
+----------------------------------------------------------------------
+unknown    | 220 (22.0%)
+yes        | 780 (78.0%)

@@ -1,0 +1,14 @@
+{
+  "caf": {
+    "accuracy": 0.421,
+    "correct": 421,
+    "total": 1000,
+    "avg_iterations": 2.507
+  },
+  "rag": {
+    "accuracy": 0.383,
+    "correct": 383,
+    "total": 1000,
+    "avg_iterations": 1.0
+  }
+}

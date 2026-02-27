@@ -1,0 +1,53 @@
+# CounterBench Causal Knowledge Base
+# Namespace: http://counterbench.org/
+# Generated: 10 relations
+
+<http://counterbench.org/variable/Ziklo> <http://counterbench.org/causes> <http://counterbench.org/variable/Blaf> .
+<http://counterbench.org/relation/Ziklo_Blaf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://counterbench.org/CausalRelation> .
+<http://counterbench.org/relation/Ziklo_Blaf> <http://counterbench.org/hasCause> <http://counterbench.org/variable/Ziklo> .
+<http://counterbench.org/relation/Ziklo_Blaf> <http://counterbench.org/hasEffect> <http://counterbench.org/variable/Blaf> .
+
+<http://counterbench.org/variable/Glent> <http://counterbench.org/causes> <http://counterbench.org/variable/Razz> .
+<http://counterbench.org/relation/Glent_Razz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://counterbench.org/CausalRelation> .
+<http://counterbench.org/relation/Glent_Razz> <http://counterbench.org/hasCause> <http://counterbench.org/variable/Glent> .
+<http://counterbench.org/relation/Glent_Razz> <http://counterbench.org/hasEffect> <http://counterbench.org/variable/Razz> .
+
+<http://counterbench.org/variable/Praf> <http://counterbench.org/causes> <http://counterbench.org/variable/Vank> .
+<http://counterbench.org/relation/Praf_Vank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://counterbench.org/CausalRelation> .
+<http://counterbench.org/relation/Praf_Vank> <http://counterbench.org/hasCause> <http://counterbench.org/variable/Praf> .
+<http://counterbench.org/relation/Praf_Vank> <http://counterbench.org/hasEffect> <http://counterbench.org/variable/Vank> .
+
+<http://counterbench.org/variable/Fizo> <http://counterbench.org/causes> <http://counterbench.org/variable/Blorn> .
+<http://counterbench.org/relation/Fizo_Blorn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://counterbench.org/CausalRelation> .
+<http://counterbench.org/relation/Fizo_Blorn> <http://counterbench.org/hasCause> <http://counterbench.org/variable/Fizo> .
+<http://counterbench.org/relation/Fizo_Blorn> <http://counterbench.org/hasEffect> <http://counterbench.org/variable/Blorn> .
+
+<http://counterbench.org/variable/Nuv> <http://counterbench.org/causes> <http://counterbench.org/variable/Splee> .
+<http://counterbench.org/relation/Nuv_Splee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://counterbench.org/CausalRelation> .
+<http://counterbench.org/relation/Nuv_Splee> <http://counterbench.org/hasCause> <http://counterbench.org/variable/Nuv> .
+<http://counterbench.org/relation/Nuv_Splee> <http://counterbench.org/hasEffect> <http://counterbench.org/variable/Splee> .
+
+<http://counterbench.org/variable/Ziklo> <http://counterbench.org/prevents> <http://counterbench.org/variable/Blaf> .
+<http://counterbench.org/relation/Ziklo_Blaf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://counterbench.org/CausalRelation> .
+<http://counterbench.org/relation/Ziklo_Blaf> <http://counterbench.org/hasCause> <http://counterbench.org/variable/Ziklo> .
+<http://counterbench.org/relation/Ziklo_Blaf> <http://counterbench.org/hasEffect> <http://counterbench.org/variable/Blaf> .
+
+<http://counterbench.org/variable/Glent> <http://counterbench.org/prevents> <http://counterbench.org/variable/Razz> .
+<http://counterbench.org/relation/Glent_Razz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://counterbench.org/CausalRelation> .
+<http://counterbench.org/relation/Glent_Razz> <http://counterbench.org/hasCause> <http://counterbench.org/variable/Glent> .
+<http://counterbench.org/relation/Glent_Razz> <http://counterbench.org/hasEffect> <http://counterbench.org/variable/Razz> .
+
+<http://counterbench.org/variable/Praf> <http://counterbench.org/prevents> <http://counterbench.org/variable/Vank> .
+<http://counterbench.org/relation/Praf_Vank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://counterbench.org/CausalRelation> .
+<http://counterbench.org/relation/Praf_Vank> <http://counterbench.org/hasCause> <http://counterbench.org/variable/Praf> .
+<http://counterbench.org/relation/Praf_Vank> <http://counterbench.org/hasEffect> <http://counterbench.org/variable/Vank> .
+
+<http://counterbench.org/variable/Fizo> <http://counterbench.org/prevents> <http://counterbench.org/variable/Blorn> .
+<http://counterbench.org/relation/Fizo_Blorn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://counterbench.org/CausalRelation> .
+<http://counterbench.org/relation/Fizo_Blorn> <http://counterbench.org/hasCause> <http://counterbench.org/variable/Fizo> .
+<http://counterbench.org/relation/Fizo_Blorn> <http://counterbench.org/hasEffect> <http://counterbench.org/variable/Blorn> .
+
+<http://counterbench.org/variable/Nuv> <http://counterbench.org/prevents> <http://counterbench.org/variable/Splee> .
+<http://counterbench.org/relation/Nuv_Splee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://counterbench.org/CausalRelation> .
+<http://counterbench.org/relation/Nuv_Splee> <http://counterbench.org/hasCause> <http://counterbench.org/variable/Nuv> .
+<http://counterbench.org/relation/Nuv_Splee> <http://counterbench.org/hasEffect> <http://counterbench.org/variable/Splee> .

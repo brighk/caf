@@ -1,0 +1,702 @@
+[
+  {
+    "id": "0",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "context": "We know that Ziklo causes Blaf, Blaf causes Trune, Trune causes Vork, and Vork causes Lumbo.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 0,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_0"
+    }
+  },
+  {
+    "id": "200",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "context": "We know that Glent causes Razz, Razz causes Pex, Pex causes Zurn, and Zurn causes Zlim.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 1,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_1"
+    }
+  },
+  {
+    "id": "400",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "context": "We know that Praf causes Vank, Vank causes Scud, Scud causes Wrenk, and Wrenk causes Klep.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 2,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_2"
+    }
+  },
+  {
+    "id": "600",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "context": "We know that Fizo causes Blorn, Blorn causes Plim, Plim causes Quaz, and Quaz causes Jext.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 3,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_3"
+    }
+  },
+  {
+    "id": "800",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "context": "We know that Nuv causes Splee, Splee causes Blen, Blen causes Druk, and Druk causes Wrox.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 4,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_4"
+    }
+  },
+  {
+    "id": "1",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "context": "We know that Ziklo causes Blaf, Blaf and Ziklo together cause Trune, Trune causes not Vork, and Vork causes Lumbo.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 5,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_0"
+    }
+  },
+  {
+    "id": "201",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "context": "We know that Glent causes Razz, Razz and Glent together cause Pex, Pex causes not Zurn, and Zurn causes Zlim.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 6,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_1"
+    }
+  },
+  {
+    "id": "401",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "context": "We know that Praf causes Vank, Vank and Praf together cause Scud, Scud causes not Wrenk, and Wrenk causes Klep.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 7,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_2"
+    }
+  },
+  {
+    "id": "601",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "context": "We know that Fizo causes Blorn, Blorn and Fizo together cause Plim, Plim causes not Quaz, and Quaz causes Jext.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 8,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_3"
+    }
+  },
+  {
+    "id": "801",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "context": "We know that Nuv causes Splee, Splee and Nuv together cause Blen, Blen causes not Druk, and Druk causes Wrox.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 9,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_4"
+    }
+  },
+  {
+    "id": "2",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "context": "We know that Ziklo causes not Blaf, Blaf causes Trune, Trune and Blaf together cause Vork, and Vork causes Lumbo.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 10,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_0"
+    }
+  },
+  {
+    "id": "202",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "context": "We know that Glent causes not Razz, Razz causes Pex, Pex and Razz together cause Zurn, and Zurn causes Zlim.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 11,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_1"
+    }
+  },
+  {
+    "id": "402",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "context": "We know that Praf causes not Vank, Vank causes Scud, Scud and Vank together cause Wrenk, and Wrenk causes Klep.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 12,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_2"
+    }
+  },
+  {
+    "id": "602",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "context": "We know that Fizo causes not Blorn, Blorn causes Plim, Plim and Blorn together cause Quaz, and Quaz causes Jext.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 13,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_3"
+    }
+  },
+  {
+    "id": "802",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "context": "We know that Nuv causes not Splee, Splee causes Blen, Blen and Splee together cause Druk, and Druk causes Wrox.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 14,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_4"
+    }
+  },
+  {
+    "id": "3",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "context": "We know that Ziklo causes Blaf, Blaf causes Trune, Trune causes Vork, and Vork and Ziklo together cause Lumbo.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 15,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_0"
+    }
+  },
+  {
+    "id": "203",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "context": "We know that Glent causes Razz, Razz causes Pex, Pex causes Zurn, and Zurn and Glent together cause Zlim.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 16,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_1"
+    }
+  },
+  {
+    "id": "403",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "context": "We know that Praf causes Vank, Vank causes Scud, Scud causes Wrenk, and Wrenk and Praf together cause Klep.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 17,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_2"
+    }
+  },
+  {
+    "id": "603",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "context": "We know that Fizo causes Blorn, Blorn causes Plim, Plim causes Quaz, and Quaz and Fizo together cause Jext.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 18,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_3"
+    }
+  },
+  {
+    "id": "803",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "context": "We know that Nuv causes Splee, Splee causes Blen, Blen causes Druk, and Druk and Nuv together cause Wrox.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 19,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_4"
+    }
+  },
+  {
+    "id": "4",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "context": "We know that Ziklo causes Blaf, Blaf and Trune together cause Vork, and Vork causes Lumbo.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 20,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_0"
+    }
+  },
+  {
+    "id": "204",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "context": "We know that Glent causes Razz, Razz and Pex together cause Zurn, and Zurn causes Zlim.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 21,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_1"
+    }
+  },
+  {
+    "id": "404",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "context": "We know that Praf causes Vank, Vank and Scud together cause Wrenk, and Wrenk causes Klep.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 22,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_2"
+    }
+  },
+  {
+    "id": "604",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "context": "We know that Fizo causes Blorn, Blorn and Plim together cause Quaz, and Quaz causes Jext.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 23,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_3"
+    }
+  },
+  {
+    "id": "804",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "context": "We know that Nuv causes Splee, Splee and Blen together cause Druk, and Druk causes Wrox.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 24,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_4"
+    }
+  },
+  {
+    "id": "5",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "context": "We know that Ziklo causes not Blaf, Blaf and Trune together cause Vork, Vork causes Lumbo. We observed Trune",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "conditional",
+      "graph_id": "graph5",
+      "model_id": 25,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_0"
+    }
+  },
+  {
+    "id": "205",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "context": "We know that Glent causes not Razz, Razz and Pex together cause Zurn, Zurn causes Zlim. We observed Pex",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "conditional",
+      "graph_id": "graph5",
+      "model_id": 26,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_1"
+    }
+  },
+  {
+    "id": "405",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "context": "We know that Praf causes not Vank, Vank and Scud together cause Wrenk, Wrenk causes Klep. We observed Scud",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "conditional",
+      "graph_id": "graph5",
+      "model_id": 27,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_2"
+    }
+  },
+  {
+    "id": "605",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "context": "We know that Fizo causes not Blorn, Blorn and Plim together cause Quaz, Quaz causes Jext. We observed Plim",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "conditional",
+      "graph_id": "graph5",
+      "model_id": 28,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_3"
+    }
+  },
+  {
+    "id": "805",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "context": "We know that Nuv causes not Splee, Splee and Blen together cause Druk, Druk causes Wrox. We observed Blen",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "conditional",
+      "graph_id": "graph5",
+      "model_id": 29,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_4"
+    }
+  },
+  {
+    "id": "6",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "context": "We know that Ziklo and Blaf together cause Trune, Trune causes Vork, and Vork causes Lumbo.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 30,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_0"
+    }
+  },
+  {
+    "id": "206",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "context": "We know that Glent and Razz together cause Pex, Pex causes Zurn, and Zurn causes Zlim.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 31,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_1"
+    }
+  },
+  {
+    "id": "406",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "context": "We know that Praf and Vank together cause Scud, Scud causes Wrenk, and Wrenk causes Klep.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 32,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_2"
+    }
+  },
+  {
+    "id": "606",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "context": "We know that Fizo and Blorn together cause Plim, Plim causes Quaz, and Quaz causes Jext.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 33,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_3"
+    }
+  },
+  {
+    "id": "806",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "context": "We know that Nuv and Splee together cause Blen, Blen causes Druk, and Druk causes Wrox.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 34,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_4"
+    }
+  },
+  {
+    "id": "7",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "context": "We know that Ziklo causes not Blaf, Blaf causes Trune, Trune causes Vork, and Vork causes Lumbo.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 35,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_0"
+    }
+  },
+  {
+    "id": "207",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "context": "We know that Glent causes not Razz, Razz causes Pex, Pex causes Zurn, and Zurn causes Zlim.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 36,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_1"
+    }
+  },
+  {
+    "id": "407",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "context": "We know that Praf causes not Vank, Vank causes Scud, Scud causes Wrenk, and Wrenk causes Klep.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 37,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_2"
+    }
+  },
+  {
+    "id": "607",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "context": "We know that Fizo causes not Blorn, Blorn causes Plim, Plim causes Quaz, and Quaz causes Jext.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 38,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_3"
+    }
+  },
+  {
+    "id": "807",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "context": "We know that Nuv causes not Splee, Splee causes Blen, Blen causes Druk, and Druk causes Wrox.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 39,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_4"
+    }
+  },
+  {
+    "id": "8",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "context": "We know that Ziklo causes Blaf, Blaf causes Trune, Trune and Ziklo together cause Vork, and Vork causes Lumbo.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 40,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_0"
+    }
+  },
+  {
+    "id": "208",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "context": "We know that Glent causes Razz, Razz causes Pex, Pex and Glent together cause Zurn, and Zurn causes Zlim.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 41,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_1"
+    }
+  },
+  {
+    "id": "408",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "context": "We know that Praf causes Vank, Vank causes Scud, Scud and Praf together cause Wrenk, and Wrenk causes Klep.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 42,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_2"
+    }
+  },
+  {
+    "id": "608",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "context": "We know that Fizo causes Blorn, Blorn causes Plim, Plim and Fizo together cause Quaz, and Quaz causes Jext.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 43,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_3"
+    }
+  },
+  {
+    "id": "808",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "context": "We know that Nuv causes Splee, Splee causes Blen, Blen and Nuv together cause Druk, and Druk causes Wrox.",
+    "expected_answer": "no",
+    "metadata": {
+      "reasoning_type": "basic",
+      "graph_id": "graph5",
+      "model_id": 44,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_4"
+    }
+  },
+  {
+    "id": "9",
+    "query": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "context": "We know that Ziklo or Blaf causes Trune, Trune causes Vork, Vork causes Lumbo. We observed Blaf.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "conditional",
+      "graph_id": "graph5",
+      "model_id": 45,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_0"
+    }
+  },
+  {
+    "id": "209",
+    "query": "Would Zlim occur if not Glent instead of Glent?",
+    "context": "We know that Glent or Razz causes Pex, Pex causes Zurn, Zurn causes Zlim. We observed Razz.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "conditional",
+      "graph_id": "graph5",
+      "model_id": 46,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_1"
+    }
+  },
+  {
+    "id": "409",
+    "query": "Would Klep occur if not Praf instead of Praf?",
+    "context": "We know that Praf or Vank causes Scud, Scud causes Wrenk, Wrenk causes Klep. We observed Vank.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "conditional",
+      "graph_id": "graph5",
+      "model_id": 47,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_2"
+    }
+  },
+  {
+    "id": "609",
+    "query": "Would Jext occur if not Fizo instead of Fizo?",
+    "context": "We know that Fizo or Blorn causes Plim, Plim causes Quaz, Quaz causes Jext. We observed Blorn.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "conditional",
+      "graph_id": "graph5",
+      "model_id": 48,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_3"
+    }
+  },
+  {
+    "id": "809",
+    "query": "Would Wrox occur if not Nuv instead of Nuv?",
+    "context": "We know that Nuv or Splee causes Blen, Blen causes Druk, Druk causes Wrox. We observed Splee.",
+    "expected_answer": "yes",
+    "metadata": {
+      "reasoning_type": "conditional",
+      "graph_id": "graph5",
+      "model_id": 49,
+      "query_type": "det-counterfactual",
+      "rung": 3,
+      "story_id": "nonsense_4"
+    }
+  }
+]

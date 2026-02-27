@@ -1,0 +1,1112 @@
+[
+  {
+    "domain": "medical",
+    "text": "Gastrointestinal Consequences of Type 2 Diabetes Mellitus and Impaired Glycemic Homeostasis A Mendelian Randomization Study.. We conducted a Mendelian randomization (MR) study to examine the associations of type 2 diabetes and glycemic traits with gastrointestinal diseases (GDs). Uncorrelated genetic variants associated with type 2 diabetes (n 231), fasting insulin (n 38), fasting glucose (n 71), and hemoglobin A1c (n 75) at the genome-wide significance were selected as instrument variables. Genetic associations with 23 common GDs were obtained from the FinnGen and UK Biobank studies and other large consortia. Genetic liability to type 2 diabetes was associated with the risk of 12 GDs. Per 1-unit increase in the log-transformed odds ratio (OR) of type 2 diabetes, the OR was 1.06 (95% CI, 1.03-1.09) for gastroesophageal reflux disease, 1.12 (95% CI, 1.07-1.17) for gastric ulcer, 1.11 (95% CI, 1.03-1.20) for acute gastritis, 1.07 (95% CI, 1.01-1.13) for chronic gastritis, 1.08 (95% CI, 1.03-1.12) for irritable bowel syndrome, 1.04 (95% CI, 1.01-1.07) for diverticular disease, 1.08 (95% CI, 1.02-1.14) for acute pancreatitis, 1.09 (95% CI, 1.05-1.12) for cholelithiasis, 1.09 (95% CI, 1.05-1.13) for cholelithiasis with cholecystitis, 1.29 (95% CI, 1.17-1.43) for nonalcoholic fatty liver disease, 1.12 (95% CI, 1.03-1.21) for liver cirrhosis, and 0.93 (95% CI, 0.89-0.97) for ulcerative colitis. Genetically predicted higher levels of fasting insulin and glucose were associated with six and one GDs, respectively. Associations were found between genetic liability to type 2 diabetes and an increased risk of a broad range of GDs, highlighting the importance of GD prevention in patients with type 2 diabetes.",
+    "gold_edges": [
+      [
+        "per 1-unit",
+        "in"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36800530"
+  },
+  {
+    "domain": "medical",
+    "text": "An older diabetes-induced mice model for studying skin wound healing.. Advances in wound treatment depend on the availability of animal models that reflect key aspects of human wound healing physiology. To this date, the accepted mouse models do not reflect defects in the healing process for chronic wounds that are associated with type two diabetic skin ulcers. The long term, systemic physiologic stress that occurs in middle aged or older Type 2 diabetes patients is difficult to simulate in preclinical animal model. We have strived to incorporate the essential elements of this stress in a manageable mouse model long term metabolic stress from obesity to include the effects of middle age and thereafter onset of diabetes. At six-weeks age, male C57BL6 mice were separated into groups fed a chow and High-Fat Diet for 0.5, 3, and 6 months. Treatment groups included long term, obesity stressed mice with induction of diabetes by streptozotocin at 5 months, and further physiologic evaluation at 8 months old. We show that this model results in a severe metabolic phenotype with insulin resistance and glucose intolerance associated with obesity and, more importantly, skin changes. The phenotype of this older age mouse model included a transcriptional signature of gene expression in skin that overlapped that observed with elderly patients who develop diabetic foot ulcers. We believe this unique old age phenotype contrasts with current mice models with induced diabetes.",
+    "gold_edges": [
+      [
+        "we show that this model",
+        "a severe"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36800369"
+  },
+  {
+    "domain": "medical",
+    "text": "Association of Hypertensive Disorders of Pregnancy With Future Cardiovascular Disease.. Hypertensive disorders in pregnancy (HDPs) are major causes of maternal and fetal morbidity and are observationally associated with future maternal risk of cardiovascular disease. However, observational results may be subject to residual confounding and bias. To investigate the association of HDPs with multiple cardiovascular diseases. A genome-wide genetic association study using mendelian randomization (MR) was performed from February 16 to March 4, 2022. Primary analysis was conducted using inverse-variance-weighted MR. Mediation analyses were performed using a multivariable MR framework. All studies included patients predominantly of European ancestry. Female-specific summary-level data from FinnGen (sixth release). Uncorrelated (r2<0.001) single-nucleotide variants (SNVs) were selected as instrumental variants from the FinnGen consortium summary statistics for exposures of any HDP, gestational hypertension, and preeclampsia or eclampsia. Genetic association estimates for outcomes were extracted from genome-wide association studies of 122 733 cases for coronary artery disease, 34 217 cases for ischemic stroke, 47 309 cases for heart failure, and 60 620 cases for atrial fibrillation. Genetically predicted HDPs were associated with a higher risk of coronary artery disease (odds ratio OR, 1.24 95% CI, 1.08-1.43 P .002) this association was evident for both gestational hypertension (OR, 1.08 95% CI, 1.00-1.17 P .04) and preeclampsiaeclampsia (OR, 1.06 95% CI, 1.01-1.12 P .03). Genetically predicted HDPs were also associated with a higher risk of ischemic stroke (OR, 1.27 95% CI, 1.12-1.44 P 2.87 \u00d7 10-4). Mediation analysis revealed a partial attenuation of the effect of HDPs on coronary artery disease after adjustment for systolic blood pressure (total effect OR, 1.24 direct effect OR, 1.10 95% CI, 1.02-1.08 P .02) and type 2 diabetes (total effect OR, 1.24 direct effect OR, 1.16 95% CI, 1.04-1.29 P .008). No associations were noted between genetically predicted HDPs and heart failure (OR, 0.97 95% CI, 0.76-1.23 P .79) or atrial fibrillation (OR, 1.11 95% CI, 0.65-1.88 P .71). The findings of this study provide genetic evidence supporting an association between HDPs and higher risk of coronary artery disease and stroke, which is only partially mediated by cardiometabolic factors. This supports classification of HDPs as risk factors for cardiovascular disease.",
+    "gold_edges": [
+      [
+        "hypertensive disorders in pregnancy (hdps) are major",
+        "of"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36800181"
+  },
+  {
+    "domain": "medical",
+    "text": "Influence of diabetes mellitus on the biochemical parameters and outcomes of multiple myeloma.. The incidence of MM in most registries remains stable or showing only a slightly increase. However, prevalence of MM is increasing due to the increase in overall survival in the last two decades. The aim of this study was to observe changes in biochemical parameters during the diagnosis and treatment of MM. A retrospective analysis was made of the biochemical indicators, survival time, and related adverse events of 196 patients with MM. Of the 196 patients with MM, 26 were diagnosed with DM (DM-MM group) at the first diagnosis, 31 with steroid-induced diabetes mellitus (SID-MM group) during treatment, and 139 without DM (MM group). There was no significant difference between the three groups in the mean age of onset, sex ratio, incidence of hypercalcemia, renal dysfunction, anemia, abnormal lactate dehydrogenase, and median value of D-dimer and fibrinogen during diagnosis and treatment. There was no significant difference in survival time between the SID-MM and MM groups, but there was a significant difference between the DM-MM and MM groups. There was no significant difference between the three groups in the incidence of hypercalcemia, anemia, and renal function impairment. The survival time of patients with DM was shorter than that of patients without DM.",
+    "gold_edges": [
+      [
+        "the",
+        "however, prevalence of mm is increasing"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36799658"
+  },
+  {
+    "domain": "medical",
+    "text": "COVID-19 and diabetes mellitus a review of the incidence, pathophysiology and management of diabetes during the pandemic.. The COVID-19 pandemic has changed the landscape of modern medicine on a global scale. An emerging concern is the recognition of a bidirectional relationship between COVID-19 and diabetes. Diabetes is a risk factor for severe COVID-19 illness. Intriguingly, recent epidemiological and This review provides an overview of our current understanding of the incidence and prevalence of diabetes in relation to the COVID-19 pandemic, highlights studies evaluating SARS-CoV-2s beta cell tropism and its effects on insulin secretion and sensitivity and evaluates the impact of the pandemic on diabetes management and metabolic control. Epidemiological studies have noted an increase in the incidence of new-onset diabetes associated with COVID-19 in patients with phenotypes of type 1 diabetes, type 2 diabetes and Ketosis-Prone Diabetes. Prospective studies are needed to fully elucidate the association between COVID-19 and diabetes and to characterize persons at risk of developing diabetes after SARS-CoV-2 infection, identify those who should be screened for diabetes, and determine the natural histories of different forms of diabetes associated with COVID-19. The COVID-19 pandemic has affected medical care worldwide. Healthcare systems have been overwhelmed during \u2018surges\u2019 of COVID-19 illness, and access to care has been affected during prolonged lockdowns. COVID-19 is caused by the SARS-CoV-2 virus, which is highly contagious. Infection with SARS-CoV-2 can lead to serious illness, primarily in the lungs, but it often affects many other organ systems, leading to disability and death. Recent studies show that persons with diabetes can have a more severe course of illness if infected with SARS-CoV-2. There is also growing evidence that COVID-19 may cause diabetes or worsen preexisting diabetes. In this review, we discuss the findings of studies that show an increase in the frequency of diabetes diagnosed worldwide during the COVID-19 pandemic. We also examine recent data that suggest SARS-CoV-2 can infect and damage the insulin-producing cells in the pancreas. Finally, we provide an overview of the impact of COVID-19 on the management of patients with diabetes, and the emerging use of telemedicine in diabetes care.",
+    "gold_edges": [
+      [
+        "epidemiological studies have noted an",
+        "in"
+      ],
+      [
+        "infection with sars-cov-2 can",
+        "serious"
+      ],
+      [
+        "there is also growing evidence that covid-19 may",
+        "diabetes"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36797835"
+  },
+  {
+    "domain": "medical",
+    "text": "Curalin Supplement for Patients with Type 2 Diabetes Mellitus.. To examine the efficacy and safety of Curalin supplement in patients with type 2 diabetes. Adult patients with type 2 diabetes were randomized 11 to receive Curalin supplement or placebo. The primary endpoint was HbA1c decrease at 1-month. The secondary endpoint was decrease in HbA1c by more than 0.5% and 1%, and change in 7 daily blood glucose measurements. Satisfaction questionnaire was used as an exploratory endpoint. Safety variables and adverse events were assessed. After 1 month of intervention, HbA1c was reduced by 0.94% in the Curalin arm vs. 0.4% in the placebo arm (P0.008). 72% of Curalin patients had decreased HbA1c levels >0.5% vs. 35% in the placebo arm (P<0.05). Treatment Satisfaction Questionnaire indicated that Curalin arm patients reported higher overall satisfaction. Curalin treatment significantly reduced HbA1c over a 1-month period and was well-tolerated. This article is protected by copyright. All rights reserved.",
+    "gold_edges": [
+      [
+        "the primary endpoint was hba1c",
+        "at"
+      ],
+      [
+        "the secondary endpoint was",
+        "in"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36797773"
+  },
+  {
+    "domain": "medical",
+    "text": "Treatment with semaglutide, a GLP-1 receptor agonist, improves extracellular matrix remodeling in the pancreatic islet of diet-induced obese mice.. The extracellular matrix (ECM) is fundamental for the normal endocrine functions of pancreatic islet cells and plays key roles in the pathophysiology of type 2 diabetes. Here we investigated the turnover of islet ECM components, including islet amyloid polypeptide (IAPP), in an obese mouse model treated with semaglutide, a glucagon-like peptide type 1 receptor agonist. Male one-month-old C57BL6 mice were fed a control diet (C) or a high-fat diet (HF) for 16 weeks, then treated with semaglutide (subcutaneous 40 \u03bcgkg every three days) for an additional four weeks (HFS). The islets were immunostained and gene expressions were assessed. Comparisons refer to HFS vs HF. Thus, IAPP immunolabeling and beta-cell-enriched beta-amyloid precursor protein cleaving enzyme (Bace2, -40 %) and heparanase immunolabeling and gene (Hpse, -40 %) were mitigated by semaglutide. In contrast, perlecan (Hspg2, 900 %) and vascular endothelial growth factor A (Vegfa, 420 %) were enhanced by semaglutide. Also, semaglutide lessened syndecan 4 (Sdc4, -65 %) and hyaluronan synthases (Has1, -45 % Has2, -65 %) as well as chondroitin sulfate immunolabeling, and collagen type 1 (Col1a1, -60 %) and type 6 (Col6a3, -15 %), lysyl oxidase (Lox, -30 %) and metalloproteinases (Mmp2, -45 % Mmp9, -60 %). Semaglutide improved the turnover of islet heparan sulfate proteoglycans, hyaluronan, chondroitin sulfate proteoglycans, and collagens in the islet ECM. Such changes should contribute to restoring a healthy islet functional milieu and should reduce the formation of cell-damaging amyloid deposits. Our findings also provide additional evidence for the involvement of islet proteoglycans in the pathophysiology of type 2 diabetes.",
+    "gold_edges": [
+      [
+        "treatment with semaglutide, a glp-1 receptor agonist",
+        "extracellular"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36796719"
+  },
+  {
+    "domain": "medical",
+    "text": "Elevated remnant cholesterol increase 6-year T2DM onset risk.. To investigate the association of remnant cholesterol (RC) with future type 2 diabetes mellites (T2DM) risk, and to assess the underlying impact of some recognized risk factors on it. A total of 11,468 nondiabetic adults in rural China were recruited in 2007-2008 and followed up in 2013-2014. Logistic regression was used to assess the risk of incident T2DM by quartiles of baseline RC, estimating odds ratios (ORs) and 95% confidence intervals (CIs). Association of the combinations of RC and low-density lipoprotein cholesterol (LDL-C) with T2DM risk were further evaluated. Multivariable adjusted OR (95% CI) for incident T2DM associated with quartile 4 versus quartile 1 of RC was 2.72 (2.05-3.62). Per 1-standard deviation (SD) increases in RC levels was associated with a 34% higher T2DM risk. However, gender modified the specific association (P Elevated RC levels increase T2DM risk in rural Chinese populations. In those who cannot control their risk by lowering LDL-C levels, the goal of lipid-lowering therapy can be shifted to RC.",
+    "gold_edges": [
+      [
+        "elevated remnant cholesterol",
+        "6-year"
+      ],
+      [
+        "per 1-standard deviation (sd)",
+        "in"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36796575"
+  },
+  {
+    "domain": "medical",
+    "text": "Combined systematic pharmacology and urine metabonomics to study the therapeutic mechanism of type 2 diabetic treated with the herbal pair of Salvia miltiorrhiza Bunge and Pueraria montana var. lobata (Willd.) Sanjappa Pradeep.. The herbal pair of Salvia miltiorrhiza Bunge and Pueraria montana var. lobata (Willd.) Sanjappa Pradeep (DG) is commonly used in the treatment of type 2 diabetes (T2DM) in traditional Chinese medicine (TCM). The drug pair DG was designed by Dr. Zhu chenyu to improve the treatment of T2DM. This study combined with systematic pharmacology and urine metabonomics to explore the mechanism of DG in the treatment of T2DM. The therapeutic effect of DG on T2DM was evaluated by fasting blood glucose (FBG) and biochemical indexes. Systematic pharmacology was used to screen the active components and targets that may be related to DG. Metabonomics was established to find urinary metabolites and pathways that may be induced by DG. Finally, integrate the results of these two parts for mutual verification. FBG and biochemical indexes showed that DG could reduce FBG and adjust the related biochemical indexes. Metabolomics analysis indicated that 39 metabolites were related to DG for T2DM treatment. In addition, systematic pharmacology showed compounds and potential targets which were associated with DG. Finally, 12 promising targets were selected as targets for T2DM therapy by integrating the results. The combination of metabonomics and systematic pharmacology based on LC-MS is feasible and effective, which provides strong support for exploring the effective components and pharmacological mechanism of TCM.",
+    "gold_edges": [
+      [
+        "zhu chenyu to",
+        "the"
+      ],
+      [
+        "fbg and biochemical indexes showed that dg could",
+        "fbg"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36796216"
+  },
+  {
+    "domain": "medical",
+    "text": "Decreased expression of mitochondrial aminoacyl-tRNA synthetases causes downregulation of OXPHOS subunits in type 2 diabetic muscle.. Type 2 diabetes mellitus (T2D) affects millions of people worldwide and is one of the leading causes of morbidity and mortality. The skeletal muscle (SKM) is one of the most important tissues involved in maintaining glucose homeostasis and substrate oxidation, and it undergoes insulin resistance in T2D. In this study, we identify the existence of alterations in the expression of mitochondrial aminoacyl-tRNA synthetases (mt-aaRSs) in skeletal muscle from two different forms of T2D early-onset type 2 diabetes (YT2) (onset of the disease before 30 years of age) and the classical form of the disease (OT2). GSEA analysis from microarray studies revealed the repression of mitochondrial mt-aaRSs independently of age, which was validated by real-time PCR assays. In agreement with this, a reduced expression of several encoding mt-aaRSs was also detected in skeletal muscle from diabetic (dbdb) mice but not in obese obob mice. In addition, the expression of the mt-aaRSs proteins most relevant in the synthesis of mitochondrial proteins, threonyl-tRNA, and leucyl-tRNA synthetases (TARS2 and LARS2) were also repressed in muscle from dbdb mice. It is likely that these alterations participate in the reduced expression of proteins synthesized in the mitochondria detected in dbdb mice. We also document an increased iNOS abundance in mitochondrial-enriched muscle fractions from diabetic mice that may inhibit aminoacylation of TARS2 and LARS2 by nitrosative stress. Our results indicate a reduced expression of mt-aaRSs in skeletal muscle from T2D patients, which may participate in the reduced expression of proteins synthesized in mitochondria. An enhanced mitochondrial iNOS could play a regulatory role in diabetes.",
+    "gold_edges": [
+      [
+        "decreased expression of mitochondrial aminoacyl-trna synthetases",
+        "downregulation"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36796135"
+  },
+  {
+    "domain": "medical",
+    "text": "Association Between Diabetes Severity and Risks of COVID-19 Infection and Outcomes.. Little is known about whether diabetes increases the risk of COVID-19 infection and whether measures of diabetes severity are related to COVID-19 outcomes. Investigate diabetes severity measures as potential risk factors for COVID-19 infection and COVID-19 outcomes. In integrated healthcare systems in Colorado, Oregon, and Washington, we identified a cohort of adults on February 29, 2020 (n 1,086,918) and conducted follow-up through February 28, 2021. Electronic health data and death certificates were used to identify markers of diabetes severity, covariates, and outcomes. Outcomes were COVID-19 infection (positive nucleic acid antigen test, COVID-19 hospitalization, or COVID-19 death) and severe COVID-19 (invasive mechanical ventilation or COVID-19 death). Individuals with diabetes (n 142,340) and categories of diabetes severity measures were compared with a referent group with no diabetes (n 944,578), adjusting for demographic variables, neighborhood deprivation index, body mass index, and comorbidities. Of 30,935 patients with COVID-19 infection, 996 met the criteria for severe COVID-19. Type 1 (odds ratio OR 1.41, 95% CI 1.27-1.57) and type 2 diabetes (OR 1.27, 95% CI 1.23-1.31) were associated with increased risk of COVID-19 infection. Insulin treatment was associated with greater COVID-19 infection risk (OR 1.43, 95% CI 1.34-1.52) than treatment with non-insulin drugs (OR 1.26, 95% 1.20-1.33) or no treatment (OR 1.24 1.18-1.29). The relationship between glycemic control and COVID-19 infection risk was dose-dependent from an OR of 1.21 (95% CI 1.15-1.26) for hemoglobin A1c (HbA1c) < 7% to an OR of 1.62 (95% CI 1.51-1.75) for HbA1c \u2265 9%. Risk factors for severe COVID-19 were type 1 diabetes (OR 2.87 95% CI 1.99-4.15), type 2 diabetes (OR 1.80 95% CI 1.55-2.09), insulin treatment (OR 2.65 95% CI 2.13-3.28), and HbA1c \u2265 9% (OR 2.61 95% CI 1.94-3.52). Diabetes and greater diabetes severity were associated with increased risks of COVID-19 infection and worse COVID-19 outcomes.",
+    "gold_edges": [
+      [
+        "little is known about whether diabetes",
+        "the"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36795328"
+  },
+  {
+    "domain": "medical",
+    "text": "Maturity-onset diabetes of the young secondary to HNF1B variants (HNF1B-MODY) a series of 10 patients from a single diabetes center.. Maturity-Onset Diabetes of the Young (MODY) is an autosomal dominant condition and represents 1-5% of all cases of diabetes mellitus. MODY is often misdiagnosed as type 1 or type 2 diabetes. The rare subtype 5 (HNF1B-MODY) is due to hepatocyte nuclear factor 1\u03b2 (HNF1B) molecular alteration and is remarkable for its multisystemic phenotypes characterized by a broad spectrum of pancreatic and extra-pancreatic clinical manifestations. Retrospective study of patients with HNF1B-MODY diagnosis followed in the Centro Hospitalar Universit\u00e1rio Lisboa Central (Lisbon, Portugal). Demographic data, medical history, clinical and laboratory data, follow-up and treatment procedures were obtained from electronic medical records. We found 10 patients with HNF1B variants (7 index cases). The median age at diabetes diagnosis was 28 (IQR 24) years and the median age at HNF1B-MODY diagnosis was 40.5 (IQR 23) years. Six patients were initially misclassified as type 1 and 4 as type 2 diabetes. The average time between diabetes diagnosis and the diagnosis of HNF1B-MODY was 16.5 years. Diabetes was the first manifestation in half of the cases. The other half presented with kidney malformations and chronic kidney disease at pediatric age as the first manifestation. All these patients were submitted to kidney transplantation. Long-term diabetes complications included retinopathy (410), peripheral neuropathy (210) and ischemic cardiomyopathy (110). Other extra-pancreatic manifestations included liver test alterations (410) and congenital malformation of the female reproductive tract (16). History of a first-degree relative with diabetes andor nephropathy diagnosed at a young age was present in 5 of the 7 index cases. Despite being a rare disease, HNF1B-MODY is underdiagnosed and often misclassified. It should be suspected in patients with diabetes and CKD, especially when diabetes appears at a young age, a family history is present, and nephropathy appears beforeshortly after the diagnosis of diabetes. Presence of unexplained liver disease increases the degree of suspicion for HNF1B-MODY. Early diagnosis is important to minimize complications and to allow familial screening and pre-conception genetic counseling. Trial registration not applicable due to the retrospective nature of the study, non-interventional.",
+    "gold_edges": [
+      [
+        "hepatocyte",
+        "the rare subtype 5 (hnf1b-mody) is"
+      ],
+      [
+        "presence of unexplained liver disease",
+        "the"
+      ],
+      [
+        "the",
+        "trial registration not applicable"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36793123"
+  },
+  {
+    "domain": "medical",
+    "text": "The prevalence of left ventricular hypertrophy associated with type-2 diabetes in Shiraz, Iran a cross-sectional study.. Left ventricular hypertrophy (LVH) is a common diagnosis in patients with cardiovascular disease (CVD). The prevalence of LVH among patients with Type-2 Diabetes Mellitus (T2DM), high blood pressure and aging is higher than the healthy population and has been independently associated with an increased risk for future cardiac event, including stroke. The aim of this study is to identify the prevalence of LVH among T2DM subjects and evaluate its association with related risk factors of CVD patients in the metropolis of Shiraz, Iran. The novelty of this study is that there has been no known published epidemiological study related to the relationship of LVH and T2DM on this unique population. This cross-sectional study was designed based on collected data of 7715 free dwelling subjects in the community-based Shiraz Cohort Heart Study (SCHS) from 2015 to 2021, ages 40-70 years. Overall, 1118 subjects with T2DM were identified in the SCHS and after exclusion criteria, 595 subjects remained eligible for study. Subjects with electrocardiography (ECG) results, which are appropriate and diagnostics tools, were evaluated for the presence of LVH. Thus, the variables related to LVH and non-LVH in subjects with diabetes were analyzed using version-22 statistical package for social sciences software program to ensure consistency, accuracy, reliability, and validity for final analysis. Based upon related variables and identifying LVH and non-LVH subjects, the relevant statistical analysis was implemented to ensure its consistency, accuracy, reliability, and validity for final analysis. Overall, the prevalence of diabetic subjects was 14.5% in the SCHS study. Furthermore, the prevalence of hypertension in the study subjects aged 40-70 years was 37.8%. The prevalence of hypertension history in T2DM study subjects for LVH compared to non-LVH was (53.7% vs. 33.7%). The prevalence of LVH among patients with T2DM as the primary target of this study was 20.7%. Analytical findings comparing both LVH and non-LVH subjects who have T2DM identified significance for variables in the older (\u2265 60) mean and categorical age group (P < 0.0001), history of hypertension (P < 0.0001), mean and categorical duration of hypertension in years (P < 0.0160), status of controlled versus uncontrolled hypertension level (P < 0.0120), the mean systolic blood pressure (P < 0.0001) as well as mean duration years of T2DM and categorical duration of diabetes in years (< 0.0001 and P < 0.0060), mean fasting blood sugar (< 0.0307) and categorical status of FBS Level (mgdl) controlled and uncontrolled FBS status of controlled vs. uncontrolled FBS levels P < 0.0020). However, there were no significant findings for gender (P 0.3112), diastolic blood pressure mean (P 0.7722) and body mass index (BMI) mean and categorical BMI (P 0.2888 and P 0.4080, respectively). The prevalence of LVH in the study increases significantly among T2DM patients with hypertension, older age, years of hypertension, years of diabetes, and higher FBS. Thus, given the significant risk of diabetes and CVD, evaluation of LVH through reasonable diagnostic testing with ECG can help reduce the risk of future complications through the development of risk factor modifications and treatments guidelines.",
+    "gold_edges": [
+      [
+        "the prevalence of lvh in the study",
+        "significantly"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36792995"
+  },
+  {
+    "domain": "medical",
+    "text": "Trpc6 knockout improves behavioral dysfunction and reduces A\u03b2 production by inhibiting CN-NFAT1 signaling in T2DM mice.. As the prevalence of diabetes and health awareness increase, type 2 diabetes mellitus -associated cognitive dysfunction is receiving increasing attention. However, the pathogenesis is not entirely understood. Transient receptor potential cation channel 6 (TRPC6) is highly correlated with intracellular Ca",
+    "gold_edges": [
+      [
+        "trpc6 knockout improves behavioral dysfunction and",
+        "a\u03b2"
+      ],
+      [
+        "trpc6 knockout",
+        "behavioral"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36791875"
+  },
+  {
+    "domain": "medical",
+    "text": "Diabetes, Ramadan, and driving - Ensuring patient safety while respecting religious autonomy A qualitative study.. Hypoglycaemia due to fasting during Ramadan may affect the ability to perform complex activities among people with type 2 diabetes mellitus (T2D), but it is unclear how this affects ones ability to drive. This study aims to explore driving experiences and coping strategies to ensure safe driving among people with T2D who fast during Ramadan. We conducted an exploratory qualitative study and purposefully selected people with T2D who drove and fasted during the past Ramadan period in 2019. In-depth face-to-face interviews were conducted and transcribed verbatim. Data were analysed thematically using a constant comparative method until saturation was achieved (n 16). Two major themes were identified, namely (1) knowing oneself and (2) voluntary self-restriction. Participants described the importance of understanding how Ramadan fasting affected them and their level of alertness. As such, participants often adjusted their daily activities and tested their blood glucose levels to prevent experiencing hypoglycaemia. Other coping strategies reported include adjusting their medications and driving restrictions or driving in the mornings when they were more alert. Findings from this study shed light on participants experiences and coping mechanisms while driving during Ramadan. Given the risks and effects of hypoglycaemia among those who fast, there is a need to provide appropriate and focused patient education during Ramadan to people with T2D to ensure they can perform complex activities such as driving safely, especially in Muslim majority countries.",
+    "gold_edges": [
+      [
+        "fasting",
+        "hypoglycaemia"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36791634"
+  },
+  {
+    "domain": "medical",
+    "text": "Skeletal muscle and intermuscular adipose tissue gene expression profiling identifies new biomarkers with prognostic significance for insulin resistance progression and intervention response.. Although insulin resistance often leads to type 2 diabetes mellitus, its early stages are often unrecognised, thus reducing the probability of successful prevention and intervention. Moreover, treatment efficacy is affected by the genetics of the individual. We used gene expression profiles from a cross-sectional study to identify potential candidate genes for the prediction of diabetes risk and intervention response. Using a multivariate regression model, we linked gene expression profiles of human skeletal muscle and intermuscular adipose tissue (IMAT) to fasting glucose levels and glucose infusion rate. Based on the expression patterns of the top predictive genes, we characterised and compared individual gene expression with clinical classifications using k-nearest neighbour clustering. The predictive potential of the candidate genes identified was validated using muscle gene expression data from a longitudinal intervention study. We found that genes with a strong association with clinical measures clustered into three distinct expression patterns. Their predictive values for insulin resistance varied substantially between skeletal muscle and IMAT. Moreover, we discovered that individual gene expression-based classifications may differ from classifications based predominantly on clinical variables, indicating that participant stratification may be imprecise if only clinical variables are used for classification. Of the 15 top candidate genes, ST3GAL2, AASS, ARF1 and the transcription factor SIN3A are novel candidates for predicting a refined diabetes risk and intervention response. Our results confirm that disease progression and successful intervention depend on individual gene expression states. We anticipate that our findings may lead to a better understanding and prediction of individual diabetes risk and may help to develop individualised intervention strategies.",
+    "gold_edges": [
+      [
+        "although insulin resistance often",
+        "type"
+      ],
+      [
+        "we anticipate that our findings may",
+        "a better"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36790478"
+  },
+  {
+    "domain": "medical",
+    "text": "Antenatal dietary supplementation with myo-inositol for preventing gestational diabetes.. Gestational diabetes with onset or first recognition during pregnancy is an increasing problem worldwide. Myo-inositol, an isomer of inositol, is a naturally occurring sugar commonly found in cereals, corn, legumes and meat. Myo-inositol is one of the intracellular mediators of the insulin signal and correlates with insulin sensitivity in type 2 diabetes. The potential beneficial effect of improving insulin sensitivity suggests that myo-inositol may be useful for women in preventing gestational diabetes. This is an update of a review first published in 2015. To assess if antenatal dietary supplementation with myo-inositol is safe and effective, for the mother and fetus, in preventing gestational diabetes. We searched the Cochrane Pregnancy and Childbirths Trials Register, ClinicalTrials.gov, WHO ICTRP (17 March 2022) and the reference lists of retrieved studies. We included published and unpublished randomised controlled trials (RCTs) including cluster-RCTs and conference abstracts, assessing the effects of myo-inositol for the prevention of gestational diabetes in pregnant women. We included studies that compared any dose of myo-inositol, alone or in a combination preparation, with no treatment, placebo or another intervention. Quasi-randomised and cross-over trials were not eligible. We excluded women with pre-existing type 1 or type 2 diabetes. Two review authors independently assessed studies for inclusion, assessed risk of bias and extracted the data. We checked the data for accuracy. We assessed the certainty of the evidence using the GRADE approach. We included seven RCTs (one conducted in Ireland, six conducted in Italy) reporting on 1319 women who were 10 weeks to 24 weeks pregnant at the start of the studies. The studies had relatively small sample sizes and the overall risk of bias was low. For the primary maternal outcomes, meta-analysis showed that myo-inositol may reduce the incidence of gestational diabetes (risk ratio (RR) 0.53, 95% confidence interval (CI) 0.31 to 0.90 6 studies, 1140 women) and hypertensive disorders of pregnancy (RR 0.34, 95% CI 0.19 to 0.61 5 studies, 1052 women). However, the certainty of the evidence was low to very low. For the primary neonatal outcomes, only one study measured the risk of a large-for-gestational-age infant and found myo-inositol was associated with both appreciable benefit and harm (RR 1.40, 95% CI 0.65 to 3.02 1 study, 234 infants low-certainty evidence). None of the included studies reported on the other primary neonatal outcomes (perinatal mortality, mortality or morbidity composite). For the secondary maternal outcomes, we are unclear about the effect of myo-inositol on weight gain during pregnancy (mean difference (MD) -0.25 kilogram (kg), 95% CI -1.26 to 0.75 kg 4 studies, 831 women) and perineal trauma (RR 4.0, 95% CI 0.45 to 35.25 1 study, 234 women) because the evidence was assessed as being very low-certainty. Further, myo-inositol may result in little to no difference in caesarean section (RR 0.91, 95% CI 0.77 to 1.07 4 studies, 829 women low-certainty evidence). None of the included studies reported on the other secondary maternal outcomes (postnatal depression and the development of subsequent type 2 diabetes mellitus). For the secondary neonatal outcomes, meta-analysis showed no neonatal hypoglycaemia (RR 3.07, 95% CI 0.90 to 10.52 4 studies 671 infants very low-certainty evidence). However, myo-inositol may be associated with a reduction in the incidence of preterm birth (RR 0.35, 95% CI 0.17 to 0.70 4 studies 829 infants). There were insufficient data for a number of maternal and neonatal secondary outcomes, and no data were reported for any of the long-term childhood or adulthood outcomes, or for health service utilisation outcomes. Evidence from seven studies shows that antenatal dietary supplementation with myo-inositol during pregnancy may reduce the incidence of gestational diabetes, hypertensive disorders of pregnancy and preterm birth. Limited data suggest that supplementation with myo-inositol may not reduce the risk of a large-for-gestational-age infant. The current evidence is based on small studies that were not powered to detect differences in outcomes such as perinatal mortality and serious infant morbidity. Six of the included studies were conducted in Italy and one in Ireland, which raises concerns about the lack of generalisability to other settings. There is evidence of inconsistency among doses of myo-inositol, the timing of administration and study population. As a result, we downgraded the certainty of the evidence for many outcomes to low or very low certainty. Further studies for this promising antenatal intervention for preventing gestational diabetes are encouraged and should include pregnant women of different ethnicities and varying risk factors. Myo-inositol at different doses, frequency and timing of administration, should be compared with placebo, diet and exercise, and pharmacological interventions. Long-term follow-up should be considered and outcomes should include potential harms, including adverse effects.",
+    "gold_edges": [
+      [
+        "further, myo-inositol may",
+        "little"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36790138"
+  },
+  {
+    "domain": "medical",
+    "text": "ox-LDL induces autophagy-mediated apoptosis by suppressing secretagogin-regulated autophagic flux in pancreatic \u03b2-cells.. Lipotoxicity has been shown to induce the loss of functional \u03b2-cell mass and lead to type 2 diabetes, but the mechanism remains unknown. In this study, we aim to explore the role of secretagogin (SCGN) in lipotoxicity-induced \u03b2-cell injury. Our results indicate that ox-LDL treatment leads to autophagic cell death, as evidenced by decreased cell viability, aggravated cell apoptosis, and the accumulation of the p62 protein in MIN6 cells. LysoTracker Red staining, TEM and mRFP-GFP-LC3 assays demonstrate that autophagic flux is blocked in ox-LDL-treated MIN6 cells. Intriguingly, SCGN is significantly decreased in MIN6 cells under lipotoxic conditions. Additionally, siRNA-guided",
+    "gold_edges": [
+      [
+        "our results indicate that ox-ldl treatment",
+        "autophagic"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36789686"
+  },
+  {
+    "domain": "medical",
+    "text": "Nonalcoholic fatty liver disease from a primary care perspective.. Nonalcoholic fatty liver disease (NAFLD) affects up to one-third of the US population. Approximately one-fifth of patients with NAFLD have nonalcoholic steatohepatitis (NASH), characterized by hepatocyte damage and inflammation with or without fibrosis. NASH leads to greater risk of liver-related complications and liver-related mortality, with the poorest outcomes seen in patients with advanced fibrosis. NASH is also associated with other metabolic comorbidities and conveys an increased risk of adverse cardiovascular outcomes and extrahepatic cancers. Despite its high prevalence, NAFLD is frequently underdiagnosed. This is a significant concern, given that early diagnosis of NAFLD is a key step in preventing progression to NASH. In this review, we describe the clinical impact of NASH from the perspective of both the clinician and the patient. In addition, we provide practical guidance on the diagnosis and management of NASH for primary care providers, who play a pivotal role in the frontline care of patients with NASH, and we use case studies to illustrate real-world scenarios encountered in the primary care setting.",
+    "gold_edges": [
+      [
+        "nash",
+        "greater"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36789676"
+  },
+  {
+    "domain": "medical",
+    "text": "Adverse Events Related to Tirzepatide.. Tirzepatide is a dual glucose-dependent insulinotropic peptide (GIP) and glucagon-like peptide-1 receptor agonist (GLP-1 RA) approved by the US Food and Drug Administration in May 2022 for patients with type 2 diabetes mellitus (T2DM). We aimed to determine the rates of individual adverse events (AEs) related to 3 studied doses of tirzepatide. We performed a systematic review with meta-analysis including 5 databases (PubMed, Embase, CINAHL, Scopus, and Web of Science) for all clinical trials reporting AEs related to tirzepatide. The safety data from individual studies were extracted and analyzed through meta-regression to assess rates of individual AEs. Study quality assessment was performed using the National Heart, Lung, and Blood Institute Quality Assessment Tool for Observational Cohort and Cross-Sectional Studies. Ten trials (6836 participants) were included. Gastrointestinal (GI) AEs were the most commonly reported AEs and were dose dependent 39% (95% CI, 35%-43%), 46% (95% CI, 42%-49%), and 49% (95% CI, 38%-60%) for the 5, 10, and 15 mg dose, respectively. Among all GI AEs, nausea and diarrhea were most frequent at any dose of tirzepatide. Drug discontinuation due to AEs was highest with the 15 mg dose of tirzepatide (10%). Incidence of mild hypoglycemia (blood glucose < 70 mgdL) was highest with tirzepatide 10 mg dose 22.6% (9.2%-39.8%). Rates of fatal AEs, severe hypoglycemia, acute pancreatitis, cholelithiasis, and cholecystitis were extremely low (\u2264 1%) across all doses of tirzepatide. Tirzepatide is associated with a dose-dependent increase in incidence of GI AEs and AEs leading to drug discontinuation. Severe hypoglycemia, fatal AEs, acute pancreatitis, cholelithiasis, and cholecystitis are rare with this medication.",
+    "gold_edges": [
+      [
+        "aes",
+        "drug discontinuation"
+      ],
+      [
+        "tirzepatide is associated with a dose-dependent",
+        "in"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36789109"
+  },
+  {
+    "domain": "medical",
+    "text": "Application of inulin in bread A review of technological properties and factors affecting its stability.. Due to its dual function, inulin is an important prebiotic compound in the cereal industry, especially in bread production. In other words, improving technological features and creating health properties (such as reducing the risk of type 2 diabetes, heart disease, metabolic syndrome, and osteoporosis) have led to the widespread use of this compound. Inulin has many important technological functions in bread, including its ability to interact with water, create structure, and influence rheological properties, texture, and overall acceptability of the final product. Nevertheless, bread processing conditions can influence the structural integrity of inulin and thus affect its technological efficiency. Therefore, this review article aims to investigate the technological properties and factors affecting the stability of inulin during bread processing conditions. Generally, the addition of inulin could considerably improve the technical performance of bread. However, the stability of inulin depends on the formulation components, type of fermentation, and baking process.",
+    "gold_edges": [
+      [
+        "generally, the addition of inulin could considerably",
+        "the"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36789054"
+  },
+  {
+    "domain": "medical",
+    "text": "Are HOMA-IR and HOMA-B good predictors for diabetes and pre-diabetes subtypes. To investigate the association between the Homeostasis Model Assessment of Insulin Resistance (HOMA-IR) and Homeostasis Model Assessment of Beta-cell function (HOMA-B) with the incidence of diabetes and pre-diabetes subtypes. A total of 3101 normoglycemic people aged 20-70 years were included in the 6-year follow-up study. Multinomial logistic regression was used to calculate the incidence possibility of isolated Impaired Fasting Glucose (iIFG), isolated Impaired Glucose Tolerance (iIGT), Combined impaired fasting glucose impaired glucose tolerance (CGI), and Diabetes Mellitus (DM) per standard deviation (SD) increment in HOMA-IR and HOMA-B in the crude and multivariable model. In the multivariate model, an increase in one SD change in HOMA-IR was associated with a 43, 42, 75, and 92% increased risk of iIFG, iIGT, CGI, and DM, respectively. There was a positive correlation between the increase in HOMA-B and the incidence of iIGT however, after adjusting the results for metabolic syndrome components, it was inversely correlated with the incidence of iIFG Odds Ratio 0.86(0.75-0.99). HOMA-IR is positively correlated with diabetes and pre-diabetes subtypes incidence, and HOMA-B is inversely correlated with the incidence of iIFG but positively correlated with iIGT incidence. However, none of these alone is a good criterion for predicting diabetes and pre-diabetes.",
+    "gold_edges": [
+      [
+        "in the multivariate model, an",
+        "in"
+      ],
+      [
+        "there was a positive correlation between the",
+        "in"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36788521"
+  },
+  {
+    "domain": "medical",
+    "text": "The effects of aqueous and ethanolic extracts of Rheum ribes on insulin-resistance and apolipoproteins in patients with type 2 diabetes mellitus a randomized controlled trial.. Previous studies have shown that Rheum ribes (R. ribes) could be effective in controlling the blood glucose levels. This study was conducted to determine the effects of R. ribes supplementation on glycemic indices and apolipoproteins in patients with type 2 diabetes mellitus (T2DM). In the present randomized double-blind controlled trial, 60 type 2 diabetic patients aged 30-60 years with a body mass index (BMI) of 20-30 kgm There was a significant decrease in the serum levels of insulin in AG and EG groups (P 0.003 and P 0.001, respectively), HOMA-IR (P 0.01 and P 0.001, respectively), HOMA-B (P 0.002 and P 0.001, respectively), ApoB (P 0.006 and P 0.03, respectively), ApoBApoA1 ratio (P 0.016 and P 0.04, respectively). However, a significant increase in ApoA1 (P 0.08 and P 0.05, respectively) with no significant changes in blood glucose, at the end of study compared to beginning values, were observed. None of the variables showed a significant change in PG. At the end of the study while there were significant differences in insulin (P 0.04), HOMA-IR (P 0.03), HOMA-B (P 0.01), ApoB (P 0.02), and ApoBApoA1 ratio (P 0.03) among the groups but ApoA1 had no significant change. Consumption of R. ribes intake could have beneficial effects on insulin resistance and apolipoproteins in type 2 diabetic patients. (Registered at en.irct.ir, identification number IRCT201410142709N31).",
+    "gold_edges": [
+      [
+        "however, a significant",
+        "in"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36788517"
+  },
+  {
+    "domain": "medical",
+    "text": "Glomerular Hyperfiltration Predicts Kidney Function Decline and Mortality in Type 1 and Type 2 Diabetes A 21-Year Longitudinal Study.. To evaluate the prognostic value of glomerular hyperfiltration on long-term kidney-related outcomes and mortality in patients with diabetes. We retrospectively analyzed 21-year longitudinal data from 314 patients with long-standing type 1 or type 2 diabetes. Glomerular hyperfiltration was identified based on the age- and sex-specific distribution of measured glomerular filtration rate (mGFR) by 99mTc-DTPA dynamic renal scintigraphy. The primary outcome was a composite of doubling of serum creatinine, end-stage kidney disease (ESKD), or cardiorenal death. The kidney-specific outcome was a composite of doubling of serum creatinine, ESKD, or renal death. Over a median of 21.0 years, the primary composite outcome occurred in 25 (39.7%), 24 (38.1%), and 46 (24.5%) participants with high mGFR (H-mGFR) (n 63), low mGFR (L-mGFR) (n 63), or normal mGFR (N-mGFR) (n 188), respectively. Compared with N-mGFR, the hazard ratio (HR) for the primary composite outcome was 2.09 (95% CI 1.25-3.49) in H-mGFR and 1.81 (1.05-3.16) in L-mGFR. The HR for the kidney-specific composite outcome was 4.95 (2.21-11.09) in H-mGFR and 3.81 (1.70-8.56) in L-mGFR. The HRs for doubling of serum creatinine and cardiorenal death were 4.86 (2.18-10.90) and 2.18 (1.24-3.83) in H-mGFR and 4.04 (1.77-9.20) and 2.26 (1.27-4.01) in L-mGFR, respectively. Glomerular hyperfiltration, similar to hypofiltration, increases the combined risk of worsening kidney function and mortality from cardiovascular or renal causes in patients with diabetes. These findings encourage the active screening of these patients to optimize risk stratification and treatment of subclinical kidney disease.",
+    "gold_edges": [
+      [
+        "glomerular hyperfiltration, similar to hypofiltration",
+        "the"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36787983"
+  },
+  {
+    "domain": "medical",
+    "text": "Association and Interaction of Genetics and Area-Level Socioeconomic Factors on the Prevalence of Type 2 Diabetes and Obesity.. Quantify the impact of genetic and socioeconomic factors on risk of type 2 diabetes (T2D) and obesity. Among participants in the Mass General Brigham Biobank (MGBB) and UK Biobank (UKB), we used logistic regression models to calculate cross-sectional odds of T2D and obesity using 1) polygenic risk scores for T2D and BMI and 2) area-level socioeconomic risk (educational attainment) measures. The primary analysis included 26,737 participants of European genetic ancestry in MGBB with replication in UKB (N 223,843), as well as in participants of non-European ancestry (MGBB N 3,468 UKB N 7,459). The area-level socioeconomic measure most strongly associated with both T2D and obesity was percent without a college degree, and associations with disease prevalence were independent of genetic risk (P < 0.001 for each). Moving from lowest to highest quintiles of combined genetic and socioeconomic burden more than tripled T2D (3.1% to 22.2%) and obesity (20.9% to 69.0%) prevalence. Favorable socioeconomic risk was associated with lower disease prevalence, even in those with highest genetic risk (T2D 13.0% vs. 22.2%, obesity 53.6% vs. 69.0% in lowest vs. highest socioeconomic risk quintiles). Additive effects of genetic and socioeconomic factors accounted for 13.2% and 16.7% of T2D and obesity prevalence, respectively, explained by these models. Findings were replicated in independent European and non-European ancestral populations. Genetic and socioeconomic factors significantly interact to increase risk of T2D and obesity. Favorable area-level socioeconomic status was associated with an almost 50% lower T2D prevalence in those with high genetic risk.",
+    "gold_edges": [
+      [
+        "genetic and socioeconomic factors significantly interact to",
+        "risk"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36787958"
+  },
+  {
+    "domain": "medical",
+    "text": "Low-Carbohydrate Diet Scores and Mortality Among Adults With Incident Type 2 Diabetes.. The current study aims to prospectively examine the association between postdiagnosis low-carbohydrate diet (LCD) patterns and mortality among individuals with type 2 diabetes (T2D). Among participants with incident diabetes identified in the Nurses Health Study and Health Professionals Follow-up Study, an overall total LCD score (TLCDS) was calculated based on the percentage of energy as total carbohydrates. In addition, vegetable (VLCDS), animal (ALCDS), healthy (HLCDS), and unhealthy LCDS (ULCDS) were further derived that emphasized different sources and quality of macronutrients. Multivariable-adjusted Cox models were used to assess the association between the LCDS and mortality. Among 10,101 incident T2D cases contributing 139,407 person-years during follow-up, we documented 4,595 deaths of which 1,389 cases were attributed to cardiovascular disease (CVD) and 881 to cancer. The pooled multivariable-adjusted hazard ratios (HRs, 95% CIs) of total mortality per 10-point increment of postdiagnosis LCDS were 0.87 (0.82, 0.92) for TLCDS, 0.76 (0.71, 0.82) for VLCDS, and 0.78 (0.73, 0.84) for HLCDS. Both VLCDS and HLCDS were also associated with significantly lower CVD and cancer mortality. Each 10-point increase of TLCDS, VLCDS, and HLCDS from prediagnosis to postdiagnosis period was associated with 12% (7%, 17%), 25% (19%, 30%), and 25% (19%, 30%) lower total mortality, respectively. No significant associations were observed for ALCDS and ULCDS. Among people with T2D, greater adherence to LCD patterns that emphasize high-quality sources of macronutrients was significantly associated with lower total, cardiovascular, and cancer mortality.",
+    "gold_edges": [
+      [
+        "each 10-point",
+        "of"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36787923"
+  },
+  {
+    "domain": "medical",
+    "text": "Association of Community Walkability and Glycemic Control Among Pregnant Individuals with Pregestational Diabetes.. Neighborhood walkability is a community-level social determinant of health that measures whether people who live in a neighborhood walk as a mode of transportation. Whether neighborhood walkability is associated with glycemic control among pregnant individuals with pregestational diabetes remains to be defined. To evaluate the association between community-level neighborhood walkability and glycemic control as measured by hemoglobin A1c (A1c) among pregnant individuals with pregestational diabetes. This was a retrospective analysis of pregnant individuals with pregestational diabetes enrolled in an integrated prenatal and diabetes care program from 2012-2016. Participant addresses were geocoded and linked at the census tract level. The exposure was community walkability, defined by the U.S. Environmental Protection Agency (EPA) National Walkability Index (score range 1-20), which incorporates intersection density (design), proximity to transit stops (distance), and a mix of employment and household types (diversity). Individuals from neighborhoods that were the most walkable (score 15.26-20.0) were compared with those from neighborhoods that were less walkable (score <15.26) defined per national EPA recommendations. The outcomes were glycemic control, including A1c <6.0% and <6.5%, measured both in early and late pregnancy, and mean change in A1c across pregnancy. Modified Poisson regression and linear regression were used, respectively, and adjusted for maternal age, body mass index at delivery, parity, race and ethnicity as a social determinant of health, insurance status, baseline A1c, gestational age at A1c measurement in early and late pregnancy, and diabetes type. Among 417 pregnant individuals (33% type 1, 67% type 2 diabetes), 10% were living in the most walkable communities. All 417 individuals underwent A1c assessment in early pregnancy (median gestational age 9.7 weeks IQR 7.4, 14.1), and 376 underwent repeat A1c in late pregnancy (median gestational age 30.4 weeks, IQR 27.8, 33.6). Pregnant individuals living in the most walkable communities were more likely to have an A1c <6.0% in early pregnancy (15% vs. 8% aRR 1.46 95% CI 1.00-2.16), as well as an A1c <6.5% in late pregnancy compared to those living in less walkable communities (13% vs. 9% aRR 1.33 95% CI 1.08-1.63). For individuals living in the most walkable communities, the median A1c was 7.5 (IQR 6.0, 9.4) in early pregnancy and 5.9 (IQR 5.4, 6.4) in late pregnancy. For those living in less walkable communities, the median A1c was 7.3 (IQR 6.2, 9.2) in early pregnancy and 6.2 (IQR 5.6, 7.1) in late pregnancy. Change in A1c across pregnancy was not associated with walkability. Pregnant individuals with pregestational diabetes living in more walkable communities had better glycemic control in both early and late pregnancy. Whether community-level interventions to enhance neighborhood walkability can improve glycemic control in pregnancy requires further study.",
+    "gold_edges": [
+      [
+        "whether community-level interventions to enhance neighborhood walkability can",
+        "glycemic"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36787839"
+  },
+  {
+    "domain": "medical",
+    "text": "Brain-derived neurotrophic factor in diabetes mellitus A systematic review and meta-analysis.. Brain-derived neurotrophic factor (BDNF) is a neurotrophic factor expressed in several tissues, including the brain, gut, and pancreas. Activation of the BDNFTrkBCREB reduces hepatic gluconeogenesis, induces hepatic insulin signal transduction, and protects against pancreatic beta-cell loss in diabetes mellitus (DM). Several studies have investigated the possible association between BDNF and DM and its complications, but the results have been conflicting. In the present study, we aimed at systematically reviewing the literature on the serum and plasma levels of BDNF in DM and its subgroups such as T2DM, DM patients with depression, and patients with retinopathy. A comprehensive search was conducted in PubMed, Scopus, and Web of Science. We identified 28 eligible studies and calculated the standardized mean difference (SMD) of outcomes as an effect measure. The meta-analysis included 2734 patients with DM and 6004 controls. Serum BDNF levels were significantly lower in patients with DM vs. controls (SMD -1.00, P<0.001). Plasma BDNF levels were not different in patients with DM compared with controls. When conducting subgroup analysis, serum BDNF levels were lower among patients with T2DM (SMD -1.26, P<0.001), DM and depression (SMD -1.69, P<0.001), and patients with diabetic retinopathy (DR) vs. controls (SMD -1.03, P 0.01). Serum BDNF levels were lower in patients with DM, T2DM, DM with depression, and DM and DR than the controls. Our findings are in line with the hypothesis that decreased BDNF levels might impair glucose metabolism and contribute to the pathogenesis of DM and its complications.",
+    "gold_edges": [
+      [
+        "activation of the bdnftrkbcreb",
+        "hepatic"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36787304"
+  },
+  {
+    "domain": "medical",
+    "text": "Plant-based diets a fad or the future of medical nutrition therapy for children with chronic kidney disease. Plant-based diets are growing in popularity worldwide due to the importance of reducing the populations ecological footprint as well as an emerging role in the prevention and treatment of chronic human diseases. In adults, plant-based diets have been shown to be beneficial for preventing and controlling conditions that are common in patients with chronic kidney disease (CKD), such as obesity, hypertension, type 2 diabetes, dyslipidemia, and metabolic acidosis. Emerging evidence suggests that the higher fiber content of plant-based diets may help to modulate production of uremic toxins through beneficial shifts in the gut microbiome. The effects of the plant-based diet on progression of CKD remain controversial, and there are no data to support this in children. However, knowledge that the bioavailability of potassium and phosphorus from plant-based foods is reduced has led to recent changes in international kidney-friendly diet recommendations for children with CKD. The new guidelines advise that high potassium fruits and vegetables should no longer be automatically excluded from the kidney-friendly diet. In fact, a plant-based diet can be safely implemented in children with CKD through building the diet around whole, high fiber foods, avoiding processed foods and using recommended cooking methods to control potassium. The health benefits of the plant-based diet compared to omnivorous diets in children with CKD need investigation.",
+    "gold_edges": [
+      [
+        "the",
+        "plant-based diets are growing in popularity worldwide"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36786858"
+  },
+  {
+    "domain": "medical",
+    "text": "Causal factors underlying diabetes risk informed by Mendelian randomisation analysis evidence, opportunities and challenges.. Diabetes and its complications cause a heavy disease burden globally. Identifying exposures, risk factors and molecular processes causally associated with the development of diabetes can provide important evidence bases for disease prevention and spur novel therapeutic strategies. Mendelian randomisation (MR), an epidemiological approach that uses genetic instruments to infer causal associations between an exposure and an outcome, can be leveraged to complement evidence from observational and clinical studies. This narrative review aims to summarise the evidence on potential causal risk factors for diabetes by integrating published MR studies on type 1 and 2 diabetes, and to reflect on future perspectives of MR studies on diabetes. Despite the genetic influence on type 1 diabetes, few MR studies have been conducted to identify causal exposures or molecular processes leading to increased disease risk. In type 2 diabetes, MR analyses support causal associations of somatic, mental and lifestyle factors with development of the disease. These studies have also identified biomarkers, some of them derived from the gut microbiota, and molecular processes leading to increased disease risk. These studies provide valuable data to better understand disease pathophysiology and explore potential therapeutic targets. Because genetic association studies have mostly been restricted to participants of European descent, multi-ancestry cohorts are needed to examine the role of different types of physical activity, dietary components, metabolites, protein biomarkers and gut microbiome in diabetes development.",
+    "gold_edges": [
+      [
+        "diabetes and its complications",
+        "a heavy"
+      ]
+    ],
+    "source": "Gaborandi/diabetes_mellitus_type2_pubmed_abstracts",
+    "source_id": "36786839"
+  },
+  {
+    "domain": "economics",
+    "text": "a vast majority of participants revised up their projections for real gdp growth this year compared with the projections they had submitted in march, citing stronger consumer demand and improvements in vaccination rates as the primary reasons for these upgrades.",
+    "gold_edges": [
+      [
+        "stronger consumer demand",
+        "improvements in vaccination rates as the"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "658"
+  },
+  {
+    "domain": "economics",
+    "text": "it was noted that a slowdown in the rate of increase in home prices going forward might lead households to increase their desired saving.",
+    "gold_edges": [
+      [
+        "home prices going forward might lead households to",
+        "their"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "288"
+  },
+  {
+    "domain": "economics",
+    "text": "compared with the december forecast, the conditioning assumptions underlying the forecast were little changed and roughly offsetting: although higher equity prices and a lower foreign exchange value of the dollar were expected to be slightly more supportive of economic growth, the staff anticipated that these influences would be about offset by lower house prices and higher oil prices.",
+    "gold_edges": [
+      [
+        "higher equity prices",
+        "a lower foreign exchange value of the dol"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "70"
+  },
+  {
+    "domain": "economics",
+    "text": "the chair noted that he had asked the subcommittee on communications to consider ways to improve the information contained in the sep and to improve communications regarding the role of the federal funds rate projections in the sep as part of the policy process.",
+    "gold_edges": [
+      [
+        "information contained in the sep and to",
+        "communications"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "163"
+  },
+  {
+    "domain": "economics",
+    "text": "most measures of the increase in nominal wages from a year earlier continued to trend down, including the 12-month change in average hourly earnings for all employees, which was 4.1 percent in may, 0.2 percentage point lower than at the end of last year.",
+    "gold_edges": [
+      [
+        "most measures of the",
+        "in"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "963"
+  },
+  {
+    "domain": "economics",
+    "text": "the increase in exports primarily reflected higher exports of services and agricultural products.",
+    "gold_edges": [
+      [
+        "the",
+        "in"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "940"
+  },
+  {
+    "domain": "economics",
+    "text": "real gdp growth slowed markedly in china, largely reflecting lower investment growth and exports.",
+    "gold_edges": [
+      [
+        "lower investment growth",
+        "exports"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "342"
+  },
+  {
+    "domain": "economics",
+    "text": "the committee agreed that that the statement to be released after the meeting should take note of the substantial policy easing to date and the ongoing measures to foster market liquidity.",
+    "gold_edges": [
+      [
+        "easing to date",
+        "the ongoing measures to foster market liq"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "950"
+  },
+  {
+    "domain": "economics",
+    "text": "the upward pressure on consumer prices from the increases in commodity and import prices earlier in the year was expected to continue to subside in the current quarter.",
+    "gold_edges": [
+      [
+        "the upward pressure on consumer prices from the",
+        "in"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "476"
+  },
+  {
+    "domain": "economics",
+    "text": "measures of hourly labor compensation continued to increase moderately with no sign of acceleration.",
+    "gold_edges": [
+      [
+        "measures of hourly labor compensation continued to",
+        "moderately"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "736"
+  },
+  {
+    "domain": "economics",
+    "text": "however, the recent decrease in energy prices had already led to a reduction in drilling activity and was likely to reduce some investment in alternative fuels.",
+    "gold_edges": [
+      [
+        "however, the recent",
+        "in"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "505"
+  },
+  {
+    "domain": "economics",
+    "text": "both imports and exports recovered from weak readings in february, with imports of consumer goods, automotive products, and capital goods rising significantly and exports of capital goods and industrial supplies showing particular strength.",
+    "gold_edges": [
+      [
+        "rising significantly",
+        "exports of capital goods and industrial s"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "470"
+  },
+  {
+    "domain": "economics",
+    "text": "a recent increase in oil drilling rigs in operation was seen as a positive sign for business investment, al\u00adthough the continued low level of oil prices was still weighing on capital investment in the energy industry.",
+    "gold_edges": [
+      [
+        "a recent",
+        "in"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "108"
+  },
+  {
+    "domain": "economics",
+    "text": "the unemployment rate, at 5.0 percent in november, was 0.7 percentage point lower than in january and close to most participants' estimates of its longer-run normal level.",
+    "gold_edges": [
+      [
+        "lower than in january",
+        "close to most participants"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "271"
+  },
+  {
+    "domain": "economics",
+    "text": "with energy price increases expected to slow next year, total pce inflation was seen as likely to fall back in line with core inflation by the end of 2011, as in previous projections.",
+    "gold_edges": [
+      [
+        "with energy price",
+        "expected"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "325"
+  },
+  {
+    "domain": "economics",
+    "text": "meeting participants noted that real consumer spending had been weakening through the summer, responding to lower employment and tighter credit.",
+    "gold_edges": [
+      [
+        "lower employment",
+        "tighter credit"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "612"
+  },
+  {
+    "domain": "economics",
+    "text": "however, the effects of these factors were offset to some extent by actual and expected easing of monetary policy in the united states and abroad and by better-than-anticipated profits at some s&p 500 firms.",
+    "gold_edges": [
+      [
+        "easing of monetary policy in the united states",
+        "abroad and by better-than-anticipated pro"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "517"
+  },
+  {
+    "domain": "economics",
+    "text": "participants generally expected that further gradual increases in the target range for the federal funds rate would be consistent with a sustained expansion of economic activity, strong labor market conditions, and inflation near the committee's symmetric 2 percent objective over the medium term.",
+    "gold_edges": [
+      [
+        "participants generally expected that further gradual",
+        "in"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "165"
+  },
+  {
+    "domain": "economics",
+    "text": "issuance of short-term securities was likely to increase in coming periods, and, as more clarity emerged in the economic and policy outlook, demand for short-term assets could moderate.",
+    "gold_edges": [
+      [
+        "issuance of short-term securities was likely to",
+        "in"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "301"
+  },
+  {
+    "domain": "economics",
+    "text": "somewhat larger increases would have been projected in consumer price inflation in the absence of anticipated technical measurement changes to the index.",
+    "gold_edges": [
+      [
+        "somewhat larger",
+        "would"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "265"
+  },
+  {
+    "domain": "economics",
+    "text": "in addition, members agreed to continue to reduce the federal reserve's holdings of treasury securities and agency debt and agency mortgage\u2011backed securities.",
+    "gold_edges": [
+      [
+        "in addition, members agreed to continue to",
+        "the"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "825"
+  },
+  {
+    "domain": "economics",
+    "text": "a few of these participants noted that this possibility was heightened by factors beyond the committee's actions, including the tightening of monetary policy stances abroad and the weakening global economic outlook, that were also likely to restrain domestic economic activity in the period ahead.",
+    "gold_edges": [
+      [
+        "tightening of monetary policy stances abroad",
+        "the weakening global economic outlook"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "356"
+  },
+  {
+    "domain": "economics",
+    "text": "the committee's action and its announcement that the risks were weighted in the direction of rising inflation were widely anticipated and had little immediate effect on market yields.",
+    "gold_edges": [
+      [
+        "rising inflation were widely anticipated",
+        "had little immediate effect on market yie"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "452"
+  },
+  {
+    "domain": "economics",
+    "text": "in money markets, the 75 basis point increase in the target range at the july meeting passed through fully to overnight rates.",
+    "gold_edges": [
+      [
+        "in money markets, the 75 basis point",
+        "in"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "28"
+  },
+  {
+    "domain": "economics",
+    "text": "nonfarm payroll employment registered another substantial increase in april after a slight decline in march, and the civilian unemployment rate fell to 4.3 percent in april.",
+    "gold_edges": [
+      [
+        "nonfarm payroll employment registered another substantial",
+        "in"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "11"
+  },
+  {
+    "domain": "economics",
+    "text": "the decline in rates coincided with an appreciable increase in the volume of refinancing activity.",
+    "gold_edges": [
+      [
+        "the decline in rates coincided with an appreciable",
+        "in"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "96"
+  },
+  {
+    "domain": "economics",
+    "text": "the decrease in exports was mainly in civilian aircraft and other capital goods.",
+    "gold_edges": [
+      [
+        "the",
+        "in"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "533"
+  },
+  {
+    "domain": "economics",
+    "text": "members anticipated that ongoing increases in the target range would be appropriate in order to attain a stance of monetary policy that is sufficiently restrictive to return inflation to 2 percent over time.",
+    "gold_edges": [
+      [
+        "members anticipated that ongoing",
+        "in"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "113"
+  },
+  {
+    "domain": "economics",
+    "text": "however, leverage continued to increase in the nonfinancial business sector, particularly among energy-related and other relatively risky firms.",
+    "gold_edges": [
+      [
+        "however, leverage continued to",
+        "in"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "313"
+  },
+  {
+    "domain": "economics",
+    "text": "in this regard the risks of rising inflation could not be dismissed, and while those risks appeared to be quite limited for the nearer term, excessive monetary stimulus had to be avoided to avert rising inflation expectations and added inflation pressures over time.",
+    "gold_edges": [
+      [
+        "rising inflation expectations",
+        "added inflation pressures over time"
+      ]
+    ],
+    "source": "gtfintechlab/federal_reserve_system",
+    "source_id": "573"
+  },
+  {
+    "domain": "policy",
+    "text": "Although VA has been authorized to collect third-party health insurance payments since 1986, it was not allowed to use these funds to supplement its medical care appropriations until enactment of the Balanced Budget Act of 1997. Part of VA\u2019s 1997 strategic plan was to increase health insurance payments and other collections to help fund an increased health care workload. The potential for increased workload occurred in part because the Veterans\u2019 Health Care Eligibility Reform Act of 1996 authorized VA to provide certain medical care services not previously available to higher-income veterans or those without service-connected disabilities. VA expected that the majority of the costs of their care would be covered by collections from third-party payments, copayments, and deductibles. These veterans increased from about 4 percent of all veterans treated in fiscal year 1996 to about a quarter of VA\u2019s total patient workload in fiscal year 2002. VA can bill insurers for treatment of conditions that are not a result of injuries or illnesses incurred or aggravated during military service. However, VA cannot bill them for health care conditions that result from military service, nor is it generally authorized to collect from Medicare or Medicaid, or from health maintenance organizations when VA is not a participating provider. To collect from health insurers, VA uses five related processes to manage the information needed to bill and collect. The patient intake process involves gathering insurance information and verifying that information with the insurer. The medical documentation process involves properly documenting the health care provided to patients by physicians and other health care providers. The coding process involves assigning correct codes for the diagnoses and med",
+    "gold_edges": [
+      [
+        "part of va\u2019s 1997 strategic plan was to",
+        "health"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Since 1996, Congress has taken important steps to increase Medicare program integrity funding and oversight, including the establishment of the Medicare Integrity Program. Table 1 summarizes several key congressional actions. CMS has made progress in strengthening provider enrollment provisions, but needs to do more to identify and prevent potentially fraudulent providers from participating in Medicare. Additional improvements to prepayment and postpayment claims review would help prevent and recover improper payments. Addressing payment vulnerabilities already identified could further help prevent or reduce fraud. PPACA authorized and CMS has implemented new provider enrollment procedures that address past weaknesses identified by GAO and HHS\u2019s Office of Inspector General (OIG) that allowed entities intent on committing fraud to enroll in Medicare. CMS has also implemented other measures intended to improve existing procedures. Specifically, to strengthen the existing screening activities conducted by CMS contractors, the agency added screenings of categories of provider enrollment applications by risk level, contracted with new national enrollment screening and site visit contractors, and began imposing moratoria on new enrollment of certain types of providers. Screening Provider Enrollment Applications by Risk Level: CMS and OIG issued a final rule in February 2011 to implement many of the new screening procedures required by PPACA. CMS designated three levels of risk\u2014high, moderate, and limited\u2014with different screening procedures for categories of Medicare providers at each level. Providers in the high-risk level are subject to the most rigorous screening. Based in part on our work and that of OIG, CMS designated newly enrolling home health agencies and suppliers of",
+    "gold_edges": [
+      [
+        "since 1996, congress has taken important steps to",
+        "medicare"
+      ],
+      [
+        "cms has also implemented other measures intended to",
+        "existing"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "The IRS and tax administrators worldwide generally use similar administrative practices. Information reporting. Information reporting is a widely accepted practice for increasing taxpayer compliance. Under U.S. law, some types of transactions are required to be reported to the IRS by third parties who make payments to, or sometimes receive payments from, individual taxpayers. Typically, information returns represent income paid to the taxpayer, such as wages or bank account interest. After tax returns are filed, the IRS then matches the amounts reported on information returns to the amounts reported on the taxpayer\u2019s return. For any differences, the IRS may send a notice to the taxpayer requesting an explanation. If the taxpayer does not respond to the notice, the IRS may make an additional assessment. For fiscal year 2010, the IRS received over 2.7 billion information returns, sent 5.5 million notices on differences between information returns and tax returns, and assessed an additional $20.7 billion in taxes, interest, and penalties. Withholding. Withholding is a widely accepted practice to increase taxpayer compliance. Under U.S. law, employers must withhold income tax from the wages paid to employees. Withholding from salaries requires wage earners to pay enough tax during the tax year to assure that they will not face a large payment at year end. Also, withholding can be required as a backup to information reporting if a payee fails to furnish a correct taxpayer identification number (TIN). If the payee refuses to furnish a TIN, the payer generally withholds 28 percent of the amount of the payment\u2014 for example, interest payments on a bank account\u2014and remits that amount to the IRS. Electronic tax administration. Many tax administrators in the United States and world",
+    "gold_edges": [
+      [
+        "withholding is a widely accepted practice to",
+        "taxpayer"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Available data showed that case dispositions and processing times in disciplinary cases during the period of January 1, 1996, through June 30, 1998, differed for SES employees and lower-level, or general schedule (GS), staff. In addition, a 1997 IRS internal study found that actions taken against lower-level employees more closely conformed to the IRS table of penalties than actions taken against higher-graded employees. However, because of dissimilarities in the types of offenses and incomplete case files, these data do not necessarily prove disparate treatment. Agencies must consider many factors, such as the nature and seriousness of the offense; the employee\u2019s job level and type of employment; whether the offense was intentional, technical, or inadvertent; the employee\u2019s past disciplinary record; and the notoriety of the offense or its impact upon the reputation of the agency, in deciding what penalty, if any, should be imposed in any given case. IRS recognized that problems have hindered the processing and resolution of employee misconduct cases and has begun revamping its disciplinary systems. For the period we studied, IRS tracked disciplinary cases for GS and SES employees in different systems. The Office of Labor Relations (OLR), which is the personnel office for non-SES staff, handled GS cases. It tracked these cases in the Automated Labor and Employee Relations Tracking System (ALERTS), although IRS officials told us that ALERTS data were often missing or incomplete. The Office of Executive Support (OES), which is the personnel office for IRS executives, handled SES cases. Although ALERTS was supposed to also track SES cases, OES tracked SES cases by using a log and monthly briefing reports. The monthly briefing reports were used to inform the Deputy Commissi",
+    "gold_edges": [
+      [
+        "dissimilarities",
+        "however"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "DOD is perhaps the largest and most complex organization in the world and spends billions of dollars each year to maintain key business operations intended to support the warfighter, including systems and processes related to the management of contracts, finances, the supply chain, support infrastructure, and weapons systems acquisition. We have reported for years that inefficiencies in these business operations result in reduced efficiencies, ineffective performance, inadequate accountability, and lack of transparency. Despite various reform initiatives, DOD continues to face weaknesses in business operations that not only adversely affect the reliability of reported financial data, but also the economy, efficiency, and effectiveness of DOD\u2019s operations. To address long-standing management problems, we began our \u201chigh-risk\u201d program in 1990 to identify and help resolve serious weaknesses in areas that involve substantial resources and provide critical services to the public. Historically, high-risk areas have been designated because of traditional vulnerabilities related to their greater susceptibility to fraud, waste, abuse, and mismanagement. As our high-risk program has evolved, we have increasingly used the high-risk designation to draw attention to areas associated with broad-based transformation needed to achieve greater economy, efficiency, effectiveness, accountability, and sustainability of selected key government programs and operations. For example, we first added DOD\u2019s overall approach to business transformation to our high-risk list in 2005 because DOD had not taken the necessary steps to achieve and sustain business reform on a broad, strategic, departmentwide, and integrated basis. Furthermore, DOD continues to dominate the high-risk list. Specifically, D",
+    "gold_edges": [
+      [
+        "traditional",
+        "historically, high-risk areas have been designated"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "DOD and VA offer health care benefits to active duty servicemembers and veterans, among others. Under DOD\u2019s health care system, eligible beneficiaries may receive care from military treatment facilities or from civilian providers. Military treatment facilities are individually managed by each of the military services\u2014the Army, the Navy, and the Air Force. Under VA, eligible beneficiaries may obtain care through VA\u2019s integrated health care system of hospitals, ambulatory clinics, nursing homes, residential rehabilitation treatment programs, and readjustment counseling centers. VA has organized its health care facilities into a polytrauma system of care that helps address the medical needs of returning servicemembers and veterans, in particular those who have an injury to more than one part of the body or organ system that results in functional disability and physical, cognitive, psychosocial, or psychological impairment. Persons with polytraumatic injuries may have injuries or conditions such as TBI, amputations, fractures, and burns. Over the past 6 years, DOD has designated over 30,000 servicemembers involved in Operations Iraqi Freedom and Enduring Freedom as wounded in action. Servicemembers injured in these conflicts are surviving injuries that would have been fatal in past conflicts, due, in part, to advanced protective equipment and medical treatment. The severity of their injuries can result in a lengthy transition from patient back to duty, or to veteran status. Initially, most seriously injured servicemembers from these conflicts, including activated National Guard and Reserve members, are evacuated to Landstuhl Regional Medical Center in Germany for treatment. From there, they are usually transported to military treatment facilities in the United States, with ",
+    "gold_edges": [
+      [
+        "the severity of their injuries can",
+        "a lengthy"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Federal crop insurance protects participating farmers against the financial losses caused by events such as droughts, floods, hurricanes, and other natural disasters. In 1995, crop insurance premiums were about $1.5 billion. USDA\u2019s Risk Management Agency administers the federal crop insurance program through FCIC. Federal crop insurance offers farmers two primary types of insurance coverage. The first\u2014called catastrophic insurance\u2014provides protection against extreme crop losses for the payment of a $50 processing fee, whereas the second\u2014called buyup insurance\u2014provides protection against more typical smaller crop losses in exchange for a premium paid by the farmer. FCIC conducts the program primarily through private insurance companies that sell and service federal crop insurance\u2014both catastrophic and buyup\u2014for the federal government and retain a portion of the insurance risk. FCIC also offers catastrophic insurance through the local offices of USDA\u2019s Farm Service Agency. FCIC pays the companies a fee, called an administrative expense reimbursement, that is intended to reimburse the companies for the expenses reasonably associated with selling and servicing crop insurance to farmers. The reimbursement is calculated as a percentage of the premiums received, regardless of the expenses incurred by the companies. Beginning in 1994, companies were required to report expenses in a consistent format following standard industry guidelines to provide FCIC with a basis for establishing future reimbursement rates. For buyup crop insurance, FCIC reduced the administrative expense reimbursement from a base rate of 34 percent of the premiums on policies sold from 1988 through 1991 to 31 percent of the premiums from 1994 through 1996. The 1994 reform act requires FCIC to reduce the rei",
+    "gold_edges": [
+      [
+        "the 1994 reform act requires fcic to",
+        "the"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "NCLBA reauthorized the Elementary and Secondary Education Act of 1965 (ESEA) and built upon accountability requirements created under a previous reauthorization, the Improving America\u2019s Schools Act of 1994 (IASA). Under ESEA, as amended, Congress sought to improve student learning by incorporating academic standards and assessments in the requirements placed on states. Academic standards, which describe what students should know and be able to do at different grade levels in different subjects, help guide school systems in their choice of curriculum and help teachers plan for classroom instruction. Assessments, which states use to measure student progress in achieving the standards, are required to be administered by states. NCLBA further strengthened some of the accountability requirements contained in ESEA, as amended. Specifically, NCLBA\u2019s accountability provisions require states to develop education plans that establish academic standards and performance goals for schools to meet AYP and lead to 100 percent of their students being proficient in reading, math, and science by 2014. This proficiency must be assessed annually in reading and math in grades 3 through 8 and periodically in science, whereas assessments were required less frequently under the IASA. Under NCLBA, schools\u2019 assessment data generally must be disaggregated to assess progress toward state proficiency targets for students in certain designated groups, including low-income students, minority students, students with disabilities, and those with limited English proficiency. Each of these groups must make AYP in order for the school to make AYP. Schools that fail to make AYP for 2 or more consecutive years are required to implement various improvement measures identified in NCLBA, and these measures are",
+    "gold_edges": [
+      [
+        "under esea, as amended, congress sought to",
+        "student"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "DLA is DOD\u2019s logistics manager for all departmental consumable items and some repair parts. Its primary business function is materiel management: providing supply support to sustain military operations and readiness. In addition, DLA performs five other supply-related business functions: distributing materiel from DLA and service-owned inventories, purchasing fuels for DOD and the U.S. government, storing strategic materiel, marketing surplus DOD materiel for reuse and disposal, and providing numerous information services, such as item cataloging, for DOD and the U.S. government, as well as selected foreign governments. These six business functions are managed by field commands that report to and support the agency\u2019s central command authority. In 2000, DLA refocused its logistics mission from that of a supplier of materiel to a manager of supply chain relationships. To support this transition, the agency developed a strategic plan (known as DLA 21) to reengineer and modernize its operations. Among the goals of DLA 21 are to optimize inventories, improve efficiency, increase effectiveness through organizational redesign, reduce inventories, and modernize business systems. DLA relies on over 650 systems to support warfighters by allowing access to global inventories. Whether it is ensuring that there is enough fuel to service an aircraft fleet, providing sufficient medical supplies to protect and treat military personnel, or supplying ample food rations to our soldiers on the frontlines, information technology plays a key role in ensuring that Defense Department agencies are prepared for their missions. Because of its heavy reliance on IT to accomplish its mission, DLA invests extensively in this area. For fiscal year 2002, DLA\u2019s IT budget is about $654 million. Our recen",
+    "gold_edges": [
+      [
+        "improve efficiency, increase effectiveness through organizational redesign",
+        "inventories"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Prepositioned equipment and supplies are strategic assets, along with sealift and airlift, for projecting military power. These assets include combat equipment, spare parts, and sustainment supplies that are stored on ships and on land in locations around the world to enable the rapid fielding of combat-ready forces. (App. I provides an overview of the military services\u2019 prepositioned assets and their locations.) DOD has made significant investments in its military prepositioning programs, totaling several billion dollars in annual acquisition costs. In addition, the services have collectively used an average of over $1 billion each year to operate and maintain these assets. For example, in fiscal year 2005, the Army spent $386.1 million for storage and maintenance of prepositioned assets, including $76.5 million for assets in South Korea and $38.3 million for assets in Southwest Asia. Prepositioned assets have been used extensively to support operations in Iraq and Afghanistan. The Marine Corps used equipment from two of its three prepositioned squadrons to support these operations. The Army used nearly all of its prepositioned ship stocks and land-based stocks in Kuwait and Qatar, in addition to drawing some equipment from Europe. Military equipment and infrastructure are often located in corrosive environments that increase the deterioration of assets and shorten their useful life. The extensive and long-term deployments of U.S. troops in Southwest Asia are likely to magnify the effects of corrosion on military equipment, including prepositioned assets, because of the region\u2019s harsh operating environment. Higher rates of corrosion result in increased repairs and replacements, drive up costs, and take critical systems out of action, reducing mission readiness. Corrosi",
+    "gold_edges": [
+      [
+        "higher rates of corrosion",
+        "increased"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "In our testimony, we stated that our audit and investigative work on FEMA disaster relief payments associated with hurricanes Katrina and Rita identified additional indications of fraud, waste, and abuse. Specifically, we found that FEMA made nearly $17 million in potentially improper and/or fraudulent rental assistance payments to individuals after they had moved into FEMA trailers. For example, after FEMA provided a trailer to a household\u2014in January 2006\u2014FEMA provided rental assistance payments to the same household in late January, February, and April of 2006 totaling approximately $5,500. In addition, FEMA provided potentially improper and/or fraudulent rental assistance payments to individuals living in FEMA-provided apartments. For example, FEMA made nearly $46,000 in rental assistance payments to at least 10 individuals living in apartments at the same time that the apartments were being paid for by FEMA through the city of Plano, Texas. Seven of 10 in this group self-certified to FEMA that they needed rental assistance, despite the fact that they were living in rent-free housing. Because of limitations in FEMA data, we were not able to identify the full extent of potentially improper rental assistance payments made to individuals in FEMA-provided apartments. We also found that nearly $20 million in potentially improper and/or fraudulent payments went to individuals who, using the same property, registered for assistance for both hurricanes Katrina and Rita. With few exceptions, FEMA officials explained that victims of both disasters are entitled to only one set of IHP payments for the same damaged property. However, FEMA officials told us that to increase the speed with which FEMA could distribute disaster assistance, they turned off the system edits that should",
+    "gold_edges": [
+      [
+        "however, fema officials told us that to",
+        "the"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Figure 1 compares original cost estimates and current cost estimates for the broader portfolio of major space acquisitions for fiscal years 2008 through 2013. The wider the gap between original and current estimates, the fewer dollars DOD has available to invest in new programs. As shown in the figure, estimated costs for the major space acquisition programs have increased by about $10.9 billion from initial estimates for fiscal years 2008 through 2013. The declining investment in the later years is the result of the Evolved Expendable Launch Vehicle (EELV) program no longer being considered a major acquisition program and the cancellation and proposed cancellation of two development efforts which would have significantly increased DOD\u2019s major space acquisition investment. Figures 2 and 3 reflect differences in total life-cycle costs and unit costs for satellites from the time the programs officially began to their most recent cost estimate. As figure 3 notes, in several cases, DOD has had to cut back on quantity and capability in the face of escalating costs. For example, two satellites and four instruments were deleted from National Polar-orbiting Operational Environmental Satellite System (NPOESS) and four sensors are expected to have fewer capabilities. This will reduce some planned capabilities for NPOESS as well as planned coverage. Figure 4 highlights the additional estimated months needed to complete programs. These additional months represent time not anticipated at the programs\u2019 start dates. Generally, the further schedules slip, the more DOD is at risk of not sustaining current capabilities. For this reason, DOD began a follow-on system effort, known as the Third Generation Infrared Satellite to run in parallel with the Space Based Infrared System (SBIRS) pro",
+    "gold_edges": [
+      [
+        "this will",
+        "some"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Floods can result in the loss of lives, extensive damage to property and agriculture, and large-scale disruptions to business and infrastructure, such as transportation and water and sewer services. The National Oceanic and Atmospheric Administration estimates that floods cause about 140 deaths in the United States each year, and the Army Corps of Engineers estimates that floods cause $6 billion in average annual losses. Congress established NFIP in the National Flood Insurance Act of 1968 to provide policyholders with some insurance coverage for flood damage as an alternative to disaster assistance, and to try to reduce the escalating costs of repairing flood damage.subsequently modified by various amendments, including the Flood Disaster Protection Act of 1973 (1973 Act) and the National Flood The program was Insurance Reform Act of 1994. And most recently, NFIP was amended by the Biggert-Waters Flood Insurance Reform Act of 2012. The 1973 Act added certain requirements that, according to FEMA officials, were intended to encourage community participation in NFIP. Specifically, as a condition of future federal financial assistance, communities are required to participate in NFIP and to adopt adequate floodplain ordinances with effective enforcement provisions consistent with federal standards in order to reduce or avoid future flood losses. Figure 1, which shows the location of U.S. Indian reservations and major flood disaster declarations over a 25-year period, indicates that many Indian tribes reside in areas that have experienced multiple floods. The 1973 Act denied direct federal financial assistance and financing by private lending institutions regulated by federal regulators for acquisition or construction purposes in participating communities where flood insuran",
+    "gold_edges": [
+      [
+        "floods can",
+        "the"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Modern agricultural biotechnology refers to various scientific techniques, most notably genetic engineering, used to modify plants, animals, or microorganisms by introducing in their genetic makeup genes for specific desired traits, including genes from unrelated species (see slide 1). For centuries people have crossbred related plant or animal species to develop useful new varieties or hybrids with desirable traits, such as better taste or increased productivity. Traditional crossbreeding, however, can be very time-consuming because it may require breeding several generations to obtain a desired trait and breed out numerous unwanted characteristics. Genetic engineering techniques allow faster development of new crop or livestock varieties, since the genes for a given trait can be readily introduced into a plant or animal species to produce a new variety incorporating that specific trait. Additionally, genetic engineering increases the range of traits available for developing new varieties by allowing genes from totally unrelated species to be incorporated into a particular plant or animal variety. To date, the principal biotechnology products marketed have been certain genetically engineered field crops (see slide 2). No genetically engineered animals have yet been approved, and only a modest number of plant products obtained from biotechnology have been marketed. However, for three key crops grown in the United States-\u2212-corn, soybeans, and cotton\u2014a large number of farmers have chosen to plant varieties derived from biotechnology. In 2000, biotech varieties accounted for about 25 percent of the corn, 54 percent of the soybeans, and 61 percent of the cotton planted in the United States. These crops are the source of various ingredients used extensively in many processed",
+    "gold_edges": [
+      [
+        "additionally, genetic engineering",
+        "the"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "The annual number of fatalities from crashes involving large trucks increased 20 percent from 4,462 in 1992 to 5,355 in 1997 (see fig. 1). This result reversed a trend of decreasing truck fatalities in the previous 5-year period, 1988-92. Also during the 1992-97 period, the fatality rate\u2014the number of fatalities per 100 million miles traveled by large trucks\u2014has remained fairly constant at about 2.9 after decreasing by 27 percent between 1988 and 1992. The recent increases in annual fatalities reflect in part increases in truck travel: the number of miles traveled increased by 25 percent from 1992 to 1997. If truck travel continues to increase at this rate, and nothing is done to reduce the fatality rate, the annual number of fatalities could increase to 5,800 in 1999 and to more than 6,000 in 2000 (see fig. 2). While we are concerned that the number of fatalities from crashes involving large trucks could increase in the next few years, only about 1 percent of all truck crashes reported to police in 1997 resulted in a fatality. About 99 percent resulted in injuries or property damage only. From 1988 through 1997, the number of people injured each year increased overall from 130,000 to 133,000. During the same period, the number of injuries per 100 million miles traveled fell from 92 to 69. In addition, the annual number of crashes involving large trucks that resulted in property damage only increased from 291,000 to 329,000 while the number of these crashes per 100 million miles traveled decreased from 206 to 172. For each mile that they traveled between 1988-97, large trucks were involved in fewer total crashes than cars were. However, large trucks were involved in a greater number of fatal crashes per mile traveled (see fig. 3). The higher fatal crash rate for large t",
+    "gold_edges": [
+      [
+        "the recent",
+        "in"
+      ],
+      [
+        "annual fatalities reflect in part",
+        "in"
+      ],
+      [
+        "if truck travel continues to",
+        "at"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "The Centers for Disease Control and Prevention (CDC) in the Department of Health and Human Services is the federal agency primarily responsible for monitoring the incidence of foodborne illness in the United States. In collaboration with state and local health departments and other federal agencies, CDC investigates outbreaks of foodborne illnesses and supports disease surveillance, research, prevention efforts, and training related to foodborne illnesses. CDC coordinates its activities concerning the safety of the food supply with the Food and Drug Administration (FDA), which is also in the Department of Health and Human Services. With respect to the safety of meat, poultry, and eggs, CDC coordinates with the Food Safety and Inspection Service (FSIS) in the U.S. Department of Agriculture (USDA). CDC monitors individual cases of illness from harmful bacteria, viruses, chemicals, and parasites (hereafter referred to collectively as pathogens) that are known to be transmitted by foods, as well as foodborne outbreaks, through voluntary reports from state and local health departments, FDA, and FSIS. In practice, because CDC does not have the authority to require states to report data on foodborne illnesses, each state determines which diseases it will report to CDC. In addition, state laboratories voluntarily report the number of positive test results for several diseases that CDC has chosen to monitor. However, these reports do not identify the source of infection and are not limited to cases of foodborne illness. CDC also investigates a limited number of more severe or unusual outbreaks when state authorities request assistance. At least 30 pathogens are associated with foodborne illnesses. For reporting purposes, CDC categorizes the causes of outbreaks of foodborne illne",
+    "gold_edges": [
+      [
+        "for reporting purposes, cdc categorizes the",
+        "of"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Both the Clean Water and Drinking Water SRF programs authorize EPA to provide states and local communities with independent and sustainable sources of financial assistance, such as low- or no-interest loans, for projects that protect or improve water quality and that are needed to comply with federal drinking water regulations and protect public health. The Clean Water SRF program was established in 1987 under the Clean Water Act, which was enacted to protect surface waters, such as rivers, lakes, and coastal areas, and to maintain and restore the physical, chemical, and biological integrity of these waters. The Drinking Water SRF program was established in 1996 under the Safe Drinking Water Act, which was enacted to establish national enforceable standards for drinking water quality and to guarantee that water suppliers monitor water to ensure compliance with standards. The Recovery Act provided $6 billion for EPA\u2019s Clean Water and Drinking Water SRF programs. This amount represents a significant increase over the federal funds awarded to the base SRF programs in recent years. From fiscal years 2000 through 2009, annual appropriations averaged about $1.1 billion for the Clean Water SRF program and about $833 million for the Drinking Water SRF program. The Recovery Act funds represent a significant federal investment in the nation\u2019s water infrastructure at a time when, according to a 2010 Congressional Budget Office report, overall spending on infrastructure has been declining, and when reported problems with the quality and safety of water supplies have raised questions about the condition of the nation\u2019s infrastructure. In addition to increasing funds, the Recovery Act included some new requirements for the SRF programs. First, projects funded with Recovery Act SRF pr",
+    "gold_edges": [
+      [
+        "this amount represents a significant",
+        "over"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Created in 1789, Customs is one of the federal government\u2019s oldest agencies. Customs is responsible for collecting revenue from imports and enforcing customs and related laws. It also processes persons, carriers, cargo, and mail into and out of the United States. In fiscal year 1997, Customs collected about $19 billion in revenues and processed about 18 million import entries; about 128 million vehicles; and about 446 million air, land, and sea passengers entering the country. Customs performs its mission with a workforce of about 19,500 personnel at its headquarters in Washington, D.C., and at 20 CMCs, 20 Special Agent-in-Charge offices, and 301 ports of entry around the country. Of these 301 ports, 24 are located along the Southwest border and\u2014through 39 crossing points (such as bridges)\u2014handle both passengers and commercial cargo entering the United States. At the end of fiscal year 1997, Customs had deployed about 28 percent of its inspectors and about 62 percent of its canine enforcement officers at ports along the Southwest border. This compared to about 24 percent of its inspectors and about 50 percent of its canine enforcement officers being deployed at the Southwest border in fiscal year 1992, the earliest year that complete data were available. This deployment represented an increase of about 36 percent in the number of inspectors and about 67 percent in the number of canine enforcement officers at the Southwest border over the fiscal year 1992 level. A major goal of Customs is to prevent the smuggling of drugs into the country by attempting to create an effective drug interdiction, intelligence, and investigation capability that disrupts and dismantles smuggling organizations. The Commissioner of Customs has designated this goal to be the highest priority wit",
+    "gold_edges": [
+      [
+        "this deployment represented an",
+        "of"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Land mines in the U.S. inventory are of two distinct types: The first consists of conventional land mines that are hand-emplaced and are termed nonself-destruct, or sometimes \u201cdumb,\u201d because they remain active for years unless disarmed or detonated. They can therefore cause unintended post-conflict and civilian casualties. The second type consists of land mines that are generally, but not always, surface-laid \u201cscatterable\u201d land mines that are dropped by aircraft, fired by artillery, or dispersed by another dispenser system. They are conversely called \u201csmart\u201d because they remain active for preset periods of time after which they are designed to self-destruct or deactivate, rendering themselves nonhazardous. According to DOD, smart land mines have a 99.99-percent self-destruct reliability rate. Most self-destruct land mine systems are set at one of three self-destruct periods: 4 hours, 48 hours, or 15 days. In addition, should the self-destruct mechanism fail, self-destruct land mines are designed to self- deactivate, meaning that they are to be rendered inoperable by means of the \u201cirreversible exhaustion of their batteries\u201d within 120 days after employment. This feature, according to DOD, operates with a reliability rate of 99.999(+) percent. At the time of the Gulf War, U.S. forces were armed with both nonself-destruct and self-destruct land mines, and U.S. policy allowed them to use both types. Today, however, U.S. presidential policy limits the U.S. forces\u2019 use of nonself-destruct M-14 and M-16 antipersonnel land mines (see fig. 6 in app. II) to Korea. Antitank mines, as the name implies, are designed to immobilize or destroy tracked and wheeled vehicles and the vehicles\u2019 crews and passengers. The fuzes that activate antitank mines are of various types. For example, t",
+    "gold_edges": [
+      [
+        "they can therefore",
+        "unintended"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Before September 2001, we and others had demonstrated significant, long- standing vulnerabilities in aviation security, some of which are depicted in figure 1. These included weaknesses in screening passengers and baggage, controlling access to secure areas at airports, and protecting air traffic control computer systems and facilities. To address these and other weaknesses, ATSA created the Transportation Security Administration and established security requirements for the new agency with mandated deadlines. Before September 2001, screeners, who were then hired by the airlines, often failed to detect threat objects located on passengers or in their carry- on luggage. Principal causes of screeners\u2019 performance problems were rapid turnover and insufficient training. As we previously reported, turnover rates exceeded 100 percent a year at most large airports, leaving few skilled and experienced screeners, primarily because of low wages, limited benefits, and repetitive, monotonous work. In addition, before September 2001, controls for limiting access to secure areas of airports, including aircraft, did not always work as intended. As we reported in May 2000, our special agents used fictitious law enforcement badges and credentials to gain access to secure areas, bypass security checkpoints at two airports, and walk unescorted to aircraft departure gates. The agents, who had been issued tickets and boarding passes, could have carried weapons, explosives, or other dangerous objects onto aircraft. DOT\u2019s Inspector General also documented numerous problems with airport access controls, and in one series of tests, nearly 7 out of every 10 attempts by the Inspector General\u2019s staff to gain access to secure areas were successful. Upon entering the secure areas, the Inspector Gene",
+    "gold_edges": [
+      [
+        "principal",
+        "of"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Federal operations and facilities have been disrupted by a range of events, including the terrorist attacks on September 11, 2001; the Oklahoma City bombing; localized shutdowns due to severe weather conditions, such as hurricanes Katrina, Rita, and Wilma in 2005; and building-level events, such as asbestos contamination at the Department of the Interior\u2019s headquarters. In addition, federal operations could be significantly disrupted by people-only events, such as an outbreak of severe acute respiratory illness (SARS). Such disruptions, particularly if prolonged, can lead to interruptions in essential government services. Prudent management, therefore, requires that federal agencies develop plans for dealing with emergency situations, including maintaining services, ensuring proper authority for government actions, and protecting vital assets. Until relatively recently, continuity planning was generally the responsibility of individual agencies. In October 1998, Presidential Decision Directive (PDD) 67 identified FEMA\u2014which is responsible for leading the effort to prepare the nation for all hazards and managing federal response and recovery efforts following any national incident\u2014as the lead agent for federal COOP planning across the federal executive branch. FEMA\u2019s responsibilities include \u25cf formulating guidance for agencies to use in developing viable plans; \u25cf coordinating interagency exercises and facilitating interagency coordination, as appropriate; and \u25cf overseeing and assessing the status of COOP capabilities across the executive branch. In July 1999, FEMA issued the first version of Federal Preparedness Circular (FPC) 65, its guidance to the federal executive branch on developing viable and executable contingency plans that facilitate the performance of essentia",
+    "gold_edges": [
+      [
+        "such disruptions, particularly if prolonged, can",
+        "interruptions"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "DOD invests in power sources such as batteries, fuel cells, and capacitors to support the warfighting effort by powering weapon systems and equipment. DOD\u2019s power source investment is expected to rise because of an increased reliance on advanced weapon systems and equipment an ongoing efforts to develop new technologies that are smaller, lighter, and Batteries are devices that convert chemical energy more power dense. into electrical energy. The two main types of batteries are primary (non- rechargeable) and secondary (rechargeable). Primary batteries, which are discarded after their charge has been depleted, are the most common battery type for soldier-carried applications. A subclass of primary d batteries called thermal batteries is used for short-term, high-power applications (e.g., missiles). While primary batteries typically self- discharge available energy when not in use, thermal batteries have a longer shelf life because they remain inert until activated. Secondary batteries, which can be reenergized after their charge has been depleted, are less commonly used by deployed units than primary batteries. However, the Army has undertaken educational campaigns to increase their use in light of some cost efficiencies and operational advantages\u2014 including overall weight reduction of soldiers\u2019 equipment. Further, the military services are interested in transitioning from non-rechargeable batteries to secondary batteries because their use by deployed units may decrease the number of vehicle convoys needed to supply batteries in war zones. DOD is also interested in limiting the proliferation of battery types to reduce the number of different battery types the soldiers have to carry and limit soldier confusion over which battery is required to operate a device\u2014thus simpli",
+    "gold_edges": [
+      [
+        "an",
+        "dod\u2019s power source investment is expected to rise"
+      ],
+      [
+        "however, the army has undertaken educational campaigns to",
+        "their"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Although a number of companies manufacture various non-lethal weapons, such as stun guns, the only company that manufactures Tasers is Taser International in Scottsdale, Arizona. First developed in the 1970s for use by police departments, Tasers differ from stun guns in that they can be fired from a distance and do not require contact with skin in order to work. Taser International has produced various models of Taser weapons including Air Tasers and the M-18, M-18L, M-26, X-26, and X-26C models. The M-18 and X-26C models are available to the civilian market. The M-26 and X-26 models are sold only to law enforcement agencies, the military, and more recently have been made available for use in maintaining aviation security. Both models, while varying in size, operate in the same manner and deliver approximately the same electrical charge. For the purposes of this report, Tasers refer to the M-26 and X-26 models. Figure 1 shows a picture of an M-26 model Taser, and figure 2 shows a picture of an X-26 model Taser. The Taser fires two metal barbs that are attached to wires, which can cover a distance of up to 25 feet. Once the barbs are embedded in an individual or on the individual\u2019s clothing, the weapon delivers an electrical charge of 50,000 volts through the wires to the barbs. This charge causes the muscles of the individual to involuntarily contract, which immediately incapacitates the individual for the duration of the shock, usually lasting about 5 seconds. The barbs need not be embedded in an individual\u2019s body in order to function. Because of the high voltage, an individual will be shocked even if the barbs are attached to an outer layer of clothing, such as a coat. If the barbs penetrate the skin, it is impossible to predict how deeply they will embed because of v",
+    "gold_edges": [
+      [
+        "this charge",
+        "the"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "The natural gas and electricity industries perform three primary functions in delivering energy to consumers: (1) producing the basic energy commodity, (2) transporting the commodity through pipelines or over power lines, and (3) distributing the commodity to the final consumer. Historically, many local utilities in the electricity sector built their own systems of power plants and electricity transmission and distribution lines to serve the needs of all consumers in their local areas. Similarly, natural gas companies built networks of pipelines to deliver natural gas from areas where it was produced to the markets where local distribution companies served all local customers. These local monopolies were overseen by regulators, who restricted the entry of new companies and also approved investments, approved prices paid by customers, and determined profits of these utilities. However, due to rising electricity prices and technological, economic, and policy developments beginning in the 1970s, the electricity and natural gas industries have restructured from a regulated environment to one that places greater reliance on competition to determine entry, investment, prices, and profits. The passage of the Natural Gas Policy Act of 1978, the Natural Gas Wellhead Decontrol Act of 1989, and subsequent FERC orders in 1985 and 1992 opened access to pipelines and required pipeline companies to completely separate transportation, storage, and sales services, all of which facilitated the shift of natural gas to more competitive markets. Similarly, the 1978 passage of the Public Utility Regulatory Policies Act of 1978 and the 1992 passage of the Energy Policy Act facilitated restructuring in the electricity industry. FERC built upon these efforts through major regulatory actions in ",
+    "gold_edges": [
+      [
+        "rising",
+        "however"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Best management practices refer to the processes, practices, and systems identified in public and private organizations that performed exceptionally well and are widely recognized as improving an organization\u2019s performance and efficiency in specific areas. Successfully identifying and applying best practices can reduce business expenses and improve organizational efficiency. Best practices we have identified in our work resulting in recommendations to the defense community include: (1) relying on established commercial networks to manage, store, and directly deliver defense electronic items more efficiently; (2) using private sector food distributors to supply food to the military community faster and cheaper; and (3) adopting the use of supplier parks to reduce maintenance and repair inventories. Most of the Defense Management and NASA\u2019s (DMN) best practices reports have focused on using best management practices to improve a specific the Department of Defense (DOD) process. DMN has also reported on management concepts that are important in successfully implementing best management practices throughout an organization, such as reporting on techniques companies use to achieve and manage change. See appendix I for a list of the reports related to the use of best management practices and additional information on each report\u2019s findings. DMN chose initially to look at applying best management practices techniques in the area of supply management, because DOD\u2019s supply system has been an area with long-standing problems in which proposed solutions seldom corrected the conditions identified. Also, DOD\u2019s supply management is a large budget item so the potential for large dollar savings was present. DMN believed that comparing DOD\u2019s supply management practices to those that had",
+    "gold_edges": [
+      [
+        "successfully identifying and applying best practices can",
+        "business"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Between 1988 and 1995, the Department of Defense (DOD), acting under special legislative authorities, conducted four rounds of base realignments and closures (BRAC). According to DOD\u2019s calculations, when all BRAC actions from those rounds are completed, no later than 2001, DOD will have reduced its domestic military basing structure by about 20 percent. DOD believes it needs to reduce its domestic basing infrastructure even further to bring it more into line with reductions in its force structure and funding levels and free up funds for other programs, including modernization. Consequently, in 1997 and 1998, the Secretary of Defense requested the Congress to authorize additional rounds of base closures. However, the Congress continues to have many questions about the four BRAC rounds and has not been willing to authorize additional ones to date. Some in the Congress, noting the lengthy time frame allowed for closures and realignments to be completed, have suggested that additional BRAC rounds should not be authorized until prior recommendations have been implemented and the effects of those decisions fully assessed. Some members have also raised questions about the adequacy of DOD\u2019s accounting for the costs and savings associated with BRAC decisions, including environmental restoration costs and other costs to the government not borne directly by DOD; the extent to which environmental restoration associated with BRAC might continue beyond 2001; and the economic impact on communities affected by closures and their ability to recover. DOD has characterized the four rounds of BRAC actions as representing about 20 percent of its major bases, producing decisions to close 97 out of 495 major domestic installations and many smaller ones and to realign many other facilities. Ho",
+    "gold_edges": [
+      [
+        "dod believes it needs to",
+        "its"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "As our past work has found, climate-related and extreme weather impacts on physical infrastructure such as buildings, roads, and bridges, as well as on federal lands, increase federal fiscal exposures. Infrastructure is typically designed to withstand and operate within historical climate patterns. However, according to NRC, as the climate changes, historical patterns do not provide reliable predictions of the future, in particular, those related to extreme weather events.may underestimate potential climate-related impacts over their design life, which can range up to 50 to 100 years. Federal agencies responsible for the long-term management of federal lands face similar impacts. Climate- Thus, infrastructure designs related impacts can increase the operating and maintenance costs of infrastructure and federal lands or decrease the infrastructure\u2019s life span, leading to increased fiscal exposures for the federal government that are not fully reflected in the budget. Key examples from our recent work include (1) Department of Defense (DOD) facilities, (2) other large federal facilities such as National Aeronautics and Space Administration (NASA) centers, and (3) federal lands such as National Parks. DOD manages a global real-estate portfolio that includes over 555,000 facilities and 28 million acres of land with a replacement value that DOD estimates at close to $850 billion. Within the United States, the department\u2019s extensive infrastructure of bases and training ranges\u2014 critical to maintaining military readiness\u2014extends across the country, including Alaska and Hawaii. DOD incurs substantial costs for infrastructure, with a base budget for military construction and family housing totaling more than $9.8 billion in fiscal year 2014. As we reported in May 2014, this infra",
+    "gold_edges": [
+      [
+        "climate- thus, infrastructure designs related impacts can",
+        "the"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "Over the past two decades\u2014from 1991 through 2012\u2014there was a substantial increase in the number of FLSA lawsuits filed, with most of the increase occurring in the period from fiscal year 2001 through 2012. As shown in figure 1, in 1991, 1,327 lawsuits were filed; in 2012, that number had increased over 500 percent to 8,148. FLSA lawsuits can be filed by DOL on behalf of employees or by private individuals. Private FLSA lawsuits can either be filed by individuals or on behalf of a group of individuals in a type of lawsuit known as a \u201ccollective action\u201d. The court will generally certify whether a lawsuit meets the requirements to proceed as a collective action. The court may deny certification to a proposed collective action or decertify an existing collective action if the court determines that the plaintiffs are not \u201csimilarly situated\u201d with respect to the factual and legal issues to be decided. In such cases, the court may permit the members to individually file private FLSA lawsuits. Collective actions can serve to reduce the burden on courts and protect plaintiffs by reducing costs for individuals and incentivizing attorneys to represent workers in pursuit of claims under the law. They may also protect employers from facing the burden of many individual lawsuits; however, they can also be costly to employers because they may result in large amounts of damages. For fiscal year 2012, we found that an estimated 58 percent of the FLSA lawsuits filed in federal district court were filed individually, and 40 percent were filed as collective actions. An estimated 16 percent of the FLSA lawsuits filed in fiscal year 2012 (about a quarter of all individually-filed lawsuits), however, were originally part of a collective action that was decertified (see fig. 2). Federal courts",
+    "gold_edges": [
+      [
+        "collective actions can serve to",
+        "the"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "The Department of Defense\u2019s military compensation package includes a collection of pays and benefits used to retain and recruit active duty servicemembers, including basic pay, allowances for housing and subsistence, and federal tax advantages. In addition, servicemembers can be provided with compensation for specific duties and occupations or conditions of service in the form of S&I pays. As we reported in 2011, DOD and the services are authorized to offer various S&I pays that provide targeted monetary incentives to specific groups of personnel to influence the numbers of personnel in specific situations in which less costly methods have proven inadequate or impractical. The services use a variety of S&I pay programs to help meet staffing targets for the three high-skill occupations we selected as case studies for this review (see table 1). These S&I pay programs are generally used to improve accession and retention of servicemembers. We discuss the services\u2019 use of S&I pays to support these occupations in more detail in appendixes II \u2013 IV. In its 2008 Report of The Tenth Quadrennial Review of Military Compensation (QRMC), DOD recommended consolidating the more than 60 S&I pays into 8 broad categories in order to increase the pay system\u2019s flexibility and effectiveness as a force management tool. These categories include enlisted force management pay, officer force management pay, nuclear officer force management pay, aviation officer force management pay, health professions officer force management pay, hazardous duty pay, assignment or special duty pay, and skill incentive or proficiency pay. Prior to the release of DOD\u2019s Tenth QRMC in 2008, Congress authorized the consolidation of the 60 legacy authorities into 8 authorities based on the categories. This change is r",
+    "gold_edges": [
+      [
+        "these s&i pay programs are generally used to",
+        "accession"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  },
+  {
+    "domain": "policy",
+    "text": "The federal Food Stamp Program is intended to help low-income individuals and families obtain a more nutritious diet by supplementing their income with benefits to purchase nutritious food such as meat, dairy, fruits, and vegetables, but not items such as soap, tobacco, or alcohol. The Food and Nutrition Service (FNS) pays the full cost of food stamp benefits and shares the states\u2019 administrative costs\u2014with FNS usually paying approximately 50 percent\u2014and is responsible for promulgating program regulations and ensuring that state officials administer the program in compliance with program rules. The states administer the program by determining whether households meet the program\u2019s income and asset requirements, calculating monthly benefits for qualified households, and issuing benefits to participants on an electronic benefits card. In fiscal year 2005, the Food Stamp Program issued almost $28.6 billion in benefits to about 25.7 million individuals participating in the program, and the maximum monthly food stamp benefit for a household of four living in the continental United States was $506. As shown in figure 1, the increase in the average monthly participation of food stamp recipients in 2005 continues a recent upward trend in the number of people receiving benefits. Retailers are the front line for determining which goods can be purchased and for ensuring the integrity of the food stamp transaction. FNS operates 44 field offices throughout the country, and they have the primary responsibility for authorizing retailers to participate in the Food Stamp Program. To become an authorized retailer, a store must offer on a continuing basis a variety of foods in each of the four staple food categories\u2014meats, poultry or fish; breads or cereals; vegetables or fruits; and dairy",
+    "gold_edges": [
+      [
+        "as shown in figure 1, the",
+        "in"
+      ]
+    ],
+    "source": "ccdv/govreport-summarization"
+  }
+]

@@ -12,6 +12,8 @@ Supports:
 
 import torch
 import warnings
+import os
+from pathlib import Path
 from typing import Optional, List
 from dataclasses import dataclass
 from transformers import (
@@ -109,6 +111,20 @@ class HuggingFaceLlamaLayer(InferenceLayer):
         if quantization_config is not None:
             model_kwargs["quantization_config"] = quantization_config
             model_kwargs["device_map"] = "auto"
+            model_kwargs["low_cpu_mem_usage"] = True
+            # On small GPUs (e.g., 4GB), keep headroom and offload overflow to CPU.
+            if self.config.device == "cuda" and torch.cuda.is_available():
+                total_mem_bytes = torch.cuda.get_device_properties(0).total_memory
+                total_mem_gib = max(1, int(total_mem_bytes / (1024 ** 3)))
+                gpu_budget_gib = max(1, total_mem_gib - 1)
+                model_kwargs["max_memory"] = {
+                    0: f"{gpu_budget_gib}GiB",
+                    "cpu": "48GiB"
+                }
+                offload_dir = Path(".hf_offload")
+                offload_dir.mkdir(parents=True, exist_ok=True)
+                model_kwargs["offload_folder"] = str(offload_dir)
+                model_kwargs["offload_state_dict"] = True
         else:
             model_kwargs["device_map"] = self.config.device
 
@@ -116,6 +132,13 @@ class HuggingFaceLlamaLayer(InferenceLayer):
             self.config.model_name,
             **model_kwargs
         )
+        # Avoid repeated warning noise when max_new_tokens is used.
+        # Pipeline merges model generation config, which often has max_length set.
+        if hasattr(self.model, "generation_config"):
+            # Keep max_length comfortably above any short benchmark decoding settings
+            # so max_new_tokens is authoritative and warnings stay quiet.
+            self.model.generation_config.max_length = 4096
+            self.model.generation_config.max_new_tokens = self.config.max_new_tokens
 
         # Create text generation pipeline
         self.pipeline = pipeline(
@@ -172,8 +195,12 @@ Your responses should be clear, well-reasoned, and avoid contradictions."""
                 add_generation_prompt=True
             )
         else:
-            # Fallback for other models
-            formatted_prompt = f"{system_message}\n\nUser: {prompt}\n\nAssistant:"
+            # Fallback for other models: avoid chat-loop style prompting.
+            formatted_prompt = (
+                f"{system_message}\n\n"
+                f"Task:\n{prompt}\n\n"
+                "Respond concisely and directly."
+            )
 
         return formatted_prompt
 
@@ -194,11 +221,10 @@ Your responses should be clear, well-reasoned, and avoid contradictions."""
         """
         formatted_prompt = self._format_prompt(prompt, constraints)
 
-        # Generate (suppress max_length to avoid conflicts with max_new_tokens)
+        # Generate
         outputs = self.pipeline(
             formatted_prompt,
             max_new_tokens=self.config.max_new_tokens,
-            max_length=None,  # Disable max_length to avoid warning
             temperature=self.config.temperature,
             top_p=self.config.top_p,
             do_sample=self.config.do_sample,
@@ -266,19 +292,70 @@ def create_llama_layer(
     Factory function to create a Llama inference layer.
 
     Args:
-        model_size: "7b", "8b", or "13b"
-        use_4bit: Use 4-bit quantization (saves memory)
+        model_size: Model size/type:
+            - "7b": Llama-2-7B (3.5GB with 4-bit)
+            - "8b": Llama-3-8B (4GB with 4-bit)
+            - "13b": Llama-2-13B (7GB with 4-bit - needs 8GB+ GPU)
+            - "tiny": TinyLlama-1.1B (0.6GB with 4-bit - ultra-lightweight)
+            - "phi2": Microsoft Phi-2 2.7B (1.5GB with 4-bit - good balance)
+            - "mistral": Mistral-7B (3.5GB with 4-bit - Llama alternative)
+        use_4bit: Use 4-bit quantization (saves memory, recommended for 4GB GPU)
         use_8bit: Use 8-bit quantization
-        open_source: Use ungated open-source variants
+        open_source: Use ungated open-source variants (recommended)
 
     Returns:
         Configured HuggingFaceLlamaLayer instance
+
+    Examples:
+        # For 4GB GPU - recommended
+        llm = create_llama_layer("7b", use_4bit=True)  # 3.5GB
+
+        # For 4GB GPU - ultra-lightweight
+        llm = create_llama_layer("tiny", use_4bit=True)  # 0.6GB
+
+        # For 4GB GPU - good balance
+        llm = create_llama_layer("phi2", use_4bit=True)  # 1.5GB
     """
+    # Rough VRAM guidance for this code path (4-bit + runtime overhead).
+    # GTX 1650 4GB typically cannot load phi2 reliably.
+    min_vram_gib = {
+        "tiny": 2,
+        "phi2": 5,
+        "mistral": 7,
+        "7b": 7,
+        "8b": 8,
+        "13b": 12,
+    }
+
+    if torch.cuda.is_available():
+        total_mem_gib = torch.cuda.get_device_properties(0).total_memory / (1024 ** 3)
+        required = min_vram_gib.get(model_size, 6)
+        if total_mem_gib < required:
+            allow_fallback = os.getenv("CAF_ALLOW_MODEL_FALLBACK", "0") == "1"
+            if allow_fallback and model_size != "tiny":
+                print(
+                    f"WARNING: GPU has {total_mem_gib:.2f} GiB, but model '{model_size}' "
+                    f"typically needs ~{required} GiB. Falling back to 'tiny' "
+                    f"(set CAF_ALLOW_MODEL_FALLBACK=0 to disable)."
+                )
+                model_size = "tiny"
+            elif model_size != "tiny":
+                raise RuntimeError(
+                    f"Insufficient VRAM for '{model_size}' on this GPU "
+                    f"({total_mem_gib:.2f} GiB available, ~{required} GiB recommended).\n"
+                    "Use '--llm-model tiny' or set CAF_ALLOW_MODEL_FALLBACK=1."
+                )
+
+    # Model map with small models for 4GB GPU support
     if open_source:
-        # Use NousResearch ungated models
+        # Use ungated open-source models
         model_map = {
             "7b": "NousResearch/Llama-2-7b-chat-hf",
             "13b": "NousResearch/Llama-2-13b-chat-hf",
+            # Small models for 4GB GPU
+            "tiny": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "phi2": "microsoft/phi-2",
+            "mistral": "mistralai/Mistral-7B-Instruct-v0.2",
         }
         model_name = model_map.get(model_size, model_map["7b"])
     else:
@@ -287,6 +364,10 @@ def create_llama_layer(
             "7b": "meta-llama/Llama-2-7b-chat-hf",
             "8b": "meta-llama/Llama-3-8B-Instruct",
             "13b": "meta-llama/Llama-2-13b-chat-hf",
+            # Small models also available
+            "tiny": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "phi2": "microsoft/phi-2",
+            "mistral": "mistralai/Mistral-7B-Instruct-v0.2",
         }
         model_name = model_map.get(model_size, model_map["7b"])
 

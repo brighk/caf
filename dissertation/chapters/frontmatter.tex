@@ -1,0 +1,110 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FRONT MATTER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title Page
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+{\LARGE\textbf{Causal Grounding for Reliable Large Language Model Reasoning:}}\\[0.5cm]
+{\LARGE\textbf{Theory, Architecture, and Intervention}}\\[3cm]
+
+{\Large Koycho Georgiev}\\[1cm]
+
+{\large A thesis submitted in partial fulfillment of the requirements}\\
+{\large for the degree of Doctor of Philosophy}\\[2cm]
+
+{\large School of Computing}\\
+{\large University of Portsmouth}\\[1cm]
+
+{\large February 2026}\\[3cm]
+
+\vfill
+
+{\large Supervisors:}\\
+{\large Professor Alexander Gegov}\\
+{\large Dr. [Second Supervisor Name]}
+
+\end{titlepage}
+
+% Declaration
+\chapter*{Declaration}
+\thispagestyle{empty}
+
+I, Koycho Georgiev, declare that while registered as a candidate for the degree of Doctor of Philosophy at the University of Portsmouth, I have not been registered for any other research award. The results and conclusions embodied in this thesis are the work of the named candidate and have not been submitted for any other academic award.
+
+I certify that all material in this dissertation which is not my own work has been properly identified and acknowledged according to appropriate academic conventions. I confirm that this thesis complies with the University's regulations regarding plagiarism, proper citation, and academic integrity.
+
+The research presented in this dissertation was conducted in accordance with ethical guidelines and received approval from the University of Portsmouth Research Ethics Committee (reference number: XXXX-XXX-XXX). All experiments involving computational resources were conducted with appropriate permissions and within institutional resource allocation policies.
+
+Portions of this work have been published or submitted for publication in peer-reviewed venues:
+
+\begin{itemize}
+\item \textbf{Georgiev, K.} and Gegov, A. (2026). ``Causal Discovery and Intervention with Large Language Models: A Neuro-Symbolic Approach.'' \textit{Proceedings of the International Conference on Autonomous Robots and Agents (ICAR-AI 2026)}.
+
+\item \textbf{Georgiev, K.} and Gegov, A. (2026). ``Enhancing Logical Consistency of Large Language Models through Causal Axiomatic Verification.'' In: \textit{Advances in Intelligent Systems and Computing} (Book Chapter, accepted).
+\end{itemize}
+
+All co-authors have provided written consent for the inclusion of this material in the dissertation. The contributions represent my own research work under the supervision of Professor Alexander Gegov.
+
+\vspace{2cm}
+
+\noindent
+Signed: \rule{5cm}{0.4pt}\\[0.5cm]
+Date: \rule{5cm}{0.4pt}
+
+\cleardoublepage
+
+% Abstract
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+Large Language Models (LLMs) demonstrate remarkable linguistic capabilities yet systematically fail at causal reasoning, confusing correlation with causation, generating inconsistent causal structures, and producing unreliable interventional predictions. This dissertation addresses the fundamental question: \textbf{Can formal causal grounding enhance LLM reliability for causal reasoning without sacrificing generative flexibility?}
+
+We present two neuro-symbolic architectures integrating LLMs with structural causal models and knowledge graph verification. The \textbf{Causal Autonomy Framework (CAF)} implements iterative refinement where SPARQL queries verify LLM-generated propositions against RDF knowledge bases, and verification failures generate constraints guiding regeneration. The \textbf{causal discovery pipeline} extracts causal graphs from text and validates them through simulated interventions on constructed structural causal models.
+
+We formalize \emph{stochastic drift}—systematic error accumulation in multi-step LLM reasoning—and introduce \emph{causal autonomy} as the target property for reliable systems. Theoretical analysis establishes convergence guarantees for iterative refinement and demonstrates that verification overhead is dominated by LLM inference rather than symbolic reasoning costs.
+
+Empirical evaluation demonstrates substantial improvements: CAF achieves 76.5\% entailment accuracy versus 62\% for vanilla LLMs (23.4\% improvement), maintains 71.1\% semantic invariance under adversarial perturbations, and improves contradiction detection from 70.7\% to 84\%. The causal discovery system recovers ground-truth structures with Structural Hamming Distance of 1.3$\pm$0.9, achieving 89\% intervention accuracy and 91\% counterfactual consistency on synthetic benchmarks. Real-world evaluations on medical, economic, and policy documents show 20--35\% improvements over correlation-based baselines.
+
+This work demonstrates that \textbf{LLMs can participate meaningfully in causal reasoning when embedded within formal verification frameworks}. The central thesis: reliable causal reasoning requires architectural innovation integrating neural flexibility with symbolic rigor, not scaling alone. By treating LLMs as probabilistic hypothesis generators constrained by symbolic validators, we achieve causally grounded outputs supporting intervention prediction and counterfactual inference—capabilities neither component possesses in isolation. This research establishes verification-based architectures as a viable path toward trustworthy AI for high-stakes domains requiring causal understanding.
+
+\vspace{1cm}
+
+\noindent\textbf{Keywords:} Causal reasoning, Large language models, Structural causal models, Neuro-symbolic AI, Knowledge graphs, SPARQL verification, Intervention design, Counterfactual reasoning, Logical consistency, Stochastic drift, Causal autonomy, Pearl's causal hierarchy, Do-calculus, Formal verification, Hybrid AI systems
+
+% Acknowledgments
+\chapter*{Acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+
+This dissertation represents the culmination of a challenging and rewarding intellectual journey that would not have been possible without the support, guidance, and encouragement of many individuals and institutions.
+
+First and foremost, I would like to express my deepest gratitude to my supervisor, Professor Alexander Gegov, for his invaluable guidance, unwavering support, and intellectual mentorship throughout this research. His expertise in computational intelligence, fuzzy systems, and formal reasoning has been instrumental in shaping the theoretical foundations of this work. Professor Gegov's encouragement to pursue ambitious research questions at the intersection of machine learning and symbolic AI, combined with his patience in helping me navigate the challenges of doctoral research, has been transformative. His insightful feedback on countless drafts, his willingness to engage in deep technical discussions, and his commitment to academic rigor have profoundly influenced my development as a researcher.
+
+I am grateful to [Second Supervisor Name] for [his/her] valuable contributions to this research, particularly in [specific area]. [His/Her] expertise in [domain] and thoughtful critiques during supervision meetings helped refine key aspects of the methodology and experimental design.
+
+I would like to thank my thesis examiners, [Internal Examiner Name] and [External Examiner Name], for their thorough review of this dissertation and their constructive feedback that has strengthened the final manuscript. Their insightful questions during the viva voce examination challenged me to think more deeply about the implications and limitations of this work.
+
+I am grateful to the School of Computing at the University of Portsmouth for providing an intellectually stimulating environment and the resources necessary to conduct this research. Special thanks to the administrative staff, particularly [names], for their efficient handling of logistical matters and their patience with my numerous queries about regulations and procedures.
+
+This research was supported by [Funding Source / Scholarship Name], to which I am deeply grateful. I acknowledge the computational resources provided by [Computing Facility / University HPC], which were essential for running the extensive experiments reported in this dissertation. Access to GPU infrastructure enabled the LLM inference experiments and large-scale empirical evaluations that form the empirical backbone of this work.
+
+I would like to thank my colleagues and fellow PhD students in the Intelligent Systems Research Group for stimulating discussions, collaborative brainstorming sessions, and mutual support throughout our respective journeys. Particular thanks to [colleague names] for technical discussions about [specific topics], code reviews, and moral support during challenging phases of the research. The weekly research seminars and informal coffee conversations provided valuable opportunities to refine ideas and receive feedback from diverse perspectives.
+
+I am grateful to the anonymous reviewers of my published papers and conference presentations for their constructive criticism and suggestions that improved both those publications and the dissertation research. Presenting early versions of this work at ICAR-AI 2026 and other venues provided valuable feedback that shaped subsequent iterations.
+
+Beyond the academic sphere, I owe an enormous debt of gratitude to my family. To my parents, [names], for their unconditional love, lifelong encouragement of my intellectual curiosity, and sacrifices that enabled me to pursue higher education. Their belief in the value of knowledge and their pride in my achievements, even when the technical details remained opaque, provided constant motivation. To my siblings, [names], for keeping me grounded and reminding me of life beyond academia.
+
+To my friends, both within and outside the university, thank you for your patience with my absences during intense research periods, for listening to my excitement about breakthroughs and frustrations about setbacks, and for providing much-needed distraction and perspective. Special thanks to [friend names] for [specific support].
+
+Finally, I acknowledge the broader research community working on causal inference, neuro-symbolic AI, and large language models. Standing on the shoulders of giants like Judea Pearl, whose foundational work on causality inspired this dissertation, and the many researchers advancing the frontiers of deep learning and symbolic AI, this work represents one small step in the collective endeavor to build more intelligent, reliable, and trustworthy AI systems.
+
+While this dissertation bears my name, it is truly the product of a community of support, and I am profoundly grateful to all who contributed to this journey.
+
+\vspace{1cm}
+
+\noindent
+Koycho Georgiev\\
+Portsmouth, United Kingdom\\
+February 2026

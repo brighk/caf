@@ -1,0 +1,23 @@
+======================================================================
+CAF CounterBench Evaluation Report
+======================================================================
+
+Generated: 2026-02-18 11:48:05
+Configuration: LLM=Real, SPARQL=Simulated
+
+OVERALL PERFORMANCE
+----------------------------------------------------------------------
+Total examples: 3
+Correct: 2
+Accuracy: 66.67%
+Avg iterations: 2.3
+Avg score: 0.98
+
+PERFORMANCE BY REASONING TYPE
+----------------------------------------------------------------------
+basic           |   2/  3 | Accuracy: 66.67%
+
+ANSWER DISTRIBUTION
+----------------------------------------------------------------------
+no         |    2 ( 66.7%)
+yes        |    1 ( 33.3%)
